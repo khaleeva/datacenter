@@ -183,6 +183,7 @@ body {
 }
 
 main {
+  width: 100%;
   margin-top: 74px;
 }
 
@@ -963,12 +964,46 @@ main {
   .header .btn {
     display: none;
   }
+
+  .main-title-section .title-container .main-title-text {
+    font-size: 36px;
+    text-align: center;
+  }
 }
 
 @media (max-width: 420px) {
   .container {
     max-width: 420px;
-    padding: 0 15px;
+    padding: 0 20px;
+  }
+
+  main {
+    margin-top: 59px;
+  }
+
+  .header {
+    height: 60px;
+  }
+
+  .header .logo {
+    font-size: 36px;
+  }
+
+  .main-title-section {
+    height: 456px;
+    background-image: url(../img/bgmobail.jpg);
+  }
+
+  .main-title-section .title-container {
+    padding-top: 115px;
+    height: 456px;
+  }
+
+  .main-title-section .title-container .main-subtitle-text {
+    margin-top: 35px;
+    font-size: 16px;
+    text-align: center;
+    line-height: 160%;
   }
 }
 
@@ -984,6 +1019,11 @@ main {
     max-width: 1024px;
     padding: 0 15px;
   }
+
+  .main-title-section .title-container .main-title-text {
+    font-size: 46px;
+    text-align: center;
+  }
 }
 
 @media (max-width: 768px) and (min-width: 421px) {
@@ -991,11 +1031,42 @@ main {
     max-width: 768px;
     padding: 0 15px;
   }
+
+  .main-title-section {
+    height: 500px;
+  }
+
+  .main-title-section .title-container {
+    padding-top: 0px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    height: 500px;
+  }
+
+  .main-title-section .title-container .main-subtitle-text {
+    font-size: 18px;
+    text-align: center;
+  }
 }
 
 @media (max-width: 1200px) and (min-width: 1024px) {
   .header .contact-data {
     font-size: 14px;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 768px) {
+  .main-title-section {
+    height: 600px;
+  }
+
+  .main-title-section .title-container {
+    padding-top: 0px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    height: 600px;
   }
 }
 @supports (-webkit-appearance:none){
@@ -1023,7 +1094,7 @@ main {
  @media (max-width: 420px){
 
 @supports (-webkit-appearance:none){
-
+.main-title-section{background-image:url(../img/bgmobail.webp)}
 }
 
 }
@@ -1053,6 +1124,14 @@ main {
 }
 
  @media (max-width: 1200px) and (min-width: 1024px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
+ @media (max-width: 1024px) and (min-width: 768px){
 
 @supports (-webkit-appearance:none){
 
