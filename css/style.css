@@ -1194,7 +1194,7 @@ main {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    margin-top: 0px;
+    margin-top: 54px;
     margin-bottom: 26px;
     row-gap: 10px;
   }
@@ -1241,6 +1241,10 @@ main {
     width: 265px;
     height: 47px;
     font-size: 16px;
+  }
+
+  .footer {
+    display: none;
   }
 }
 
