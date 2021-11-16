@@ -172,8 +172,8 @@ body {
 .container {
   width: 100%;
   max-width: 1200px;
-  min-width: 320px;
-  height: auto;
+  min-width: 280px;
+  height: 100%;
   margin: 0 auto;
 }
 
@@ -447,6 +447,14 @@ main {
   padding-bottom: 58px;
 }
 
+.main-section-services .title-mob {
+  display: none;
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 700;
+  text-align: center;
+}
+
 .main-section-services .section-services {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -456,7 +464,6 @@ main {
   -webkit-column-gap: 24px;
      -moz-column-gap: 24px;
           column-gap: 24px;
-  row-gap: 24px;
 }
 
 .main-section-services .section-services .section-services-item {
@@ -466,6 +473,7 @@ main {
   -webkit-transition: all 0.3s linear;
   -o-transition: all 0.3s linear;
   transition: all 0.3s linear;
+  margin-bottom: 24px;
 }
 
 .main-section-services .section-services .section-services-item:hover .services-item-link a {
@@ -494,8 +502,8 @@ main {
 }
 
 .main-section-about {
-  padding-top: 140px;
-  padding-bottom: 180px;
+  padding-top: 120px;
+  padding-bottom: 190px;
 }
 
 .main-section-about .about-container {
@@ -505,17 +513,19 @@ main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-column-gap: 90px;
-     -moz-column-gap: 90px;
-          column-gap: 90px;
+  -webkit-column-gap: 7.5%;
+     -moz-column-gap: 7.5%;
+          column-gap: 7.5%;
 }
 
 .main-section-about .about-container .section-about-item {
-  padding-top: 80px;
+  padding-top: 90px;
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
 }
 
 .main-section-about .about-container .section-about-item .title-section {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 .main-section-about .about-container .section-about-item .about-text {
@@ -525,24 +535,29 @@ main {
   text-align: left;
 }
 
-.main-section-about .about-container .image-item {
-  padding-top: 50px;
+.main-section-about .about-container .section-image-item {
+  padding-top: 55px;
   width: 100%;
+  -ms-flex-preferred-size: 45%;
+      flex-basis: 45%;
 }
 
-.main-section-about .about-container .image-item img {
+.main-section-about .about-container .section-image-item img {
   width: 100%;
   max-width: 441px;
   height: auto;
 }
 
 .main-section-advantages {
-  padding-top: 80px;
   width: 100%;
-  height: 1300px;
   background-image: url(../img/bg2.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.main-section-advantages .advantages-container {
+  padding-top: 80px;
+  height: 1290px;
 }
 
 .main-section-advantages .title-section {
@@ -551,7 +566,7 @@ main {
 }
 
 .main-section-advantages .section-advantages {
-  margin-top: 55px;
+  margin-top: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -620,6 +635,12 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.main-section-advantages .section-advantages .section-advantages-item .advantages-image-layer img {
+  width: 100%;
+  max-width: 96px;
+  height: auto;
 }
 
 .main-section-advantages .section-advantages .advantages-title {
@@ -945,29 +966,14 @@ main {
     text-align: center;
   }
 
-  .main-section-about {
-    padding-top: 60px;
-    height: 966px;
-  }
-
   .main-section-about .about-container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
         -ms-flex-direction: column-reverse;
             flex-direction: column-reverse;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
+    max-width: 281px;
     height: 835px;
-    padding: 0px 22px;
-  }
-
-  .main-section-about .about-container .section-about-item {
-    padding-top: 0px;
-  }
-
-  .main-section-about .about-container .section-about-item .title-section {
-    margin-bottom: 0px;
-    font-size: 30px;
+    padding: 0px 0px;
   }
 
   .main-section-about .about-container .section-about-item .about-text {
@@ -975,15 +981,14 @@ main {
     margin-bottom: 0px;
   }
 
-  .main-section-about .about-container .image-item img {
-    max-width: 280px;
+  .main-section-about .about-container .section-image-item img {
+    max-width: 217px;
   }
 }
 
 @media (max-width: 420px) {
   .container {
-    max-width: 420px;
-    padding: 0 20px;
+    width: 280px;
   }
 
   main {
@@ -1012,8 +1017,88 @@ main {
     line-height: 160%;
   }
 
+  .main-section-services {
+    padding-top: 48px;
+  }
+
+  .main-section-services .title-section {
+    display: none;
+  }
+
+  .main-section-services .title-mob {
+    display: block;
+    margin-bottom: 30px;
+  }
+
   .main-section-services .section-services .section-services-item {
     width: 280px;
+    padding: 25px 24px 30px;
+    margin-bottom: 10px;
+  }
+
+  .main-section-services .section-services .section-services-item .services-item-title {
+    font-size: 24px;
+    line-height: 120%;
+    text-align: left;
+    margin-bottom: 25px;
+  }
+
+  .main-section-services .section-services .section-services-item .services-item-link li a {
+    font-size: 16px;
+    text-align: left;
+  }
+
+  .main-section-about {
+    padding-top: 40px;
+    padding-bottom: 70px;
+  }
+
+  .main-section-about .about-container .section-about-item {
+    width: 236px;
+    padding-top: 0px;
+    margin: 0 0 36px 24px;
+  }
+
+  .main-section-about .about-container .section-about-item .title-section {
+    font-size: 30px;
+    margin: 0 30px 18px 0;
+  }
+
+  .main-section-about .about-container .section-image-item {
+    padding-top: 0px;
+    margin: 37px 0 0 34px;
+  }
+
+  .main-section-advantages .advantages-container {
+    padding-top: 54px;
+  }
+
+  .main-section-advantages .title-section {
+    font-size: 30px;
+  }
+
+  .main-section-advantages .section-advantages {
+    margin-top: 38px;
+  }
+
+  .main-section-advantages .section-advantages .section-advantages-item {
+    padding: 18px 24px;
+  }
+
+  .main-section-advantages .section-advantages .section-advantages-item .advantages-image {
+    width: 64px;
+    height: 64px;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+  }
+
+  .main-section-advantages .section-advantages .section-advantages-item .advantages-image-layer {
+    width: 52px;
+    height: 52px;
+  }
+
+  .main-section-advantages .section-advantages .section-advantages-item .advantages-image-layer img {
+    max-width: 30px;
   }
 }
 
@@ -1039,6 +1124,7 @@ main {
 
   .main-section-services .section-services .section-services-item {
     width: 380px;
+    margin-bottom: 10px;
   }
 }
 
