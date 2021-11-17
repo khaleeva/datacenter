@@ -566,7 +566,8 @@ main {
 
 .main-section-advantages .advantages-container {
   padding-top: 80px;
-  height: 1295px;
+  padding-bottom: 60px;
+  min-height: 1295px;
 }
 
 .main-section-advantages .title-section {
@@ -602,7 +603,7 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 32%;
+  width: 384px;
   height: auto;
   background: rgba(255, 255, 255, 0.09);
   -webkit-backdrop-filter: blur(24px);
@@ -676,6 +677,16 @@ main {
 .main-section-partners .partners-container {
   position: relative;
   min-height: 340px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .main-section-partners .partners-container .title-mob {
@@ -700,6 +711,9 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-column-gap: 24px;
@@ -757,6 +771,9 @@ main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-column-gap: 24px;
@@ -1013,6 +1030,10 @@ main {
   .menu-burger {
     display: block;
   }
+
+  .main-section-review {
+    padding-top: 40px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1028,6 +1049,12 @@ main {
     font-size: 36px;
     text-align: center;
     margin-bottom: 31px;
+  }
+
+  .main-section-review .section-review .section-review-item {
+    width: 380px;
+    height: 328px;
+    padding: 25px 24px 30px 24px;
   }
 }
 
@@ -1128,11 +1155,16 @@ main {
 
   .main-section-advantages .advantages-container {
     padding-top: 54px;
-    height: 1603px;
+    min-height: 1603px;
   }
 
   .main-section-advantages .title-section {
     font-size: 30px;
+  }
+
+  .main-section-advantages .section-advantages {
+    margin-top: 37px;
+    row-gap: 10px;
   }
 
   .main-section-advantages .section-advantages .section-advantages-item {
@@ -1316,6 +1348,19 @@ main {
   .main-section-services .section-services .section-services-item {
     width: 800px;
   }
+
+  .main-section-partners .section-partners-title h2 {
+    font-size: 70px;
+  }
+
+  .main-section-partners .section-partners {
+    padding: 0 100px;
+  }
+
+  .main-section-partners .section-partners .section-partners-item {
+    width: 230px;
+    height: 90px;
+  }
 }
 
 @media (max-width: 1024px) and (min-width: 769px) {
@@ -1346,6 +1391,12 @@ main {
   .main-section-about .about-container .section-about-item {
     padding-top: 30px;
     text-align: center;
+  }
+
+  .main-section-partners .section-partners {
+    top: 0;
+    padding: 30px 40px 0px 40px;
+    position: relative;
   }
 }
 
@@ -1386,6 +1437,12 @@ main {
   .main-section-about .about-container .section-image-item img {
     max-width: 270px;
   }
+
+  .main-section-partners .section-partners {
+    top: 0;
+    padding: 30px 40px;
+    position: relative;
+  }
 }
 
 @media (max-width: 1025px) and (min-width: 769px) {
@@ -1397,6 +1454,28 @@ main {
 @media (max-width: 1200px) and (min-width: 769px) {
   .main-section-about .about-container .section-image-item img {
     max-width: 350px;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 768px) {
+  .main-section-partners .section-partners-title h2 {
+    font-size: 50px;
+  }
+
+  .main-section-partners .section-partners .section-partners-item {
+    width: 160px;
+    height: 70px;
+  }
+}
+
+@media (max-width: 768px) and (min-width: 420px) {
+  .main-section-partners .section-partners-title h2 {
+    font-size: 40px;
+  }
+
+  .main-section-partners .section-partners .section-partners-item {
+    width: 130px;
+    height: 60px;
   }
 }
 @supports (-webkit-appearance:none){
@@ -1472,6 +1551,22 @@ main {
 }
 
  @media (max-width: 1200px) and (min-width: 769px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
+ @media (max-width: 1024px) and (min-width: 768px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
+ @media (max-width: 768px) and (min-width: 420px){
 
 @supports (-webkit-appearance:none){
 
