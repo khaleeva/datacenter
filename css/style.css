@@ -18,7 +18,7 @@
 .main-section-review .section-title,
 .title-section {
   font-weight: bold;
-  font-size: 46px;
+  font-size: 3.29rem;
   line-height: 120%;
 }
 
@@ -163,10 +163,14 @@ h6 {
   font-weight: inherit;
 }
 
+html {
+  font-size: 14px;
+}
+
 body {
   font-family: "futura-pt";
   font-weight: 400;
-  font-size: 14px;
+  font-size: 1rem;
 }
 
 .container {
@@ -179,7 +183,7 @@ body {
 
 main {
   width: 100%;
-  margin-top: 74px;
+  margin-top: 5.26rem;
 }
 
 .header {
@@ -214,6 +218,12 @@ main {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  margin-right: 1rem;
+}
+
+.header-menu .header-nav {
+  min-width: 470px;
+  margin-right: 1rem;
 }
 
 .header-menu .header-nav .header-nav-list {
@@ -226,8 +236,7 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  min-width: 470px;
-  margin: 0 25px;
+  width: 100%;
 }
 
 .header-menu .header-nav .header-nav-list .nav-list-item {
@@ -254,7 +263,7 @@ main {
   display: block;
   position: absolute;
   left: 0;
-  top: 55px;
+  top: 57px;
   min-width: 147px;
   height: auto;
   display: -webkit-box;
@@ -269,16 +278,23 @@ main {
           align-items: flex-start;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  row-gap: 16px;
-  padding: 16px 26px 16px 20px;
-  font-size: 16px;
+  row-gap: 1.14rem;
+  padding: 1.14rem 1.86rem 1.4rem 1.4rem;
+  font-size: 1.14rem;
 }
 
 .header-menu .header-nav .header-nav-list .nav-list-item .active-block a {
   color: #000000;
 }
 
-.header-menu .header-nav-phone {
+.header-menu .header-nav-contact a {
+  color: #000000;
+  font-size: 1.29rem;
+  font-weight: 700;
+  line-height: 120%;
+}
+
+.header-menu .contact {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -286,12 +302,6 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-}
-
-.header-menu .contact-data {
-  color: #000000;
-  font-size: 18px;
-  font-weight: 700;
 }
 
 .header-menu .header-btn {
@@ -307,8 +317,8 @@ main {
   width: 124px;
   height: 46px;
   font-weight: 700;
-  font-size: 16px;
-  line-height: 21px;
+  font-size: 1.14rem;
+  line-height: 160%;
   -webkit-transition: all 0.1s linear;
   -o-transition: all 0.1s linear;
   transition: all 0.1s linear;
@@ -427,14 +437,14 @@ main {
 
 .main-title-section .title-container .main-title-text {
   color: #FFFFFF;
-  font-size: 90px;
+  font-size: 6.42rem;
   font-weight: 700;
   line-height: 120%;
 }
 
 .main-title-section .title-container .main-subtitle-text {
   color: #FFFFFF;
-  font-size: 20px;
+  font-size: 1.43rem;
   line-height: 160%;
   margin-bottom: 55px;
 }
@@ -475,7 +485,7 @@ main {
 }
 
 .main-section-services .section-services .section-services-item .services-item-title {
-  font-size: 30px;
+  font-size: 2.14rem;
   font-weight: 700;
   margin-bottom: 30px;
 }
@@ -486,7 +496,7 @@ main {
 
 .main-section-services .section-services .section-services-item .services-item-link li a {
   color: #000000;
-  font-size: 20px;
+  font-size: 1.43rem;
   line-height: 120%;
   border-bottom: 1px solid #000000;
   -webkit-transition: all 0.3s linear;
@@ -496,7 +506,7 @@ main {
 
 .title-mob {
   display: none;
-  font-size: 30px;
+  font-size: 2.14rem;
   line-height: 36px;
   font-weight: 700;
   text-align: center;
@@ -530,7 +540,7 @@ main {
 }
 
 .main-section-about .about-container .section-about-item .about-text {
-  font-size: 18px;
+  font-size: 1.29rem;
   line-height: 160%;
   margin-bottom: 15px;
   text-align: left;
@@ -646,7 +656,7 @@ main {
 
 .main-section-advantages .section-advantages .advantages-title {
   margin-top: 35px;
-  font-size: 24px;
+  font-size: 1.71rem;
   color: #FFFFFF;
   font-weight: 700;
   line-height: 120%;
@@ -655,7 +665,7 @@ main {
 
 .main-section-advantages .section-advantages .advantages-text {
   margin-top: 24px;
-  font-size: 16px;
+  font-size: 1.14rem;
   color: #FFFFFF;
   line-height: 160%;
   text-align: center;
@@ -675,7 +685,7 @@ main {
 }
 
 .main-section-partners .section-partners-title h2 {
-  font-size: 90px;
+  font-size: 6.42rem;
   font-weight: 700;
   color: #EFEFEF;
   text-align: center;
@@ -764,7 +774,7 @@ main {
 }
 
 .main-section-review .section-review .section-review-item .review-item-name {
-  font-size: 16px;
+  font-size: 1.14rem;
   line-height: 120%;
   font-weight: 700;
 }
@@ -775,7 +785,7 @@ main {
 }
 
 .main-section-review .section-review .section-review-item .review-item-text {
-  font-size: 18px;
+  font-size: 1.29rem;
   line-height: 160%;
   margin-bottom: 30px;
   height: 145px;
@@ -788,7 +798,7 @@ main {
 }
 
 .main-section-review .section-review .section-review-item .review-item-btn {
-  font-size: 18px;
+  font-size: 1.29rem;
   line-height: 120%;
   font-weight: 700;
   color: #3E77BB;
@@ -808,7 +818,7 @@ main {
   width: 264px;
   height: 52px;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 1.43rem;
   line-height: 120%;
   -webkit-transition: all 0.1s linear;
   -o-transition: all 0.1s linear;
@@ -851,7 +861,7 @@ main {
   width: 354px;
   height: 60px;
   color: #FFFFFF;
-  font-size: 20px;
+  font-size: 1.43rem;
   line-height: 120%;
   font-weight: 700;
   border-radius: 16px;
@@ -868,8 +878,8 @@ main {
 
 .footer {
   background-color: #172433;
-  padding-top: 55px;
-  padding-bottom: 45px;
+  padding-top: 3.9rem;
+  padding-bottom: 3.5rem;
 }
 
 .footer .footer-container {
@@ -879,9 +889,9 @@ main {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-column-gap: 110px;
-     -moz-column-gap: 110px;
-          column-gap: 110px;
+  -webkit-column-gap: 7.86rem;
+     -moz-column-gap: 7.86rem;
+          column-gap: 7.86rem;
 }
 
 .footer .footer-item {
@@ -891,48 +901,69 @@ main {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-column-gap: 120px;
-     -moz-column-gap: 120px;
-          column-gap: 120px;
+  -webkit-column-gap: 8.57rem;
+     -moz-column-gap: 8.57rem;
+          column-gap: 8.57rem;
 }
 
 .footer .footer-item .footer-item-info {
-  margin-bottom: 20px;
+  margin-bottom: 1.2rem;
 }
 
 .footer .footer-item .footer-item-info p {
   color: #FFFFFF;
-  margin-bottom: 10px;
+  margin-bottom: 0.75rem;
 }
 
-.footer .footer-item .footer-item-info span {
-  font-size: 16px;
+.footer .footer-item .footer-item-info a,
+.footer .footer-item .footer-item-info address {
+  font-size: 1.14rem;
   font-weight: 700;
+  color: #FFFFFF;
+  font-style: normal;
 }
 
 .footer .footer-title {
-  font-size: 24px;
+  font-size: 1.71rem;
   line-height: 120%;
   font-weight: 700;
   color: #FFFFFF;
-  margin-bottom: 25px;
+  margin-bottom: 2.5rem;
 }
 
-.footer .footer-nav-list li {
-  margin-bottom: 20px;
+.footer .footer-item-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.footer .footer-nav-list li a {
-  font-size: 16px;
+.footer .footer-item-nav .footer-nav-list li {
+  margin-bottom: 1.4rem;
+}
+
+.footer .footer-item-nav .footer-nav-list li a {
+  font-size: 1.14rem;
   line-height: 120%;
   color: #FFFFFF;
 }
 
-.footer .footer-logo {
-  font-size: 200px;
-  color: #ffffff;
-  font-weight: bold;
-  margin-top: 15px;
+.footer .footer-item-logo {
+  width: 47.3333333333%;
+  max-width: 568px;
+  height: auto;
+  margin-top: 1.07rem;
+  background-image: url(../img/dhb.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.footer-mob {
+  display: none;
 }
 
 @media (max-width: 1200px) {
@@ -958,11 +989,7 @@ main {
 }
 
 @media (max-width: 768px) {
-  .header-menu .header-nav-email {
-    display: none;
-  }
-
-  .header-menu .header-nav-phone {
+  .header-menu .header-nav-contact {
     display: none;
   }
 
@@ -971,7 +998,7 @@ main {
   }
 
   .main-title-section .title-container .main-title-text {
-    font-size: 36px;
+    font-size: 2.57rem;
     text-align: center;
   }
 
@@ -986,7 +1013,7 @@ main {
   }
 
   .main-section-about .about-container .section-about-item .about-text {
-    font-size: 16px;
+    font-size: 1.14rem;
     margin-bottom: 0px;
   }
 
@@ -1001,7 +1028,7 @@ main {
   }
 
   main {
-    margin-top: 59px;
+    margin-top: 4.2rem;
   }
 
   .header {
@@ -1021,7 +1048,7 @@ main {
 
   .main-title-section .title-container .main-subtitle-text {
     margin-top: 35px;
-    font-size: 16px;
+    font-size: 1.14rem;
     text-align: center;
     line-height: 160%;
   }
@@ -1041,14 +1068,14 @@ main {
   }
 
   .main-section-services .section-services .section-services-item .services-item-title {
-    font-size: 24px;
+    font-size: 1.71rem;
     line-height: 120%;
     text-align: left;
     margin-bottom: 25px;
   }
 
   .main-section-services .section-services .section-services-item .services-item-link li a {
-    font-size: 16px;
+    font-size: 1.14rem;
     text-align: left;
   }
 
@@ -1069,7 +1096,7 @@ main {
   }
 
   .main-section-about .about-container .section-about-item .title-section {
-    font-size: 30px;
+    font-size: 2.14rem;
     margin: 0 30px 18px 0;
   }
 
@@ -1084,7 +1111,7 @@ main {
   }
 
   .main-section-advantages .title-section {
-    font-size: 30px;
+    font-size: 2.14rem;
   }
 
   .main-section-advantages .section-advantages {
@@ -1116,13 +1143,13 @@ main {
 
   .main-section-advantages .section-advantages .advantages-title {
     margin-top: 18px;
-    font-size: 18px;
+    font-size: 1.29rem;
     text-align: left;
   }
 
   .main-section-advantages .section-advantages .advantages-text {
     margin-top: 12px;
-    font-size: 14px;
+    font-size: 1rem;
     text-align: left;
   }
 
@@ -1182,7 +1209,7 @@ main {
   }
 
   .main-section-review .section-title {
-    font-size: 30px;
+    font-size: 2.14rem;
   }
 
   .main-section-review {
@@ -1214,14 +1241,14 @@ main {
   }
 
   .main-section-review .section-review .section-review-item .review-item-text {
-    font-size: 16px;
+    font-size: 1.14rem;
     height: 182px;
     -webkit-line-clamp: 7;
     margin-bottom: 15px;
   }
 
   .main-section-review .section-review .section-review-item .review-item-btn {
-    font-size: 16px;
+    font-size: 1.14rem;
   }
 
   .main-section-review .btn-review {
@@ -1233,39 +1260,51 @@ main {
   }
 
   .main-section-offer .offer-container .section-title {
-    font-size: 30px;
+    font-size: 2.14rem;
   }
 
   .main-section-offer .offer-container .offer-btn {
     margin-top: 39px;
     width: 265px;
     height: 47px;
-    font-size: 16px;
+    font-size: 1.14rem;
   }
 
   .footer {
     display: none;
   }
+
+  .footer-mob {
+    display: block;
+  }
 }
 
 @media (max-width: 1200px) and (min-width: 1025px) {
   .container {
-    max-width: 1200px;
-    padding: 0 15px;
+    max-width: 1024px;
+    padding: 0 1.07rem;
+  }
+
+  .header-menu .header-nav-contact a {
+    font-size: 1rem;
   }
 }
 
 @media (max-width: 1024px) and (min-width: 769px) {
   .container {
-    max-width: 1024px;
-    padding: 0 15px;
+    max-width: 768px;
+    padding: 0 1.07rem;
   }
 }
 
 @media (max-width: 768px) and (min-width: 421px) {
   .container {
     max-width: 768px;
-    padding: 0 15px;
+    padding: 0 3rem;
+  }
+
+  .main-title-section {
+    height: 520px;
   }
 
   .main-section-services .section-services .section-services-item {
@@ -1274,9 +1313,9 @@ main {
   }
 }
 
-@media (max-width: 1200px) and (min-width: 1024px) {
-  .header-menu .contact-data {
-    font-size: 14px;
+@media (max-width: 1200px) and (min-width: 769px) {
+  .main-title-section {
+    height: 580px;
   }
 }
 @supports (-webkit-appearance:none){
@@ -1284,6 +1323,7 @@ main {
 .header-menu .header-nav .header-nav-list .nav-list-item::after{background-image:url("../img/icons/Vector1.svg")}
 .main-title-section{background-image:url(../img/bg1.webp)}
 .main-section-advantages{background-image:url(../img/bg2.webp)}
+.footer .footer-item-logo{background-image:url(../img/dhb.webp)}
 }
 
  @media (max-width: 1200px){
@@ -1342,7 +1382,7 @@ main {
 
 }
 
- @media (max-width: 1200px) and (min-width: 1024px){
+ @media (max-width: 1200px) and (min-width: 769px){
 
 @supports (-webkit-appearance:none){
 
