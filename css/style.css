@@ -1148,6 +1148,14 @@ main {
     display: none;
   }
 
+  .header-menu .header-nav-contact {
+    display: none;
+  }
+
+  .header-menu .header-btn {
+    display: none;
+  }
+
   .menu-burger {
     display: block;
   }
@@ -1158,14 +1166,6 @@ main {
 }
 
 @media (max-width: 768px) {
-  .header-menu .header-nav-contact {
-    display: none;
-  }
-
-  .header-menu .header-btn {
-    display: none;
-  }
-
   .main-title-section .title-container .main-title-text {
     font-size: 36px;
     text-align: center;
@@ -1451,11 +1451,6 @@ main {
 
   .header-menu .header-nav-contact a {
     font-size: 14px;
-  }
-
-  .header-menu .header-btn {
-    width: 100px;
-    height: 35px;
   }
 
   .main-title-section {
