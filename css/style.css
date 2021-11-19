@@ -44,6 +44,7 @@
   color: #FFFFFF;
 }
 
+.section-about-dc .about-dc-info a,
 .btn-review,
 .header-menu .header-btn {
   border: double 1px transparent;
@@ -55,6 +56,7 @@
   background-clip: content-box, border-box;
 }
 
+.section-about-dc .about-dc-info a:hover,
 .footer-mob .gradient-btn:hover,
 .main-section-offer .offer-container .offer-btn,
 .btn-review:hover,
@@ -64,6 +66,7 @@
   background-image: linear-gradient(90deg, #EA5C2F 0%, #F3B921 100%);
 }
 
+.section-about-dc .about-dc-info a span,
 .footer-mob .gradient-btn span,
 .btn-review span,
 .header-menu .header-btn span {
@@ -75,6 +78,7 @@
   color: transparent;
 }
 
+.section-about-dc .about-dc-info a:hover span,
 .footer-mob .gradient-btn:hover span,
 .btn-review:hover span,
 .header-menu .header-btn:hover span {
@@ -1219,6 +1223,7 @@ main {
 .section-about .section-about-container .about-info-item .text-item {
   font-size: 18px;
   line-height: 160%;
+  margin-bottom: 10px;
 }
 
 .section-about .section-about-container .about-image-item {
@@ -1269,6 +1274,140 @@ main {
 
 .section-about .section-about-container .about-info-card .about-inner-card p span {
   font-weight: 700;
+}
+
+.section-about-dc {
+  padding-top: 114px;
+  padding-bottom: 189px;
+}
+
+.section-about-dc .about-dc-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-areas: "grid-cell-1 grid-cell-2" "grid-cell-4 grid-cell-3" "grid-cell-5 grid-cell-6" "grid-cell-8 grid-cell-7";
+  -webkit-column-gap: 55px;
+     -moz-column-gap: 55px;
+          column-gap: 55px;
+}
+
+.section-about-dc #grid-cell-1 {
+  grid-area: grid-cell-1;
+}
+
+.section-about-dc #grid-cell-2 {
+  grid-area: grid-cell-2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-left: 25px;
+}
+
+.section-about-dc #grid-cell-2 img {
+  width: 100%;
+  max-width: 398px;
+  height: auto;
+}
+
+.section-about-dc #grid-cell-3 {
+  grid-area: grid-cell-3;
+  margin-top: 40px;
+  margin-left: -15px;
+}
+
+.section-about-dc #grid-cell-4 {
+  grid-area: grid-cell-4;
+  margin-top: 67px;
+}
+
+.section-about-dc #grid-cell-4 img {
+  width: 100%;
+  max-width: 510px;
+  height: auto;
+}
+
+.section-about-dc #grid-cell-5 {
+  grid-area: grid-cell-5;
+  margin-top: 76px;
+}
+
+.section-about-dc #grid-cell-6 {
+  grid-area: grid-cell-6;
+  margin-top: 110px;
+  margin-left: 10px;
+}
+
+.section-about-dc #grid-cell-6 img {
+  width: 100%;
+  max-width: 564px;
+  height: auto;
+}
+
+.section-about-dc #grid-cell-7 {
+  grid-area: grid-cell-7;
+  margin-left: -15px;
+  margin-top: 265px;
+}
+
+.section-about-dc #grid-cell-8 {
+  grid-area: grid-cell-8;
+  margin-top: 180px;
+  margin-left: -2px;
+}
+
+.section-about-dc #grid-cell-8 img {
+  width: 100%;
+  max-width: 486px;
+  height: auto;
+}
+
+.section-about-dc .about-dc-info .title-mg {
+  margin-top: 55px;
+}
+
+.section-about-dc .about-dc-info h3 {
+  margin-bottom: 22px;
+}
+
+.section-about-dc .about-dc-info p {
+  font-size: 18px;
+  line-height: 160%;
+  margin-bottom: 25px;
+}
+
+.section-about-dc .about-dc-info a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 417px;
+  height: 52px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 120%;
+  -webkit-transition: all 0.1s linear;
+  -o-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+.section-about-dc .about-dc-info a span {
+  -webkit-transition: all 0.1s linear;
+  -o-transition: all 0.1s linear;
+  transition: all 0.1s linear;
 }
 
 @media (min-width: 769px) {
@@ -1339,6 +1478,12 @@ main {
     -webkit-box-ordinal-group: 0;
         -ms-flex-order: -1;
             order: -1;
+  }
+
+  .section-about-dc .about-dc-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: "grid-cell-2" "grid-cell-1" "grid-cell-4" "grid-cell-3" "grid-cell-6" "grid-cell-5" "grid-cell-8" "grid-cell-7";
   }
 }
 
@@ -1671,6 +1816,10 @@ main {
     min-width: 160px;
     height: 38px;
     font-size: 14px;
+  }
+
+  .section-about-dc .about-dc-info a {
+    width: 280px;
   }
 }
 
