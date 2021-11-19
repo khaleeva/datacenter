@@ -985,7 +985,7 @@ main {
 
 .footer-mob {
   background-color: #172433;
-  padding: 45px 0px 85px 0px;
+  padding: 45px 0px 87px 0px;
 }
 
 .footer-mob .footer-mob-contact {
@@ -1148,6 +1148,37 @@ main {
 .footer-mob .contact-address .btn-map {
   margin-top: 26px;
   width: 216px;
+}
+
+.footer-mob-nav-container {
+  padding-top: 97px;
+}
+
+.footer-mob-nav-container .footer-mob-title {
+  margin-bottom: 38px;
+}
+
+.footer-mob-nav-container .footer-mob-nav-list {
+  height: 240px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.footer-mob-nav-container .footer-mob-nav-list li a {
+  font-size: 20px;
+  line-height: 120%;
+  color: #FFFFFF;
 }
 
 @media (min-width: 769px) {
@@ -1514,7 +1545,8 @@ main {
 
 @media (max-width: 768px) and (min-width: 421px) {
   .container {
-    padding: 0 15px;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 
   .main-title-section {
