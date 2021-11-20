@@ -994,7 +994,7 @@ main {
 }
 
 .footer .footer-item-logo {
-  width: 47.3333333333%;
+  width: 47.33%;
   max-width: 568px;
   height: auto;
   margin-top: 1.07rem;
@@ -1399,7 +1399,7 @@ main {
   padding-bottom: 163px;
 }
 
-.section-details .section-details-container {
+.details-container-item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1408,84 +1408,104 @@ main {
           justify-content: space-between;
 }
 
-.section-details .name-company {
-  font-size: 20px;
-  margin-top: 5px;
-  margin-bottom: 45px;
-}
-
-.section-details .number-payments {
-  margin-top: 8px;
-  margin-bottom: 25px;
-}
-
-.section-details .bank-address {
-  margin-top: 14px;
-  font-size: 14px;
-}
-
-.section-details .swift {
-  margin-bottom: 25px;
-}
-
-.section-details .details-title {
-  margin-bottom: 14px;
-}
-
-.section-details .iban {
-  margin-bottom: 6px;
-}
-
-.section-details .post-address {
-  margin-top: 14px;
-}
-
-.section-details .dc-address,
-.section-details .legal-address,
-.section-details .fax,
-.section-details .email {
-  margin-top: 15px;
-}
-
-.section-details .contact-title {
-  margin-top: 55px;
-  margin-bottom: 14px;
-}
-
-.section-details .director {
-  font-size: 20px;
-  margin-top: 35px;
-}
-
-.section-details .dc-number {
-  margin-top: 40px;
-}
-
-.section-details .details-info-item {
-  font-size: 16px;
-  line-height: 120%;
-}
-
-.section-details .details-info-item h5 {
+.details-info-inner h5 {
   font-size: 24px;
   line-height: 120%;
   font-weight: 700;
 }
 
-.section-details span {
+.details-info-inner p {
+  font-size: 16px;
+  line-height: 120%;
+}
+
+.details-info-inner span {
   font-size: 18px;
   font-weight: 700;
 }
 
-.details-img-item {
-  padding-top: 25px;
+.details-img-inner {
   width: 510px;
 }
 
-.details-img-item img {
+.details-img-inner img {
   width: 100%;
   max-width: 510px;
   height: auto;
+  margin-top: -30px;
+}
+
+.company-name {
+  font-size: 20px;
+  margin-bottom: 50px;
+}
+
+.company-number {
+  margin-bottom: 20px;
+}
+
+.company-number p {
+  margin-top: 10px;
+}
+
+.company-details {
+  margin-bottom: 25px;
+}
+
+.company-details h5 {
+  margin-bottom: 15px;
+}
+
+.company-details p {
+  margin-bottom: 6px;
+}
+
+.company-details .bank-address {
+  font-size: 14px;
+  margin-top: 15px;
+  margin-bottom: 0px;
+}
+
+.company-details .swift {
+  font-size: 14px;
+  margin-bottom: 0px;
+}
+
+.company-address {
+  margin-bottom: 50px;
+}
+
+.company-address h5 {
+  margin-bottom: 15px;
+}
+
+.company-address .p-mg {
+  margin-bottom: 15px;
+}
+
+.company-contacts {
+  margin-bottom: 30px;
+}
+
+.company-contacts h5 {
+  margin-bottom: 15px;
+}
+
+.company-contacts .p-mg {
+  margin-bottom: 15px;
+}
+
+.company-head {
+  font-size: 20px;
+  line-height: 120%;
+  max-width: 433px;
+  margin-bottom: 35px;
+}
+
+.section-contacts-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 @media (min-width: 769px) {
@@ -1662,7 +1682,12 @@ main {
             order: -1;
   }
 
-  .section-details .section-details-container {
+  .section-details h2 {
+    text-align: center;
+    font-size: 30px;
+  }
+
+  .details-container-item {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -1672,7 +1697,7 @@ main {
             align-items: center;
   }
 
-  .details-img-item {
+  .details-img-inner {
     display: none;
   }
 }
@@ -2034,85 +2059,97 @@ main {
 
   .section-details {
     padding-top: 20px;
-    padding-bottom: 80px;
+    padding-bottom: 75px;
   }
 
-  .section-details .section-details-container {
-    width: 281px;
+  .section-details h2 {
+    text-align: left;
   }
 
-  .section-details .section-details-container h2 {
-    font-size: 30px;
-  }
-
-  .section-details .name-company {
-    margin-top: 15px;
-    margin-bottom: 30px;
-    font-size: 18px;
-    line-height: 160%;
-  }
-
-  .section-details .number-payments {
-    font-size: 16px;
-  }
-
-  .section-details .bank-address {
-    margin-top: 20px;
-  }
-
-  .section-details .swift {
-    margin-top: 10px;
-    margin-bottom: 30px;
-  }
-
-  .section-details .details-title {
-    margin-bottom: 20px;
-  }
-
-  .section-details .post-address {
-    margin-top: 20px;
-    margin-bottom: 8px;
-  }
-
-  .section-details .dc-address,
-  .section-details .legal-address {
-    margin-bottom: 5px;
-  }
-
-  .section-details .contact-title {
-    margin-bottom: 20px;
-  }
-
-  .section-details .phone,
-  .section-details .fax,
-  .section-details .email {
-    margin-bottom: 5px;
-  }
-
-  .section-details .director {
-    font-size: 16px;
-    line-height: 160%;
-  }
-
-  .section-details .dc-number {
-    margin-top: 30px;
-    margin-bottom: 9px;
-  }
-
-  .section-details .dc-code span {
-    font-size: 18px;
-  }
-
-  .section-details .details-info-item {
-    font-size: 14px;
-  }
-
-  .section-details .details-info-item h5 {
+  .details-info-inner h5 {
     font-size: 20px;
   }
 
-  .section-details span {
+  .details-info-inner p {
+    font-size: 14px;
+  }
+
+  .details-info-inner span {
     font-size: 16px;
+  }
+
+  .company-name {
+    font-size: 18px;
+    line-height: 160%;
+    margin-top: 15px;
+    margin-bottom: 30px;
+  }
+
+  .company-number p {
+    font-size: 16px;
+    margin-top: 5px;
+  }
+
+  .company-details {
+    margin-top: 25px;
+    margin-bottom: 30px;
+  }
+
+  .company-details h5 {
+    margin-bottom: 20px;
+  }
+
+  .company-details .swift {
+    margin-top: 15px;
+  }
+
+  .company-address h5 {
+    margin-bottom: 20px;
+  }
+
+  .company-address .p-mg {
+    margin-bottom: 20px;
+    margin-top: 5px;
+  }
+
+  .company-address .s-mg {
+    margin-top: 5px;
+  }
+
+  .company-address {
+    margin-bottom: 45px;
+    width: 281px;
+  }
+
+  .company-contacts h5 {
+    margin-bottom: 20px;
+  }
+
+  .company-contacts .p-mg {
+    margin-top: 5px;
+  }
+
+  .company-contacts .s-mg {
+    margin-top: 5px;
+  }
+
+  .company-contacts {
+    margin-bottom: 40px;
+  }
+
+  .company-head {
+    font-size: 16px;
+    max-width: 278px;
+    line-height: 160%;
+    margin-bottom: 30px;
+  }
+
+  .company-dc-number span {
+    font-size: 18px;
+  }
+
+  .company-dc-number p {
+    margin-bottom: 5px;
   }
 }
 
