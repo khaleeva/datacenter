@@ -1512,7 +1512,7 @@ main {
 
 .section-contacts {
   padding-top: 103px;
-  padding-bottom: 540px;
+  padding-bottom: 100px;
 }
 
 .section-contacts-item {
@@ -1856,6 +1856,7 @@ main {
 }
 
 .footer-contacts-mob {
+  display: none;
   background: #172433;
   padding-top: 45px;
   padding-bottom: 20px;
@@ -2119,6 +2120,10 @@ main {
   }
 
   .section-contacts-support-mob {
+    display: block;
+  }
+
+  .footer-contacts-mob {
     display: block;
   }
 }
