@@ -341,8 +341,8 @@ main {
 .menu-burger {
   display: none;
   position: relative;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   background-color: #F8F8F8;
 }
@@ -366,7 +366,7 @@ main {
   z-index: 1;
   position: absolute;
   left: 0;
-  top: 20px;
+  top: 25px;
 }
 
 .menu-burger .menu-btn > span,
@@ -374,7 +374,7 @@ main {
 .menu-burger .menu-btn > span::after {
   display: block;
   position: absolute;
-  width: 23px;
+  width: 30px;
   height: 3px;
   background: #000000;
   -webkit-transition-duration: 0.25s;
@@ -606,12 +606,19 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-column-gap: 24px;
      -moz-column-gap: 24px;
           column-gap: 24px;
   row-gap: 24px;
+}
+
+.main-section-advantages .section-advantages .opacity-block {
+  visibility: hidden;
 }
 
 .main-section-advantages .section-advantages .section-advantages-item {
@@ -1164,15 +1171,15 @@ main {
   width: 216px;
 }
 
-.footer-mob-nav-container {
+.footer-mob-nav {
   padding-top: 97px;
 }
 
-.footer-mob-nav-container .footer-mob-title {
+.footer-mob-nav .footer-mob-title {
   margin-bottom: 38px;
 }
 
-.footer-mob-nav-container .footer-mob-nav-list {
+.footer-mob-nav .footer-mob-nav-list {
   height: 240px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1189,7 +1196,7 @@ main {
           justify-content: space-between;
 }
 
-.footer-mob-nav-container .footer-mob-nav-list li a {
+.footer-mob-nav .footer-mob-nav-list li a {
   font-size: 20px;
   line-height: 120%;
   color: #FFFFFF;
@@ -1431,12 +1438,6 @@ main {
     margin-bottom: 0px;
   }
 
-  .main-section-advantages .section-advantages {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-
   .main-section-advantages .section-advantages .section-advantages-item .advantages-image {
     width: 160px;
     height: 160px;
@@ -1453,20 +1454,8 @@ main {
 }
 
 @media (max-width: 1024px) {
-  .header-menu .header-nav {
-    display: none;
-  }
-
   .header-menu .header-nav-contact {
     display: none;
-  }
-
-  .header-menu .header-btn {
-    display: none;
-  }
-
-  .menu-burger {
-    display: block;
   }
 
   .section-about .section-about-container {
@@ -1497,6 +1486,14 @@ main {
 }
 
 @media (max-width: 768px) {
+  .header-menu .header-nav {
+    display: none;
+  }
+
+  .header-menu .header-btn {
+    display: none;
+  }
+
   .main-title-section .title-container .main-title-text {
     font-size: 36px;
     text-align: center;
@@ -1543,6 +1540,22 @@ main {
 
   .header {
     height: 60px;
+  }
+
+  .menu-burger {
+    display: block;
+    width: 40px;
+    height: 40px;
+  }
+
+  .menu-burger .menu-btn {
+    top: 20px;
+  }
+
+  .menu-burger .menu-btn > span,
+  .menu-burger .menu-btn > span::before,
+  .menu-burger .menu-btn > span::after {
+    width: 23px;
   }
 
   .main-title-section {
@@ -1832,51 +1845,29 @@ main {
   }
 }
 
-@media (max-width: 1024px) and (min-width: 769px) {
+@media (max-width: 1200px) and (min-width: 421px) {
   .container {
-    padding: 0 15px;
-  }
-
-  .main-title-section .title-container .main-title-text {
-    font-size: 40px;
-  }
-
-  .main-section-about .about-container {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    row-gap: 50px;
-    padding: 28px;
-  }
-
-  .main-section-about .about-container .section-about-item {
-    padding-top: 30px;
-    text-align: center;
-  }
-
-  .main-section-about .about-container .section-image-item {
-    padding-top: 0px;
-    text-align: center;
-  }
-
-  .main-section-partners .partners-container h2 {
-    font-size: 46px;
-    color: #000000;
-  }
-
-  .main-section-partners .section-partners {
     padding: 0 15px;
   }
 }
 
+@media (max-width: 1200px) and (min-width: 1025px) {
+  .header-menu .header-nav-contact a {
+    font-size: 14px;
+  }
+
+  .main-title-section {
+    height: 600px;
+  }
+
+  .main-section-about .about-container .section-image-item {
+    text-align: center;
+  }
+}
+
 @media (max-width: 768px) and (min-width: 421px) {
-  .container {
-    padding-left: 15px;
-    padding-right: 15px;
+  .menu-burger {
+    display: block;
   }
 
   .main-title-section {
@@ -1923,23 +1914,46 @@ main {
   }
 }
 
-@media (max-width: 1200px) and (min-width: 1025px) {
-  .header-menu .header-nav-contact a {
-    font-size: 14px;
-  }
-
-  .main-title-section {
-    height: 600px;
-  }
-
-  .main-section-about .about-container .section-image-item {
-    text-align: center;
-  }
-}
-
 @media (max-width: 1025px) and (min-width: 769px) {
   .main-title-section {
     height: 520px;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  .main-title-section .title-container .main-title-text {
+    font-size: 40px;
+  }
+
+  .main-section-about .about-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    row-gap: 50px;
+    padding: 28px;
+  }
+
+  .main-section-about .about-container .section-about-item {
+    padding-top: 30px;
+    text-align: center;
+  }
+
+  .main-section-about .about-container .section-image-item {
+    padding-top: 0px;
+    text-align: center;
+  }
+
+  .main-section-partners .partners-container h2 {
+    font-size: 46px;
+    color: #000000;
+  }
+
+  .main-section-partners .section-partners {
+    padding: 0 15px;
   }
 }
 
@@ -2003,15 +2017,7 @@ main {
 
 }
 
- @media (max-width: 1024px) and (min-width: 769px){
-
-@supports (-webkit-appearance:none){
-
-}
-
-}
-
- @media (max-width: 768px) and (min-width: 421px){
+ @media (max-width: 1200px) and (min-width: 421px){
 
 @supports (-webkit-appearance:none){
 
@@ -2027,7 +2033,23 @@ main {
 
 }
 
+ @media (max-width: 768px) and (min-width: 421px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
  @media (max-width: 1025px) and (min-width: 769px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
+ @media (max-width: 1024px) and (min-width: 769px){
 
 @supports (-webkit-appearance:none){
 
