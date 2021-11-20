@@ -1502,6 +1502,10 @@ main {
   margin-bottom: 35px;
 }
 
+.company-dc-number p {
+  margin-bottom: 5px;
+}
+
 .section-contacts-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2146,10 +2150,6 @@ main {
 
   .company-dc-number span {
     font-size: 18px;
-  }
-
-  .company-dc-number p {
-    margin-bottom: 5px;
   }
 }
 
