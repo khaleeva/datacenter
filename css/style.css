@@ -1229,7 +1229,7 @@ main {
 }
 
 .section-about .section-about-container .about-info-item {
-  width: 51%;
+  max-width: 612px;
 }
 
 .section-about .section-about-container .about-info-item .title-section {
@@ -1394,6 +1394,100 @@ main {
   margin-right: 125px;
 }
 
+.section-details {
+  padding-top: 54px;
+  padding-bottom: 163px;
+}
+
+.section-details .section-details-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.section-details .name-company {
+  font-size: 20px;
+  margin-top: 5px;
+  margin-bottom: 45px;
+}
+
+.section-details .number-payments {
+  margin-top: 8px;
+  margin-bottom: 25px;
+}
+
+.section-details .bank-address {
+  margin-top: 14px;
+  font-size: 14px;
+}
+
+.section-details .swift {
+  margin-bottom: 25px;
+}
+
+.section-details .details-title {
+  margin-bottom: 14px;
+}
+
+.section-details .iban {
+  margin-bottom: 6px;
+}
+
+.section-details .post-address {
+  margin-top: 14px;
+}
+
+.section-details .dc-address,
+.section-details .legal-address,
+.section-details .fax,
+.section-details .email {
+  margin-top: 15px;
+}
+
+.section-details .contact-title {
+  margin-top: 55px;
+  margin-bottom: 14px;
+}
+
+.section-details .director {
+  font-size: 20px;
+  margin-top: 35px;
+}
+
+.section-details .dc-number {
+  margin-top: 40px;
+}
+
+.section-details .details-info-item {
+  font-size: 16px;
+  line-height: 120%;
+}
+
+.section-details .details-info-item h5 {
+  font-size: 24px;
+  line-height: 120%;
+  font-weight: 700;
+}
+
+.section-details span {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.details-img-item {
+  padding-top: 25px;
+  width: 510px;
+}
+
+.details-img-item img {
+  width: 100%;
+  max-width: 510px;
+  height: auto;
+}
+
 @media (min-width: 769px) {
   .footer-mob {
     display: none;
@@ -1434,6 +1528,10 @@ main {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+  }
+
+  .section-about .section-about-container .about-info-item {
+    max-width: 1024px;
   }
 
   .section-about .section-about-container .about-info-item .title-section {
@@ -1562,6 +1660,20 @@ main {
     -webkit-box-ordinal-group: 0;
         -ms-flex-order: -1;
             order: -1;
+  }
+
+  .section-details .section-details-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .details-img-item {
+    display: none;
   }
 }
 
@@ -1842,6 +1954,7 @@ main {
 
   .section-about .section-about-container .about-info-item .text-item {
     font-size: 16px;
+    margin-bottom: 0px;
   }
 
   .section-about .section-about-container .about-image-item {
@@ -1917,6 +2030,89 @@ main {
 
   #img-4 {
     max-width: 280px;
+  }
+
+  .section-details {
+    padding-top: 20px;
+    padding-bottom: 80px;
+  }
+
+  .section-details .section-details-container {
+    width: 281px;
+  }
+
+  .section-details .section-details-container h2 {
+    font-size: 30px;
+  }
+
+  .section-details .name-company {
+    margin-top: 15px;
+    margin-bottom: 30px;
+    font-size: 18px;
+    line-height: 160%;
+  }
+
+  .section-details .number-payments {
+    font-size: 16px;
+  }
+
+  .section-details .bank-address {
+    margin-top: 20px;
+  }
+
+  .section-details .swift {
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
+
+  .section-details .details-title {
+    margin-bottom: 20px;
+  }
+
+  .section-details .post-address {
+    margin-top: 20px;
+    margin-bottom: 8px;
+  }
+
+  .section-details .dc-address,
+  .section-details .legal-address {
+    margin-bottom: 5px;
+  }
+
+  .section-details .contact-title {
+    margin-bottom: 20px;
+  }
+
+  .section-details .phone,
+  .section-details .fax,
+  .section-details .email {
+    margin-bottom: 5px;
+  }
+
+  .section-details .director {
+    font-size: 16px;
+    line-height: 160%;
+  }
+
+  .section-details .dc-number {
+    margin-top: 30px;
+    margin-bottom: 9px;
+  }
+
+  .section-details .dc-code span {
+    font-size: 18px;
+  }
+
+  .section-details .details-info-item {
+    font-size: 14px;
+  }
+
+  .section-details .details-info-item h5 {
+    font-size: 20px;
+  }
+
+  .section-details span {
+    font-size: 16px;
   }
 }
 
