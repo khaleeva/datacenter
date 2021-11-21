@@ -429,7 +429,7 @@ main {
   overflow: hidden;
   position: fixed;
   position: absolute;
-  top: 60;
+  top: 60px;
   left: 0;
   visibility: hidden;
 }
@@ -456,6 +456,9 @@ main {
   -webkit-transform: translateY(793px);
       -ms-transform: translateY(793px);
           transform: translateY(793px);
+  -webkit-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+  transition: all 0.5s linear;
 }
 
 .menu-box-nav {
@@ -597,9 +600,9 @@ main {
   -webkit-transform: translateY(0px);
       -ms-transform: translateY(0px);
           transform: translateY(0px);
-  -webkit-transition: all 0.7s linear;
-  -o-transition: all 0.7s linear;
-  transition: all 0.7s linear;
+  -webkit-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+  transition: all 0.5s linear;
 }
 
 .main-title-section {
