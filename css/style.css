@@ -424,7 +424,8 @@ main {
 
 .wrapper {
   width: 100%;
-  height: 7000px;
+  height: 1200px;
+  z-index: 1000;
   background-color: rgba(0, 0, 0, 0.5);
   overflow: hidden;
   position: fixed;
@@ -453,9 +454,9 @@ main {
   background: #FFFFFF;
   border-radius: 20px 20px 0px 0px;
   padding-bottom: 30px;
-  -webkit-transform: translateY(793px);
-      -ms-transform: translateY(793px);
-          transform: translateY(793px);
+  -webkit-transform: translateY(100%);
+      -ms-transform: translateY(100%);
+          transform: translateY(100%);
   -webkit-transition: all 0.5s linear;
   -o-transition: all 0.5s linear;
   transition: all 0.5s linear;
