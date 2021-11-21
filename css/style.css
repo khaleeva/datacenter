@@ -437,7 +437,9 @@ main {
 .menu-box {
   width: 100%;
   height: auto;
-  margin-top: 30px;
+  position: absolute;
+  bottom: -100%;
+  left: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -451,9 +453,6 @@ main {
   background: #FFFFFF;
   border-radius: 20px 20px 0px 0px;
   padding-bottom: 30px;
-  -webkit-transform: translateY(100%);
-      -ms-transform: translateY(100%);
-          transform: translateY(100%);
   -webkit-transition: all 0.5s linear;
   -o-transition: all 0.5s linear;
   transition: all 0.5s linear;
@@ -595,9 +594,7 @@ main {
 }
 
 .active {
-  -webkit-transform: translateY(0%);
-      -ms-transform: translateY(0%);
-          transform: translateY(0%);
+  bottom: 0;
   -webkit-transition: all 0.5s linear;
   -o-transition: all 0.5s linear;
   transition: all 0.5s linear;
