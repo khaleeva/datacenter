@@ -1642,6 +1642,14 @@ main {
   margin-top: 10px;
 }
 
+.contact-mob-item .contacts-tg {
+  margin-top: 30px;
+}
+
+.contact-mob-item .contacts-tg .tg {
+  margin-top: 10px;
+}
+
 .contact-image {
   width: 168px;
   height: 168px;
