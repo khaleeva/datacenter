@@ -594,7 +594,7 @@ main {
 }
 
 .active {
-  bottom: 0;
+  bottom: 5%;
   -webkit-transition: all 0.5s linear;
   -o-transition: all 0.5s linear;
   transition: all 0.5s linear;
