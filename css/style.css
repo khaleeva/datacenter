@@ -235,8 +235,6 @@ main {
 
 .menu-list > li:hover .menu-sub-list {
   opacity: 1;
-  visibility: visible;
-  pointer-events: all;
   -webkit-transform: translate(0px, 0px);
       -ms-transform: translate(0px, 0px);
           transform: translate(0px, 0px);
@@ -2161,7 +2159,6 @@ main {
             transform: translate(0px, 10%);
     opacity: 0;
     visibility: hidden;
-    pointer-events: none;
     -webkit-transition: all 0.3s ease 0s;
     -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
