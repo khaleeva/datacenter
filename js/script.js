@@ -5,8 +5,53 @@ const accordeon = document.querySelectorAll(".accordeon-section");
 
 const burgerMenu = document.querySelector(".menu-btn");
 const wrapper = document.querySelector(".wrapper-burger-menu");
-const menuBox = document.querySelector(".menu-burger-section");
+const menuBox = document.querySelector(".menu-section-mob");
 const headerMenu = document.querySelectorAll(".header-nav-list");
+
+
+const iconMenu = document.querySelector('.menu-icon');
+if (iconMenu){
+   
+   iconMenu.addEventListener('click', function(e){
+      iconMenu.classList.toggle("active");
+      wrapper.classList.toggle("active-wrapper");
+      menuBox.classList.toggle('active-block');
+      document.body.style.overflow = 'hidden';
+   })
+}
+
+
+const accordeonClick = function(e){
+    
+   accordeon.forEach(function(section){
+      section.querySelector(".accordeon-panel").style.maxHeight = "0px";
+   
+    })
+
+
+      let insideElHeight = e.target.closest(".accordeon-section").querySelector(".accordeon-panel").scrollHeight;
+      e.target.closest(".accordeon-section").querySelector(".accordeon-panel").style.maxHeight = insideElHeight + "px" ;
+      menuBox.style.minHeight = 790 + insideElHeight + 'px';
+}
+
+accordeon.forEach(function(section){
+   section.addEventListener("click", accordeonClick) 
+})
+
+
+
+
+// let menuBtns= document.querySelectorAll(".menu-link");
+//    if (menuBtns.length > 0){
+//       for (let i = 0; i < menuBtns.length; i++){
+//          const menuBtn = menuBtns[i];
+//          menuBtn.addEventListener('click', function(e){
+//             e.target.classList.toggle('active-link');
+//          })
+//       }
+//    }
+
+
 
 
 
@@ -59,42 +104,13 @@ const headerMenu = document.querySelectorAll(".header-nav-list");
 
 
 
-headerMenu.forEach(function(item){
-   item.addEventListener('click', function(e){
-      document.querySelectorAll('.inner-nav-items').forEach(function(elem){
-            elem.classList.remove('active-block')
-      })
-      e.target.closest("li").querySelector('.inner-nav-items').classList.toggle('active-block');
-      
-
-   
-   })
-})
 
 
 
-burgerMenu.addEventListener('click', function(){
-   menuBox.classList.toggle('active-block');
-   wrapper.classList.toggle('active-wrapper');
-   document.body.style.overflow = 'hidden';
-})
-
-const accordeonClick = function(e){
-    
-   accordeon.forEach(function(section){
-      section.querySelector(".accordeon-panel").style.maxHeight = "0px";
-   
-    })
 
 
-      let insideElHeight = e.target.closest(".accordeon-section").querySelector(".accordeon-panel").scrollHeight;
-      e.target.closest(".accordeon-section").querySelector(".accordeon-panel").style.maxHeight = insideElHeight + "px" ;
-      menuBox.style.minHeight = 790 + insideElHeight + 'px';
-}
 
-accordeon.forEach(function(section){
-   section.addEventListener("click", accordeonClick) 
-})
+
 
 
 
