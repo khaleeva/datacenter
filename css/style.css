@@ -2352,8 +2352,8 @@ main {
   .menu-icon::after {
     left: 0;
     position: absolute;
-    height: 2px;
-    width: 23px;
+    height: 12%;
+    width: 100%;
     -webkit-transition: all 0.3s ease 0s;
     -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
