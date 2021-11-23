@@ -1,5 +1,3 @@
-@charset "UTF-8";
-
 @font-face {
   font-family: "futura-pt";
   font-display: swap;
@@ -17,13 +15,13 @@
 }
 
 .main-section-offer .offer-container .section-title,
-.main-section-review .section-title,
 .title-section {
   font-weight: bold;
   font-size: 46px;
   line-height: 120%;
 }
 
+.section-advices .section-advices-item .section-advices-inner,
 .section-about .section-about-container .about-info-card .about-inner-card,
 .main-section-review .section-review .section-review-item,
 .main-section-partners .section-partners .section-partners-item,
@@ -249,6 +247,7 @@ main {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
+  cursor: pointer;
 }
 
 .header-menu .header-nav .header-nav-list .nav-list-item {
@@ -605,6 +604,10 @@ main {
   transition: all 0.5s linear;
 }
 
+.active-panel .accordeon-panel {
+  display: block;
+}
+
 .main-title-section {
   width: 100%;
   height: 713px;
@@ -954,7 +957,7 @@ main {
   padding-bottom: 105px;
 }
 
-.main-section-review .section-title {
+.main-section-review .title-section {
   text-align: center;
 }
 
@@ -980,7 +983,6 @@ main {
      -moz-column-gap: 24px;
           column-gap: 24px;
   row-gap: 24px;
-  position: relative;
 }
 
 .main-section-review .section-review .section-review-item {
@@ -1008,24 +1010,7 @@ main {
   line-height: 160%;
 }
 
-.main-section-review .section-review .section-review-item .read-more-checker {
-  opacity: 0;
-  position: absolute;
-}
-
-.main-section-review .section-review .section-review-item .read-more-checker:checked ~ .limiter {
-  max-height: none;
-}
-
-.main-section-review .section-review .section-review-item .read-more-checker ~ .read-more-button:before {
-  content: "Развернуть";
-}
-
-.main-section-review .section-review .section-review-item .read-more-checker:checked ~ .read-more-button:before {
-  content: "Свернуть";
-}
-
-.main-section-review .section-review .section-review-item .read-more-button {
+.read-more-button {
   cursor: pointer;
   display: inline-block;
   font-size: 18px;
@@ -1033,6 +1018,14 @@ main {
   font-weight: 700;
   color: #3E77BB;
   margin-top: 28px;
+}
+
+.active-review {
+  color: #FFFFFF;
+}
+
+.active-limiter {
+  max-height: none;
 }
 
 .btn-review {
@@ -2141,6 +2134,79 @@ main {
   position: absolute;
 }
 
+.section-advices {
+  padding-top: 85px;
+  padding-bottom: 195px;
+}
+
+.section-advices .advices-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.section-advices .title-section {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-advices .section-advices-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  -webkit-column-gap: 24px;
+     -moz-column-gap: 24px;
+          column-gap: 24px;
+  row-gap: 24px;
+}
+
+.section-advices .section-advices-item .section-advices-inner {
+  max-width: 588px;
+  min-height: 302px;
+  padding: 31px 33px 39px 42px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.section-advices .section-advices-item .section-advices-inner h5 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 120%;
+  margin-bottom: 20px;
+}
+
+.section-advices .section-advices-item .section-advices-inner .limiter {
+  height: 145px;
+  overflow: hidden;
+  font-size: 18px;
+  line-height: 160%;
+  text-align: start;
+}
+
+.read-more-button {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 18px;
+  line-height: 120%;
+  font-weight: 700;
+  color: #3E77BB;
+  margin-top: 28px;
+}
+
 @media (min-width: 421px) {
   .wrapper-burger-menu {
     top: 75px;
@@ -2380,6 +2446,12 @@ main {
   .footer-contacts-mob {
     display: block;
   }
+
+  .section-advices .section-advices-item {
+    grid-template-columns: 1fr;
+    margin-bottom: 26px;
+    row-gap: 10px;
+  }
 }
 
 @media (max-width: 420px) {
@@ -2591,7 +2663,7 @@ main {
     padding-bottom: 54px;
   }
 
-  .main-section-review .section-title {
+  .main-section-review .title-section {
     font-size: 30px;
   }
 
@@ -2615,7 +2687,7 @@ main {
     line-height: 160%;
   }
 
-  .main-section-review .section-review .section-review-item .read-more-button {
+  .read-more-button {
     font-size: 16px;
     margin-top: 15px;
   }
@@ -2827,6 +2899,37 @@ main {
   .section-contacts-container h2 {
     font-size: 30px;
     margin-bottom: 40px;
+  }
+
+  .section-advices {
+    padding-top: 25px;
+    padding-bottom: 113px;
+  }
+
+  .section-advices .title-section {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+
+  .section-advices .section-advices-item .section-advices-inner {
+    width: 280px;
+    min-height: 307px;
+    padding: 30px 28px 30px 19px;
+  }
+
+  .section-advices .section-advices-item .section-advices-inner h5 {
+    font-size: 18px;
+  }
+
+  .section-advices .section-advices-item .section-advices-inner .limiter {
+    width: 240px;
+    max-height: 156px;
+    font-size: 16px;
+    line-height: 160%;
+  }
+
+  .read-more-button {
+    font-size: 18px;
   }
 }
 
