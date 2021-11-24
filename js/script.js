@@ -16,7 +16,8 @@ if (iconMenu){
       iconMenu.classList.toggle("active");
       wrapper.classList.toggle("active-wrapper");
       menuBox.classList.toggle('active-block');
-      document.body.style.overflow = 'hidden';
+      // document.body.style.overflow = 'hidden';
+      document.body.classList.toggle('active-body');
    })
 }
 
