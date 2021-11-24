@@ -183,6 +183,10 @@ body {
   font-size: 14px;
 }
 
+body.active-body {
+  overflow: hidden;
+}
+
 .container {
   width: 100%;
   max-width: 1200px;
@@ -233,8 +237,14 @@ main {
   margin-left: 30px;
 }
 
+.menu-list > li:first-child {
+  margin-left: 0px;
+}
+
 .menu-list > li:hover .menu-sub-list {
   opacity: 1;
+  visibility: visible;
+  pointer-events: all;
   -webkit-transform: translate(0px, 0px);
       -ms-transform: translate(0px, 0px);
           transform: translate(0px, 0px);
@@ -294,6 +304,10 @@ main {
 
 .menu-sub-link {
   color: #000000;
+}
+
+.menu-sub-link:hover {
+  text-decoration: underline;
 }
 
 .header-nav-contact a {
@@ -2159,6 +2173,7 @@ main {
             transform: translate(0px, 10%);
     opacity: 0;
     visibility: hidden;
+    pointer-events: none;
     -webkit-transition: all 0.3s ease 0s;
     -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
