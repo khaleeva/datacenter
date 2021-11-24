@@ -18,6 +18,7 @@ if (iconMenu){
       wrapper.classList.toggle("active-wrapper");
       menuBox.classList.toggle('active-block');
       document.body.classList.toggle('active-body');
+      menuClick();
    })
 }
 
