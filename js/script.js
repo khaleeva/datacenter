@@ -1,13 +1,14 @@
 
-// "use strict"
 
-const accordeon = document.querySelectorAll(".accordeon-section");
+
+
 
 const burgerMenu = document.querySelector(".menu-btn");
 const wrapper = document.querySelector(".wrapper-burger-menu");
 const menuBox = document.querySelector(".menu-section-mob");
 const headerMenu = document.querySelectorAll(".header-nav-list");
-
+const accHeaders = document.querySelectorAll(".accordeon-header");
+const accPanel = document.querySelectorAll('.accordeon-panel');
 
 const iconMenu = document.querySelector('.menu-icon');
 if (iconMenu){
@@ -16,29 +17,42 @@ if (iconMenu){
       iconMenu.classList.toggle("active");
       wrapper.classList.toggle("active-wrapper");
       menuBox.classList.toggle('active-block');
-      // document.body.style.overflow = 'hidden';
       document.body.classList.toggle('active-body');
    })
 }
 
 
-const accordeonClick = function(e){
-    
-   accordeon.forEach(function(section){
-      section.querySelector(".accordeon-panel").style.maxHeight = "0px";
-   
-    })
+// Burger-menu
+
+   const menuClick = () =>{
+
+      for (let accHeader of accHeaders) {
+        
+        if(accHeader.nextElementSibling.classList.contains("show-panel")){
+         accHeader.nextElementSibling.classList.remove("show-panel");
+         menuBox.style.minHeight = 790 + 'px';
+        }
+
+         accHeader.addEventListener('click', function() {
+            let setClasses = !this.classList.contains('active-panel');
+             setClass(accHeaders, 'active-panel', 'remove');
+             setClass(accPanel, 'show-panel', 'remove');
+             
+               if (setClasses) {
+                 this.classList.toggle("active-panel");
+                 this.nextElementSibling.classList.toggle("show-panel");
+                 menuBox.style.minHeight = 790 + 136 + 'px';
+             } 
+         })
+        }
+   }
 
 
-      let insideElHeight = e.target.closest(".accordeon-section").querySelector(".accordeon-panel").scrollHeight;
-      e.target.closest(".accordeon-section").querySelector(".accordeon-panel").style.maxHeight = insideElHeight + "px" ;
-      menuBox.style.minHeight = 790 + insideElHeight + 'px';
-}
-
-accordeon.forEach(function(section){
-   section.addEventListener("click", accordeonClick) 
-})
-
+      function setClass(elem, className, fnName) {
+         for (let i = 0; i < elem.length; i++) {
+            elem[i].classList[fnName](className);
+         }
+      }
 
 
 
@@ -98,7 +112,30 @@ accordeon.forEach(function(section){
 //    })
 // })
 
+// const accordeonClick = function(e){
+    
+  
 
+//    accordeon.forEach(function(section){
+      
+//       section.querySelector(".accordeon-panel").style.maxHeight = "0px";
+   
+//     })
+
+
+//       let insideElHeight = e.target.closest(".accordeon-section")
+//       .querySelector(".accordeon-panel").scrollHeight;
+    
+//          e.target.closest(".accordeon-section").querySelector(".accordeon-panel")
+//          .style.maxHeight = insideElHeight + "px" ;
+//          menuBox.style.minHeight = 790 + insideElHeight + 'px';
+//       }
+
+
+
+// accordeon.forEach(function(section){
+//    section.addEventListener("click", accordeonClick) 
+// })
 
 
 
