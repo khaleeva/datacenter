@@ -453,7 +453,7 @@ main {
 }
 
 .accordeon-panel {
-  max-height: 0px;
+  max-height: 0;
   overflow: hidden;
   -webkit-transition: max-height 0.4s linear;
   -o-transition: max-height 0.4s linear;
@@ -544,8 +544,12 @@ main {
   transition: all 0.5s linear;
 }
 
-.active-panel .accordeon-panel {
-  display: block;
+.accordeon-panel.active-panel {
+  max-height: 0px;
+}
+
+.accordeon-panel.show-panel {
+  max-height: 136px;
 }
 
 .main-title-section {
