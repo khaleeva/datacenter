@@ -70,9 +70,10 @@ hammertime.get('swipe').set({ direction: Hammer.DIRECTION_VERTICAL });
 hammertime.on('swipe', function(ev) {
     
    
-    document.querySelector(".wrapper-burger-menu").classList.remove('active-wrapper');
-    document.body.classList.remove('active-body');
-	iconMenu.classList.remove("active");
+        iconMenu.classList.remove("active");
+         wrapper.classList.remove("active-wrapper");
+         menuBox.classList.remove('active-block');
+         document.body.classList.remove('active-body'); 
 });
 
 ;
