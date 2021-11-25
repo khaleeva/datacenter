@@ -69,44 +69,22 @@ menuClick();
 
 
    
-    let touchstartY = 0;
-    let touchendY = 0;
     
-    const gestureZone = document.querySelector('.div-line-swipe');
-    
-    gestureZone.addEventListener('touchstart', function(event) {
-      
-        touchstartY = event.changedTouches[0].screenY;
-    }, false);
-    
-    gestureZone.addEventListener('touchend', function(event) {
-      
-        touchendY = event.changedTouches[0].screenY;
-        handleGesture();
-    }, false); 
-    
-    function handleGesture() {
-  
-        
-        if (touchendY >= touchstartY) {
-                  iconMenu.classList.remove("active");
-                  wrapper.classList.remove("active-wrapper");
-                  menuBox.classList.remove('active-block');
-                  document.body.classList.remove('active-body'); 
-                  menuAccClick();
-
-                  
-        }
-        
-       
-    }
 
 
 
 
     
 ;
+const swipeBtn = document.querySelector(".div-line-swipe");
 
+swipeBtn.addEventListener('swiped-down', function(e) {
+    iconMenu.classList.remove("active");
+    wrapper.classList.remove("active-wrapper");
+    menuBox.classList.remove('active-block');
+    document.body.classList.remove('active-body'); 
+    menuAccClick();
+  });;
 
 
 

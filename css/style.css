@@ -413,29 +413,24 @@ main {
 
 .div-line-swipe {
   width: 100%;
-  padding-top: 20px;
-  padding-bottom: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-touch-action: pan-down;
-      touch-action: pan-down;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  height: 35px;
+  display: block;
+  background-color: transparent;
+  position: relative;
 }
 
-.div-line-swipe span {
-  display: block;
+.div-line-swipe::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   width: 106px;
   height: 4px;
-  opacity: 0.1;
-  background-color: black;
-  border-radius: 2px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
 }
 
 .accordeon-section {
