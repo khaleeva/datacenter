@@ -374,7 +374,7 @@ main {
 
 .menu-section-mob {
   width: 100%;
-  min-height: 790px;
+  min-height: 690px;
   position: absolute;
   top: 100%;
   left: 0;
@@ -391,7 +391,7 @@ main {
           align-items: center;
   background: #FFFFFF;
   border-radius: 20px 20px 0px 0px;
-  padding-bottom: 30px;
+  padding-bottom: 90px;
   -webkit-transition: all 0.5s linear;
   -o-transition: all 0.5s linear;
   transition: all 0.5s linear;
@@ -566,10 +566,6 @@ main {
 
 .accordeon-panel.show-panel {
   max-height: 136px;
-}
-
-.menu-section-mob.active-height {
-  min-height: 926px;
 }
 
 .main-title-section {
