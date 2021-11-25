@@ -31,11 +31,11 @@ menuClick();
       
       if(accHeader.nextElementSibling.classList.contains("show-panel")){
          accHeader.nextElementSibling.classList.remove("show-panel");
-         menuBox.classList.remove("active-height");
+         menuBox.style.minHeight = 690 + 'px';
         }
       
 
-       accHeader.addEventListener('click', function() {
+       accHeader.addEventListener('click', function(e) {
           let setClasses = !this.classList.contains('active-panel');
            setClass(accHeaders, 'active-panel', 'remove');
            setClass(accPanel, 'show-panel', 'remove');
@@ -48,9 +48,14 @@ menuClick();
             } 
 
             if(accHeader.nextElementSibling.classList.contains("show-panel")){
-               menuBox.classList.add("active-height");
+
+               let insideElHeight = e.target.nextElementSibling.scrollHeight;
+               menuBox.style.minHeight = 690 + insideElHeight + 'px';
+
+               // menuBox.classList.add("active-height");
             } else {
-               menuBox.classList.remove("active-height");
+               // menuBox.classList.remove("active-height");
+               menuBox.style.minHeight = 690 + 'px';
             }
 
             
@@ -68,7 +73,7 @@ menuClick();
     }
 
 
-   
+ 
     
 
 
@@ -84,6 +89,8 @@ swipeBtn.addEventListener('swiped-down', function(e) {
     menuBox.classList.remove('active-block');
     document.body.classList.remove('active-body'); 
     menuAccClick();
+
+  
   });
 
 
@@ -93,6 +100,8 @@ swipeBtn.addEventListener('swiped-down', function(e) {
     menuBox.classList.remove('active-block');
     document.body.classList.remove('active-body'); 
     menuAccClick();
+
+   
   });;
 
 
