@@ -417,6 +417,10 @@ main {
   display: block;
   background-color: transparent;
   position: relative;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .div-line-swipe::before {

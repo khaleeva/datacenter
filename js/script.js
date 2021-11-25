@@ -84,6 +84,15 @@ swipeBtn.addEventListener('swiped-down', function(e) {
     menuBox.classList.remove('active-block');
     document.body.classList.remove('active-body'); 
     menuAccClick();
+  });
+
+
+  swipeBtn.addEventListener('click', function(e) {
+    iconMenu.classList.remove("active");
+    wrapper.classList.remove("active-wrapper");
+    menuBox.classList.remove('active-block');
+    document.body.classList.remove('active-body'); 
+    menuAccClick();
   });;
 
 
