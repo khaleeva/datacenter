@@ -15,7 +15,7 @@ function menuClick(){
          wrapper.classList.toggle("active-wrapper");
          menuBox.classList.toggle('active-block');
          document.body.classList.toggle('active-body');
-         menuAccClick()
+         menuAccClick();
          
       })
    }
@@ -39,20 +39,26 @@ menuClick();
           let setClasses = !this.classList.contains('active-panel');
            setClass(accHeaders, 'active-panel', 'remove');
            setClass(accPanel, 'show-panel', 'remove');
-           menuBox.classList.toggle("active-height");
+           
            
              if (setClasses) {
                this.classList.toggle("active-panel");
                this.nextElementSibling.classList.toggle("show-panel");
                
-               
-           } 
+            } 
 
-        
-           
+            if(accHeader.nextElementSibling.classList.contains("show-panel")){
+               menuBox.classList.add("active-height");
+            } else {
+               menuBox.classList.remove("active-height");
+            }
+
+            
        })
       }
  }
+
+
 
     function setClass(elem, className, fnName) {
        for (let i = 0; i < elem.length; i++) {
@@ -83,6 +89,7 @@ hammertime.on('swipe', function(ev) {
          wrapper.classList.remove("active-wrapper");
          menuBox.classList.remove('active-block');
          document.body.classList.remove('active-body'); 
+         menuAccClick();
 });
 
 ;
