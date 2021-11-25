@@ -3,6 +3,8 @@
 const iconMenu = document.querySelector('.menu-icon');
 const wrapper = document.querySelector(".wrapper-burger-menu");
 const menuBox = document.querySelector(".menu-section-mob");
+const accHeaders = document.querySelectorAll(".accordeon-header");
+const accPanel = document.querySelectorAll('.accordeon-panel');
 
 
 function menuClick(){
@@ -13,6 +15,7 @@ function menuClick(){
          wrapper.classList.toggle("active-wrapper");
          menuBox.classList.toggle('active-block');
          document.body.classList.toggle('active-body');
+         menuAccClick()
          
       })
    }
@@ -20,43 +23,49 @@ function menuClick(){
 
 menuClick();
 
-;
-
-const accHeaders = document.querySelectorAll(".accordeon-header");
-const accPanel = document.querySelectorAll('.accordeon-panel');
 
 
-const menuAccClick = () =>{
 
+ function menuAccClick(){
     for (let accHeader of accHeaders) {
       
       if(accHeader.nextElementSibling.classList.contains("show-panel")){
-       accHeader.nextElementSibling.classList.remove("show-panel");
-       menuBox.style.minHeight = 790 + 'px';
-      }
+         accHeader.nextElementSibling.classList.remove("show-panel");
+         menuBox.classList.remove("active-height");
+        }
+      
 
        accHeader.addEventListener('click', function() {
           let setClasses = !this.classList.contains('active-panel');
            setClass(accHeaders, 'active-panel', 'remove');
            setClass(accPanel, 'show-panel', 'remove');
+           menuBox.classList.toggle("active-height");
            
              if (setClasses) {
                this.classList.toggle("active-panel");
                this.nextElementSibling.classList.toggle("show-panel");
-               menuBox.style.minHeight = 790 + 136 + 'px';
+               
+               
            } 
+
+        
+           
        })
       }
  }
-
 
     function setClass(elem, className, fnName) {
        for (let i = 0; i < elem.length; i++) {
           elem[i].classList[fnName](className);
        }
+
     }
 
-    menuAccClick();;
+
+
+    
+;
+
 // /*! Hammer.JS - v2.0.8 - 2016-04-23
 //  * http://hammerjs.github.io/
 //  *
