@@ -552,6 +552,10 @@ main {
   max-height: 136px;
 }
 
+.menu-section-mob.active-height {
+  min-height: 926px;
+}
+
 .main-title-section {
   width: 100%;
   height: 713px;
