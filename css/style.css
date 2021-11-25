@@ -414,8 +414,6 @@ main {
 .div-line-swipe {
   width: 100%;
   height: 35px;
-  display: block;
-  background-color: transparent;
   position: relative;
   -webkit-user-select: none;
      -moz-user-select: none;
