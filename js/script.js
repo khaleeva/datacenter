@@ -52,9 +52,8 @@ menuClick();
                let insideElHeight = e.target.nextElementSibling.scrollHeight;
                menuBox.style.minHeight = 690 + insideElHeight + 'px';
 
-               // menuBox.classList.add("active-height");
             } else {
-               // menuBox.classList.remove("active-height");
+               
                menuBox.style.minHeight = 690 + 'px';
             }
 
