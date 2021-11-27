@@ -253,6 +253,7 @@ main {
 .menu-link {
   color: #000000;
   cursor: pointer;
+  font-size: 16px;
 }
 
 .menu-link:hover {
@@ -2173,12 +2174,6 @@ main {
   }
 }
 
-@media (min-width: 769px) {
-  .footer-mob {
-    display: none;
-  }
-}
-
 @media (min-width: 1025px) {
   .menu-list {
     display: -webkit-box;
@@ -2210,6 +2205,10 @@ main {
   }
 
   .menu-section-mob {
+    display: none;
+  }
+
+  .footer-mob {
     display: none;
   }
 }
@@ -2311,6 +2310,10 @@ main {
   }
 
   .menu-link {
+    display: none;
+  }
+
+  .footer {
     display: none;
   }
 
@@ -2434,10 +2437,6 @@ main {
             column-gap: 10px;
     row-gap: 10px;
     max-width: 380px;
-  }
-
-  .footer {
-    display: none;
   }
 
   .section-about .section-about-container .about-info-card {
@@ -3100,14 +3099,6 @@ main {
 }
 
  @media (min-width: 421px){
-
-@supports (-webkit-appearance:none){
-
-}
-
-}
-
- @media (min-width: 769px){
 
 @supports (-webkit-appearance:none){
 
