@@ -111,33 +111,38 @@ const accordionBtns = document.querySelectorAll('.accordion-header-services');
 
 const accSection = document.querySelector('.colocation-services-accordion');
 
+let accordionFirst = document.getElementById('first-content'); 
+
+let  accordionPanel = document.querySelectorAll(" .accordion-panel-services") ;
+
+
 
 
 
  for (let accordionBtn of accordionBtns) {
-  accordionBtn.addEventListener('click', function(){
-    
-    let accordionContent = this.nextElementSibling;
-    if (accordionContent.style.maxHeight) {
-	accordionContent.style.maxHeight = null;
-   accSection.style.minHeight = 96 + 'px';
-
-   
-    } else {
-      accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
-      accSection.style.minHeight = accordionContent.scrollHeight + 'px';
-      
+   accordionBtn.addEventListener('click', function(){
      
+     let accordionContent = this.nextElementSibling;
+     if (accordionContent.style.maxHeight) {
+    accordionContent.style.maxHeight = null;
+    accSection.style.minHeight = 96 + 'px';
+ 
+    
+     } else {
+       accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+       accSection.style.minHeight = accordionContent.scrollHeight + 'px';
+       
+      
+     }
+   });
+
+   window.onload = function() {
+     
+      accordionFirst.style.maxHeight = accordionFirst.scrollHeight + 'px';
     }
-  });
-}
+   }
+       
 
-let accordionFirst = document.getElementById('first-content'); 
-
-window.onload = function() {
-  let accordionBtn = document.querySelector('.accordion-btn');
-  accordionFirst.style.maxHeight = accordionFirst.scrollHeight + 'px';
-}
 ;
 
 
