@@ -3411,11 +3411,15 @@ main {
     width: 320px;
   }
 
-  .services-table {
-    display: none;
+  .dedic-header p:last-child {
+    font-size: 14px;
   }
 
   .dedic-table {
+    display: none;
+  }
+
+  .dedic-additional {
     display: block;
   }
 
