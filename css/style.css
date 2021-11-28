@@ -2903,6 +2903,16 @@ main {
     padding: 25px 24px 30px;
   }
 
+  .main-section-services .section-services .section-services-item:hover {
+    background: none;
+    color: #000000;
+  }
+
+  .main-section-services .section-services .section-services-item:hover .services-item-link a {
+    color: #000000;
+    border-color: #000000;
+  }
+
   .main-section-services .section-services .section-services-item .services-item-title {
     font-size: 24px;
     line-height: 120%;
@@ -2913,6 +2923,10 @@ main {
   .main-section-services .section-services .section-services-item .services-item-link li a {
     font-size: 16px;
     text-align: left;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
   }
 
   .title-mob {
@@ -3339,7 +3353,7 @@ main {
   }
 
   .table-head {
-    padding-left: 10px;
+    padding: 0 10px;
     -webkit-column-gap: 50px;
        -moz-column-gap: 50px;
             column-gap: 50px;
@@ -3361,7 +3375,7 @@ main {
     -webkit-column-gap: 15px;
        -moz-column-gap: 15px;
             column-gap: 15px;
-    min-height: 70px;
+    min-height: 75px;
   }
 
   .table-body-item p:first-child {
