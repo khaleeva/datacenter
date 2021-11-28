@@ -2381,6 +2381,54 @@ main {
   margin-left: 20px;
 }
 
+.dedicated-services {
+  min-height: 100vh;
+  padding-top: 53px;
+}
+
+.dedicated-services h2 {
+  text-align: center;
+}
+
+.dedicated-head,
+.dedicated-body {
+  padding-left: 0;
+}
+
+.dedicated-head p,
+.dedicated-body p {
+  -ms-flex-preferred-size: 25%;
+      flex-basis: 25%;
+  text-align: center;
+}
+
+.dedicated-head a,
+.dedicated-body a {
+  cursor: pointer;
+}
+
+.dedicated-head p:first-child,
+.dedicated-body p:first-child {
+  -ms-flex-preferred-size: 25%;
+      flex-basis: 25%;
+}
+
+.dedic-header p:last-child {
+  font-size: 18px;
+  line-height: lh160;
+  font-weight: normal;
+  padding-top: 28px;
+  padding-bottom: 22px;
+}
+
+.dedic-header a {
+  text-decoration: underline;
+}
+
+.dedic-header::after {
+  display: none;
+}
+
 @media (min-width: 421px) {
   .wrapper-burger-menu {
     top: 75px;
@@ -2701,11 +2749,12 @@ main {
 
   .accordion-section-services {
     padding: 0px;
+    min-height: 80px;
   }
 
   .accordion-header-services {
     font-size: 20px;
-    padding: 30px 20px;
+    padding: 30px 20px 0px;
   }
 
   .accordion-header-services::after {
@@ -2743,8 +2792,13 @@ main {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    row-gap: 10px;
+    row-gap: 20px;
     font-size: 16px;
+  }
+
+  .order-btn {
+    width: 280px;
+    height: 40px;
   }
 
   .calc-btn {
@@ -2759,6 +2813,15 @@ main {
 
   .info-services ul li {
     font-size: 14px;
+  }
+
+  .dedicated-services h2 {
+    font-size: 30px;
+  }
+
+  .order-info {
+    -ms-flex-item-align: start;
+        align-self: flex-start;
   }
 }
 
@@ -2791,11 +2854,6 @@ main {
     -webkit-box-ordinal-group: 0;
         -ms-flex-order: -1;
             order: -1;
-  }
-
-  .order-btn {
-    width: 280px;
-    height: 40px;
   }
 }
 
@@ -3261,12 +3319,21 @@ main {
     width: 320px;
   }
 
+  .accordion-section-services {
+    padding: 0px;
+    min-height: 60px;
+  }
+
+  .accordion-header-services {
+    padding: 20px;
+  }
+
   .accordion-panel-services {
     padding: 0px;
   }
 
   .accordion-panel-services .panel-text {
-    padding: 0 20px;
+    padding: 10px 20px 0;
   }
 
   .table-head {
@@ -3318,6 +3385,11 @@ main {
     padding: 10px 20px 0;
   }
 
+  .btn-services {
+    font-size: 14px;
+    row-gap: 10px;
+  }
+
   .btn-services p {
     padding: 10px 20px 0;
     font-size: 14px;
@@ -3329,6 +3401,10 @@ main {
 
   .info-services ul li {
     margin-left: 20px;
+  }
+
+  .dedicated-services-container {
+    width: 320px;
   }
 }
 
