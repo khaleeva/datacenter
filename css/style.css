@@ -2254,6 +2254,11 @@ main {
       flex-basis: 65%;
 }
 
+.table-head p:last-child {
+  -ms-flex-preferred-size: 35%;
+      flex-basis: 35%;
+}
+
 .table-body {
   width: 100%;
   display: -webkit-box;
@@ -2266,6 +2271,7 @@ main {
 }
 
 .table-body-item {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2280,6 +2286,11 @@ main {
 .table-body-item p:first-child {
   -ms-flex-preferred-size: 65%;
       flex-basis: 65%;
+}
+
+.table-body-item p:last-child {
+  -ms-flex-preferred-size: 35%;
+      flex-basis: 35%;
 }
 
 .table-body-item:nth-child(2n) {
@@ -3353,6 +3364,11 @@ main {
         flex-basis: 50%;
   }
 
+  .table-head p:last-child {
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+  }
+
   .table-body-item {
     padding: 10px;
     -webkit-column-gap: 15px;
@@ -3366,23 +3382,23 @@ main {
         flex-basis: 60%;
   }
 
+  .table-body-item p:last-child {
+    -ms-flex-preferred-size: 40%;
+        flex-basis: 40%;
+  }
+
   .table-body-item:last-child {
     border-radius: 0;
   }
 
   .rack .table-body-item p:first-child {
-    -ms-flex-preferred-size: 40%;
-        flex-basis: 40%;
-  }
-
-  .rack .first-body-item p:first-child {
     -ms-flex-preferred-size: 50%;
         flex-basis: 50%;
   }
 
   .last-body-item p:last-child {
-    -ms-flex-preferred-size: 50%;
-        flex-basis: 50%;
+    -ms-flex-preferred-size: 40%;
+        flex-basis: 40%;
   }
 
   .panel-param {
@@ -3437,7 +3453,7 @@ main {
     margin-top: 20px;
   }
 
-  .order-btn {
+  .dedic-btn {
     display: none;
   }
 
