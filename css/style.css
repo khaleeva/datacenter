@@ -2415,7 +2415,7 @@ main {
 
 .dedic-header p:last-child {
   font-size: 18px;
-  line-height: lh160;
+  line-height: 160%;
   font-weight: normal;
   padding-top: 28px;
   padding-bottom: 22px;
