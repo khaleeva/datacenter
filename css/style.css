@@ -26,7 +26,7 @@
 .section-about .section-about-container .about-info-card .about-inner-card,
 .main-section-review .section-review .section-review-item,
 .main-section-partners .section-partners .section-partners-item,
-.main-section-services .section-services .section-services-item,
+.main-section-services .section-services-content .section-services-item,
 .menu-sub-list {
   background: #FFFFFF;
   -webkit-box-shadow: 0px 24px 74px rgba(0, 0, 0, 0.07);
@@ -37,7 +37,7 @@
 .contact-image-layer,
 .footer-mob .contact-image-layer,
 .main-section-about .about-container,
-.main-section-services .section-services .section-services-item:hover {
+.main-section-services .section-services-content .section-services-item:hover {
   background: #3E77BB;
   -webkit-box-shadow: 0px 34px 74px rgba(62, 119, 187, 0.3);
           box-shadow: 0px 34px 74px rgba(62, 119, 187, 0.3);
@@ -232,6 +232,7 @@ main {
 }
 
 .logo {
+  display: block;
   width: 114px;
   height: 51px;
   background-image: url(../img/logo/dh.png);
@@ -631,7 +632,7 @@ main {
           align-items: center;
 }
 
-.main-section-services .section-services {
+.main-section-services .section-services-content {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -641,7 +642,7 @@ main {
   row-gap: 24px;
 }
 
-.main-section-services .section-services .section-services-item {
+.main-section-services .section-services-content .section-services-item {
   min-width: 49%;
   height: auto;
   padding: 35px 45px 40px;
@@ -650,22 +651,22 @@ main {
   transition: all 0.3s linear;
 }
 
-.main-section-services .section-services .section-services-item:hover .services-item-link a {
+.main-section-services .section-services-content .section-services-item:hover .services-item-link a {
   color: #FFFFFF;
   border-color: #FFFFFF;
 }
 
-.main-section-services .section-services .section-services-item .services-item-title {
+.main-section-services .section-services-content .section-services-item .services-item-title {
   font-size: 30px;
   font-weight: 700;
   margin-bottom: 30px;
 }
 
-.main-section-services .section-services .section-services-item .services-item-link li {
+.main-section-services .section-services-content .section-services-item .services-item-link li {
   margin-bottom: 10px;
 }
 
-.main-section-services .section-services .section-services-item .services-item-link li a {
+.main-section-services .section-services-content .section-services-item .services-item-link li a {
   color: #000000;
   font-size: 20px;
   line-height: 120%;
@@ -2834,7 +2835,7 @@ main {
     margin-bottom: 31px;
   }
 
-  .main-section-services .section-services {
+  .main-section-services .section-services-content {
     grid-template-columns: 1fr;
     row-gap: 10px;
   }
@@ -2873,6 +2874,7 @@ main {
   }
 
   .header-container {
+    width: 320px;
     height: 60px;
   }
 
@@ -2898,35 +2900,21 @@ main {
     display: none;
   }
 
-  .main-section-services .section-services .section-services-item {
+  .main-section-services .section-services-content .section-services-item {
     width: 280px;
     padding: 25px 24px 30px;
   }
 
-  .main-section-services .section-services .section-services-item:hover {
-    background: none;
-    color: #000000;
-  }
-
-  .main-section-services .section-services .section-services-item:hover .services-item-link a {
-    color: #000000;
-    border-color: #000000;
-  }
-
-  .main-section-services .section-services .section-services-item .services-item-title {
+  .main-section-services .section-services-content .section-services-item .services-item-title {
     font-size: 24px;
     line-height: 120%;
     text-align: left;
     margin-bottom: 25px;
   }
 
-  .main-section-services .section-services .section-services-item .services-item-link li a {
+  .main-section-services .section-services-content .section-services-item .services-item-link li a {
     font-size: 16px;
     text-align: left;
-    -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
   }
 
   .title-mob {
@@ -3361,13 +3349,13 @@ main {
   }
 
   .table-head p:first-child {
-    -ms-flex-preferred-size: 50%;
-        flex-basis: 50%;
+    -ms-flex-preferred-size: 55%;
+        flex-basis: 55%;
   }
 
   .table-head p:last-child {
-    -ms-flex-preferred-size: 50%;
-        flex-basis: 50%;
+    -ms-flex-preferred-size: 45%;
+        flex-basis: 45%;
   }
 
   .table-body-item {
