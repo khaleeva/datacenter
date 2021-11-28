@@ -3,8 +3,8 @@
 const iconMenu = document.querySelector('.menu-icon');
 const wrapper = document.querySelector(".wrapper-burger-menu");
 const menuBox = document.querySelector(".menu-section-mob");
-const accHeaders = document.querySelectorAll(".accordeon-header");
-const accPanel = document.querySelectorAll('.accordeon-panel');
+const accHeaders = document.querySelectorAll(".accordion-header");
+const accPanel = document.querySelectorAll('.accordion-panel');
 
 
 function menuClick(){
@@ -103,6 +103,42 @@ swipeBtn.addEventListener('swiped-down', function(e) {
    
   });;
 
+
+
+
+
+const accordionBtns = document.querySelectorAll('.accordion-header-services');
+
+const accSection = document.querySelector('.colocation-services-accordion');
+
+
+
+
+ for (let accordionBtn of accordionBtns) {
+  accordionBtn.addEventListener('click', function(){
+    
+    let accordionContent = this.nextElementSibling;
+    if (accordionContent.style.maxHeight) {
+	accordionContent.style.maxHeight = null;
+   accSection.style.minHeight = 96 + 'px';
+
+   
+    } else {
+      accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+      accSection.style.minHeight = accordionContent.scrollHeight + 'px';
+      
+     
+    }
+  });
+}
+
+let accordionFirst = document.getElementById('first-content'); 
+
+window.onload = function() {
+  let accordionBtn = document.querySelector('.accordion-btn');
+  accordionFirst.style.maxHeight = accordionFirst.scrollHeight + 'px';
+}
+;
 
 
 
