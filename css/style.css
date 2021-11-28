@@ -2429,6 +2429,10 @@ main {
   display: none;
 }
 
+.services-card-section {
+  display: none;
+}
+
 @media (min-width: 421px) {
   .wrapper-burger-menu {
     top: 75px;
@@ -3405,6 +3409,114 @@ main {
 
   .dedicated-services-container {
     width: 320px;
+  }
+
+  .services-table {
+    display: none;
+  }
+
+  .dedic-table {
+    display: block;
+  }
+
+  .services-card-section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 10px;
+    width: 280px;
+    height: auto;
+    margin-top: 20px;
+  }
+
+  .order-btn {
+    display: none;
+  }
+
+  .dedic-panel {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .services-card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    border: double 1px transparent;
+    border-radius: 16px;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(white)), radial-gradient(circle at left bottom, #EA5C2F, #F3B921);
+    background-image: -o-linear-gradient(white, white), -o-radial-gradient(left bottom, circle, #EA5C2F, #F3B921);
+    background-image: linear-gradient(white, white), radial-gradient(circle at left bottom, #EA5C2F, #F3B921);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 0px;
+            flex: 1 1 0;
+  }
+
+  .card-name {
+    font-size: 14px;
+    width: 100%;
+    padding: 20px;
+  }
+
+  .card-name div {
+    margin-bottom: 10px;
+  }
+
+  .card-name div:nth-child(2n+1) {
+    font-weight: 700;
+  }
+
+  .card-price {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 0px 20px 20px;
+  }
+
+  .card-price .card-price-btn {
+    width: 70px;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+    background-image: -webkit-gradient(linear, left top, right top, from(#EA5C2F), to(#F3B921));
+    background-image: -o-linear-gradient(left, #EA5C2F 0%, #F3B921 100%);
+    background-image: linear-gradient(90deg, #EA5C2F 0%, #F3B921 100%);
+    color: #FFFFFF;
+    font-weight: 700;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 10px;
+    border-radius: 10px;
   }
 }
 
