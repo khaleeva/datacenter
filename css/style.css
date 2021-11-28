@@ -2177,6 +2177,7 @@ main {
 }
 
 .accordion-section-services {
+  width: 100%;
   max-width: 1200px;
   padding: 0px 52px 30px;
   min-height: 96px;
@@ -2195,6 +2196,7 @@ main {
 }
 
 .accordion-header-services::after {
+  content: "";
   position: absolute;
   right: 52px;
   content: "";
@@ -2288,11 +2290,34 @@ main {
   border-radius: 0 0 20px 20px;
 }
 
+.rack div:nth-child(2n+1) {
+  background-color: #F8F8F8;
+}
+
+.rack div:nth-child(2n) {
+  background-color: transparent;
+}
+
+.last-body-item p:last-child {
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
+}
+
+.panel-param {
+  font-size: 18px;
+  font-weight: 700;
+  padding-top: 20px;
+}
+
 .btn-services {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-bottom: 55px;
+  font-size: 18px;
 }
 
 .order-btn {
@@ -2305,6 +2330,7 @@ main {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  cursor: pointer;
   width: 144px;
   height: 52px;
   border-radius: 20px;
@@ -2697,6 +2723,78 @@ main {
     -webkit-box-ordinal-group: 0;
         -ms-flex-order: -1;
             order: -1;
+  }
+
+  .colocation-services h2 {
+    font-size: 30px;
+  }
+
+  .accordion-section-services {
+    padding: 0px;
+  }
+
+  .accordion-header-services {
+    font-size: 20px;
+    padding: 30px 20px;
+  }
+
+  .accordion-header-services::after {
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+  }
+
+  .accordion-panel-services {
+    padding: 0 20px;
+  }
+
+  .accordion-panel-services .panel-text {
+    font-size: 14px;
+  }
+
+  .table-head {
+    font-size: 14px;
+  }
+
+  .table-body-item {
+    font-size: 14px;
+  }
+
+  .panel-param {
+    font-size: 16px;
+  }
+
+  .btn-services {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    row-gap: 10px;
+    font-size: 16px;
+  }
+
+  .order-btn {
+    width: 280px;
+    height: 40px;
+    margin-right: 0px;
+  }
+
+  #calc-btn {
+    width: 280px;
+    height: 40px;
+    border-radius: 20px;
+  }
+
+  .info-services p {
+    font-size: 16px;
+  }
+
+  .info-services ul li {
+    font-size: 14px;
   }
 }
 
@@ -3156,6 +3254,80 @@ main {
 
   .read-more-button {
     font-size: 18px;
+  }
+
+  .colocation-services-container {
+    width: 320px;
+  }
+
+  .accordion-panel-services {
+    padding: 0px;
+  }
+
+  .accordion-panel-services .panel-text {
+    padding: 0 20px;
+  }
+
+  .table-head {
+    padding-left: 10px;
+    -webkit-column-gap: 50px;
+       -moz-column-gap: 50px;
+            column-gap: 50px;
+    border-radius: 0;
+  }
+
+  .table-head p:first-child {
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+  }
+
+  .table-body-item {
+    padding: 10px;
+    -webkit-column-gap: 15px;
+       -moz-column-gap: 15px;
+            column-gap: 15px;
+    min-height: 60px;
+  }
+
+  .table-body-item p:first-child {
+    -ms-flex-preferred-size: 60%;
+        flex-basis: 60%;
+  }
+
+  .table-body-item:last-child {
+    border-radius: 0;
+  }
+
+  .rack .table-body-item p:first-child {
+    -ms-flex-preferred-size: 40%;
+        flex-basis: 40%;
+  }
+
+  .rack .first-body-item p:first-child {
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+  }
+
+  .last-body-item p:last-child {
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+  }
+
+  .panel-param {
+    padding: 10px 20px 0;
+  }
+
+  .btn-services p {
+    padding: 10px 20px 0;
+    font-size: 14px;
+  }
+
+  .info-services {
+    padding: 0 20px;
+  }
+
+  .info-services ul li {
+    margin-left: 20px;
   }
 }
 
