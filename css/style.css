@@ -2167,12 +2167,12 @@ main {
   margin-top: 28px;
 }
 
-.colocation-services {
+.section-services {
   min-height: 100vh;
   padding-top: 53px;
 }
 
-.colocation-services h2 {
+.section-services h2 {
   text-align: center;
 }
 
@@ -2390,15 +2390,6 @@ main {
   font-size: 18px;
   margin-bottom: 10px;
   margin-left: 20px;
-}
-
-.dedicated-services {
-  min-height: 100vh;
-  padding-top: 53px;
-}
-
-.dedicated-services h2 {
-  text-align: center;
 }
 
 .dedicated-head,
@@ -2758,7 +2749,7 @@ main {
     row-gap: 10px;
   }
 
-  .colocation-services h2 {
+  .section-services h2 {
     font-size: 30px;
   }
 
@@ -2828,10 +2819,6 @@ main {
 
   .info-services ul li {
     font-size: 14px;
-  }
-
-  .dedicated-services h2 {
-    font-size: 30px;
   }
 
   .order-info {
@@ -3330,7 +3317,7 @@ main {
     font-size: 18px;
   }
 
-  .colocation-services-container {
+  .section-services-container {
     width: 320px;
   }
 
@@ -3421,10 +3408,6 @@ main {
 
   .info-services ul li {
     margin-left: 20px;
-  }
-
-  .dedicated-services-container {
-    width: 320px;
   }
 
   .dedic-header p:last-child {
