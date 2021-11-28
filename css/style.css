@@ -44,7 +44,7 @@
   color: #FFFFFF;
 }
 
-#calc-btn,
+.calc-btn,
 .dc-info-item a,
 .btn-review,
 .header-btn {
@@ -57,7 +57,7 @@
   background-clip: content-box, border-box;
 }
 
-#calc-btn:hover,
+.calc-btn:hover,
 .order-btn,
 .gradient-btn:hover,
 .dc-info-item a:hover,
@@ -71,7 +71,7 @@
   background-image: linear-gradient(90deg, #EA5C2F 0%, #F3B921 100%);
 }
 
-#calc-btn span,
+.calc-btn span,
 .gradient-btn span,
 .dc-info-item a span,
 .footer-mob .gradient-btn span,
@@ -85,7 +85,7 @@
   color: transparent;
 }
 
-#calc-btn:hover span,
+.calc-btn:hover span,
 .gradient-btn:hover span,
 .dc-info-item a:hover span,
 .footer-mob .gradient-btn:hover span,
@@ -2316,6 +2316,9 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-column-gap: 24px;
+     -moz-column-gap: 24px;
+          column-gap: 24px;
   margin-bottom: 55px;
   font-size: 18px;
 }
@@ -2337,10 +2340,9 @@ main {
   color: #FFFFFF;
   font-size: 20px;
   font-weight: 700;
-  margin-right: 24px;
 }
 
-#calc-btn {
+.calc-btn {
   width: 257px;
   height: 52px;
   -webkit-transition: all 0.1s linear;
@@ -2360,7 +2362,7 @@ main {
   font-weight: 700;
 }
 
-#calc-btn span {
+.calc-btn span {
   -webkit-transition: all 0.1s linear;
   -o-transition: all 0.1s linear;
   transition: all 0.1s linear;
@@ -2780,10 +2782,9 @@ main {
   .order-btn {
     width: 280px;
     height: 40px;
-    margin-right: 0px;
   }
 
-  #calc-btn {
+  .calc-btn {
     width: 280px;
     height: 40px;
     border-radius: 20px;
@@ -3286,7 +3287,7 @@ main {
     -webkit-column-gap: 15px;
        -moz-column-gap: 15px;
             column-gap: 15px;
-    min-height: 60px;
+    min-height: 70px;
   }
 
   .table-body-item p:first-child {

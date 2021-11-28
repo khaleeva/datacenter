@@ -113,7 +113,7 @@ const accSection = document.querySelector('.colocation-services-accordion');
 
 let accordionFirst = document.getElementById('first-content'); 
 
-let  accordionPanel = document.querySelectorAll(" .accordion-panel-services") ;
+
 
 
 
