@@ -376,6 +376,7 @@ main {
 
 .menu-section-mob {
   width: 100%;
+  min-width: 320px;
   min-height: 690px;
   position: absolute;
   top: 100%;
