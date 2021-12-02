@@ -1,8 +1,8 @@
 
 
 const iconMenu = document.querySelector('.menu-icon');
-const wrapper = document.querySelector(".wrapper-burger-menu");
-const menuBox = document.querySelector(".menu-section-mob");
+const wrapper = document.querySelector(".wrapper-swipe-menu");
+const menuBox = document.querySelector(".swipe-menu-container");
 const accHeaders = document.querySelectorAll(".accordion-header");
 const accPanel = document.querySelectorAll('.accordion-panel');
 
@@ -77,10 +77,11 @@ menuClick();
 
 
 
+   
 
     
 ;
-const swipeBtn = document.querySelector(".div-line-swipe");
+const swipeBtn = document.querySelector(".swipe-line");
 
 swipeBtn.addEventListener('swiped-down', function(e) {
     iconMenu.classList.remove("active");
@@ -144,7 +145,102 @@ let accordionFirst = document.getElementById('first-content');
        
 
 ;
+const range = document.querySelector("#power-range");
+const unitRange = document.querySelector("#unit-range");
+const output = document.querySelector(".value");
+const outputUnit = document.querySelector(".unit")
+const calcBtns = document.querySelectorAll(".calc-btn");
+const closeIcon = document.querySelector(".close-icon");
 
+
+
+
+
+
+// range.oninput = function() {
+//   output.innerHTML = `${this.value} Вт`;
+
+// }
+
+// unitRange.oninput = function() {
+//     outputUnit.innerHTML = `${this.value} U`;
+  
+//   }
+
+// range.addEventListener('input', function(){
+//   let x = range.value/11;
+  
+     
+//   document.querySelector('.fill').style.width = x + '%';
+  
+
+  
+// })
+
+
+// unitRange.addEventListener('input', function(){
+//     let x = unitRange.value*12.5;
+    
+//        console.log(x)
+//     document.querySelector('.fill-unit').style.width = x + '%';
+    
+  
+    
+//   })
+
+
+
+
+
+// for(let calcBtn of calcBtns){
+//     calcBtn.addEventListener('click', function(){
+//         document.body.classList.add('active-body');
+//         document.querySelector('.wrapper-calc').classList.add('active');
+//     })
+// }
+
+// closeIcon.addEventListener('click', function(){
+//     document.body.classList.remove('active-body');
+//     document.querySelector('.wrapper-calc').classList.remove('active');
+//     range.value = 0;
+//     document.querySelector('.fill').style.width = 0 + "%";
+//     range.oninput();
+// });
+const reviewBtns = document.querySelectorAll('.read-more-button');
+
+
+
+
+for (let reviewBtn of reviewBtns){
+
+
+    
+    
+
+reviewBtn.addEventListener("click", function(e) {
+
+    // this.parentNode.classList.remove('active-section');
+
+    
+    e.target.parentNode.classList.toggle('active-section');
+
+});
+}
+
+
+    
+
+    
+
+       
+
+
+      
+    
+
+
+
+;
 
 
 
