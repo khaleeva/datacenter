@@ -145,19 +145,43 @@ let accordionFirst = document.getElementById('first-content');
        
 
 ;
-const range = document.querySelector("#power-range");
-const unitRange = document.querySelector("#unit-range");
-const output = document.querySelector(".value");
-const outputUnit = document.querySelector(".unit")
+
+// const powerRange = document.querySelector('#power-range')
+// const unitRange = document.querySelector("#unit-range");
+const ranges = document.querySelectorAll('.range')
+// const output = document.querySelectorAll(".value");
+// const outputUnit = document.querySelector(".unit")
 const calcBtns = document.querySelectorAll(".calc-btn");
 const closeIcon = document.querySelector(".close-icon");
+// const fill = document.querySelectorAll('.fill');
+let measure;
+let output;
+
+for(let range of ranges){
+  range.oninput = function(){
+    output = this.parentElement.parentElement.firstElementChild.lastElementChild;
+    measure = output.getAttribute('data-value');
+    console.log(measure)
+    output.innerHTML = `${this.value} ${measure}` ;
+     
+  }
+
+  range.addEventListener('input', function(){
+    let x = 0;
+    if (measure === 'Вт'){
+      x = this.value/15;
+      this.previousSibling.previousSibling.firstElementChild.style.width = x + '%';
+      
+    } else {
+      x = (this.value*14.286)-14.286;
+      this.previousSibling.previousSibling.firstElementChild.style.width = x + '%'
+    }
+    
+  })
+}
 
 
-
-
-
-
-// range.oninput = function() {
+// powerRange.oninput = function() {
 //   output.innerHTML = `${this.value} Вт`;
 
 // }
@@ -167,9 +191,10 @@ const closeIcon = document.querySelector(".close-icon");
   
 //   }
 
-// range.addEventListener('input', function(){
-//   let x = range.value/11;
+// powerRange.addEventListener('input', function(){
+//   let x = powerRange.value/15;
   
+//   console.log(x)
      
 //   document.querySelector('.fill').style.width = x + '%';
   
@@ -179,12 +204,10 @@ const closeIcon = document.querySelector(".close-icon");
 
 
 // unitRange.addEventListener('input', function(){
-//     let x = unitRange.value*12.5;
+//     let x = (unitRange.value*14.286)-14.286;
     
 //        console.log(x)
 //     document.querySelector('.fill-unit').style.width = x + '%';
-    
-  
     
 //   })
 
@@ -192,42 +215,99 @@ const closeIcon = document.querySelector(".close-icon");
 
 
 
-// for(let calcBtn of calcBtns){
-//     calcBtn.addEventListener('click', function(){
-//         document.body.classList.add('active-body');
-//         document.querySelector('.wrapper-calc').classList.add('active');
-//     })
-// }
-
-// closeIcon.addEventListener('click', function(){
-//     document.body.classList.remove('active-body');
-//     document.querySelector('.wrapper-calc').classList.remove('active');
-//     range.value = 0;
-//     document.querySelector('.fill').style.width = 0 + "%";
-//     range.oninput();
-// });
-const reviewBtns = document.querySelectorAll('.read-more-button');
-
-
-
-
-for (let reviewBtn of reviewBtns){
-
-
-    
-    
-
-reviewBtn.addEventListener("click", function(e) {
-
-    // this.parentNode.classList.remove('active-section');
-
-    
-    e.target.parentNode.classList.toggle('active-section');
-
-});
+for(let calcBtn of calcBtns){
+    calcBtn.addEventListener('click', function(){
+        document.body.classList.add('active-body');
+        document.querySelector('.wrapper-calc').classList.add('active');
+    })
 }
 
+closeIcon.addEventListener('click', function(){
+    document.body.classList.remove('active-body');
+    document.querySelector('.wrapper-calc').classList.remove('active');
+    for(range of ranges){
+      range.value = 0;
+      range.previousSibling.previousSibling.firstElementChild.style.width = 0 + '%';
+      
+      if (range.parentElement.parentElement.firstElementChild.lastElementChild.getAttribute('data-value') === 'Вт'){
+        range.parentElement.parentElement.firstElementChild.lastElementChild.innerHTML = `0 Вт`;
+        
+      } else if (range.parentElement.parentElement.firstElementChild.lastElementChild.getAttribute('data-value') === 'U'){
+        range.parentElement.parentElement.firstElementChild.lastElementChild.innerHTML = `1 U`;
+      } else if (range.parentElement.parentElement.firstElementChild.lastElementChild.getAttribute('data-value') === 'IP'){
+        range.parentElement.parentElement.firstElementChild.lastElementChild.innerHTML = `1 IP`;
+      } else {
+        range.parentElement.parentElement.firstElementChild.lastElementChild.innerHTML = `1 Gb/s`;
+      }
+      
+    }
+   
+   
+});
+const reviewLinks = document.querySelectorAll('.read-more-button');
+const parents = document.querySelectorAll('.section-review-inner');
+const limiters = document.querySelectorAll('.limiter');
 
+
+
+for (let link of reviewLinks) {
+      
+    if(link.parentNode.classList.contains("active-section")){
+        link.parentNode.classList.remove("active-section");
+        
+        
+      }
+    
+
+     link.addEventListener('click', function() {
+        let setClasses = !this.classList.contains('active');
+         setClass(reviewLinks, 'active', 'remove');
+         setClass(parents, 'active-section', 'remove');
+        setClass(limiters,'active-limiter', 'remove');
+
+         
+         
+           if (setClasses) {
+             this.classList.toggle("active");
+             this.parentNode.classList.toggle("active-section");
+             this.previousSibling.previousSibling.classList.toggle("active-limiter");
+            
+          } 
+
+
+        //   if(link.classList.contains('active')){
+
+        //     console.log(link.innerHTML = 'Свернуть');
+ 
+        //   } else {
+             
+        //      console.log(link.innerHTML = 'Развернуть');
+        //   }
+          
+
+       
+         
+
+          
+     })
+    }
+
+
+
+
+  function setClass(elem, className, fnName) {
+     for (let i = 0; i < elem.length; i++) {
+        elem[i].classList[fnName](className);
+     }
+
+  }
+
+
+
+
+
+
+   
     
 
     
