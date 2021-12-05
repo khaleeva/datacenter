@@ -2145,10 +2145,34 @@ main {
 .section-services {
   min-height: 100vh;
   padding-top: 53px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .section-services h2 {
   text-align: center;
+}
+
+.section-services-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .accordion-section-services {
@@ -2392,7 +2416,9 @@ main {
 }
 
 .calc-form {
-  width: 418px;
+  width: 100%;
+  max-width: 418px;
+  min-width: 320px;
   background-color: #FFFFFF;
   border-radius: 20px;
   position: absolute;
@@ -2402,6 +2428,10 @@ main {
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   padding-bottom: 50px;
+}
+
+.calc-form .swipe-line {
+  display: none;
 }
 
 .close-icon {
@@ -3150,6 +3180,14 @@ main {
         -ms-flex-order: -1;
             order: -1;
   }
+
+  .calc-form .swipe-line {
+    display: block;
+  }
+
+  .close-icon {
+    display: none;
+  }
 }
 
 @media (max-width: 420px) {
@@ -3620,7 +3658,7 @@ main {
   }
 
   .section-services-container {
-    width: 320px;
+    padding: 0 20px;
   }
 
   .accordion-section-services {
@@ -3714,6 +3752,24 @@ main {
 
   .wrapper-calc {
     top: 60px;
+    overflow: visible;
+  }
+
+  .calc-form {
+    width: 100%;
+    top: 200%;
+    left: 50%;
+    z-index: 1000;
+    -webkit-transition: top 0.5s ease 0s;
+    -o-transition: top 0.5s ease 0s;
+    transition: top 0.5s ease 0s;
+  }
+
+  .calc-form.active-calc {
+    top: 60%;
+    -webkit-transition: top 0.5s ease 0s;
+    -o-transition: top 0.5s ease 0s;
+    transition: top 0.5s ease 0s;
   }
 
   .dedic-header p:last-child {
