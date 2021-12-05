@@ -146,85 +146,144 @@ let accordionFirst = document.getElementById('first-content');
 
 ;
 
-// const powerRange = document.querySelector('#power-range')
-// const unitRange = document.querySelector("#unit-range");
+
+
 const ranges = document.querySelectorAll('.range')
-// const output = document.querySelectorAll(".value");
-// const outputUnit = document.querySelector(".unit")
-const calcBtns = document.querySelectorAll(".calc-btn");
+const calcBtnUnit = document.querySelector("#btn-unit");
+const calcBtnTower = document.querySelector("#btn-tower");
 const closeIcon = document.querySelector(".close-icon");
-// const fill = document.querySelectorAll('.fill');
+const checkBox = document.querySelector('.checkbox-input');
+const currentCost = document.querySelector(".cost-info");
+
+
 let measure;
 let output;
+let powerValue = 0;
+let unitValue = 0;
+let portValue = 0;
+let ipValue = 0;
+
+let supplyValue = 0;
+let costServer = +document.querySelector('#costServer').innerHTML.replace(/,/, '.');
+let costTower = +document.querySelector('#costTower').innerHTML.replace(/,/, '.');
+const costPower = +document.querySelector('#costPower').innerHTML.replace(/,/, '.');
+const costUnit = +document.querySelector('#costUnit').innerHTML.replace(/,/, '.');
+const costSupply = +document.querySelector('#costSupply').innerHTML.replace(/,/, '.');
+const costPort = +document.querySelector('#costPort').innerHTML.replace(/,/, '.');
+const costIp = +document.querySelector('#costIp').innerHTML.replace(/,/, '.');
+
+let sum = 0;
+
 
 for(let range of ranges){
   range.oninput = function(){
     output = this.parentElement.parentElement.firstElementChild.lastElementChild;
     measure = output.getAttribute('data-value');
-    console.log(measure)
     output.innerHTML = `${this.value} ${measure}` ;
-     
+    
   }
 
   range.addEventListener('input', function(){
     let x = 0;
     if (measure === 'Вт'){
-      x = this.value/15;
+      x = (this.value/12.5)-20;
       this.previousSibling.previousSibling.firstElementChild.style.width = x + '%';
+      powerValue = parseFloat((((this.value-250)/50) * costPower).toFixed(2));
       
-    } else {
+      
+    } else if (measure === 'U'){
       x = (this.value*14.286)-14.286;
-      this.previousSibling.previousSibling.firstElementChild.style.width = x + '%'
-    }
-    
+      this.previousSibling.previousSibling.firstElementChild.style.width = x + '%';
+      unitValue = parseFloat(((this.value * costUnit)-costUnit).toFixed(2));
+      
+      
+    } else if (measure === 'IP'){
+      x = (this.value*14.286)-14.286;
+      this.previousSibling.previousSibling.firstElementChild.style.width = x + '%';
+      ipValue = parseFloat(((this.value * costIp)-costIp).toFixed(2));
+      
+      
+    } else if (measure === 'Gb/s'){
+      x = (this.value*14.286)-14.286;
+      this.previousSibling.previousSibling.firstElementChild.style.width = x + '%';
+     
+      portValue = parseFloat(((this.value * costPort)-costPort).toFixed(2));
+    } 
+
+      calcValue(costServer, powerValue, unitValue, ipValue, portValue);
   })
 }
 
 
-// powerRange.oninput = function() {
-//   output.innerHTML = `${this.value} Вт`;
 
-// }
 
-// unitRange.oninput = function() {
-//     outputUnit.innerHTML = `${this.value} U`;
+
+document.querySelector('.checkbox-container').addEventListener("change", function(){
+   
+  if(checkBox.checked){
+     supplyValue = costSupply;
+    } else {
+      supplyValue = 0;
+    }
+
+    calcValue();
   
-//   }
+})
 
-// powerRange.addEventListener('input', function(){
-//   let x = powerRange.value/15;
+
+
+function calcValue(){
+
+  sum = parseFloat(costServer + powerValue + unitValue + ipValue + portValue + supplyValue).toFixed(2);
+  currentCost.innerHTML = `${sum} BYN`;
   
-//   console.log(x)
-     
-//   document.querySelector('.fill').style.width = x + '%';
-  
-
-  
-// })
-
-
-// unitRange.addEventListener('input', function(){
-//     let x = (unitRange.value*14.286)-14.286;
-    
-//        console.log(x)
-//     document.querySelector('.fill-unit').style.width = x + '%';
-    
-//   })
-
-
-
-
-
-for(let calcBtn of calcBtns){
-    calcBtn.addEventListener('click', function(){
-        document.body.classList.add('active-body');
-        document.querySelector('.wrapper-calc').classList.add('active');
-    })
 }
+
+
+
+
+
+    calcBtnUnit.addEventListener('click', function(){
+        document.body.classList.add('active-body');
+        document.querySelector('.wrapper-calc').classList.add('active')
+        document.querySelector('.unit-item').style.display = 'block';
+        currentCost.innerHTML = `${costServer}.00 BYN`;
+        
+    })
+
+
+
+
+
+
+    calcBtnTower.addEventListener('click', function(){
+      document.body.classList.add('active-body');
+      document.querySelector('.wrapper-calc').classList.add('active');
+      document.querySelector('.unit-item').style.display = 'none';
+      unitValue = 0;
+      currentCost.innerHTML = `${costTower}.00 BYN`;
+      costServer = costTower;
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 closeIcon.addEventListener('click', function(){
     document.body.classList.remove('active-body');
     document.querySelector('.wrapper-calc').classList.remove('active');
+    currentCost.innerHTML = `0 BYN`;
     for(range of ranges){
       range.value = 0;
       range.previousSibling.previousSibling.firstElementChild.style.width = 0 + '%';
@@ -241,9 +300,22 @@ closeIcon.addEventListener('click', function(){
       }
       
     }
+    
+
+    costServer = +document.querySelector('#costServer').innerHTML.replace(/,/, '.');
+    
+
+      if(checkBox.checked){
+        checkBox.checked = false;
+      }
+  
    
    
-});
+})
+
+
+
+;
 const reviewLinks = document.querySelectorAll('.read-more-button');
 const parents = document.querySelectorAll('.section-review-inner');
 const limiters = document.querySelectorAll('.limiter');
