@@ -2419,6 +2419,7 @@ main {
   width: 100%;
   max-width: 418px;
   min-width: 320px;
+  min-height: 462px;
   background-color: #FFFFFF;
   border-radius: 20px;
   position: absolute;
@@ -2507,6 +2508,7 @@ main {
 }
 
 .cost-calculation {
+  width: 100%;
   padding: 48px 44px 50px 39px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3757,19 +3759,29 @@ main {
 
   .calc-form {
     width: 100%;
+    padding: 0 10px;
     top: 200%;
     left: 50%;
     z-index: 1000;
     -webkit-transition: top 0.5s ease 0s;
     -o-transition: top 0.5s ease 0s;
     transition: top 0.5s ease 0s;
+    min-height: 600px;
   }
 
   .calc-form.active-calc {
-    top: 60%;
+    top: 55%;
     -webkit-transition: top 0.5s ease 0s;
     -o-transition: top 0.5s ease 0s;
     transition: top 0.5s ease 0s;
+  }
+
+  .cost-calculation {
+    padding: 0;
+  }
+
+  .cost-calculation-item {
+    width: 100%;
   }
 
   .dedic-header p:last-child {
