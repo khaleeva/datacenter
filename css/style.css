@@ -2371,7 +2371,6 @@ main {
           justify-content: center;
   font-size: 20px;
   font-weight: 700;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .calc-btn span {
@@ -2399,7 +2398,7 @@ main {
 
 .wrapper-calc {
   position: fixed;
-  top: 0px;
+  top: 60px;
   left: 0;
   width: 100%;
   height: 100%;
@@ -2418,8 +2417,7 @@ main {
 }
 
 .calc-form {
-  width: 100%;
-  max-width: 418px;
+  width: 418px;
   min-width: 320px;
   min-height: 462px;
   background-color: #FFFFFF;
@@ -2722,7 +2720,7 @@ main {
   }
 
   .wrapper-calc {
-    top: 0;
+    top: 60px;
   }
 }
 
@@ -3750,10 +3748,6 @@ main {
     margin-left: 20px;
   }
 
-  .wrapper-calc {
-    top: 60px;
-  }
-
   .calc-form {
     width: 100%;
     min-height: 600px;
@@ -3761,9 +3755,12 @@ main {
     border-radius: 20px 20px 0px 0px;
     left: 0;
     top: 100%;
-    -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-            transform: translateY(-50%);
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    -webkit-transform: none;
+        -ms-transform: none;
+            transform: none;
     z-index: 1000;
     -webkit-transition: top 0.5s ease 0s;
     -o-transition: top 0.5s ease 0s;
@@ -3771,7 +3768,7 @@ main {
   }
 
   .calc-form.active-calc {
-    top: 60%;
+    top: 20%;
     -webkit-transition: top 0.5s ease 0s;
     -o-transition: top 0.5s ease 0s;
     transition: top 0.5s ease 0s;
@@ -3984,6 +3981,15 @@ main {
     display: block;
   }
 }
+
+@media (orientation: landscape) {
+  .calc-form {
+    top: 100%;
+    -webkit-transition: top 0.5s ease 0s;
+    -o-transition: top 0.5s ease 0s;
+    transition: top 0.5s ease 0s;
+  }
+}
 @supports (-webkit-appearance:none){
 .header-logo{background-image:url(../img/logo/dh.webp)}
 .menu-link::after{background-image:url("../img/icons/Vector1.svg")}
@@ -4091,6 +4097,14 @@ main {
 }
 
  @media (max-width: 1024px) and (min-width: 421px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
+ @media (orientation: landscape){
 
 @supports (-webkit-appearance:none){
 
