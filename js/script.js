@@ -82,6 +82,7 @@ menuClick();
     
 ;
 const swipeBtns = document.querySelectorAll(".swipe-line");
+// const ranges = document.querySelectorAll('.range');
 
 for(let swipeBtn of swipeBtns){
 
@@ -93,6 +94,7 @@ for(let swipeBtn of swipeBtns){
     document.querySelector('.wrapper-calc').classList.remove('active');
     document.querySelector('.calc-form').classList.remove('active-calc');
     menuAccClick();
+    nullValue();
 
   
   });
@@ -106,7 +108,7 @@ for(let swipeBtn of swipeBtns){
     document.querySelector('.wrapper-calc').classList.remove('active');
     document.querySelector('.calc-form').classList.remove('active-calc');
     menuAccClick();
-
+    nullValue();
    
   });
 }
@@ -293,10 +295,13 @@ function calcValue(){
 
 
 
-closeIcon.addEventListener('click', function(){
-    document.body.classList.remove('active-body');
+
+
+
+function nullValue(){
+  document.body.classList.remove('active-body');
     document.querySelector('.wrapper-calc').classList.remove('active');
-    currentCost.innerHTML = `0 BYN`;
+    
     for(range of ranges){
       range.value = 0;
       range.previousSibling.previousSibling.firstElementChild.style.width = 0 + '%';
@@ -314,21 +319,17 @@ closeIcon.addEventListener('click', function(){
       
     }
     
-
     costServer = +document.querySelector('#costServer').innerHTML.replace(/,/, '.');
     
 
       if(checkBox.checked){
         checkBox.checked = false;
       }
-  
-   
-   
-})
+}
 
 
 
-;
+closeIcon.addEventListener('click', nullValue);;
 const reviewLinks = document.querySelectorAll('.read-more-button');
 const parents = document.querySelectorAll('.section-review-inner');
 const limiters = document.querySelectorAll('.limiter');
