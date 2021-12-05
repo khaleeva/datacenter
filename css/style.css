@@ -2398,7 +2398,7 @@ main {
 
 .wrapper-calc {
   position: fixed;
-  top: 60px;
+  top: 0;
   left: 0;
   width: 100%;
   height: 100%;
@@ -2409,6 +2409,7 @@ main {
   transition: top 0.3s ease 0s;
   visibility: hidden;
   opacity: 0;
+  z-index: 1000000;
 }
 
 .wrapper-calc.active {
@@ -2717,10 +2718,6 @@ main {
 @media (min-width: 421px) {
   .wrapper-swipe-menu {
     top: 75px;
-  }
-
-  .wrapper-calc {
-    top: 60px;
   }
 }
 
@@ -3152,6 +3149,15 @@ main {
   .order-info {
     -ms-flex-item-align: start;
         align-self: flex-start;
+  }
+}
+
+@media (max-width: 1024px) and (orientation: landscape) {
+  .calc-form {
+    top: 100%;
+    -webkit-transition: top 0.5s ease 0s;
+    -o-transition: top 0.5s ease 0s;
+    transition: top 0.5s ease 0s;
   }
 }
 
@@ -3748,6 +3754,10 @@ main {
     margin-left: 20px;
   }
 
+  .wrapper-calc {
+    top: 60px;
+  }
+
   .calc-form {
     width: 100%;
     min-height: 600px;
@@ -3981,15 +3991,6 @@ main {
     display: block;
   }
 }
-
-@media (orientation: landscape) {
-  .calc-form {
-    top: 100%;
-    -webkit-transition: top 0.5s ease 0s;
-    -o-transition: top 0.5s ease 0s;
-    transition: top 0.5s ease 0s;
-  }
-}
 @supports (-webkit-appearance:none){
 .header-logo{background-image:url(../img/logo/dh.webp)}
 .menu-link::after{background-image:url("../img/icons/Vector1.svg")}
@@ -4025,6 +4026,14 @@ main {
 }
 
  @media (max-width: 1024px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
+ @media (max-width: 1024px) and (orientation: landscape){
 
 @supports (-webkit-appearance:none){
 
@@ -4097,14 +4106,6 @@ main {
 }
 
  @media (max-width: 1024px) and (min-width: 421px){
-
-@supports (-webkit-appearance:none){
-
-}
-
-}
-
- @media (orientation: landscape){
 
 @supports (-webkit-appearance:none){
 
