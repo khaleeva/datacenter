@@ -2718,6 +2718,10 @@ main {
   .wrapper-swipe-menu {
     top: 75px;
   }
+
+  .wrapper-calc {
+    top: 75px;
+  }
 }
 
 @media (min-width: 1025px) {
@@ -3181,14 +3185,6 @@ main {
     -webkit-box-ordinal-group: 0;
         -ms-flex-order: -1;
             order: -1;
-  }
-
-  .calc-form .swipe-line {
-    display: block;
-  }
-
-  .close-icon {
-    display: none;
   }
 }
 
@@ -3752,28 +3748,35 @@ main {
     margin-left: 20px;
   }
 
-  .wrapper-calc {
-    top: 60px;
-    overflow: visible;
-  }
-
   .calc-form {
     width: 100%;
-    padding: 0 10px;
-    top: 200%;
-    left: 50%;
+    min-height: 500px;
+    padding: 0 10px 50px 10px;
+    border-radius: 20px 20px 0px 0px;
+    left: 0;
+    top: 100%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
     z-index: 1000;
     -webkit-transition: top 0.5s ease 0s;
     -o-transition: top 0.5s ease 0s;
     transition: top 0.5s ease 0s;
-    min-height: 600px;
   }
 
   .calc-form.active-calc {
-    top: 55%;
+    top: 70%;
     -webkit-transition: top 0.5s ease 0s;
     -o-transition: top 0.5s ease 0s;
     transition: top 0.5s ease 0s;
+  }
+
+  .calc-form .swipe-line {
+    display: block;
+  }
+
+  .close-icon {
+    display: none;
   }
 
   .cost-calculation {
