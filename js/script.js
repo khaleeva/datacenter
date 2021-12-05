@@ -81,13 +81,17 @@ menuClick();
 
     
 ;
-const swipeBtn = document.querySelector(".swipe-line");
+const swipeBtns = document.querySelectorAll(".swipe-line");
 
-swipeBtn.addEventListener('swiped-down', function(e) {
+for(let swipeBtn of swipeBtns){
+
+  swipeBtn.addEventListener('swiped-down', function(e) {
     iconMenu.classList.remove("active");
     wrapper.classList.remove("active-wrapper");
     menuBox.classList.remove('active-block');
     document.body.classList.remove('active-body'); 
+    document.querySelector('.wrapper-calc').classList.remove('active');
+    document.querySelector('.calc-form').classList.remove('active-calc');
     menuAccClick();
 
   
@@ -99,10 +103,16 @@ swipeBtn.addEventListener('swiped-down', function(e) {
     wrapper.classList.remove("active-wrapper");
     menuBox.classList.remove('active-block');
     document.body.classList.remove('active-body'); 
+    document.querySelector('.wrapper-calc').classList.remove('active');
+    document.querySelector('.calc-form').classList.remove('active-calc');
     menuAccClick();
 
    
-  });;
+  });
+}
+
+
+;
 
 
 
@@ -248,6 +258,8 @@ function calcValue(){
         document.querySelector('.wrapper-calc').classList.add('active')
         document.querySelector('.unit-item').style.display = 'block';
         currentCost.innerHTML = `${costServer}.00 BYN`;
+        document.querySelector('.calc-form').classList.add('active-calc');
+      
         
     })
 
@@ -259,6 +271,7 @@ function calcValue(){
     calcBtnTower.addEventListener('click', function(){
       document.body.classList.add('active-body');
       document.querySelector('.wrapper-calc').classList.add('active');
+      document.querySelector('.calc-form').classList.add('active-calc');
       document.querySelector('.unit-item').style.display = 'none';
       unitValue = 0;
       currentCost.innerHTML = `${costTower}.00 BYN`;
