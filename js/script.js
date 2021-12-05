@@ -183,8 +183,8 @@ const costUnit = +document.querySelector('#costUnit').innerHTML.replace(/,/, '.'
 const costSupply = +document.querySelector('#costSupply').innerHTML.replace(/,/, '.');
 const costPort = +document.querySelector('#costPort').innerHTML.replace(/,/, '.');
 const costIp = +document.querySelector('#costIp').innerHTML.replace(/,/, '.');
-
 let sum = 0;
+
 
 
 for(let range of ranges){
@@ -201,28 +201,29 @@ for(let range of ranges){
       x = (this.value/12.5)-20;
       this.previousSibling.previousSibling.firstElementChild.style.width = x + '%';
       powerValue = parseFloat((((this.value-250)/50) * costPower).toFixed(2));
-      
+      console.log(powerValue);
       
     } else if (measure === 'U'){
       x = (this.value*14.286)-14.286;
       this.previousSibling.previousSibling.firstElementChild.style.width = x + '%';
       unitValue = parseFloat(((this.value * costUnit)-costUnit).toFixed(2));
-      
+      console.log(unitValue);
       
     } else if (measure === 'IP'){
       x = (this.value*14.286)-14.286;
       this.previousSibling.previousSibling.firstElementChild.style.width = x + '%';
       ipValue = parseFloat(((this.value * costIp)-costIp).toFixed(2));
-      
+      console.log(ipValue);
       
     } else if (measure === 'Gb/s'){
       x = (this.value*14.286)-14.286;
       this.previousSibling.previousSibling.firstElementChild.style.width = x + '%';
      
       portValue = parseFloat(((this.value * costPort)-costPort).toFixed(2));
+      console.log(portValue);
     } 
 
-      calcValue(costServer, powerValue, unitValue, ipValue, portValue);
+      calcValue();
   })
 }
 
@@ -275,7 +276,7 @@ function calcValue(){
       document.querySelector('.wrapper-calc').classList.add('active');
       document.querySelector('.calc-form').classList.add('active-calc');
       document.querySelector('.unit-item').style.display = 'none';
-      unitValue = 0;
+      // unitValue = 0;
       currentCost.innerHTML = `${costTower}.00 BYN`;
       costServer = costTower;
     })
@@ -301,7 +302,9 @@ function calcValue(){
 function nullValue(){
   document.body.classList.remove('active-body');
     document.querySelector('.wrapper-calc').classList.remove('active');
-    
+    sum = 0;
+    currentCost.innerHTML = `${sum} BYN`;
+    console.log(currentCost);
     for(range of ranges){
       range.value = 0;
       range.previousSibling.previousSibling.firstElementChild.style.width = 0 + '%';
@@ -316,8 +319,16 @@ function nullValue(){
       } else {
         range.parentElement.parentElement.firstElementChild.lastElementChild.innerHTML = `1 Gb/s`;
       }
+
+      powerValue = 0;
+      unitValue = 0;
+      ipValue = 0;
+      portValue = 0;
+      supplyValue = 0;
       
     }
+
+    
     
     costServer = +document.querySelector('#costServer').innerHTML.replace(/,/, '.');
     

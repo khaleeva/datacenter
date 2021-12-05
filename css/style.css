@@ -3152,15 +3152,6 @@ main {
   }
 }
 
-@media (max-width: 1024px) and (orientation: landscape) {
-  .calc-form {
-    top: 100%;
-    -webkit-transition: top 0.5s ease 0s;
-    -o-transition: top 0.5s ease 0s;
-    transition: top 0.5s ease 0s;
-  }
-}
-
 @media (max-width: 768px) {
   .main-title-section .title-container .main-title-text {
     font-size: 36px;
@@ -3191,6 +3182,15 @@ main {
     -webkit-box-ordinal-group: 0;
         -ms-flex-order: -1;
             order: -1;
+  }
+}
+
+@media (max-width: 768px) and (orientation: landscape) {
+  .calc-form {
+    top: 100%;
+    -webkit-transition: top 0.5s ease 0s;
+    -o-transition: top 0.5s ease 0s;
+    transition: top 0.5s ease 0s;
   }
 }
 
@@ -4033,7 +4033,7 @@ main {
 
 }
 
- @media (max-width: 1024px) and (orientation: landscape){
+ @media (max-width: 768px){
 
 @supports (-webkit-appearance:none){
 
@@ -4041,7 +4041,7 @@ main {
 
 }
 
- @media (max-width: 768px){
+ @media (max-width: 768px) and (orientation: landscape){
 
 @supports (-webkit-appearance:none){
 
