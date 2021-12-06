@@ -176,26 +176,36 @@ for (let link of reviewLinks) {
         let setClasses = !this.classList.contains('active');
          setClass(reviewLinks, 'active', 'remove');
          setClass(parents, 'active-section', 'remove');
-        setClass(limiters,'active-limiter', 'remove');
+         setClass(limiters,'active-limiter', 'remove');
+         setInner(reviewLinks);
 
          
          
            if (setClasses) {
-             this.classList.toggle("active");
-             this.parentNode.classList.toggle("active-section");
-             this.previousSibling.previousSibling.classList.toggle("active-limiter");
-            
-          } 
-
-
-          if(link.classList.contains('active')){
-
-            console.log(link.innerHTML = 'Свернуть');
- 
-          } else {
+             this.classList.add("active");
+             this.parentNode.classList.add("active-section");
+             this.previousSibling.previousSibling.classList.add("active-limiter");
+             link.innerHTML = 'Свернуть';
              
-             console.log(link.innerHTML = 'Развернуть');
+            
+          } else{
+            this.classList.remove("active");
+            this.parentNode.classList.remove("active-section");
+            this.previousSibling.previousSibling.classList.remove("active-limiter");
+            link.innerHTML = 'Развернуть';
+            
           }
+
+
+         //  if(link.classList.contains('active')){
+
+         //    link.innerHTML = 'Свернуть';
+ 
+         //  } else {
+             
+         //     link.innerHTML = 'Развернуть';
+         //     console.log('test')
+         //  }
           
 
        
@@ -211,8 +221,21 @@ for (let link of reviewLinks) {
   function setClass(elem, className, fnName) {
      for (let i = 0; i < elem.length; i++) {
         elem[i].classList[fnName](className);
+
      }
 
+  }
+
+
+  function setInner(elem){
+     for(let i = 0; i < elem.length; i++){
+        if(elem[i].classList.contains('active')){
+           elem[i].innerHTML = 'Свернуть';
+        } else {
+           
+         elem[i].innerHTML = 'Развернуть'
+        }
+     }
   }
 
 
@@ -243,6 +266,8 @@ const calcBtnTower = document.querySelector("#btn-tower");
 const closeIcon = document.querySelector(".close-icon");
 const checkBox = document.querySelector('.checkbox-input');
 const currentCost = document.querySelector(".cost-info");
+const inputIp = document.querySelector('#input-ip');
+
 
 
 let measure;
@@ -251,7 +276,6 @@ let powerValue = 0;
 let unitValue = 0;
 let portValue = 0;
 let ipValue = 0;
-
 let supplyValue = 0;
 let costServer = +document.querySelector('#costServer').innerHTML.replace(/,/, '.');
 let costTower = +document.querySelector('#costTower').innerHTML.replace(/,/, '.');
@@ -286,12 +310,6 @@ for(let range of ranges){
       unitValue = parseFloat(((this.value * costUnit)-costUnit).toFixed(2));
       console.log(unitValue);
       
-    } else if (measure === 'IP'){
-      x = (this.value*14.286)-14.286;
-      this.previousSibling.previousSibling.firstElementChild.style.width = x + '%';
-      ipValue = parseFloat(((this.value * costIp)-costIp).toFixed(2));
-      console.log(ipValue);
-      
     } else if (measure === 'Gb/s'){
       x = (this.value*14.286)-14.286;
       this.previousSibling.previousSibling.firstElementChild.style.width = x + '%';
@@ -303,7 +321,6 @@ for(let range of ranges){
       calcValue();
   })
 }
-
 
 
 
@@ -321,10 +338,30 @@ document.querySelector('.checkbox-container').addEventListener("change", functio
 })
 
 
+inputIp.oninput = function() {
+
+  
+   
+  let currentValue = 0;
+
+  if(inputIp.value <= 1){
+    currentValue = 0;
+    ipValue = 0;
+
+  } else {
+    currentValue = inputIp.value - 1;
+    ipValue = parseFloat((currentValue * costIp).toFixed(2));
+  }
+
+  
+  calcValue();
+};
+
+
 
 function calcValue(){
-
-  sum = parseFloat(costServer + powerValue + unitValue + ipValue + portValue + supplyValue).toFixed(2);
+   
+   sum = parseFloat(costServer + powerValue + unitValue + ipValue + portValue + supplyValue).toFixed(2);
   currentCost.innerHTML = `${sum} BYN`;
   
 }
@@ -402,7 +439,7 @@ function nullValue(){
       ipValue = 0;
       portValue = 0;
       supplyValue = 0;
-      
+      inputIp.value = '';
     }
 
     

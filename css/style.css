@@ -1013,6 +1013,7 @@ main {
 
 .main-section-review .section-review .section-review-item .section-review-inner.active-section {
   z-index: 1000;
+  min-height: 100%;
   color: white;
 }
 
@@ -1036,7 +1037,7 @@ main {
 }
 
 .limiter.active-limiter {
-  max-height: none;
+  max-height: 100%;
 }
 
 .read-more-button {
@@ -2607,6 +2608,7 @@ main {
   background: -webkit-gradient(linear, left top, right top, from(#EA5C2F), to(#F3B921));
   background: linear-gradient(90deg, #EA5C2F 0%, #F3B921 100%);
   outline: none;
+  margin-top: 1.5px;
 }
 
 .cost-calculation-item .range::-moz-range-thumb {
@@ -2619,6 +2621,34 @@ main {
   cursor: pointer;
   background: linear-gradient(90deg, #EA5C2F 0%, #F3B921 100%);
   outline: none;
+}
+
+.input-container input {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  height: 52px;
+  width: 100%;
+  padding: 0 30px;
+}
+
+#input-ip::-webkit-input-placeholder {
+  text-align: left;
+}
+
+#input-ip::-moz-placeholder {
+  text-align: left;
+}
+
+#input-ip:-ms-input-placeholder {
+  text-align: left;
+}
+
+#input-ip::-ms-input-placeholder {
+  text-align: left;
+}
+
+#input-ip::placeholder {
+  text-align: left;
 }
 
 .checkbox-container {
