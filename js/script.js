@@ -81,20 +81,18 @@ menuClick();
 
     
 ;
-const swipeBtns = document.querySelectorAll(".swipe-line");
+const swipeBtn = document.querySelector(".swipe-line");
+const swipeCalcBtn = document.querySelector("#calc-swipe-line");
 // const ranges = document.querySelectorAll('.range');
 
-for(let swipeBtn of swipeBtns){
+
 
   swipeBtn.addEventListener('swiped-down', function(e) {
     iconMenu.classList.remove("active");
     wrapper.classList.remove("active-wrapper");
     menuBox.classList.remove('active-block');
     document.body.classList.remove('active-body'); 
-    document.querySelector('.wrapper-calc').classList.remove('active');
-    document.querySelector('.calc-form').classList.remove('active-calc');
     menuAccClick();
-    nullValue();
 
   
   });
@@ -105,13 +103,27 @@ for(let swipeBtn of swipeBtns){
     wrapper.classList.remove("active-wrapper");
     menuBox.classList.remove('active-block');
     document.body.classList.remove('active-body'); 
-    document.querySelector('.wrapper-calc').classList.remove('active');
-    document.querySelector('.calc-form').classList.remove('active-calc');
     menuAccClick();
-    nullValue();
+    // document.querySelector('.wrapper-calc').classList.remove('active');
+    // document.querySelector('.calc-form').classList.remove('active-calc');
+    // nullValue();
    
   });
-}
+
+
+  swipeCalcBtn.addEventListener('swiped-down', function(e){
+    document.body.classList.remove('active-body'); 
+    document.querySelector('.wrapper-calc').classList.remove('active');
+    nullValue();
+  });
+
+  swipeCalcBtn.addEventListener('click', function(e){
+    document.body.classList.remove('active-body'); 
+    document.querySelector('.wrapper-calc').classList.remove('active');
+    // document.querySelector('.calc-form').classList.remove('active-calc');
+    nullValue();
+  });
+
 
 
 ;
