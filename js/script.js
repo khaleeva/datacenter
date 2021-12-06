@@ -157,6 +157,83 @@ let accordionFirst = document.getElementById('first-content');
        
 
 ;
+const reviewLinks = document.querySelectorAll('.read-more-button');
+const parents = document.querySelectorAll('.section-review-inner');
+const limiters = document.querySelectorAll('.limiter');
+
+
+
+for (let link of reviewLinks) {
+      
+    if(link.parentNode.classList.contains("active-section")){
+        link.parentNode.classList.remove("active-section");
+        
+        
+      }
+    
+
+     link.addEventListener('click', function() {
+        let setClasses = !this.classList.contains('active');
+         setClass(reviewLinks, 'active', 'remove');
+         setClass(parents, 'active-section', 'remove');
+        setClass(limiters,'active-limiter', 'remove');
+
+         
+         
+           if (setClasses) {
+             this.classList.toggle("active");
+             this.parentNode.classList.toggle("active-section");
+             this.previousSibling.previousSibling.classList.toggle("active-limiter");
+            
+          } 
+
+
+          if(link.classList.contains('active')){
+
+            console.log(link.innerHTML = 'Свернуть');
+ 
+          } else {
+             
+             console.log(link.innerHTML = 'Развернуть');
+          }
+          
+
+       
+         
+
+          
+     })
+    }
+
+
+
+
+  function setClass(elem, className, fnName) {
+     for (let i = 0; i < elem.length; i++) {
+        elem[i].classList[fnName](className);
+     }
+
+  }
+
+
+
+
+
+
+   
+    
+
+    
+
+       
+
+
+      
+    
+
+
+
+;
 
 
 
@@ -341,83 +418,7 @@ function nullValue(){
 
 
 closeIcon.addEventListener('click', nullValue);;
-const reviewLinks = document.querySelectorAll('.read-more-button');
-const parents = document.querySelectorAll('.section-review-inner');
-const limiters = document.querySelectorAll('.limiter');
 
-
-
-for (let link of reviewLinks) {
-      
-    if(link.parentNode.classList.contains("active-section")){
-        link.parentNode.classList.remove("active-section");
-        
-        
-      }
-    
-
-     link.addEventListener('click', function() {
-        let setClasses = !this.classList.contains('active');
-         setClass(reviewLinks, 'active', 'remove');
-         setClass(parents, 'active-section', 'remove');
-        setClass(limiters,'active-limiter', 'remove');
-
-         
-         
-           if (setClasses) {
-             this.classList.toggle("active");
-             this.parentNode.classList.toggle("active-section");
-             this.previousSibling.previousSibling.classList.toggle("active-limiter");
-            
-          } 
-
-
-        //   if(link.classList.contains('active')){
-
-        //     console.log(link.innerHTML = 'Свернуть');
- 
-        //   } else {
-             
-        //      console.log(link.innerHTML = 'Развернуть');
-        //   }
-          
-
-       
-         
-
-          
-     })
-    }
-
-
-
-
-  function setClass(elem, className, fnName) {
-     for (let i = 0; i < elem.length; i++) {
-        elem[i].classList[fnName](className);
-     }
-
-  }
-
-
-
-
-
-
-   
-    
-
-    
-
-       
-
-
-      
-    
-
-
-
-;
 
 
 
