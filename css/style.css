@@ -2597,6 +2597,7 @@ main {
 
 .cost-calculation-item .range::-webkit-slider-thumb {
   -webkit-appearance: none;
+  -moz-appearance: none;
   width: 20px;
   height: 20px;
   border-radius: 50%;
@@ -2607,7 +2608,7 @@ main {
   background: -webkit-gradient(linear, left top, right top, from(#EA5C2F), to(#F3B921));
   background: linear-gradient(90deg, #EA5C2F 0%, #F3B921 100%);
   outline: none;
-  margin-top: -6px;
+  margin-top: -6.5px;
 }
 
 .checkbox-container {
