@@ -82,12 +82,12 @@ menuClick();
     
 ;
 const swipeBtn = document.querySelector(".swipe-line");
-const swipeCalcBtn = document.querySelector("#calc-swipe-line");
+
 // const ranges = document.querySelectorAll('.range');
 
 
 
-  swipeBtn.addEventListener('swiped-down', function(e) {
+  swipeBtn.addEventListener('swiped-down', function() {
     iconMenu.classList.remove("active");
     wrapper.classList.remove("active-wrapper");
     menuBox.classList.remove('active-block');
@@ -98,7 +98,7 @@ const swipeCalcBtn = document.querySelector("#calc-swipe-line");
   });
 
 
-  swipeBtn.addEventListener('click', function(e) {
+  swipeBtn.addEventListener('click', function() {
     iconMenu.classList.remove("active");
     wrapper.classList.remove("active-wrapper");
     menuBox.classList.remove('active-block');
@@ -111,18 +111,9 @@ const swipeCalcBtn = document.querySelector("#calc-swipe-line");
   });
 
 
-  swipeCalcBtn.addEventListener('swiped-down', function(e){
-    document.body.classList.remove('active-body'); 
-    document.querySelector('.wrapper-calc').classList.remove('active');
-    nullValue();
-  });
 
-  swipeCalcBtn.addEventListener('click', function(e){
-    document.body.classList.remove('active-body'); 
-    document.querySelector('.wrapper-calc').classList.remove('active');
-    // document.querySelector('.calc-form').classList.remove('active-calc');
-    nullValue();
-  });
+
+ 
 
 
 
@@ -175,6 +166,7 @@ const limiters = document.querySelectorAll('.limiter');
 
 
 
+
 for (let link of reviewLinks) {
       
     if(link.parentNode.classList.contains("active-section")){
@@ -209,16 +201,7 @@ for (let link of reviewLinks) {
           }
 
 
-         //  if(link.classList.contains('active')){
-
-         //    link.innerHTML = 'Свернуть';
- 
-         //  } else {
-             
-         //     link.innerHTML = 'Развернуть';
-         //     console.log('test')
-         //  }
-          
+         
 
        
          
@@ -279,7 +262,7 @@ const closeIcon = document.querySelector(".close-icon");
 const checkBox = document.querySelector('.checkbox-input');
 const currentCost = document.querySelector(".cost-info");
 const inputIp = document.querySelector('#input-ip');
-
+const swipeCalcBtn = document.querySelector("#calc-swipe-line");
 
 
 let measure;
@@ -440,8 +423,6 @@ function nullValue(){
         
       } else if (range.parentElement.parentElement.firstElementChild.lastElementChild.getAttribute('data-value') === 'U'){
         range.parentElement.parentElement.firstElementChild.lastElementChild.innerHTML = `1 U`;
-      } else if (range.parentElement.parentElement.firstElementChild.lastElementChild.getAttribute('data-value') === 'IP'){
-        range.parentElement.parentElement.firstElementChild.lastElementChild.innerHTML = `1 IP`;
       } else {
         range.parentElement.parentElement.firstElementChild.lastElementChild.innerHTML = `1 Gb/s`;
       }
@@ -456,7 +437,7 @@ function nullValue(){
 
     
     
-    costServer = +document.querySelector('#costServer').innerHTML.replace(/,/, '.');
+    // costServer = +document.querySelector('#costServer').innerHTML.replace(/,/, '.');
     
 
       if(checkBox.checked){
@@ -466,7 +447,18 @@ function nullValue(){
 
 
 
-closeIcon.addEventListener('click', nullValue);;
+closeIcon.addEventListener('click', nullValue);
+
+
+function removeClasses(){
+  document.body.classList.remove('active-body'); 
+  document.querySelector('.wrapper-calc').classList.remove('active');
+  nullValue();
+}
+
+swipeCalcBtn.addEventListener('swiped-down', removeClasses);
+
+swipeCalcBtn.addEventListener('click', removeClasses);;
 
 
 
