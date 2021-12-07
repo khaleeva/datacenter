@@ -419,7 +419,7 @@ function nullValue(){
       range.previousSibling.previousSibling.firstElementChild.style.width = 0 + '%';
       
       if (range.parentElement.parentElement.firstElementChild.lastElementChild.getAttribute('data-value') === 'Вт'){
-        range.parentElement.parentElement.firstElementChild.lastElementChild.innerHTML = `0 Вт`;
+        range.parentElement.parentElement.firstElementChild.lastElementChild.innerHTML = `250 Вт`;
         
       } else if (range.parentElement.parentElement.firstElementChild.lastElementChild.getAttribute('data-value') === 'U'){
         range.parentElement.parentElement.firstElementChild.lastElementChild.innerHTML = `1 U`;
