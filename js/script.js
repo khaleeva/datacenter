@@ -433,18 +433,23 @@ addCalcBtn.addEventListener('click', function(){
   document.querySelector('.calc-container').classList.add('active-calc-container');
   calcTable.classList.add('active-calc-table');
   document.querySelector('.calc-total-amount').classList.add('active-total-amount');
-  power = document.querySelector("#power-range").value;
-  unit = document.querySelector('#unit-range').value;
-  port = document.querySelector('#port-range').value;
+  power = `${document.querySelector("#power-range").value}Вт`;
+  port = `${document.querySelector('#port-range').value}Gb/s`;
+  if(costCalc.querySelector('.unit-item').style.display === 'block'){
+    unit = `${document.querySelector('#unit-range').value}U`;
+  } else unit = 'Tower';
+
+  
+  
   if(inputIp.value == 0 || inputIp.value == 1){
-    ip = 1;
+    ip = `${1}IP`;
   } else {
-    ip = inputIp.value;
+    ip = `${inputIp.value}IP`;
   }
 
   if(checkBox.checked){
-      supply = 2;
-  } else supply = 1;
+      supply = `${2}БП`;
+  } else supply = `${1}БП`;
     
 })
 
@@ -470,7 +475,8 @@ function addCalcServer () {
    
   let calcTableName = document.createElement('div');
   calcTableName.classList.add('calc-table-name');
-  calcTableName.innerHTML = `Сервер ${unit}U ${power}Вт ${ip}IP ${port}Gb/s ${supply}БП`;
+
+  calcTableName.innerHTML = `Сервер ${unit} ${power} ${ip} ${port} ${supply}`;
   calcTableContainer.append(calcTableName);
    
   let calcTableCost = document.createElement('div');
