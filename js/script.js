@@ -274,6 +274,11 @@ let portValue = 0;
 let ipValue = 0;
 let supplyValue = 0;
 let sum = 0;
+let power = 0;
+let unit = 0;
+let ip = 0;
+let port = 0;
+let supply = 0;
 
 let costServer = +document.querySelector('#costServer').innerHTML.replace(/,/, '.');
 let costTower = +document.querySelector('#costTower').innerHTML.replace(/,/, '.');
@@ -297,31 +302,71 @@ for(let range of ranges){
     
   }
 
-    range.addEventListener('input', function(){
-      let x = 0;
+
+
+  range.addEventListener('input', getValue);
+
+}
+
+
+
+
+
+//получение значений инпутов
+
+function getValue(){
+  let x = 0;
       if (measure === 'Вт'){
         x = (this.value/12.5)-20;
         this.previousSibling.previousSibling.firstElementChild.style.width = x + '%';
         powerValue = parseFloat((((this.value-250)/50) * costPower).toFixed(2));
-        console.log(powerValue);
+        // power = this.value;
+
+        // console.log(getPowerValue(this.value));
         
       } else if (measure === 'U'){
         x = (this.value*14.286)-14.286;
         this.previousSibling.previousSibling.firstElementChild.style.width = x + '%';
         unitValue = parseFloat(((this.value * costUnit)-costUnit).toFixed(2));
-        console.log(unitValue);
+       
         
       } else if (measure === 'Gb/s'){
+        
         x = (this.value*14.286)-14.286;
         this.previousSibling.previousSibling.firstElementChild.style.width = x + '%';
-      
         portValue = parseFloat(((this.value * costPort)-costPort).toFixed(2));
-        console.log(portValue);
+        
       } 
 
+
       calcValue();
-    })
+
+      
 }
+
+
+
+
+function getPowerValue(value){
+  return value;
+}
+
+// function getIpValue(value){
+//   return value;
+// }
+
+// function getUnitValue(value){
+//   return value;
+// }
+
+
+// function getPortValue(value){
+//   return value;
+// }
+
+// function getSupplyValue(value){
+//   return value;
+// }
 
 
 
@@ -334,11 +379,13 @@ document.querySelector('.checkbox-container').addEventListener("change", functio
       supplyValue = 0;
     }
 
+    
+
   calcValue();
   
 })
 
-
+//Расчет стоимости IP
 inputIp.oninput = function() {
 
   let currentValue = 0;
@@ -364,37 +411,58 @@ inputIp.oninput = function() {
 };
 
 
+// Расчет общей стоимости услуги
 function calcValue(){
    let cost;
   if(costCalc.querySelector('.unit-item').style.display === 'block'){
     cost = costServer;
   } else cost = costTower;
 
-  sum = parseFloat(cost + powerValue + unitValue + ipValue + portValue + supplyValue).toFixed(2);
-  currentCost.innerHTML = `${sum} BYN`;
-  return sum;
+  sum = parseFloat(cost + powerValue + unitValue + ipValue + portValue + supplyValue);
+
+  // sum = (Math.round(cost*10) + Math.round(powerValue*10) + Math.round(unitValue*10) + Math.round(ipValue*10) + Math.round(portValue*10) + Math.round(supplyValue*10))/10;
+  
+  currentCost.innerHTML = `${sum.toFixed(2)} BYN`;
+  return (sum.toFixed(2));
 }
+
+
+//функция добавления таблицы по клике на кнопку @Добавить еще
 
 addCalcBtn.addEventListener('click', function(){
   document.querySelector('.calc-container').classList.add('active-calc-container');
   calcTable.classList.add('active-calc-table');
-  
+  document.querySelector('.calc-total-amount').classList.add('active-total-amount');
+  power = document.querySelector("#power-range").value;
+  unit = document.querySelector('#unit-range').value;
+  port = document.querySelector('#port-range').value;
+  if(inputIp.value == 0 || inputIp.value == 1){
+    ip = 1;
+  } else {
+    ip = inputIp.value;
+  }
+
+  if(checkBox.checked){
+      supply = 2;
+  } else supply = 1;
+    
 })
 
 addCalcBtn.addEventListener('click', addCalcServer);
 
 
+// Добавление таблицы
+
 function addCalcServer () {
 
   let total = 0;
+  
 
   if(calcTable.querySelectorAll('.calc-table-container').length >=9){
     addCalcBtn.disabled = 'true';
     addCalcBtn.classList.remove('btn-gr-bg');
     addCalcBtn.classList.add('disabled');
   }
-
-  
   
   let calcTableContainer = document.createElement('div');
   calcTableContainer.classList.add('calc-table-container');
@@ -402,7 +470,7 @@ function addCalcServer () {
    
   let calcTableName = document.createElement('div');
   calcTableName.classList.add('calc-table-name');
-  calcTableName.innerHTML = 'Сервер';
+  calcTableName.innerHTML = `Сервер ${unit}U ${power}Вт ${ip}IP ${port}Gb/s ${supply}БП`;
   calcTableContainer.append(calcTableName);
    
   let calcTableCost = document.createElement('div');
@@ -416,15 +484,21 @@ function addCalcServer () {
   }
   
 
-  document.querySelector('.calc-total-amount').style.display = 'flex';
-  document.querySelector('.total').innerHTML = `${total} BYN`;
+  
+
+  
+    // document.querySelector('.calc-total-amount').style.display = 'flex';
+  document.querySelector('.total-text').innerHTML = `Итого`;
+    document.querySelector('.total').innerHTML = `${total.toFixed(2)} BYN`;
+
+
  
 }
 
 
 
 
-
+// Кнопки рассчитать услугу
   
 
 calcBtnUnit.addEventListener('click', function(){
@@ -445,6 +519,9 @@ calcBtnTower.addEventListener('click', function(){
   currentCost.innerHTML = `${costTower}.00 BYN`;
   
 })
+
+
+//Функция обнулить значения калькулятора
 
 
 function nullCalcValue(){
@@ -481,6 +558,7 @@ function nullCalcValue(){
 
 }
 
+// функция обнуления классов
 
 function nullValue(){
   document.body.classList.remove('active-body');
@@ -508,6 +586,8 @@ function nullValue(){
 
 closeIcon.addEventListener('click', nullValue);
 
+
+//Обнуление классов по свайпу
 
 function removeClasses(){
   document.body.classList.remove('active-body'); 

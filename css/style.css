@@ -2426,7 +2426,7 @@ main {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  max-width: 418px;
+  max-width: 768px;
   min-height: 462px;
   background-color: #ffff;
   position: absolute;
@@ -2486,7 +2486,7 @@ main {
 }
 
 .calc-table-name {
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .calc-table-cost {
@@ -2496,9 +2496,13 @@ main {
 .calc-total-amount {
   margin-top: 30px;
   width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  display: none;
+  visibility: hidden;
+  opacity: 0;
 }
 
 .calc-total-amount p {
@@ -2509,6 +2513,11 @@ main {
 .calc-total-amount .total {
   font-size: 20px;
   font-weight: 700;
+}
+
+.calc-total-amount.active-total-amount {
+  visibility: visible;
+  opacity: 1;
 }
 
 .calc-form {
@@ -2737,12 +2746,12 @@ main {
 }
 
 .input-container span {
-  display: none;
+  visibility: hidden;
   color: red;
 }
 
 .ip-span.active-span {
-  display: block;
+  visibility: visible;
 }
 
 .checkbox-container {
