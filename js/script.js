@@ -129,6 +129,7 @@ const accSection = document.querySelector('.colocation-services-accordion');
 
 let accordionFirst = document.getElementById('first-content'); 
 
+let accordionFirstDedic = document.getElementById('first-content-dedic'); 
 
 
 
@@ -155,6 +156,7 @@ let accordionFirst = document.getElementById('first-content');
    window.onload = function() {
      
       accordionFirst.style.maxHeight = accordionFirst.scrollHeight + 'px';
+      
     }
    }
        
@@ -287,7 +289,8 @@ const costUnit = +document.querySelector('#costUnit').innerHTML.replace(/,/, '.'
 const costSupply = +document.querySelector('#costSupply').innerHTML.replace(/,/, '.');
 const costPort = +document.querySelector('#costPort').innerHTML.replace(/,/, '.');
 const costIp = +document.querySelector('#costIp').innerHTML.replace(/,/, '.');
-const IP_REGEXP = /^\d{1,4}$/;
+// const IP_REGEXP = /^\d{1,4}$/;
+const IP_REGEXP = /^[1-9]([0-9]*)$/;
 
 
 function validateIpInput(value) {
@@ -320,9 +323,7 @@ function getValue(){
         x = (this.value/12.5)-20;
         this.previousSibling.previousSibling.firstElementChild.style.width = x + '%';
         powerValue = parseFloat((((this.value-250)/50) * costPower).toFixed(2));
-        // power = this.value;
-
-        // console.log(getPowerValue(this.value));
+       
         
       } else if (measure === 'U'){
         x = (this.value*14.286)-14.286;
@@ -350,23 +351,6 @@ function getValue(){
 function getPowerValue(value){
   return value;
 }
-
-// function getIpValue(value){
-//   return value;
-// }
-
-// function getUnitValue(value){
-//   return value;
-// }
-
-
-// function getPortValue(value){
-//   return value;
-// }
-
-// function getSupplyValue(value){
-//   return value;
-// }
 
 
 
@@ -420,7 +404,7 @@ function calcValue(){
 
   sum = parseFloat(cost + powerValue + unitValue + ipValue + portValue + supplyValue);
 
-  // sum = (Math.round(cost*10) + Math.round(powerValue*10) + Math.round(unitValue*10) + Math.round(ipValue*10) + Math.round(portValue*10) + Math.round(supplyValue*10))/10;
+  
   
   currentCost.innerHTML = `${sum.toFixed(2)} BYN`;
   return (sum.toFixed(2));
