@@ -1562,15 +1562,15 @@ main {
 }
 
 .section-details {
-  padding-top: 54px;
-  padding-bottom: 163px;
+  padding-top: 3.86rem;
+  padding-bottom: 7rem;
 }
 
 .section-details h2 {
-  margin-bottom: 5px;
+  text-align: left;
 }
 
-.details-container-item {
+.section-details-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1579,20 +1579,40 @@ main {
           justify-content: space-between;
 }
 
-.details-info-inner h5 {
-  font-size: 24px;
-  line-height: 120%;
+.details-container-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.details-container-inner {
+  font-size: 20px;
+  margin-top: 3rem;
+}
+
+.details-container-inner span {
   font-weight: 700;
-}
-
-.details-info-inner p {
-  font-size: 16px;
-  line-height: 120%;
-}
-
-.details-info-inner span {
   font-size: 18px;
+  line-height: 120%;
+}
+
+.details-subtitle {
+  font-size: 24px;
   font-weight: 700;
+  line-height: 120%;
+  margin-bottom: 1rem;
+}
+
+.mg-top {
+  margin-top: 1rem;
+}
+
+.mg-bot {
+  margin-bottom: 1rem;
 }
 
 .details-img-inner {
@@ -1603,72 +1623,6 @@ main {
   width: 100%;
   max-width: 510px;
   height: auto;
-  margin-top: -36px;
-}
-
-.company-name {
-  font-size: 20px;
-  margin-bottom: 45px;
-}
-
-.company-number p {
-  margin-top: 10px;
-}
-
-.company-details {
-  margin-top: 20px;
-}
-
-.company-details h5 {
-  margin-bottom: 15px;
-}
-
-.company-details p {
-  margin-bottom: 6px;
-}
-
-.company-details .bank-address {
-  font-size: 14px;
-  margin-top: 15px;
-}
-
-.company-details .swift {
-  font-size: 14px;
-}
-
-.company-address {
-  margin-top: 25px;
-}
-
-.company-address h5 {
-  margin-bottom: 15px;
-}
-
-.company-address p {
-  margin-bottom: 6px;
-}
-
-.company-contacts {
-  margin-top: 50px;
-}
-
-.company-contacts h5 {
-  margin-bottom: 15px;
-}
-
-.company-contacts p {
-  margin-bottom: 6px;
-}
-
-.company-head {
-  font-size: 20px;
-  line-height: 120%;
-  max-width: 433px;
-  margin-top: 35px;
-}
-
-.company-dc-number {
-  margin-top: 35px;
 }
 
 .section-contacts {
@@ -3026,12 +2980,10 @@ main {
   }
 
   .section-details h2 {
-    text-align: center;
     font-size: 30px;
-    padding-left: 22px;
   }
 
-  .details-container-item {
+  .section-details-container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -3039,7 +2991,6 @@ main {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    padding-left: 22px;
   }
 
   .details-img-inner {
@@ -3399,8 +3350,16 @@ main {
     height: 54px;
   }
 
+  .main-section-partners .section-partners-item img {
+    max-width: 100px;
+  }
+
+  .main-section-partners .section-partners-item #img-intel {
+    max-width: 80px;
+  }
+
   .main-section-review .section-review {
-    row-gap: 3rem;
+    row-gap: 4rem;
   }
 
   .main-section-review .section-review .section-review-item {
@@ -3540,89 +3499,24 @@ main {
   }
 
   .section-details {
-    padding: 20px 0px 80px 0px;
+    padding: 1.43rem 0 5.71rem 0;
   }
 
   .section-details h2 {
-    text-align: left;
-    margin-bottom: 15px;
+    margin-bottom: 1rem;
   }
 
-  .details-info-inner h5 {
-    font-size: 20px;
-  }
-
-  .details-info-inner p {
+  .details-container-inner {
     font-size: 14px;
+    margin-top: 2rem;
   }
 
-  .details-info-inner span {
+  .details-container-inner span {
     font-size: 16px;
   }
 
-  .company-name {
-    font-size: 18px;
-    line-height: 160%;
-    margin-bottom: 30px;
-  }
-
-  .company-number p {
-    margin-top: 5px;
-    font-size: 16px;
-  }
-
-  .company-details {
-    margin-top: 25px;
-  }
-
-  .company-details h5 {
-    margin-bottom: 20px;
-  }
-
-  .company-details p {
-    margin-bottom: 7px;
-  }
-
-  .company-details .swift {
-    margin-top: 10px;
-  }
-
-  .company-address {
-    margin-top: 35px;
-  }
-
-  .company-address h5 {
-    margin-bottom: 18px;
-  }
-
-  .company-address .p-mg {
-    margin-bottom: 15px;
-  }
-
-  .company-contacts {
-    margin-top: 40px;
-  }
-
-  .company-contacts .s-mg {
-    margin-top: 15px;
-  }
-
-  .company-head {
-    font-size: 16px;
-    max-width: 278px;
-    line-height: 160%;
-  }
-
-  .company-dc-number {
-    margin-top: 30px;
-  }
-
-  .company-dc-number .reg-number {
-    margin-bottom: 8px;
-  }
-
-  .company-dc-number span {
-    font-size: 18px;
+  .details-subtitle {
+    font-size: 20px;
   }
 
   .contacts-title {
