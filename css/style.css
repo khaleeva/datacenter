@@ -1685,10 +1685,15 @@ main {
           justify-content: space-between;
 }
 
+.section-contacts-container h5 {
+  margin-top: 3.9rem;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 120%;
+}
+
 .contacts-title {
-  -webkit-box-align: left;
-      -ms-flex-align: left;
-          align-items: left;
+  text-align: left;
   font-weight: bold;
   font-size: 46px;
   line-height: 120%;
@@ -1715,13 +1720,6 @@ main {
   width: 100%;
   max-width: 661px;
   height: auto;
-}
-
-.section-contacts-item h5 {
-  margin-top: 3.9rem;
-  font-size: 30px;
-  font-weight: 700;
-  line-height: 120%;
 }
 
 .section-contacts-mob {
