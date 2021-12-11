@@ -69,6 +69,7 @@
       -ms-flex-align: center;
           align-items: center;
   border-radius: 16px;
+  cursor: pointer;
 }
 
 .btn-gr-bg span {
@@ -104,7 +105,6 @@
 
 .checkbox-label:before,
 .calc-table-container,
-.calc-btn,
 .dc-info-item a,
 .gradient-btn,
 .btn-gr-border {
@@ -117,8 +117,6 @@
   background-clip: content-box, border-box;
 }
 
-.calc-btn:hover,
-.order-btn,
 .dc-info-item a:hover,
 .footer-mob .footer-btn:hover,
 .btn-gr-border:hover,
@@ -128,7 +126,6 @@
   background-image: linear-gradient(90deg, #EA5C2F 0%, #F3B921 100%);
 }
 
-.calc-btn span,
 .dc-info-item a span,
 .footer-mob .footer-btn span,
 .btn-gr-border span {
@@ -140,7 +137,6 @@
   color: transparent;
 }
 
-.calc-btn:hover span,
 .dc-info-item a:hover span,
 .footer-mob .footer-btn:hover span,
 .btn-gr-border span:hover {
@@ -1371,8 +1367,8 @@ main {
 
 .section-about {
   width: 100%;
-  padding-top: 94px;
-  padding-bottom: 185px;
+  padding-top: 6.71rem;
+  padding-bottom: 13.2rem;
 }
 
 .section-about .section-about-container {
@@ -1381,10 +1377,10 @@ main {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-column-gap: 111px;
-     -moz-column-gap: 111px;
-          column-gap: 111px;
-  row-gap: 70px;
+  -webkit-column-gap: 7.8rem;
+     -moz-column-gap: 7.8rem;
+          column-gap: 7.8rem;
+  row-gap: 5rem;
 }
 
 .section-about .section-about-container .title-section-mob {
@@ -1400,13 +1396,13 @@ main {
 }
 
 .section-about .section-about-container .about-info-item .title-section {
-  margin-bottom: 45px;
+  margin-bottom: 3rem;
 }
 
 .section-about .section-about-container .about-info-item .text-item {
   font-size: 18px;
   line-height: 160%;
-  margin-bottom: 10px;
+  margin-bottom: 0.7rem;
 }
 
 .section-about .section-about-container .about-image-item {
@@ -1427,10 +1423,10 @@ main {
   display: grid;
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr;
-  row-gap: 24px;
-  -webkit-column-gap: 24px;
-     -moz-column-gap: 24px;
-          column-gap: 24px;
+  row-gap: 1.7rem;
+  -webkit-column-gap: 1.7rem;
+     -moz-column-gap: 1.7rem;
+          column-gap: 1.7rem;
 }
 
 .section-about .section-about-container .about-info-card .about-inner-card {
@@ -1440,11 +1436,11 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-column-gap: 24px;
-     -moz-column-gap: 24px;
-          column-gap: 24px;
+  -webkit-column-gap: 1.7rem;
+     -moz-column-gap: 1.7rem;
+          column-gap: 1.7rem;
   max-width: 384px;
-  padding: 21px;
+  padding: 1.5rem;
   background: white;
 }
 
@@ -1460,8 +1456,8 @@ main {
 }
 
 .section-about-dc {
-  padding-top: 114px;
-  padding-bottom: 30px;
+  padding-top: 8.14rem;
+  padding-bottom: 2.14rem;
 }
 
 .about-dc-item {
@@ -1469,7 +1465,7 @@ main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-bottom: 157px;
+  margin-bottom: 11.2rem;
 }
 
 .about-dc-item-reverse {
@@ -1477,21 +1473,21 @@ main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-bottom: 120px;
+  margin-bottom: 8.57rem;
 }
 
 .dc-info-item {
-  padding-top: 54px;
+  padding-top: 3.86rem;
 }
 
 .dc-info-item h3 {
-  margin-bottom: 22px;
+  margin-bottom: 1.57rem;
 }
 
 .dc-info-item p {
   font-size: 18px;
   line-height: 160%;
-  margin-bottom: 15px;
+  margin-bottom: 1rem;
 }
 
 .dc-info-item a {
@@ -1513,7 +1509,7 @@ main {
   -o-transition: all 0.1s linear;
   transition: all 0.1s linear;
   cursor: pointer;
-  margin-top: 40px;
+  margin-top: 2.86rem;
 }
 
 .dc-info-item a span {
@@ -1524,16 +1520,16 @@ main {
 
 .left-item {
   max-width: 532px;
-  margin-right: 200px;
+  margin-right: 14.3rem;
 }
 
 .left-item-2 {
   max-width: 538px;
-  margin-right: 98px;
+  margin-right: 7rem;
 }
 
 .right-item {
-  margin-top: 70px;
+  margin-top: 5rem;
 }
 
 #img-1 {
@@ -1544,21 +1540,21 @@ main {
 #img-2 {
   max-width: 510px;
   height: auto;
-  margin-top: 80px;
-  margin-right: 100px;
+  margin-top: 5.71rem;
+  margin-right: 7.14rem;
 }
 
 #img-3 {
   max-width: 564px;
   height: auto;
-  margin-top: 85px;
+  margin-top: 6rem;
 }
 
 #img-4 {
   max-width: 486px;
   height: auto;
-  margin-top: 35px;
-  margin-right: 125px;
+  margin-top: 2.5rem;
+  margin-right: 8.9rem;
 }
 
 .section-details {
@@ -1943,7 +1939,7 @@ main {
 
 .section-services {
   min-height: 100vh;
-  padding-top: 53px;
+  padding-top: 3.78rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1977,17 +1973,17 @@ main {
 .accordion-section-services {
   width: 100%;
   max-width: 1200px;
-  padding: 0px 52px 30px;
+  padding: 0px 3.7rem 2.14rem;
   min-height: 96px;
-  margin-top: 57px;
+  margin-top: 4rem;
 }
 
 .accordion-section-services:last-child {
-  margin-bottom: 57px;
+  margin-bottom: 4rem;
 }
 
 .accordion-header-services {
-  padding: 30px 52px 0px;
+  padding: 2.14rem 3.7rem 0;
   position: relative;
   font-size: 30px;
   font-weight: 700;
@@ -2004,7 +2000,7 @@ main {
 }
 
 .accordion-panel-services {
-  padding: 0 52px;
+  padding: 0 3.7rem;
   max-height: 0;
   overflow: hidden;
   -webkit-transition: max-height 0.4s linear;
@@ -2013,9 +2009,26 @@ main {
 }
 
 .accordion-panel-services .panel-text {
-  padding-top: 28px;
+  padding-top: 2rem;
   font-size: 18px;
   line-height: 160%;
+}
+
+.accordion-panel-services .panel-text li {
+  list-style-type: disc;
+  margin-left: 1.4rem;
+}
+
+.accordion-panel-services h5 {
+  margin-top: 2rem;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.accordion-panel-services .text {
+  font-size: 18px;
+  line-height: 160%;
+  margin-top: 0.7rem;
 }
 
 .services-table {
@@ -2026,8 +2039,8 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-top: 36px;
-  margin-bottom: 30px;
+  margin-top: 2.57rem;
+  margin-bottom: 2.14rem;
   max-width: 1096px;
 }
 
@@ -2041,9 +2054,9 @@ main {
           align-items: center;
   font-size: 20px;
   font-weight: 700;
-  padding-left: 26px;
+  padding-left: 1.86rem;
+  border-radius: 1.4rem 1.4rem 0 0;
   background-color: #F8F8F8;
-  border-radius: 20px 20px 0 0;
   height: 51px;
 }
 
@@ -2078,7 +2091,7 @@ main {
           align-items: center;
   height: 51px;
   font-size: 16px;
-  padding-left: 26px;
+  padding-left: 1.86rem;
 }
 
 .table-body-item p:first-child {
@@ -2115,7 +2128,7 @@ main {
 .panel-param {
   font-size: 18px;
   font-weight: 700;
-  padding-top: 20px;
+  padding-top: 1.4rem;
 }
 
 .btn-services {
@@ -2125,60 +2138,25 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-column-gap: 24px;
-     -moz-column-gap: 24px;
-          column-gap: 24px;
-  margin-bottom: 55px;
+  -webkit-column-gap: 1.7rem;
+     -moz-column-gap: 1.7rem;
+          column-gap: 1.7rem;
+  margin-bottom: 3.9rem;
   font-size: 18px;
 }
 
 .order-btn {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  cursor: pointer;
   width: 144px;
   height: 52px;
-  border-radius: 20px;
-  color: #FFFFFF;
-  font-size: 20px;
-  font-weight: 700;
 }
 
 .calc-btn {
   width: 257px;
   height: 52px;
-  -webkit-transition: all 0.1s linear;
-  -o-transition: all 0.1s linear;
-  transition: all 0.1s linear;
-  cursor: pointer;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  font-size: 20px;
-  font-weight: 700;
-}
-
-.calc-btn span {
-  -webkit-transition: all 0.1s linear;
-  -o-transition: all 0.1s linear;
-  transition: all 0.1s linear;
 }
 
 .info-services p {
-  margin-bottom: 20px;
+  margin-bottom: 1.4rem;
   font-size: 20px;
   font-weight: 700;
 }
@@ -2190,8 +2168,8 @@ main {
 .info-services ul li {
   list-style-type: disc;
   font-size: 18px;
-  margin-bottom: 10px;
-  margin-left: 20px;
+  margin-bottom: 0.7rem;
+  margin-left: 1.4rem;
 }
 
 .wrapper-calc {
@@ -2270,7 +2248,7 @@ main {
 .calc-table-container {
   width: 90%;
   min-height: 40px;
-  margin-top: 5px;
+  margin-top: 0.36rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2290,7 +2268,7 @@ main {
 }
 
 .calc-total-amount {
-  margin-top: 30px;
+  margin-top: 2.14rem;
   width: 90%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2320,7 +2298,7 @@ main {
   max-width: 418px;
   min-width: 320px;
   min-height: 462px;
-  padding-bottom: 30px;
+  padding-bottom: 2.14rem;
 }
 
 .calc-form .swipe-line {
@@ -2384,8 +2362,8 @@ main {
   font-size: 24px;
   line-height: 120%;
   text-align: center;
-  margin-top: 27px;
-  margin-bottom: 38px;
+  margin-top: 2rem;
+  margin-bottom: 2.7rem;
 }
 
 .form-subtitle {
@@ -2401,7 +2379,7 @@ main {
 
 .cost-calculation {
   width: 100%;
-  padding: 48px 44px 50px 39px;
+  padding: 3.43rem 3.14rem 3.57rem 2.78rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2433,7 +2411,7 @@ main {
 
 .cost-calculation-item {
   width: 335px;
-  padding-top: 22px;
+  padding-top: 1.57rem;
 }
 
 .cost-calculation-item .slider-container {
@@ -2518,7 +2496,7 @@ main {
   border-radius: 16px;
   height: 52px;
   width: 100%;
-  padding: 0 30px;
+  padding: 0 2.14rem;
 }
 
 #input-ip::-webkit-input-placeholder {
@@ -2578,7 +2556,7 @@ main {
           align-items: center;
   position: relative;
   cursor: pointer;
-  padding-left: 25px;
+  padding-left: 1.78rem;
 }
 
 .checkbox-label:before {
@@ -2667,8 +2645,8 @@ main {
   font-size: 18px;
   line-height: 160%;
   font-weight: normal;
-  padding-top: 28px;
-  padding-bottom: 22px;
+  padding-top: 2rem;
+  padding-bottom: 1.57rem;
 }
 
 .dedic-header a {
@@ -2681,6 +2659,40 @@ main {
 
 .services-card-section {
   display: none;
+}
+
+.other-table .table-head-name {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 20px;
+  font-weight: 700;
+  height: 51px;
+}
+
+.other-table .table-body-item:nth-child(2n) {
+  background-color: #F8F8F8;
+}
+
+.other-table .table-body-item:last-child {
+  border-radius: 0 0 20px 20px;
+}
+
+.other-btn-services {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.btn-text {
+  max-width: 800px;
 }
 
 @media (min-width: 421px) {
@@ -2913,7 +2925,7 @@ main {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    margin-bottom: 95px;
+    margin-bottom: 6.77rem;
   }
 
   .about-dc-item-reverse {
@@ -2924,7 +2936,7 @@ main {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    margin-bottom: 105px;
+    margin-bottom: 7.5rem;
   }
 
   .dc-info-item {
@@ -2944,38 +2956,37 @@ main {
 
   .left-item {
     max-width: 1024px;
-    margin-right: 0px;
+    margin-right: 0;
   }
 
   .left-item-2 {
     max-width: 1024px;
-    margin-right: 0px;
+    margin-right: 0;
   }
 
   .right-item {
-    margin-top: 0px;
+    margin-top: 0;
   }
 
   #img-1 {
     max-width: 260px;
-    margin-left: 25px;
+    margin-left: 1.78rem;
   }
 
   #img-2 {
     max-width: 400px;
-    margin-right: 0px;
-    margin-top: 0px;
+    margin-right: 0;
+    margin-top: 0;
   }
 
   #img-3 {
     max-width: 400px;
-    margin-top: 0px;
-    margin-bottom: 10px;
+    margin-top: 0;
+    margin-bottom: 0.7rem;
   }
 
   #img-4 {
     max-width: 320px;
-    margin-top: -5px;
     margin-right: 0px;
   }
 
@@ -3038,7 +3049,7 @@ main {
 
   .accordion-header-services {
     font-size: 20px;
-    padding: 30px 20px 0px;
+    padding: 2.14rem 1.4rem 0;
   }
 
   .accordion-header-services::after {
@@ -3049,10 +3060,14 @@ main {
   }
 
   .accordion-panel-services {
-    padding: 0 20px;
+    padding: 0 1.4rem;
   }
 
   .accordion-panel-services .panel-text {
+    font-size: 14px;
+  }
+
+  .accordion-panel-services .text {
     font-size: 14px;
   }
 
@@ -3076,7 +3091,7 @@ main {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    row-gap: 20px;
+    row-gap: 1.4rem;
     font-size: 16px;
   }
 
@@ -3105,12 +3120,16 @@ main {
 
   .calc-table.active-calc-table {
     width: 320px;
-    padding-bottom: 30px;
+    padding-bottom: 2.14rem;
   }
 
   .order-info {
     -ms-flex-item-align: start;
         align-self: flex-start;
+  }
+
+  .other-table .table-head-name {
+    font-size: 14px;
   }
 }
 
@@ -3143,7 +3162,7 @@ main {
 
   .section-about .section-about-container .about-info-card {
     grid-template-columns: 1fr;
-    row-gap: 10px;
+    row-gap: 0.7rem;
     -webkit-box-ordinal-group: 0;
         -ms-flex-order: -1;
             order: -1;
@@ -3152,7 +3171,7 @@ main {
   .calc-container {
     width: 100%;
     min-height: 600px;
-    padding: 0 10px 50px 10px;
+    padding: 0 0.7rem 3.57rem 0.7rem;
     border-radius: 20px 20px 0px 0px;
     left: 0;
     top: 100%;
@@ -3187,8 +3206,8 @@ main {
   }
 
   .calc-table {
-    margin-top: 10px;
-    padding: 10px;
+    margin-top: 0.7rem;
+    padding: 0.7rem;
     min-height: 0;
   }
 }
@@ -3400,12 +3419,12 @@ main {
   }
 
   .section-about {
-    padding-top: 35px;
-    padding-bottom: 62px;
+    padding-top: 2.5rem;
+    padding-bottom: 4.43rem;
   }
 
   .section-about .section-about-container {
-    row-gap: 42px;
+    row-gap: 3rem;
   }
 
   .section-about .section-about-container .title-section-mob {
@@ -3432,15 +3451,14 @@ main {
   }
 
   .section-about .section-about-container .about-info-card {
-    margin-top: 5px;
+    margin-top: 0.36rem;
   }
 
   .section-about .section-about-container .about-info-card .about-inner-card {
-    width: 280px;
     height: 75px;
-    -webkit-column-gap: 15px;
-       -moz-column-gap: 15px;
-            column-gap: 15px;
+    -webkit-column-gap: 1rem;
+       -moz-column-gap: 1rem;
+            column-gap: 1rem;
   }
 
   .section-about .section-about-container .about-info-card .about-inner-card .about-inner-img img {
@@ -3455,18 +3473,17 @@ main {
   }
 
   .section-about-dc {
-    padding-top: 90px;
-    padding-bottom: 5px;
+    padding-top: 6.43rem;
+    padding-bottom: 0.36rem;
   }
 
   .dc-info-item {
-    padding-top: 44px;
-    width: 280px;
+    padding-top: 3.14rem;
   }
 
   .dc-info-item h3 {
     font-size: 24px;
-    margin-bottom: 20px;
+    margin-bottom: 1.43rem;
   }
 
   .dc-info-item p {
@@ -3479,7 +3496,7 @@ main {
     height: 59px;
     font-size: 16px;
     text-align: center;
-    margin-top: 52px;
+    margin-top: 3.7rem;
   }
 
   #img-1 {
@@ -3554,17 +3571,13 @@ main {
     font-size: 18px;
   }
 
-  .section-services-container {
-    padding: 0 20px;
-  }
-
   .accordion-section-services {
     padding: 0px;
     min-height: 60px;
   }
 
   .accordion-header-services {
-    padding: 20px;
+    padding: 1.4rem;
   }
 
   .accordion-panel-services {
@@ -3572,14 +3585,22 @@ main {
   }
 
   .accordion-panel-services .panel-text {
-    padding: 10px 20px 0;
+    padding: 0.7rem 1.4rem 0;
+  }
+
+  .accordion-panel-services h5 {
+    padding: 0.7rem 1.4rem 0;
+  }
+
+  .accordion-panel-services .text {
+    padding: 0.7rem 1.4rem 0;
   }
 
   .table-head {
-    padding: 0 10px;
-    -webkit-column-gap: 50px;
-       -moz-column-gap: 50px;
-            column-gap: 50px;
+    padding: 0 0.7rem;
+    -webkit-column-gap: 3.57rem;
+       -moz-column-gap: 3.57rem;
+            column-gap: 3.57rem;
     border-radius: 0;
   }
 
@@ -3594,10 +3615,10 @@ main {
   }
 
   .table-body-item {
-    padding: 10px;
-    -webkit-column-gap: 15px;
-       -moz-column-gap: 15px;
-            column-gap: 15px;
+    padding: 0.7rem;
+    -webkit-column-gap: 1rem;
+       -moz-column-gap: 1rem;
+            column-gap: 1rem;
     min-height: 75px;
   }
 
@@ -3626,25 +3647,25 @@ main {
   }
 
   .panel-param {
-    padding: 10px 20px 0;
+    padding: 0.7rem 1.4rem 0;
   }
 
   .btn-services {
     font-size: 14px;
-    row-gap: 10px;
+    row-gap: 0.7rem;
   }
 
   .btn-services p {
-    padding: 10px 20px 0;
+    padding: 0.7rem 1.4rem 0;
     font-size: 14px;
   }
 
   .info-services {
-    padding: 0 20px;
+    padding: 0 1.4rem;
   }
 
   .info-services ul li {
-    margin-left: 20px;
+    margin-left: 1.4rem;
   }
 
   .wrapper-calc {
@@ -3656,7 +3677,7 @@ main {
   }
 
   .calc-form {
-    padding: 0 20px;
+    padding: 0 1.4rem;
   }
 
   .calc-form .swipe-line {
@@ -3695,9 +3716,10 @@ main {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    row-gap: 10px;
-    width: 280px;
-    margin-top: 20px;
+    row-gap: 0.7rem;
+    width: 100%;
+    margin-top: 1.4rem;
+    padding: 0 1.4rem;
   }
 
   .dedic-btn {
@@ -3740,11 +3762,11 @@ main {
   .card-name {
     font-size: 14px;
     width: 100%;
-    padding: 20px;
+    padding: 1.4rem;
   }
 
   .card-name div {
-    margin-bottom: 10px;
+    margin-bottom: 0.7rem;
   }
 
   .card-name div:nth-child(2n+1) {
@@ -3761,7 +3783,7 @@ main {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    padding: 0px 20px 20px;
+    padding: 0px 1.4rem 1.4rem;
   }
 
   .card-price .card-price-btn {
@@ -3782,8 +3804,22 @@ main {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    padding: 10px;
+    padding: 0.7rem;
     border-radius: 10px;
+  }
+
+  .other-table .table-head-name {
+    padding: 0.7rem;
+    min-height: 75px;
+    text-align: center;
+  }
+
+  .other-table .table-body-item:last-child {
+    border-radius: 0;
+  }
+
+  .btn-text {
+    padding: 0.7rem 1.4rem 0;
   }
 }
 
