@@ -2744,6 +2744,213 @@ main {
   line-height: 160%;
 }
 
+.inner-list li a {
+  color: #000000;
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.partners-section {
+  padding-top: 6.28rem;
+  padding-bottom: 13.2rem;
+}
+
+.partners-section-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-column-gap: 5.7rem;
+     -moz-column-gap: 5.7rem;
+          column-gap: 5.7rem;
+}
+
+.partners-container-item {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+}
+
+.partners-container-item h2 {
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.partners-container-item .partners-text {
+  font-size: 18px;
+  line-height: 160%;
+}
+
+.partners-container-item .partners-text:last-child {
+  margin-top: 1rem;
+}
+
+.partners-container-item .partners-text span {
+  font-weight: 700;
+}
+
+.partners-container-item h5 {
+  margin-top: 3.57rem;
+  margin-bottom: 2rem;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 120%;
+}
+
+.partners-container-item .partners-list li {
+  margin-bottom: 1rem;
+  font-size: 18px;
+  line-height: 160%;
+}
+
+.partners-container-item .partners-list li:last-child {
+  margin-bottom: 2.85rem;
+}
+
+.partners-container-item .partners-btn {
+  width: 217px;
+  height: 52px;
+  margin-top: 3.78rem;
+}
+
+.partners-container-item img {
+  width: 100%;
+  max-width: 486px;
+  height: auto;
+}
+
+.wrapper-partners {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: auto;
+  -webkit-transition: top 0.3s ease 0s;
+  -o-transition: top 0.3s ease 0s;
+  transition: top 0.3s ease 0s;
+  z-index: 1000000;
+}
+
+.wrapper-partners .partners-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 418px;
+  min-height: 462px;
+  background-color: #ffff;
+  position: absolute;
+  left: 50%;
+  top: 35%;
+  -webkit-transform: translate(-50%, -35%);
+      -ms-transform: translate(-50%, -35%);
+          transform: translate(-50%, -35%);
+  border-radius: 20px;
+  padding-bottom: 3rem;
+}
+
+.wrapper-partners .partners-form {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 2.86rem;
+}
+
+.wrapper-partners .partners-form .swipe-line {
+  display: none;
+}
+
+.wrapper-partners .partners-form .form-title {
+  max-width: 286px;
+}
+
+.wrapper-partners .partners-form .partner-form-container input {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  height: 52px;
+  width: 100%;
+  padding: 0 2.14rem;
+  margin-bottom: 1rem;
+}
+
+.wrapper-partners .partners-form input::-webkit-input-placeholder {
+  text-align: left;
+}
+
+.wrapper-partners .partners-form input::-moz-placeholder {
+  text-align: left;
+}
+
+.wrapper-partners .partners-form input:-ms-input-placeholder {
+  text-align: left;
+}
+
+.wrapper-partners .partners-form input::-ms-input-placeholder {
+  text-align: left;
+}
+
+.wrapper-partners .partners-form input::placeholder {
+  text-align: left;
+}
+
+.wrapper-partners .partners-form .partner-form-container textarea {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  width: 100%;
+  padding: 2.14rem 2.14rem;
+  resize: none;
+}
+
+.wrapper-partners .partners-form textarea::-webkit-input-placeholder {
+  text-align: left;
+}
+
+.wrapper-partners .partners-form textarea::-moz-placeholder {
+  text-align: left;
+}
+
+.wrapper-partners .partners-form textarea:-ms-input-placeholder {
+  text-align: left;
+}
+
+.wrapper-partners .partners-form textarea::-ms-input-placeholder {
+  text-align: left;
+}
+
+.wrapper-partners .partners-form textarea::placeholder {
+  text-align: left;
+}
+
+.wrapper-partners .partners-form .partners-btn-send {
+  margin-top: 3rem;
+  width: 335px;
+  height: 52px;
+}
+
+.wrapper-partners.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+input.error {
+  -webkit-box-shadow: 0 0 7px orange;
+          box-shadow: 0 0 7px orange;
+}
+
 @media (min-width: 421px) {
   .wrapper-swipe-menu {
     top: 75px;
@@ -3904,6 +4111,14 @@ main {
 
   .inner-list li {
     font-size: 16px;
+  }
+
+  .wrapper-partners {
+    top: 60px;
+  }
+
+  .wrapper-partners .partners-form .swipe-line {
+    display: block;
   }
 }
 
