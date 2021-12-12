@@ -282,13 +282,39 @@ let ip = 0;
 let port = 0;
 let supply = 0;
 
-let costServer = +document.querySelector('#costServer').innerHTML.replace(/,/, '.');
-let costTower = +document.querySelector('#costTower').innerHTML.replace(/,/, '.');
-const costPower = +document.querySelector('#costPower').innerHTML.replace(/,/, '.');
-const costUnit = +document.querySelector('#costUnit').innerHTML.replace(/,/, '.');
-const costSupply = +document.querySelector('#costSupply').innerHTML.replace(/,/, '.');
-const costPort = +document.querySelector('#costPort').innerHTML.replace(/,/, '.');
-const costIp = +document.querySelector('#costIp').innerHTML.replace(/,/, '.');
+
+const costServerElem = document.querySelector('#costServer');
+const costTowerElem = document.querySelector('#costTower');
+const costPowerElem = document.querySelector('#costPower');
+const costUnitElem = document.querySelector('#costUnit');
+const costSupplyElem = document.querySelector('#costSupply');
+const costPortElem = document.querySelector('#costPort');
+const costIpElem = document.querySelector('#costIp');
+
+
+if(costServerElem && costTowerElem && costPowerElem && costUnitElem && costPortElem && costSupplyElem && costIp){
+  costServer = parseFloat(costServerElem.innerHTML.replace(/,/, '.'));
+  costTower = parseFloat(costTowerElem.innerHTML.replace(/,/, '.'));
+  costPower = parseFloat(costPowerElem.innerHTML.replace(/,/, '.'));
+  costUnit = parseFloat(costUnitElem.innerHTML.replace(/,/, '.'));
+  costSupply = parseFloat(costSupplyElem.innerHTML.replace(/,/, '.'));
+  costPort = parseFloat(costPortElem.innerHTML.replace(/,/, '.'));
+  costIp = parseFloat(costIpElem.innerHTML.replace(/,/, '.'));
+}
+// const costTowerElem = document.querySelector('#costTower');
+// const costPowerElem = document.querySelector('#costPower');
+// const costUnitElem = document.querySelector('#costUnit');
+// const costSupplyElem = document.querySelector('#costSupply');
+// const costPortElem = document.querySelector('#costPort');
+// const costIpElem = document.querySelector('#costIp');
+
+// const costServer = parseFloat(costServerElem.innerText.replace(/,/, '.'));
+// const costTower = parseFloat(costTowerElem.innerHTML.replace(/,/, '.'));
+// const costPower = parseFloat(costPowerElem.innerHTML.replace(/,/, '.'));
+// const costUnit = parseFloat(costUnitElem.innerHTML.replace(/,/, '.'));
+// const costSupply = parseFloat(costSupplyElem.innerHTML.replace(/,/, '.'));
+// const costPort = parseFloat(costPortElem.innerHTML.replace(/,/, '.'));
+// const costIp = parseFloat(costIpElem.innerHTML.replace(/,/, '.'));
 // const IP_REGEXP = /^\d{1,4}$/;
 const IP_REGEXP = /^[1-9]([0-9]*)$/;
 
@@ -354,45 +380,56 @@ function getPowerValue(value){
 
 
 
+if(document.querySelector('.checkbox-container')){
 
-document.querySelector('.checkbox-container').addEventListener("change", function(){
+  document.querySelector('.checkbox-container').addEventListener("change", function(){
    
-  if(checkBox.checked){
-     supplyValue = costSupply;
-    } else {
-      supplyValue = 0;
-    }
-
-    
-
-  calcValue();
+    if(checkBox.checked){
+       supplyValue = costSupply;
+      } else {
+        supplyValue = 0;
+      }
   
-})
+      
+  
+    calcValue();
+    
+  })
+
+}
+
 
 //Расчет стоимости IP
-inputIp.oninput = function() {
 
-  let currentValue = 0;
 
-  if(validateIpInput(inputIp.value)){
-    document.querySelector('.ip-span').classList.remove('active-span');
-    if(inputIp.value <= 1){
-      currentValue = 0;
-      ipValue = 0;
+if(inputIp){
+
+  inputIp.oninput = function() {
+
+    let currentValue = 0;
+  
+    if(validateIpInput(inputIp.value)){
+      document.querySelector('.ip-span').classList.remove('active-span');
+      if(inputIp.value <= 1){
+        currentValue = 0;
+        ipValue = 0;
+        
+      } else {
+        currentValue = inputIp.value - 1;
+        ipValue = parseFloat((currentValue * costIp).toFixed(2));
+      }
+    
       
+      calcValue();
     } else {
-      currentValue = inputIp.value - 1;
-      ipValue = parseFloat((currentValue * costIp).toFixed(2));
+      document.querySelector('.ip-span').classList.add('active-span');
     }
   
     
-    calcValue();
-  } else {
-    document.querySelector('.ip-span').classList.add('active-span');
-  }
+  };
 
-  
-};
+}
+
 
 
 // Расчет общей стоимости услуги
@@ -413,31 +450,36 @@ function calcValue(){
 
 //функция добавления таблицы по клике на кнопку @Добавить еще
 
-addCalcBtn.addEventListener('click', function(){
-  document.querySelector('.calc-container').classList.add('active-calc-container');
-  calcTable.classList.add('active-calc-table');
-  document.querySelector('.calc-total-amount').classList.add('active-total-amount');
-  power = `${document.querySelector("#power-range").value}Вт`;
-  port = `${document.querySelector('#port-range').value}Gb/s`;
-  if(costCalc.querySelector('.unit-item').style.display === 'block'){
-    unit = `${document.querySelector('#unit-range').value}U`;
-  } else unit = 'Tower';
 
+if(addCalcBtn){
+  addCalcBtn.addEventListener('click', function(){
+    document.querySelector('.calc-container').classList.add('active-calc-container');
+    calcTable.classList.add('active-calc-table');
+    document.querySelector('.calc-total-amount').classList.add('active-total-amount');
+    power = `${document.querySelector("#power-range").value}Вт`;
+    port = `${document.querySelector('#port-range').value}Gb/s`;
+    if(costCalc.querySelector('.unit-item').style.display === 'block'){
+      unit = `${document.querySelector('#unit-range').value}U`;
+    } else unit = 'Tower';
   
-  
-  if(inputIp.value == 0 || inputIp.value == 1){
-    ip = `${1}IP`;
-  } else {
-    ip = `${inputIp.value}IP`;
-  }
-
-  if(checkBox.checked){
-      supply = `${2}БП`;
-  } else supply = `${1}БП`;
     
-})
+    
+    if(inputIp.value == 0 || inputIp.value == 1){
+      ip = `${1}IP`;
+    } else {
+      ip = `${inputIp.value}IP`;
+    }
+  
+    if(checkBox.checked){
+        supply = `${2}БП`;
+    } else supply = `${1}БП`;
+      
+  })
+  
+  addCalcBtn.addEventListener('click', addCalcServer);
+}
 
-addCalcBtn.addEventListener('click', addCalcServer);
+
 
 
 // Добавление таблицы
@@ -490,25 +532,29 @@ function addCalcServer () {
 
 // Кнопки рассчитать услугу
   
+if(calcBtnUnit){
+  calcBtnUnit.addEventListener('click', function(){
+    document.body.classList.add('active-body');
+    document.querySelector('.wrapper-calc').classList.add('active')
+    document.querySelector('.unit-item').style.display = 'block';
+    document.querySelector('.calc-container').classList.add('active-calc');
+    currentCost.innerHTML = `${costServer}.00 BYN`;
+    
+  })
+}
 
-calcBtnUnit.addEventListener('click', function(){
-  document.body.classList.add('active-body');
-  document.querySelector('.wrapper-calc').classList.add('active')
-  document.querySelector('.unit-item').style.display = 'block';
-  document.querySelector('.calc-container').classList.add('active-calc');
-  currentCost.innerHTML = `${costServer}.00 BYN`;
-  
-})
 
+if(calcBtnTower){
+  calcBtnTower.addEventListener('click', function(){
+    document.body.classList.add('active-body');
+    document.querySelector('.wrapper-calc').classList.add('active');
+    document.querySelector('.calc-container').classList.add('active-calc');
+    document.querySelector('.unit-item').style.display = 'none';
+    currentCost.innerHTML = `${costTower}.00 BYN`;
+    
+  })
+}
 
-calcBtnTower.addEventListener('click', function(){
-  document.body.classList.add('active-body');
-  document.querySelector('.wrapper-calc').classList.add('active');
-  document.querySelector('.calc-container').classList.add('active-calc');
-  document.querySelector('.unit-item').style.display = 'none';
-  currentCost.innerHTML = `${costTower}.00 BYN`;
-  
-})
 
 
 //Функция обнулить значения калькулятора
@@ -585,9 +631,101 @@ function removeClasses(){
   nullValue();
 }
 
-swipeCalcBtn.addEventListener('swiped-down', removeClasses);
+if(swipeCalcBtn){
+  swipeCalcBtn.addEventListener('swiped-down', removeClasses);
 
-swipeCalcBtn.addEventListener('click', removeClasses);;
+swipeCalcBtn.addEventListener('click', removeClasses);
+}
+
+;
+// "use strict"
+
+document.addEventListener('DOMContentLoaded', function(){
+    const form = document.getElementById('form');
+    form.addEventListener('submit', formSend);
+ 
+
+
+    async function formSend(e){
+        e.preventDefault();
+    
+        let error = formValidate(form);
+
+        let formData = new FormData(form);
+        
+        if(error === 0){
+            form.classList.add('sending');
+             
+        let response = await fetch('sendmail.php', {
+            method: 'POST',
+            body: formData
+        });
+
+        if(response.ok){
+
+            let result = await response.json();
+            alert(result.message);
+            form.reset();
+
+        } else {
+            alert('Ошибка')
+        }
+
+        } else alert('заполните обязательные поля')
+        
+    }
+
+    function formValidate(form){
+        let error = 0; 
+        let formReq = document.querySelectorAll('.req')
+
+        for(let index = 0; index < formReq.length; index++){
+            const input = formReq[index];
+            formRemoveError(input);
+
+            if(input.classList.contains('email')){
+                if(emailTest(input)){
+                    formAddError(input);
+                    error++;
+                }
+            } else{
+                if(input.value === ""){
+                    formAddError(input);
+                    error++;
+                }
+            }
+
+        }
+
+        return error;
+
+    }
+
+    function formAddError(input){
+        input.parentElement.classList.add('error');
+        input.classList.add('error');
+    }
+
+
+    function formRemoveError(input){
+        input.parentElement.classList.remove('error');
+        input.classList.remove('error');
+    }
+
+
+    function emailTest(input){
+        return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
+    }
+
+
+
+})
+
+
+
+
+
+;
 
 
 
