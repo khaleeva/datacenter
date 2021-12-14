@@ -4244,6 +4244,17 @@ input.error {
   .wrapper-partners .partners-form .partner-form-container textarea {
     height: 113px;
   }
+
+  .form-send .form-image {
+    width: 168px;
+    height: 168px;
+    margin-top: 2rem;
+  }
+
+  .form-send .form-image-layer {
+    width: 132px;
+    height: 132px;
+  }
 }
 
 @media (max-width: 320px) {
