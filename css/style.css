@@ -92,6 +92,7 @@
   border-radius: 20px;
 }
 
+.form-send .form-image-layer,
 .contact-image-layer,
 .footer-mob .contact-image-layer,
 .main-section-review .section-review .section-review-item .section-review-inner.active-section,
@@ -2832,6 +2833,8 @@ main {
   -webkit-transition: top 0.3s ease 0s;
   -o-transition: top 0.3s ease 0s;
   transition: top 0.3s ease 0s;
+  visibility: hidden;
+  opacity: 0;
   z-index: 1000000;
 }
 
@@ -2885,26 +2888,32 @@ main {
   width: 100%;
   padding: 0 2.14rem;
   margin-bottom: 1rem;
+  font-size: 18px;
 }
 
 .wrapper-partners .partners-form input::-webkit-input-placeholder {
   text-align: left;
+  font-size: 14px;
 }
 
 .wrapper-partners .partners-form input::-moz-placeholder {
   text-align: left;
+  font-size: 14px;
 }
 
 .wrapper-partners .partners-form input:-ms-input-placeholder {
   text-align: left;
+  font-size: 14px;
 }
 
 .wrapper-partners .partners-form input::-ms-input-placeholder {
   text-align: left;
+  font-size: 14px;
 }
 
 .wrapper-partners .partners-form input::placeholder {
   text-align: left;
+  font-size: 14px;
 }
 
 .wrapper-partners .partners-form .partner-form-container textarea {
@@ -2913,26 +2922,32 @@ main {
   width: 100%;
   padding: 2.14rem 2.14rem;
   resize: none;
+  font-size: 18px;
 }
 
 .wrapper-partners .partners-form textarea::-webkit-input-placeholder {
   text-align: left;
+  font-size: 14px;
 }
 
 .wrapper-partners .partners-form textarea::-moz-placeholder {
   text-align: left;
+  font-size: 14px;
 }
 
 .wrapper-partners .partners-form textarea:-ms-input-placeholder {
   text-align: left;
+  font-size: 14px;
 }
 
 .wrapper-partners .partners-form textarea::-ms-input-placeholder {
   text-align: left;
+  font-size: 14px;
 }
 
 .wrapper-partners .partners-form textarea::placeholder {
   text-align: left;
+  font-size: 14px;
 }
 
 .wrapper-partners .partners-form .partners-btn-send {
@@ -2949,6 +2964,67 @@ main {
 input.error {
   -webkit-box-shadow: 0 0 7px orange;
           box-shadow: 0 0 7px orange;
+}
+
+.form-send {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.form-send .form-image {
+  margin-top: 4rem;
+  width: 255px;
+  height: 255px;
+  border-radius: 50%;
+  background: rgba(62, 119, 187, 0.2);
+  background: -webkit-gradient(linear, left top, right top, from(rgba(31, 120, 224, 0.2)), to(rgba(0, 194, 255, 0.2)));
+  background: -o-linear-gradient(left, rgba(31, 120, 224, 0.2) 0%, rgba(0, 194, 255, 0.2) 100%);
+  background: linear-gradient(90deg, rgba(31, 120, 224, 0.2) 0%, rgba(0, 194, 255, 0.2) 100%);
+  position: relative;
+}
+
+.form-send .form-image-layer {
+  width: 201px;
+  height: 201px;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.form-send .form-image-layer img {
+  width: 100%;
+  max-width: 78px;
+  height: auto;
+}
+
+.form-send .form-message {
+  width: 310px;
+  text-align: center;
+}
+
+.form-send.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 @media (min-width: 421px) {
