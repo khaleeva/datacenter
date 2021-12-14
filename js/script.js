@@ -582,14 +582,21 @@ function nullCalcValue(){
     inputIp.value = '';
   }
 
-  if(checkBox.checked){
-    checkBox.checked = false;
+  if(checkBox){
+    if(checkBox.checked){
+      checkBox.checked = false;
+    }
   }
 
-  if(costCalc.querySelector('.unit-item').style.display === 'block'){
-    currentCost.innerHTML = `${costServer}.00 BYN`; 
-  
-  } else currentCost.innerHTML = `${costTower}.00 BYN`;
+ 
+  if(costCalc){
+    if(costCalc.querySelector('.unit-item').style.display === 'block'){
+      currentCost.innerHTML = `${costServer}.00 BYN`; 
+    
+    } else currentCost.innerHTML = `${costTower}.00 BYN`;
+  }
+
+
   
 
 }
@@ -598,23 +605,44 @@ function nullCalcValue(){
 
 function nullValue(){
   document.body.classList.remove('active-body');
-  document.querySelector('.calc-container').classList.remove('active-calc-container');
-  document.querySelector('.wrapper-calc').classList.remove('active');
-  calcTable.classList.remove('active-calc-table');
-   
-  nullCalcValue();
-    
-  if(calcTable.querySelectorAll('.calc-table-container').length > 0){
-    for(child of calcTable.querySelectorAll('.calc-table-container')){
-        child.remove();
-    }
-     
+  if(document.querySelector('.calc-container')){
+    document.querySelector('.calc-container').classList.remove('active-calc-container');
+  }
+
+  if(document.querySelector('.wrapper-calc')){
+    document.querySelector('.wrapper-calc').classList.remove('active');
+  }
+
+  if(calcTable){
+    calcTable.classList.remove('active-calc-table');
   }
   
+  
+ 
+   
+  nullCalcValue();
+
+  if(calcBtnUnit){
+    if(calcTable.querySelectorAll('.calc-table-container').length > 0){
+      for(child of calcTable.querySelectorAll('.calc-table-container')){
+          child.remove();
+      }
+       
+    }
+  }
+    
+if(addCalcBtn){
   addCalcBtn.disabled = false;
   addCalcBtn.classList.add('btn-gr-bg');
   addCalcBtn.classList.remove('disabled');
+}
+
+if(document.querySelector('.ip-span')){
+    
   document.querySelector('.ip-span').classList.remove('active-span');
+}
+  
+
 
 }
 
@@ -638,15 +666,54 @@ swipeCalcBtn.addEventListener('click', removeClasses);
 }
 
 ;
-// "use strict"
+//   "use strict"
+
+
+//   const sendForm = () =>{
+//     const form = document.getElementById('form');
+//     const message = {
+//         loading: "загрузка",
+//         success: 'Спасибо!',
+//         failure: 'Что-то пошло не так...'
+//     }
+
+
+//     const postData = async(url, data) =>{
+//         let res = await fetch(url, {
+//             method: "POST",
+//             body: data
+//         });
+
+//         return await res.json();
+//     }
+
+
+//     form.addEventListener('submit', (e)=>{
+//         e.preventDefault();
+//         const formData = new FormData(form);
+//         postData('send.php', formData)
+//         .then(res => {
+//             console.log(res);
+//         });
+        
+//   })
+
+
+//   };
+
+  
+
 
 document.addEventListener('DOMContentLoaded', function(){
     const form = document.getElementById('form');
-    form.addEventListener('submit', formSend);
+    if(form){
+        form.addEventListener('submit', formSend);
+    }
+  
  
 
 
-    async function formSend(e){
+  async function formSend(e){
         e.preventDefault();
     
         let error = formValidate(form);
@@ -656,19 +723,26 @@ document.addEventListener('DOMContentLoaded', function(){
         if(error === 0){
             form.classList.add('sending');
              
-        let response = await fetch('sendmail.php', {
+        let response = await fetch('send.php', {
             method: 'POST',
             body: formData
-        });
+        })
+        
+        
+        
 
         if(response.ok){
 
             let result = await response.json();
-            alert(result.message);
-            form.reset();
-
+            console.log(result);
+            // alert(result.message);
+            // form.reset();
+            form.style.display = 'none';
+            document.querySelector('#form-title').style.display = 'none';
+            document.querySelector('.form-send').classList.add('active');
         } else {
             alert('Ошибка')
+            form.reset();
         }
 
         } else alert('заполните обязательные поля')
@@ -722,7 +796,24 @@ document.addEventListener('DOMContentLoaded', function(){
 })
 
 
+;
+let closeIconPartners = document.getElementById('close-icon-partners');
+let partnersBtn = document.querySelector('.partners-btn');
+const form = document.getElementById('form');
 
+if(partnersBtn){
+    partnersBtn.addEventListener('click', function(){
+        document.querySelector('.wrapper-partners').classList.add('active');
+    })
+}
+
+
+if(closeIconPartners){
+    closeIconPartners.addEventListener("click", function(){
+        document.querySelector('.wrapper-partners').classList.remove('active');
+        form.reset();
+    })
+}
 
 
 ;
