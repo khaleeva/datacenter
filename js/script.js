@@ -821,6 +821,7 @@ if(closeIconPartners){
         document.querySelector('.form-send').classList.remove('active');
         form.reset();
         document.body.classList.remove('active-body');
+        document.querySelector('.partners-container').classList.remove('active');
     })
 }
 
@@ -831,6 +832,7 @@ if(swipeFormLine){
         document.querySelector('.form-send').classList.remove('active');
         form.reset();
         document.body.classList.remove('active-body');
+        document.querySelector('.partners-container').classList.remove('active');
     })
 
 
@@ -839,6 +841,7 @@ swipeFormLine.addEventListener('click', function(){
         document.querySelector('.form-send').classList.remove('active');
         form.reset();
         document.body.classList.remove('active-body');
+        document.querySelector('.partners-container').classList.remove('active');
 });
 }
 
