@@ -2846,7 +2846,7 @@ main {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 418px;
-  min-height: 462px;
+  max-height: 600px;
   background-color: #ffff;
   position: absolute;
   left: 50%;
@@ -2925,6 +2925,10 @@ main {
   font-size: 18px;
 }
 
+.wrapper-partners .partners-form .partner-form-container.display-none {
+  display: none;
+}
+
 .wrapper-partners .partners-form textarea::-webkit-input-placeholder {
   text-align: left;
   font-size: 14px;
@@ -2975,6 +2979,7 @@ input.error {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  min-height: 600px;
 }
 
 .form-send .form-image {
@@ -3559,6 +3564,39 @@ input.error {
     margin-top: 0.7rem;
     padding: 0.7rem;
     min-height: 0;
+  }
+
+  .wrapper-partners .partners-container {
+    width: 100%;
+    min-height: 600px;
+    padding: 0 0.7rem 3.57rem 0.7rem;
+    border-radius: 20px 20px 0px 0px;
+    left: 0;
+    top: 100%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    -webkit-transform: none;
+        -ms-transform: none;
+            transform: none;
+    z-index: 1000;
+    -webkit-transition: top 0.5s ease 0s;
+    -o-transition: top 0.5s ease 0s;
+    transition: top 0.5s ease 0s;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .wrapper-partners .partners-container.active {
+    top: 20%;
+    -webkit-transition: top 0.5s ease 0s;
+    -o-transition: top 0.5s ease 0s;
+    transition: top 0.5s ease 0s;
   }
 }
 
@@ -4195,6 +4233,16 @@ input.error {
 
   .wrapper-partners .partners-form .swipe-line {
     display: block;
+  }
+
+  .wrapper-partners .partners-form .form-title {
+    font-size: 20px;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .wrapper-partners .partners-form .partner-form-container textarea {
+    height: 113px;
   }
 }
 
