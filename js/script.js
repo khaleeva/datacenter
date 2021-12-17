@@ -119,22 +119,10 @@ const swipeBtn = document.querySelector(".swipe-line");
 
 ;
 
-
-
-
-
 const accordionBtns = document.querySelectorAll('.accordion-header-services');
-
 const accSection = document.querySelector('.colocation-services-accordion');
-
 let accordionFirst = document.getElementById('first-content'); 
-
-let accordionFirstDedic = document.getElementById('first-content-dedic'); 
-
-
-
-
-
+// let accordionFirstDedic = document.getElementById('first-content-dedic'); 
 
  for (let accordionBtn of accordionBtns) {
    accordionBtn.addEventListener('click', function(){
@@ -190,8 +178,8 @@ for (let link of reviewLinks) {
            if (setClasses) {
              this.classList.add("active");
              this.parentNode.classList.add("active-section");
-             this.previousSibling.previousSibling.classList.add("active-limiter");
-             link.innerHTML = 'Свернуть';
+            this.previousSibling.previousSibling.classList.add("active-limiter");
+            link.innerHTML = 'Свернуть';
              
             
           } else{
@@ -374,9 +362,9 @@ function getValue(){
 
 
 
-function getPowerValue(value){
-  return value;
-}
+// function getPowerValue(value){
+//   return value;
+// }
 
 
 
@@ -646,9 +634,11 @@ if(document.querySelector('.ip-span')){
 
 }
 
+if(closeIcon){
+  closeIcon.addEventListener('click', nullValue);
+}
 
 
-closeIcon.addEventListener('click', nullValue);
 
 
 //Обнуление классов по свайпу
@@ -734,18 +724,18 @@ document.addEventListener('DOMContentLoaded', function(){
         if(response.ok){
 
             let result = await response.json();
-            console.log(result);
+            // console.log(result);
             // alert(result.message);
             // form.reset();
             form.classList.add('display-none');
             document.querySelector('#form-title').style.display = 'none';
             document.querySelector('.form-send').classList.add('active');
         } else {
-            alert('Ошибка')
+            alert('Что-то пошло не так...')
             form.reset();
         }
 
-        } else alert('заполните обязательные поля')
+        } else alert('Заполните обязательные поля')
         
     }
 
@@ -808,6 +798,8 @@ if(partnersBtn){
         document.body.classList.add('active-body');
         document.querySelector('.wrapper-partners').classList.add('active');
         document.querySelector('.form-send').classList.remove('active');
+        // document.querySelector('.form-send').hidden = 'true';
+        // form.hidden="false";
         form.classList.remove('display-none');
         document.querySelector('#form-title').style.display = 'block';
         document.querySelector('.partners-container').classList.add('active');

@@ -81,6 +81,7 @@
 
 .accordion-section-services,
 .section-advices .section-advices-item .section-advices-inner,
+.map-container-item,
 .section-about .section-about-container .about-info-card .about-inner-card,
 .main-section-review .section-review .section-review-item .section-review-inner,
 .main-section-partners .section-partners-item,
@@ -1844,18 +1845,48 @@ main {
   color: #FFFFFF;
 }
 
-.map-responsive {
-  width: 100%;
-  overflow: hidden;
-  padding-bottom: 56.25%;
+.map-section {
+  padding-bottom: 78px;
 }
 
-.map-responsive iframe {
-  left: 0;
-  top: 0;
-  height: 100%;
+.map-subtitle {
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 56px;
+}
+
+.map-section-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.map-section-container h3 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 30px;
+  padding: 29px 0;
+}
+
+.map-container-item {
   width: 100%;
-  position: absolute;
+  background-color: #FFFFFF;
+  margin-bottom: 30px;
+}
+
+ymaps {
+  border-radius: 20px;
+}
+
+.map-responsive {
+  max-width: 1200px;
 }
 
 .section-advices {
@@ -2847,7 +2878,7 @@ main {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 418px;
-  max-height: 600px;
+  max-height: 594px;
   background-color: #ffff;
   position: absolute;
   left: 50%;
@@ -4298,14 +4329,11 @@ input.error {
 
   .wrapper-partners .partners-container {
     width: 100%;
-    min-height: 600px;
+    height: 594px;
     padding: 0 0.7rem 3.57rem 0.7rem;
     border-radius: 20px 20px 0px 0px;
     left: 0;
-    top: 100%;
-    -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+    top: 100vh;
     -webkit-transform: none;
         -ms-transform: none;
             transform: none;
@@ -4323,7 +4351,7 @@ input.error {
   }
 
   .wrapper-partners .partners-container.active {
-    top: 20%;
+    top: 20vh;
     -webkit-transition: all 0.5s linear;
     -o-transition: all 0.5s linear;
     transition: all 0.5s linear;
