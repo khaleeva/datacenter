@@ -1846,13 +1846,14 @@ main {
 }
 
 .map-section {
-  padding-bottom: 78px;
+  padding-top: 5.2rem;
+  padding-bottom: 5.57rem;
 }
 
 .map-subtitle {
   text-align: center;
   font-size: 18px;
-  margin-bottom: 56px;
+  margin-bottom: 4rem;
 }
 
 .map-section-container {
@@ -1872,21 +1873,23 @@ main {
   text-align: center;
   font-weight: 700;
   font-size: 30px;
-  padding: 29px 0;
+  padding: 2rem 0;
 }
 
 .map-container-item {
   width: 100%;
   background-color: #FFFFFF;
-  margin-bottom: 30px;
+  margin-bottom: 2.14rem;
+  overflow: hidden;
 }
 
 ymaps {
   border-radius: 20px;
 }
 
-.map-responsive {
+.map {
   max-width: 1200px;
+  height: 521px;
 }
 
 .section-advices {
@@ -4019,6 +4022,30 @@ input.error {
 
   .contacts-title {
     font-size: 30px;
+  }
+
+  .map-section {
+    padding-top: 1rem;
+    padding-bottom: 3rem;
+  }
+
+  .map-subtitle {
+    font-size: 16px;
+    margin-top: 0.65rem;
+    margin-bottom: 2.6rem;
+  }
+
+  .map-section-container h3 {
+    font-size: 18px;
+    padding: 1.2rem 2rem;
+  }
+
+  .map-container-item {
+    height: 340px;
+  }
+
+  .map {
+    height: 356px;
   }
 
   .section-advices {
