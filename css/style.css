@@ -79,6 +79,7 @@
   color: #FFFFFF;
 }
 
+.card-inner,
 .accordion-section-services,
 .section-advices .section-advices-item .section-advices-inner,
 .map-container-item,
@@ -3105,6 +3106,129 @@ input.error {
   display: flex;
 }
 
+.payments-section {
+  padding-top: 8.7rem;
+  padding-bottom: 17rem;
+}
+
+.payments-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  row-gap: 6rem;
+}
+
+.payments-container-item {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-column-gap: 5%;
+     -moz-column-gap: 5%;
+          column-gap: 5%;
+}
+
+.payments-container-inner {
+  -ms-flex-preferred-size: 47%;
+      flex-basis: 47%;
+  width: 100%;
+}
+
+.payments-container-img img {
+  width: 100%;
+  height: auto;
+}
+
+.card-image-inner img {
+  width: 100%;
+  height: auto;
+}
+
+#order1 #img1 {
+  max-width: 536px;
+}
+
+#order1 #img2 {
+  display: none;
+}
+
+#title {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+.payments-container-card {
+  margin-top: 71px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  row-gap: 1.7rem;
+}
+
+.payments-subtitle {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 120%;
+  margin-bottom: 39px;
+}
+
+.card-inner {
+  width: 100%;
+  max-width: 588px;
+  padding: 27px 41px 49px 41px;
+}
+
+.card-inner h5 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 120%;
+  margin-bottom: 40px;
+}
+
+.card-image {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-column-gap: 1.43rem;
+     -moz-column-gap: 1.43rem;
+          column-gap: 1.43rem;
+  row-gap: 1.7rem;
+}
+
+.payments-container-text li {
+  margin-left: 1rem;
+}
+
+.payments-container-text li,
+.payments-container-text p {
+  font-size: 18px;
+  line-height: 160%;
+  margin-bottom: 1rem;
+}
+
 @media (min-width: 421px) {
   .wrapper-swipe-menu {
     top: 75px;
@@ -3700,6 +3824,55 @@ input.error {
     -ms-flex-item-align: center;
         align-self: center;
   }
+
+  .payments-section {
+    padding-top: 2.7rem;
+    padding-bottom: 5rem;
+  }
+
+  .payments-container {
+    row-gap: 5rem;
+  }
+
+  .payments-container-item {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-column-gap: 0;
+       -moz-column-gap: 0;
+            column-gap: 0;
+  }
+
+  .payments-container-img {
+    margin-bottom: 3rem;
+  }
+
+  #order1 #img1 {
+    display: none;
+  }
+
+  #order1 #img2 {
+    display: block;
+    max-width: 280px;
+  }
+
+  #title {
+    -ms-flex-item-align: center;
+        align-self: center;
+  }
+
+  .payments-container-card {
+    margin-top: 3rem;
+  }
+
+  .payments-subtitle {
+    margin-bottom: 1rem;
+    text-align: center;
+  }
 }
 
 @media (max-width: 768px) and (orientation: landscape) {
@@ -3708,6 +3881,15 @@ input.error {
     -webkit-transition: top 0.5s ease 0s;
     -o-transition: top 0.5s ease 0s;
     transition: top 0.5s ease 0s;
+  }
+}
+
+@media (max-width: 768px) and (max-width: 768px) {
+  .payments-container-item #order1,
+  .payments-container-item #order2 {
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
   }
 }
 
@@ -4407,6 +4589,35 @@ input.error {
     width: 132px;
     height: 132px;
   }
+
+  .card-image-inner img {
+    max-width: 60px;
+  }
+
+  .card-image-inner #img3,
+  .card-image-inner #img4,
+  .card-image-inner #img5 {
+    max-width: 100px;
+  }
+
+  .payments-subtitle {
+    font-size: 24px;
+  }
+
+  .card-inner h5 {
+    font-size: 18px;
+  }
+
+  .card-image {
+    -webkit-column-gap: 0.7rem;
+       -moz-column-gap: 0.7rem;
+            column-gap: 0.7rem;
+  }
+
+  .payments-container-text li,
+  .payments-container-text p {
+    font-size: 16px;
+  }
 }
 
 @media (max-width: 320px) {
@@ -4584,6 +4795,14 @@ input.error {
 }
 
  @media (max-width: 768px) and (orientation: landscape){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
+ @media (max-width: 768px) and (max-width: 768px){
 
 @supports (-webkit-appearance:none){
 
