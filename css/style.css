@@ -3144,6 +3144,10 @@ input.error {
   width: 100%;
 }
 
+.payments-container-inner .title-section {
+  text-align: left;
+}
+
 .payments-container-img img {
   width: 100%;
   height: auto;
@@ -3847,8 +3851,13 @@ input.error {
             column-gap: 0;
   }
 
+  .payments-container-inner .title-section {
+    text-align: center;
+  }
+
   .payments-container-img {
     margin-bottom: 3rem;
+    text-align: center;
   }
 
   #order1 #img1 {
@@ -3856,7 +3865,7 @@ input.error {
   }
 
   #order1 #img2 {
-    display: block;
+    display: inline-block;
     max-width: 280px;
   }
 
@@ -4648,6 +4657,16 @@ input.error {
 
   .main-section-partners .section-partners-item #img-wildber {
     max-width: 103px;
+  }
+
+  .card-image-inner img {
+    max-width: 40px;
+  }
+
+  .card-image-inner #img3,
+  .card-image-inner #img4,
+  .card-image-inner #img5 {
+    max-width: 95px;
   }
 }
 
