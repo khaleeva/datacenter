@@ -239,24 +239,43 @@ body {
   font-weight: 400;
   font-size: 14px;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  width: 100%;
+  height: 100%;
 }
 
 body.active-body {
   overflow: hidden;
 }
 
+.wrapper {
+  position: relative;
+}
+
+.page-wrapper {
+  overflow: hidden;
+  min-height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 .container {
   width: 100%;
   max-width: 1200px;
-  min-width: 320px;
   height: 100%;
   margin: 0 auto;
 }
 
 main {
   width: 100%;
-  min-width: 320px;
-  margin-top: 5.26rem;
+  margin-top: 75px;
 }
 
 .header {
@@ -406,7 +425,6 @@ main {
 
 .swipe-menu-container {
   width: 100%;
-  min-width: 320px;
   min-height: 690px;
   position: absolute;
   top: 100%;
@@ -612,7 +630,6 @@ main {
 
 .main-title-section {
   width: 100%;
-  min-width: 320px;
   height: 713px;
   background-image: url(../img/bg1.jpg);
   background-repeat: no-repeat;
@@ -731,7 +748,6 @@ main {
 .main-section-about {
   width: 100%;
   padding: 10.7rem 0 13rem 0;
-  min-width: 320px;
 }
 
 .main-section-about .inner-about-container {
@@ -1004,6 +1020,9 @@ main {
   width: 100%;
   min-height: 315px;
   padding: 34px 35px 33px 34px;
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
 }
 
 .main-section-review .section-review .section-review-item .section-review-inner.active-section {
@@ -1168,7 +1187,6 @@ main {
 
 .footer-mob {
   width: 100%;
-  min-width: 320px;
   background-color: #172433;
   padding: 3.2rem 0px 6.2rem 0px;
 }
@@ -1495,7 +1513,7 @@ main {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 417px;
+  max-width: 417px;
   height: 52px;
   font-weight: 700;
   font-size: 20px;
@@ -1646,7 +1664,6 @@ main {
 
 .section-contacts-inner {
   margin-top: 2.64rem;
-  width: 292px;
 }
 
 .section-contacts-inner span {
@@ -1898,6 +1915,7 @@ ymaps {
 }
 
 .section-advices .advices-container {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1948,7 +1966,7 @@ ymaps {
 }
 
 .section-advices .section-advices-item .section-advices-inner .limiter {
-  height: 145px;
+  max-height: 145px;
   overflow: hidden;
   font-size: 18px;
   line-height: 160%;
@@ -1966,7 +1984,6 @@ ymaps {
 }
 
 .section-services {
-  min-height: 100vh;
   padding-top: 3.78rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2324,7 +2341,6 @@ ymaps {
 
 .calc-form {
   max-width: 418px;
-  min-width: 320px;
   min-height: 462px;
   padding-bottom: 2.14rem;
 }
@@ -3605,9 +3621,6 @@ input.error {
     border-radius: 20px 20px 0px 0px;
     left: 0;
     top: 100%;
-    -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
     -webkit-transform: none;
         -ms-transform: none;
             transform: none;
@@ -3708,7 +3721,7 @@ input.error {
   }
 
   main {
-    margin-top: 4.2rem;
+    margin-top: 60px;
   }
 
   .header {
@@ -3773,7 +3786,7 @@ input.error {
   }
 
   .main-section-about .inner-about-container {
-    height: 835px;
+    min-height: 835px;
   }
 
   .main-section-about .inner-about-container .section-about-item {
@@ -3849,7 +3862,6 @@ input.error {
   }
 
   .main-section-partners .section-partners-item {
-    width: 135px;
     height: 54px;
   }
 
@@ -3871,7 +3883,6 @@ input.error {
   }
 
   .limiter {
-    width: 240px;
     max-height: 182px;
     font-size: 16px;
     line-height: 160%;
@@ -3879,10 +3890,6 @@ input.error {
 
   .read-more-button {
     font-size: 16px;
-  }
-
-  .btn-review {
-    width: 280px;
   }
 
   .main-section-offer {
@@ -3916,22 +3923,9 @@ input.error {
     width: 184px;
   }
 
-  .section-about .section-about-container .about-info-item {
-    width: 280px;
-  }
-
   .section-about .section-about-container .about-info-item .text-item {
     font-size: 16px;
     margin-bottom: 0px;
-  }
-
-  .section-about .section-about-container .about-image-item {
-    text-align: center;
-    width: 280px;
-  }
-
-  .section-about .section-about-container .about-image-item img {
-    max-width: 267px;
   }
 
   .section-about .section-about-container .about-info-card {
@@ -3939,6 +3933,7 @@ input.error {
   }
 
   .section-about .section-about-container .about-info-card .about-inner-card {
+    padding: 1rem;
     height: 75px;
     -webkit-column-gap: 1rem;
        -moz-column-gap: 1rem;
@@ -3976,7 +3971,6 @@ input.error {
   }
 
   .dc-info-item a {
-    width: 280px;
     height: 59px;
     font-size: 16px;
     text-align: center;
@@ -3992,11 +3986,11 @@ input.error {
   }
 
   #img-3 {
-    max-width: 280px;
+    max-width: 270px;
   }
 
   #img-4 {
-    max-width: 280px;
+    max-width: 270px;
   }
 
   .section-details {
@@ -4059,7 +4053,7 @@ input.error {
   }
 
   .section-advices .section-advices-item .section-advices-inner {
-    width: 280px;
+    width: 100%;
     min-height: 307px;
     padding: 30px 28px 30px 19px;
   }
@@ -4069,7 +4063,7 @@ input.error {
   }
 
   .section-advices .section-advices-item .section-advices-inner .limiter {
-    width: 240px;
+    max-width: 240px;
     max-height: 156px;
     font-size: 16px;
     line-height: 160%;
@@ -4185,10 +4179,6 @@ input.error {
     -webkit-transition: top 0.5s ease 0s;
     -o-transition: top 0.5s ease 0s;
     transition: top 0.5s ease 0s;
-  }
-
-  .calc-table-container {
-    width: 280px;
   }
 
   .calc-form {
@@ -4450,6 +4440,20 @@ input.error {
   }
 }
 
+@media (max-width: 319px) {
+  .order-btn {
+    width: 90%;
+  }
+
+  .calc-btn {
+    width: 90%;
+  }
+
+  .wrapper-partners .partners-form .partners-btn-send {
+    width: 100%;
+  }
+}
+
 @media (max-width: 1200px) and (min-width: 421px) {
   .container {
     padding: 0 15px;
@@ -4596,6 +4600,14 @@ input.error {
 }
 
  @media (max-width: 320px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
+ @media (max-width: 319px){
 
 @supports (-webkit-appearance:none){
 
