@@ -3108,7 +3108,7 @@ input.error {
 
 .payments-section {
   padding-top: 8.7rem;
-  padding-bottom: 17rem;
+  padding-bottom: 5rem;
 }
 
 .payments-container {
@@ -3122,7 +3122,6 @@ input.error {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  row-gap: 6rem;
 }
 
 .payments-container-item {
@@ -3136,6 +3135,11 @@ input.error {
   -webkit-column-gap: 5%;
      -moz-column-gap: 5%;
           column-gap: 5%;
+  margin-bottom: 12rem;
+}
+
+#mg-item {
+  margin-top: -6rem;
 }
 
 .payments-container-inner {
@@ -3169,6 +3173,7 @@ input.error {
 #title {
   -ms-flex-item-align: start;
       align-self: flex-start;
+  margin-bottom: 2.3rem;
 }
 
 .payments-container-card {
@@ -3831,11 +3836,7 @@ input.error {
 
   .payments-section {
     padding-top: 2.7rem;
-    padding-bottom: 5rem;
-  }
-
-  .payments-container {
-    row-gap: 5rem;
+    padding-bottom: 4rem;
   }
 
   .payments-container-item {
@@ -3849,6 +3850,11 @@ input.error {
     -webkit-column-gap: 0;
        -moz-column-gap: 0;
             column-gap: 0;
+    margin-bottom: 4.85rem;
+  }
+
+  #mg-item {
+    margin-top: 0;
   }
 
   .payments-container-inner .title-section {
