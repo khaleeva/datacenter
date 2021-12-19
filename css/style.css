@@ -3238,6 +3238,78 @@ input.error {
   margin-bottom: 1rem;
 }
 
+.support-section {
+  padding-top: 7.36rem;
+  padding-bottom: 22rem;
+}
+
+.support-section .title-section {
+  text-align: left;
+  margin-bottom: 1.64rem;
+}
+
+.support-section-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  row-gap: 7.64rem;
+}
+
+.support-container-item {
+  -ms-flex-preferred-size: 47%;
+      flex-basis: 47%;
+}
+
+.support-container-text p,
+.support-container-text li {
+  margin-bottom: 1rem;
+  font-size: 18px;
+  line-height: 160%;
+}
+
+.support-container-text li:last-child {
+  margin-bottom: 2.7rem;
+}
+
+.support-container-text span {
+  font-weight: 700;
+}
+
+.support-container-text a {
+  text-decoration: underline;
+}
+
+.support-container-text h3 {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 120%;
+  margin-bottom: 1.286rem;
+}
+
+.support-img {
+  width: 100%;
+}
+
+.support-img img {
+  width: 100%;
+  max-width: 509px;
+  height: auto;
+}
+
+.support-container-contact {
+  width: 100%;
+}
+
+.support-container-contact p,
+.support-container-contact span {
+  font-size: 20px;
+}
+
 @media (min-width: 421px) {
   .wrapper-swipe-menu {
     top: 75px;
@@ -3887,6 +3959,32 @@ input.error {
   .payments-subtitle {
     margin-bottom: 1rem;
     text-align: center;
+  }
+
+  .support-section {
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+  }
+
+  .support-section .title-section {
+    text-align: center;
+  }
+
+  .support-section-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    row-gap: 2.36rem;
+  }
+
+  .support-section-container #order3 {
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
   }
 }
 
@@ -4632,6 +4730,23 @@ input.error {
   .payments-container-text li,
   .payments-container-text p {
     font-size: 16px;
+  }
+
+  .support-container-text p,
+  .support-container-text li {
+    font-size: 16px;
+  }
+
+  .support-container-text li:last-child {
+    margin-bottom: 0.7rem;
+  }
+
+  .support-container-text h3 {
+    font-size: 20px;
+  }
+
+  .support-img img {
+    max-width: 280px;
   }
 }
 
