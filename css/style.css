@@ -3520,11 +3520,6 @@ input.error {
   margin-bottom: 1rem;
 }
 
-.article-container-item ol span,
-.article-container-item ul span {
-  font-weight: 700;
-}
-
 .article-container-item a {
   text-decoration: underline;
 }
