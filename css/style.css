@@ -632,7 +632,7 @@ main {
 .main-title-section {
   width: 100%;
   height: 713px;
-  background-image: url(../img/bg1.jpg);
+  background-image: url(../img/content/bg1.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 100% 100%;
@@ -790,7 +790,7 @@ main {
 
 .main-section-advantages {
   width: 100%;
-  background-image: url(../img/bg2.jpg);
+  background-image: url(../img/content/bg2.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -1175,7 +1175,7 @@ main {
   max-width: 568px;
   height: auto;
   margin-top: 1.07rem;
-  background-image: url(../img/dhb.png);
+  background-image: url(../img/logo/dhb.png);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -3451,7 +3451,7 @@ input.error {
   width: 100%;
   max-width: 1200px;
   height: 500px;
-  background-image: url(../img/image12.jpg);
+  background-image: url(../img/article/image12.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
@@ -3462,7 +3462,7 @@ input.error {
   width: 100%;
   max-width: 1200px;
   height: 500px;
-  background-image: url(../img/pexels-manuel-geissinger-325229.jpg);
+  background-image: url(../img/article/pexels-manuel-geissinger-325229.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
@@ -4382,7 +4382,7 @@ input.error {
 
   .main-title-section {
     height: 456px;
-    background-image: url(../img/bgmobail.jpg);
+    background-image: url(../img/content/bgmobail.jpg);
     background-size: cover;
     background-position: 100% 100%;
   }
@@ -5261,12 +5261,12 @@ input.error {
 .header-logo{background-image:url(../img/logo/dh.webp)}
 .menu-link::after{background-image:url("../img/icons/Vector1.svg")}
 .accordion-header::after{background-image:url("../img/icons/Vector1.svg")}
-.main-title-section{background-image:url(../img/bg1.webp)}
-.main-section-advantages{background-image:url(../img/bg2.webp)}
-.footer .footer-logo{background-image:url(../img/dhb.webp)}
+.main-title-section{background-image:url(../img/content/bg1.webp)}
+.main-section-advantages{background-image:url(../img/content/bg2.webp)}
+.footer .footer-logo{background-image:url(../img/logo/dhb.webp)}
 .accordion-header-services::after{background-image:url("../img/icons/btn-rotate.svg")}
-.article-img{background-image:url(../img/image12.webp)}
-.article-img2{background-image:url(../img/pexels-manuel-geissinger-325229.webp)}
+.article-img{background-image:url(../img/article/image12.webp)}
+.article-img2{background-image:url(../img/article/pexels-manuel-geissinger-325229.webp)}
 }
 
  @media (min-width: 421px){
@@ -5336,7 +5336,7 @@ input.error {
  @media (max-width: 420px){
 
 @supports (-webkit-appearance:none){
-.main-title-section{background-image:url(../img/bgmobail.webp)}
+.main-title-section{background-image:url(../img/content/bgmobail.webp)}
 }
 
 }
