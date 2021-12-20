@@ -3484,6 +3484,17 @@ input.error {
   margin-bottom: 2.14rem;
 }
 
+.container-img {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.container-img img {
+  width: 100%;
+  max-width: 635px;
+  height: auto;
+}
+
 .article-container-item {
   margin-bottom: 3.57rem;
 }
@@ -3501,6 +3512,10 @@ input.error {
 
 .article-container-item ul {
   margin-bottom: 1rem;
+}
+
+.article-container-item ul span {
+  font-weight: 700;
 }
 
 .article-container-item a {
@@ -5146,6 +5161,10 @@ input.error {
 
   .wrapper-partners .partners-form .partners-btn-send {
     width: 100%;
+  }
+
+  .article-container-item li {
+    margin-left: 0.5rem;
   }
 }
 
