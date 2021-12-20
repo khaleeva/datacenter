@@ -3503,6 +3503,11 @@ input.error {
   margin-bottom: 1rem;
 }
 
+.article-container-item p span {
+  font-weight: 700;
+}
+
+.article-container-item ol,
 .article-container-item ul,
 .article-container-item li,
 .article-container-item p {
@@ -3510,10 +3515,12 @@ input.error {
   line-height: 160%;
 }
 
+.article-container-item ol,
 .article-container-item ul {
   margin-bottom: 1rem;
 }
 
+.article-container-item ol span,
 .article-container-item ul span {
   font-weight: 700;
 }
@@ -3522,7 +3529,11 @@ input.error {
   text-decoration: underline;
 }
 
-.article-container-item li {
+.article-container-item ol li {
+  list-style-type: none;
+}
+
+.article-container-item ul li {
   list-style-type: disc;
   margin-left: 2rem;
   margin-top: 1rem;
@@ -5148,6 +5159,10 @@ input.error {
   .card-image-inner #img5 {
     max-width: 95px;
   }
+
+  .font {
+    font-size: 12px;
+  }
 }
 
 @media (max-width: 319px) {
@@ -5163,7 +5178,7 @@ input.error {
     width: 100%;
   }
 
-  .article-container-item li {
+  .article-container-item ul li {
     margin-left: 0.5rem;
   }
 }
