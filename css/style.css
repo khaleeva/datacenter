@@ -4825,15 +4825,12 @@ input.error {
   }
 
   .calc-form {
+    width: 100%;
     padding: 0 1.4rem;
   }
 
   .cost-calculation {
     padding: 0;
-  }
-
-  .cost-calculation-item {
-    width: 100%;
   }
 
   .dedic-header p:last-child {
@@ -5145,6 +5142,10 @@ input.error {
 
   .main-section-partners .section-partners-item #img-wildber {
     max-width: 103px;
+  }
+
+  .cost-calculation-item {
+    width: 100%;
   }
 
   .card-image-inner img {
