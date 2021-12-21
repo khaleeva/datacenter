@@ -720,7 +720,17 @@ main {
 }
 
 .main-section-services .section-services-content .section-services-item .services-item-link li {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 20px;
+  line-height: 120%;
   margin-bottom: 0.7rem;
+  cursor: pointer;
+  border-bottom: 1px solid #000000;
+  -webkit-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
 
 .main-section-services .section-services-content .section-services-item .services-item-link li a {
@@ -1509,6 +1519,7 @@ main {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  width: 100%;
   max-width: 417px;
   height: 52px;
   font-weight: 700;
@@ -3237,7 +3248,7 @@ input.error {
 
 .support-section {
   padding-top: 7.36rem;
-  padding-bottom: 22rem;
+  padding-bottom: 10rem;
 }
 
 .support-section .title-section {
@@ -3309,7 +3320,7 @@ input.error {
 
 .document-section {
   padding-top: 6rem;
-  padding-bottom: 26rem;
+  padding-bottom: 10rem;
 }
 
 .document-section-container {
@@ -3442,7 +3453,7 @@ input.error {
 
 .article-section {
   padding-top: 2.86rem;
-  padding-bottom: 14rem;
+  padding-bottom: 2rem;
 }
 
 .article-title {
@@ -3568,6 +3579,11 @@ input.error {
   }
 
   .main-section-services .section-services-content .section-services-item:hover .services-item-link a {
+    color: #FFFFFF;
+    border-color: #FFFFFF;
+  }
+
+  .main-section-services .section-services-content .section-services-item:hover .services-item-link li {
     color: #FFFFFF;
     border-color: #FFFFFF;
   }
@@ -4259,10 +4275,6 @@ input.error {
             order: -1;
   }
 
-  .document-section {
-    padding-bottom: 10rem;
-  }
-
   .document-container-item {
     max-width: 588px;
     padding: 1rem;
@@ -4321,10 +4333,6 @@ input.error {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-  }
-
-  .article-section {
-    padding-bottom: 8.7rem;
   }
 
   .article-title {
@@ -4412,6 +4420,11 @@ input.error {
     line-height: 120%;
     text-align: left;
     margin-bottom: 1.78rem;
+  }
+
+  .main-section-services .section-services-content .section-services-item .services-item-link li {
+    font-size: 16px;
+    text-align: left;
   }
 
   .main-section-services .section-services-content .section-services-item .services-item-link li a {
