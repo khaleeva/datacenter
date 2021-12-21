@@ -395,22 +395,27 @@ if(inputIp){
   inputIp.oninput = function() {
 
     let currentValue = 0;
-  
-    if(validateIpInput(inputIp.value)){
-      document.querySelector('.ip-span').classList.remove('active-span');
-      if(inputIp.value <= 1){
-        currentValue = 0;
-        ipValue = 0;
-        
-      } else {
-        currentValue = inputIp.value - 1;
-        ipValue = parseFloat((currentValue * costIp).toFixed(2));
-      }
+
+    if(inputIp.value <= 1){
+      currentValue = 0;
+      ipValue = 0;
+
+    } 
     
-      
-      calcValue();
+    
+    else {
+      currentValue = inputIp.value - 1;
+      ipValue = parseFloat((currentValue * costIp).toFixed(2));
+    }
+  
+  
+    calcValue();
+  
+    if(validateIpInput(inputIp.value) || inputIp.value == ""){
+      document.querySelector('.ip-error').classList.remove('active-error');
+     
     } else {
-      document.querySelector('.ip-span').classList.add('active-span');
+      document.querySelector('.ip-error').classList.add('active-error');
     }
   
     

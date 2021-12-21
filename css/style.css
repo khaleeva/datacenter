@@ -2563,12 +2563,14 @@ ymaps {
   border: 1px solid orange;
 }
 
-.input-container span {
+.input-container p {
   visibility: hidden;
   color: red;
+  padding: 0.5rem 0;
+  text-align: center;
 }
 
-.ip-span.active-span {
+.ip-error.active-error {
   visibility: visible;
 }
 
@@ -2591,7 +2593,7 @@ ymaps {
 }
 
 .checkbox-label {
-  width: 50%;
+  width: 5%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
