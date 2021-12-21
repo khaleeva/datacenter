@@ -121,8 +121,18 @@ const swipeBtn = document.querySelector(".swipe-line");
 
 const accordionBtns = document.querySelectorAll('.accordion-header-services');
 const accSection = document.querySelector('.colocation-services-accordion');
+const panels = document.querySelectorAll('.accordion-panel-services');
 let accordionFirst = document.getElementById('first-content'); 
-// let accordionFirstDedic = document.getElementById('first-content-dedic'); 
+const coloLinks = document.querySelectorAll('.item-link');
+const dedicLinks = document.querySelectorAll('.item-link-dedic');
+const otherLinks = document.querySelectorAll('.item-link-other');
+const softLink = document.querySelector('.item-link-soft');
+const tower = document.getElementById('tower');
+const rack = document.getElementById('rack');
+const server = document.getElementById('server');
+const domain = document.getElementById('domain');
+const ssl = document.getElementById('ssl');
+
 
  for (let accordionBtn of accordionBtns) {
    accordionBtn.addEventListener('click', function(){
@@ -140,14 +150,114 @@ let accordionFirst = document.getElementById('first-content');
       
      }
    });
+  
+}
 
-   window.onload = function() {
-     
+
+
+
+if(accordionFirst)
+{  
+
+  
+  window.onload = function() {
+    if(localStorage.length == 0){
       accordionFirst.style.maxHeight = accordionFirst.scrollHeight + 'px';
-      
     }
-   }
-       
+  }
+}
+
+if(softLink){
+  softLink.addEventListener('click', function(){
+    let hash = this.dataset.value;
+    localStorage.setItem('key', hash);
+    window.location.href = `software.html`;
+    
+  })
+}
+
+if(coloLinks){
+  for(let link of coloLinks){
+    link.addEventListener('click', function(){
+      let hash = this.dataset.value;
+      localStorage.setItem('key', hash);
+      window.location.href = `colocation.html`;
+      
+    })
+  
+  }
+}
+
+
+if(dedicLinks){
+  for (let dedicLink of dedicLinks){
+    dedicLink.addEventListener('click', function(){
+      let hash = this.dataset.value;
+      localStorage.setItem('key', hash);
+      window.location.href = `dedicated.html`;
+      
+    })
+  }
+}
+
+if(otherLinks){
+  for (let otherLink of otherLinks){
+    otherLink.addEventListener('click', function(){
+      let hash = this.dataset.value;
+      localStorage.setItem('key', hash);
+      window.location.href = `other.html`;
+      
+    })
+  }
+}
+
+
+  
+  
+  function maxLengthPanel (){
+   
+    var currentHash = localStorage.getItem('key');
+    console.log(currentHash);
+
+    
+    if(currentHash == 'tower')
+    { 
+      
+      tower.lastElementChild.style.maxHeight = tower.lastElementChild.scrollHeight + 'px';
+
+    }else if (currentHash == 'rack'){
+      rack.lastElementChild.style.maxHeight = rack.lastElementChild.scrollHeight + 'px';
+      // rack.style.maxHeight = rack.scrollHeight + 'px';
+    } else if (currentHash == 'unit'){
+      accordionFirst.style.maxHeight = accordionFirst.scrollHeight + 'px';
+    } else if (currentHash == 'dedic'){
+      accordionFirst.style.maxHeight = accordionFirst.scrollHeight + 'px';
+    } else if (currentHash == 'ddos'){
+      accordionFirst.style.maxHeight = accordionFirst.scrollHeight + 'px';
+    } else if (currentHash == 'domain'){
+      domain.lastElementChild.style.maxHeight = domain.lastElementChild.scrollHeight + 'px';
+    }else if (currentHash == 'ssl'){
+      ssl.lastElementChild.style.maxHeight = ssl.lastElementChild.scrollHeight + 'px';
+    } else if (currentHash == 'soft'){
+      accordionFirst.style.maxHeight = accordionFirst.scrollHeight + 'px';
+    }
+
+  
+  }
+
+  maxLengthPanel ();
+
+
+
+  
+
+
+
+
+   
+
+
+  
 
 ;
 const reviewLinks = document.querySelectorAll('.read-more-button');
