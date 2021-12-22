@@ -281,11 +281,13 @@ main {
 
 .header {
   width: 100%;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000;
+  z-index: 2000;
+  -webkit-box-shadow: 0 24px 22px -7px rgba(0, 0, 0, 0.03);
+          box-shadow: 0 24px 22px -7px rgba(0, 0, 0, 0.03);
   background-color: #FFFFFF;
 }
 
@@ -2028,7 +2030,7 @@ ymaps {
 }
 
 .section-wrapper {
-  padding-top: 4rem;
+  padding-top: 7rem;
   width: 100%;
 }
 
@@ -3684,13 +3686,6 @@ input.error {
 }
 
 @media (max-width: 1024px) {
-  .header {
-    -webkit-box-shadow: 0 24px 22px -7px rgba(0, 0, 0, 0.03);
-            box-shadow: 0 24px 22px -7px rgba(0, 0, 0, 0.03);
-    position: fixed;
-    z-index: 2000;
-  }
-
   .header-contact {
     display: none;
   }
