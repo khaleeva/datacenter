@@ -127,11 +127,11 @@ const coloLinks = document.querySelectorAll('.item-link');
 const dedicLinks = document.querySelectorAll('.item-link-dedic');
 const otherLinks = document.querySelectorAll('.item-link-other');
 const softLink = document.querySelector('.item-link-soft');
-const tower = document.getElementById('tower');
-const rack = document.getElementById('rack');
-const server = document.getElementById('server');
-const domain = document.getElementById('domain');
-const ssl = document.getElementById('ssl');
+const tower = document.getElementById('two');
+const rack = document.getElementById('one');
+const server = document.getElementById('three');
+const domain = document.getElementById('four');
+const ssl = document.getElementById('five');
 
 
  for (let accordionBtn of accordionBtns) {
@@ -154,25 +154,30 @@ const ssl = document.getElementById('ssl');
 }
 
 
-
-
-if(accordionFirst)
-{  
-
-  
-  window.onload = function() {
-    if(localStorage.length == 0){
-      accordionFirst.style.maxHeight = accordionFirst.scrollHeight + 'px';
-    }
+window.onload = function() {
+  if(localStorage.length > 0){
+    localStorage.clear();
+  } else {
+    accordionFirst.style.maxHeight = accordionFirst.scrollHeight + 'px';
   }
 }
+
+// if(accordionFirst){
+  
+//     window.onload = function() {
+//     if(localStorage.length == 0){
+//       accordionFirst.style.maxHeight = accordionFirst.scrollHeight + 'px';
+      
+//     }
+//   } 
+// } 
+   
 
 if(softLink){
   softLink.addEventListener('click', function(){
     let hash = this.dataset.value;
+    window.location.href = `software.html#${hash}`;
     localStorage.setItem('key', hash);
-    window.location.href = `software.html`;
-    
   })
 }
 
@@ -180,8 +185,8 @@ if(coloLinks){
   for(let link of coloLinks){
     link.addEventListener('click', function(){
       let hash = this.dataset.value;
+      window.location.href = `colocation.html#${hash}`;
       localStorage.setItem('key', hash);
-      window.location.href = `colocation.html`;
       
     })
   
@@ -193,8 +198,9 @@ if(dedicLinks){
   for (let dedicLink of dedicLinks){
     dedicLink.addEventListener('click', function(){
       let hash = this.dataset.value;
+      
+      window.location.href = `dedicated.html#${hash}`;
       localStorage.setItem('key', hash);
-      window.location.href = `dedicated.html`;
       
     })
   }
@@ -204,8 +210,10 @@ if(otherLinks){
   for (let otherLink of otherLinks){
     otherLink.addEventListener('click', function(){
       let hash = this.dataset.value;
-      localStorage.setItem('key', hash);
-      window.location.href = `other.html`;
+      window.location.href = `other.html#${hash}`;
+     
+        localStorage.setItem('key', hash);
+      
       
     })
   }
@@ -215,19 +223,14 @@ if(otherLinks){
   
   
   function maxLengthPanel (){
+
    
     var currentHash = localStorage.getItem('key');
     console.log(currentHash);
-
-    
     if(currentHash == 'tower')
-    { 
-      
-      tower.lastElementChild.style.maxHeight = tower.lastElementChild.scrollHeight + 'px';
-
+    { tower.lastElementChild.style.maxHeight = tower.lastElementChild.scrollHeight + 'px';
     }else if (currentHash == 'rack'){
       rack.lastElementChild.style.maxHeight = rack.lastElementChild.scrollHeight + 'px';
-      // rack.style.maxHeight = rack.scrollHeight + 'px';
     } else if (currentHash == 'unit'){
       accordionFirst.style.maxHeight = accordionFirst.scrollHeight + 'px';
     } else if (currentHash == 'dedic'){
