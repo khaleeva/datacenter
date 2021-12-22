@@ -2028,7 +2028,7 @@ ymaps {
 }
 
 .section-wrapper {
-  padding-top: 5rem;
+  padding-top: 4rem;
   width: 100%;
 }
 
@@ -3965,6 +3965,10 @@ input.error {
 
   .section-services h2 {
     font-size: 30px;
+  }
+
+  .section-wrapper {
+    padding-top: 5rem;
   }
 
   .accordion-section-services {
