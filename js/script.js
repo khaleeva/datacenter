@@ -154,23 +154,18 @@ const ssl = document.getElementById('five');
 }
 
 
-window.onload = function() {
-  if(localStorage.length > 0){
-    localStorage.clear();
-  } else {
-    accordionFirst.style.maxHeight = accordionFirst.scrollHeight + 'px';
-  }
-}
 
-// if(accordionFirst){
-  
-//     window.onload = function() {
-//     if(localStorage.length == 0){
-//       accordionFirst.style.maxHeight = accordionFirst.scrollHeight + 'px';
-      
-//     }
-//   } 
-// } 
+  window.onload = function() {
+    if(localStorage.length > 0){
+      localStorage.clear();
+    } else {
+      accordionFirst.style.maxHeight = accordionFirst.scrollHeight + 'px';
+    }
+  }
+
+
+
+
    
 
 if(softLink){
@@ -221,12 +216,15 @@ if(otherLinks){
 
 
   
-  
-  function maxLengthPanel (){
+
+  function maxLengthPanel (el){
+
+
+    let currentHash = localStorage.getItem('key');
+    
+    console.log(currentHash);
 
    
-    var currentHash = localStorage.getItem('key');
-    console.log(currentHash);
     if(currentHash == 'tower')
     { tower.lastElementChild.style.maxHeight = tower.lastElementChild.scrollHeight + 'px';
     }else if (currentHash == 'rack'){
@@ -244,11 +242,14 @@ if(otherLinks){
     } else if (currentHash == 'soft'){
       accordionFirst.style.maxHeight = accordionFirst.scrollHeight + 'px';
     }
+   
+    
+   
 
   
   }
 
-  maxLengthPanel ();
+  maxLengthPanel (tower, accordionFirst, domain, ssl);
 
 
 
