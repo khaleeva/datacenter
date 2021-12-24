@@ -4802,10 +4802,6 @@ input.error {
     padding: 0 1.4rem;
   }
 
-  .dedic-btn {
-    display: none;
-  }
-
   .dedic-panel {
     display: -webkit-box;
     display: -ms-flexbox;
