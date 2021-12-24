@@ -154,7 +154,7 @@ const ssl = document.getElementById('five');
 }
 
 
-
+if(accordionFirst){
   window.onload = function() {
     if(localStorage.length > 0){
       localStorage.clear();
@@ -162,6 +162,9 @@ const ssl = document.getElementById('five');
       accordionFirst.style.maxHeight = accordionFirst.scrollHeight + 'px';
     }
   }
+}
+
+ 
 
 
 
