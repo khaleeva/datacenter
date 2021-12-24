@@ -154,15 +154,15 @@ const ssl = document.getElementById('five');
 }
 
 
-if(accordionFirst){
-  window.onload = function() {
+
+  window.onload = function(accordionFirst) {
     if(localStorage.length > 0){
       localStorage.clear();
     } else {
       accordionFirst.style.maxHeight = accordionFirst.scrollHeight + 'px';
     }
   }
-}
+
 
  
 
