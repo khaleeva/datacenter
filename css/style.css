@@ -1,7 +1,7 @@
 @font-face {
   font-family: "futura-pt";
   font-display: swap;
-  src: url("../fonts/futura-pt.woff") format("woff"), url("../fonts/futura-pt-bold.woff2") format("woff2");
+  src: url("../fonts/futura-pt-bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
 }
@@ -9,7 +9,7 @@
 @font-face {
   font-family: "futura-pt";
   font-display: swap;
-  src: url("../fonts/futura-pt.woff") format("woff"), url("../fonts/futura-pt-book.woff2") format("woff2");
+  src: url("../fonts/futura-pt-book.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
 }
@@ -723,7 +723,6 @@ main {
 .main-section-services .section-services-content .section-services-item .services-item-title {
   font-size: 30px;
   font-weight: 700;
-  margin-bottom: 2.1rem;
 }
 
 .main-section-services .section-services-content .section-services-item .services-item-link li {
@@ -732,16 +731,12 @@ main {
   width: fit-content;
   font-size: 20px;
   line-height: 120%;
-  margin-bottom: 0.7rem;
-  cursor: pointer;
-  border-bottom: 1px solid #000000;
-  -webkit-transition: all 0.3s linear;
-  -o-transition: all 0.3s linear;
-  transition: all 0.3s linear;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  padding-top: 1.1rem;
+  padding-bottom: 0.7rem;
+}
+
+.main-section-services .section-services-content .section-services-item .services-item-link li:first-child {
+  padding-top: 1.1rem;
 }
 
 .main-section-services .section-services-content .section-services-item .services-item-link li a {
@@ -752,6 +747,11 @@ main {
   -webkit-transition: all 0.3s linear;
   -o-transition: all 0.3s linear;
   transition: all 0.3s linear;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
 }
 
 .title-mob {
@@ -1898,6 +1898,36 @@ main {
   overflow: hidden;
 }
 
+.container-fluid {
+  width: 100%;
+  height: 521px;
+  background-image: url(../img/content/map.png);
+  background-size: cover;
+  background-position: center center;
+  z-index: 2000;
+  cursor: pointer;
+}
+
+.container-fluid-two {
+  width: 100%;
+  height: 521px;
+  background-image: url(../img/content/map2.png);
+  background-size: cover;
+  background-position: center center;
+  z-index: 2000;
+  cursor: pointer;
+}
+
+.container-fluid-three {
+  width: 100%;
+  height: 521px;
+  background-image: url(../img/content/map3.png);
+  background-size: cover;
+  background-position: center center;
+  z-index: 2000;
+  cursor: pointer;
+}
+
 ymaps {
   border-radius: 20px;
 }
@@ -2703,6 +2733,10 @@ ymaps {
 
 .dedic-header::after {
   display: none;
+}
+
+.btn-services {
+  margin-top: 2rem;
 }
 
 .services-card-section {
@@ -3969,6 +4003,7 @@ input.error {
             align-items: center;
     row-gap: 1.4rem;
     font-size: 16px;
+    margin-top: 2rem;
   }
 
   .order-btn {
@@ -4862,26 +4897,15 @@ input.error {
     padding: 0px 1.4rem 1.4rem;
   }
 
-  .card-price .card-price-btn {
-    width: 70px;
-    -ms-flex-item-align: end;
-        align-self: flex-end;
-    background-image: -webkit-gradient(linear, left top, right top, from(#EA5C2F), to(#F3B921));
-    background-image: -o-linear-gradient(left, #EA5C2F 0%, #F3B921 100%);
-    background-image: linear-gradient(90deg, #EA5C2F 0%, #F3B921 100%);
-    color: #FFFFFF;
-    font-weight: 700;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    padding: 0.7rem;
+  .card-price-btn {
+    width: 100%;
+    max-width: 90px;
+    height: 35px;
     border-radius: 10px;
+  }
+
+  .card-price-btn span {
+    font-size: 16px;
   }
 
   .other-table .table-head-name {
@@ -5196,6 +5220,9 @@ input.error {
 .main-title-section{background-image:url(../img/content/bg1.webp)}
 .main-section-advantages{background-image:url(../img/content/bg2.webp)}
 .footer .footer-logo{background-image:url(../img/logo/dhb.webp)}
+.container-fluid{background-image:url(../img/content/map.webp)}
+.container-fluid-two{background-image:url(../img/content/map2.webp)}
+.container-fluid-three{background-image:url(../img/content/map3.webp)}
 .accordion-header-services::after{background-image:url("../img/icons/btn-rotate.svg")}
 .article-img{background-image:url(../img/article/image12.webp)}
 .article-img2{background-image:url(../img/article/pexels-manuel-geissinger-325229.webp)}
