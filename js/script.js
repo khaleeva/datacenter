@@ -119,14 +119,143 @@ const swipeBtn = document.querySelector(".swipe-line");
 
 ;
 
+
+  
+// const accordionBtns = document.querySelectorAll('.accordion-header-services');
+// const accSection = document.querySelector('.colocation-services-accordion');
+// const panels = document.querySelectorAll('.accordion-panel-services');
+// let accordionFirst = document.getElementById('first-content'); 
+// const coloLinks = document.querySelectorAll('.item-link');
+// const dedicLinks = document.querySelectorAll('.item-link-dedic');
+// const otherLinks = document.querySelectorAll('.item-link-other');
+// const softLink = document.querySelector('.item-link-soft');
+// const tower = document.getElementById('two');
+// const rack = document.getElementById('one');
+// const server = document.getElementById('three');
+// const domain = document.getElementById('four');
+// const ssl = document.getElementById('five');
+
+
+//  for (let accordionBtn of accordionBtns) {
+//    accordionBtn.addEventListener('click', function(){
+     
+//      let accordionContent = this.nextElementSibling;
+//      if (accordionContent.style.maxHeight) {
+//     accordionContent.style.maxHeight = null;
+//     accSection.style.minHeight = 96 + 'px';
+ 
+    
+//      } else {
+//        accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+//        accSection.style.minHeight = accordionContent.scrollHeight + 'px';
+       
+      
+//      }
+//    });
+  
+// }
+
+
+// if(accordionFirst){
+//   window.onload = function() {
+//     if(localStorage.length > 0){
+//       localStorage.clear();
+//     } else {
+//       accordionFirst.style.maxHeight = accordionFirst.scrollHeight + 'px';
+//     }
+//   }
+// }
+
+ 
+
+// if(softLink){
+//   softLink.addEventListener('click', function(){
+//     let hash = this.dataset.value;
+//     window.location.href = `software.html#${hash}`;
+//     localStorage.setItem('key', hash);
+//   })
+// }
+
+// if(coloLinks){
+//   for(let link of coloLinks){
+//     link.addEventListener('click', function(){
+//       let hash = this.dataset.value;
+//       window.location.href = `colocation.html#${hash}`;
+//       localStorage.setItem('key', hash);
+      
+//     })
+  
+//   }
+// }
+
+
+// if(dedicLinks){
+//   for (let dedicLink of dedicLinks){
+//     dedicLink.addEventListener('click', function(){
+//       let hash = this.dataset.value;
+      
+//       window.location.href = `dedicated.html#${hash}`;
+//       localStorage.setItem('key', hash);
+      
+//     })
+//   }
+// }
+
+// if(otherLinks){
+//   for (let otherLink of otherLinks){
+//     otherLink.addEventListener('click', function(){
+//       let hash = this.dataset.value;
+//       window.location.href = `other.html#${hash}`;
+     
+//         localStorage.setItem('key', hash);
+      
+      
+//     })
+//   }
+// }
+
+
+  
+  
+//   function maxLengthPanel (){
+
+//     var currentHash = localStorage.getItem('key');
+//     console.log(currentHash);
+
+   
+//     if(currentHash == 'tower')
+//     { tower.lastElementChild.style.maxHeight = tower.lastElementChild.scrollHeight + 'px';
+//     }else if (currentHash == 'rack'){
+//       rack.lastElementChild.style.maxHeight = rack.lastElementChild.scrollHeight + 'px';
+//     } else if (currentHash == 'unit'){
+//       accordionFirst.style.maxHeight = accordionFirst.scrollHeight + 'px';
+//     } else if (currentHash == 'dedic'){
+//       accordionFirst.style.maxHeight = accordionFirst.scrollHeight + 'px';
+//     } else if (currentHash == 'ddos'){
+//       accordionFirst.style.maxHeight = accordionFirst.scrollHeight + 'px';
+//     } else if (currentHash == 'domain'){
+//       domain.lastElementChild.style.maxHeight = domain.lastElementChild.scrollHeight + 'px';
+//     }else if (currentHash == 'ssl'){
+//       ssl.lastElementChild.style.maxHeight = ssl.lastElementChild.scrollHeight + 'px';
+//     } else if (currentHash == 'soft'){
+//       accordionFirst.style.maxHeight = accordionFirst.scrollHeight + 'px';
+//     }
+   
+    
+   
+
+  
+//   }
+
+//   maxLengthPanel ();
+
+
+
 const accordionBtns = document.querySelectorAll('.accordion-header-services');
 const accSection = document.querySelector('.colocation-services-accordion');
 const panels = document.querySelectorAll('.accordion-panel-services');
 let accordionFirst = document.getElementById('first-content'); 
-const coloLinks = document.querySelectorAll('.item-link');
-const dedicLinks = document.querySelectorAll('.item-link-dedic');
-const otherLinks = document.querySelectorAll('.item-link-other');
-const softLink = document.querySelector('.item-link-soft');
+const links = document.querySelectorAll('.item-link');
 const tower = document.getElementById('two');
 const rack = document.getElementById('one');
 const server = document.getElementById('three');
@@ -154,36 +283,25 @@ const ssl = document.getElementById('five');
 }
 
 
-
-  window.onload = function(accordionFirst) {
+if(accordionFirst){
+  window.onload = function() {
     if(localStorage.length > 0){
       localStorage.clear();
     } else {
       accordionFirst.style.maxHeight = accordionFirst.scrollHeight + 'px';
     }
   }
-
+}
 
  
 
 
 
-
-   
-
-if(softLink){
-  softLink.addEventListener('click', function(){
-    let hash = this.dataset.value;
-    window.location.href = `software.html#${hash}`;
-    localStorage.setItem('key', hash);
-  })
-}
-
-if(coloLinks){
-  for(let link of coloLinks){
+if(links){
+  for(let link of links){
     link.addEventListener('click', function(){
       let hash = this.dataset.value;
-      window.location.href = `colocation.html#${hash}`;
+      
       localStorage.setItem('key', hash);
       
     })
@@ -192,41 +310,14 @@ if(coloLinks){
 }
 
 
-if(dedicLinks){
-  for (let dedicLink of dedicLinks){
-    dedicLink.addEventListener('click', function(){
-      let hash = this.dataset.value;
-      
-      window.location.href = `dedicated.html#${hash}`;
-      localStorage.setItem('key', hash);
-      
-    })
-  }
-}
 
-if(otherLinks){
-  for (let otherLink of otherLinks){
-    otherLink.addEventListener('click', function(){
-      let hash = this.dataset.value;
-      window.location.href = `other.html#${hash}`;
-     
-        localStorage.setItem('key', hash);
-      
-      
-    })
-  }
-}
 
 
   
+  
+  function maxLengthPanel (){
 
-  function maxLengthPanel (el){
-
-
-    let currentHash = localStorage.getItem('key');
-    
-    console.log(currentHash);
-
+    var currentHash = localStorage.getItem('key');
    
     if(currentHash == 'tower')
     { tower.lastElementChild.style.maxHeight = tower.lastElementChild.scrollHeight + 'px';
@@ -252,13 +343,7 @@ if(otherLinks){
   
   }
 
-  maxLengthPanel (tower, accordionFirst, domain, ssl);
-
-
-
-  
-
-
+  maxLengthPanel ();
 
 
    
@@ -963,7 +1048,39 @@ swipeFormLine.addEventListener('click', function(){
 
 
 ;
+let map_containers = document.querySelectorAll('.map_container');
+// console.log(map_containers);
+let options_map = {
+    once: true,
+    passive: true,
+    capture: true
+};
 
+if(map_containers){
+ for (let map_container of map_containers){
+    map_container.addEventListener('click', start_lazy_map, options_map);
+map_container.addEventListener('mouseover', start_lazy_map, options_map);
+map_container.addEventListener('touchstart', start_lazy_map, options_map);
+map_container.addEventListener('touchmove', start_lazy_map, options_map);   
+}
+
+}
+
+
+let map_loaded = false;
+function start_lazy_map() {
+    if (!map_loaded) {
+        let map_blocks = document.querySelectorAll('.ymap_lazy');
+        for(let map_block of map_blocks){
+            map_loaded = true;
+            map_block.setAttribute('src', map_block.getAttribute('data-src'));
+            map_block.removeAttribute('data-src');
+        }
+        
+            
+        // console.log('YMAP LOADED');
+    }
+};
 
 
 
