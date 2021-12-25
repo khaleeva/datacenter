@@ -4664,6 +4664,18 @@ input.error {
     height: 340px;
   }
 
+  .container-fluid {
+    background-position-y: -100px;
+  }
+
+  .container-fluid-two {
+    background-position-y: -100px;
+  }
+
+  .container-fluid-three {
+    background-position-y: -100px;
+  }
+
   .map {
     height: 356px;
   }
