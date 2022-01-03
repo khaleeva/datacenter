@@ -315,10 +315,21 @@ main {
   display: block;
   width: 114px;
   height: 51px;
-  background-image: url(../img/logo/dh.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header-logo img {
+  width: 100%;
+  max-width: 114px;
+  height: auto;
 }
 
 .menu-list > li {
@@ -1043,13 +1054,13 @@ main {
   color: white;
 }
 
-.main-section-review .section-review .section-review-item h5 {
+.main-section-review .section-review .section-review-item h3 {
   font-size: 16px;
   font-weight: 700;
   line-height: 120%;
 }
 
-.main-section-review .section-review .section-review-item h6 {
+.main-section-review .section-review .section-review-item h4 {
   margin-top: 0.2rem;
   margin-bottom: 1.4rem;
   line-height: 120%;
@@ -1651,7 +1662,7 @@ main {
           justify-content: space-between;
 }
 
-.section-contacts-container h5 {
+.section-contacts-container h3 {
   margin-top: 3.9rem;
   font-size: 30px;
   font-weight: 700;
@@ -1808,7 +1819,7 @@ main {
   background: #F8F8F8;
 }
 
-.section-contacts-support-mob h5 {
+.section-contacts-support-mob h3 {
   font-size: 30px;
   font-weight: 700;
   line-height: 120%;
@@ -1884,7 +1895,7 @@ main {
           align-items: center;
 }
 
-.map-section-container h3 {
+.map-section-container h4 {
   text-align: center;
   font-weight: 700;
   font-size: 30px;
@@ -1981,7 +1992,7 @@ ymaps {
           justify-content: space-between;
 }
 
-.section-advices .section-advices-item .section-advices-inner h5 {
+.section-advices .section-advices-item .section-advices-inner h3 {
   font-size: 24px;
   font-weight: 700;
   line-height: 120%;
@@ -2092,7 +2103,7 @@ ymaps {
   margin-left: 1.4rem;
 }
 
-.accordion-panel-services h5 {
+.accordion-panel-services h3 {
   margin-top: 2rem;
   font-size: 20px;
   font-weight: 700;
@@ -2872,7 +2883,7 @@ ymaps {
   font-weight: 700;
 }
 
-.partners-container-item h5 {
+.partners-container-item h3 {
   margin-top: 3.57rem;
   margin-bottom: 2rem;
   font-size: 24px;
@@ -3231,7 +3242,7 @@ input.error {
   padding: 27px 41px 49px 41px;
 }
 
-.card-inner h5 {
+.card-inner h4 {
   font-weight: 700;
   font-size: 24px;
   line-height: 120%;
@@ -3546,14 +3557,14 @@ input.error {
   margin-top: 1rem;
 }
 
-.article-container-item h5 {
+.article-container-item h3 {
   font-weight: 700;
   font-size: 24px;
   line-height: 160%;
   margin-bottom: 1.43rem;
 }
 
-.article-container-item h6 {
+.article-container-item h4 {
   font-weight: 700;
   font-size: 18px;
   line-height: 160%;
@@ -4655,7 +4666,7 @@ input.error {
     margin-bottom: 2.6rem;
   }
 
-  .map-section-container h3 {
+  .map-section-container h4 {
     font-size: 18px;
     padding: 1.2rem 2rem;
   }
@@ -4691,7 +4702,7 @@ input.error {
     padding: 30px 28px 30px 19px;
   }
 
-  .section-advices .section-advices-item .section-advices-inner h5 {
+  .section-advices .section-advices-item .section-advices-inner h3 {
     font-size: 18px;
   }
 
@@ -4723,7 +4734,7 @@ input.error {
     padding: 0.7rem 1.4rem 0;
   }
 
-  .accordion-panel-services h5 {
+  .accordion-panel-services h3 {
     padding: 0.7rem 1.4rem 0;
   }
 
@@ -5032,7 +5043,7 @@ input.error {
     font-size: 24px;
   }
 
-  .card-inner h5 {
+  .card-inner h4 {
     font-size: 18px;
   }
 
@@ -5226,7 +5237,6 @@ input.error {
   }
 }
 @supports (-webkit-appearance:none){
-.header-logo{background-image:url(../img/logo/dh.webp)}
 .menu-link::after{background-image:url("../img/icons/Vector1.svg")}
 .accordion-header::after{background-image:url("../img/icons/Vector1.svg")}
 .main-title-section{background-image:url(../img/content/bg1.webp)}
