@@ -2007,7 +2007,7 @@ ymaps {
   text-align: start;
 }
 
-.read-more-button {
+.read-button {
   cursor: pointer;
   display: inline-block;
   font-size: 18px;
@@ -4713,7 +4713,7 @@ input.error {
     line-height: 160%;
   }
 
-  .read-more-button {
+  .read-button {
     font-size: 18px;
   }
 
