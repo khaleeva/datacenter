@@ -1,4 +1,4 @@
-let project_folder = require('path').basename(__dirname);
+let project_folder = 'datahata';
 let source_folder = "#src";
 
 
@@ -53,10 +53,10 @@ let ttf2woff2 = require('gulp-ttf2woff2');
 const ghPages = require('gulp-gh-pages');
 
 gulp.task('deploy', function() {
-    return gulp.src('./datacenter-project/**/*')
+    return gulp.src('./datahata/**/*')
         .pipe(ghPages({
             branch: 'gh-pages',
-            remoteUrl: 'https://github.com/khaleeva/datahata.git',
+            remoteUrl: 'https://github.com/khaleeva/datacenter.git',
             push: true,
             message: 'Deployed to Github Pages'
         }));
