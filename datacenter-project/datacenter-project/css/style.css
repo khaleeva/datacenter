@@ -550,7 +550,7 @@ h4 {
 .swipe-menu__navigation .horizontal-line {
   width: 100%;
   height: 1px;
-  background-color: #eeeeee;
+  background-color: rgb(238, 238, 238);
   margin: 10px 0;
 }
 
@@ -1041,7 +1041,7 @@ h4 {
 .horizontal-line {
   width: 100%;
   height: 1px;
-  background-color: #eeeeee;
+  background-color: rgb(238, 238, 238);
   margin: 10px 0;
 }
 
@@ -2373,7 +2373,7 @@ ymaps {
           justify-content: space-between;
   max-width: 768px;
   min-height: 462px;
-  background-color: #ffff;
+  background-color: white;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -2900,7 +2900,7 @@ ymaps {
   left: 0;
   width: 100%;
   height: 100%;
-  background: white url("../img/louder/Ellipsis-1s-200px.gif") center/100px no-repeat;
+  background: rgb(255, 255, 255) url("../img/louder/Ellipsis-1s-200px.gif") center/100px no-repeat;
   opacity: 0;
   visibility: hidden;
 }
@@ -3255,7 +3255,7 @@ ymaps {
   left: 0;
   width: 100%;
   height: 100%;
-  background: white url("../img/louder/Ellipsis-1s-200px.gif") center/100px no-repeat;
+  background: rgb(255, 255, 255) url("../img/louder/Ellipsis-1s-200px.gif") center/100px no-repeat;
   opacity: 0;
   visibility: hidden;
   border-radius: 20px;
@@ -3465,7 +3465,7 @@ ymaps {
           justify-content: space-between;
   width: 418px;
   max-height: 594px;
-  background-color: #ffff;
+  background-color: white;
   position: absolute;
   left: 50%;
   top: 35%;
@@ -5053,7 +5053,7 @@ input.error {
   }
 
   .form-other-container::after {
-    background: white url("../img/louder/Ellipsis-1s-200px.gif") 50% 20%/100px no-repeat;
+    background: rgb(255, 255, 255) url("../img/louder/Ellipsis-1s-200px.gif") 50% 20%/100px no-repeat;
   }
 }
 
@@ -5894,8 +5894,8 @@ input.error {
 .container-fluid-two{background-image:url(../img/map/map2.webp)}
 .container-fluid-three{background-image:url(../img/map/map3.webp)}
 .accordion-header-services::after{background-image:url("../img/icons/btn-rotate.svg")}
-.dedicated-table .order-form::after{background:white url("../img/louder/Ellipsis-1s-200px.gif") center/100px no-repeat}
-.form-other-container::after{background:white url("../img/louder/Ellipsis-1s-200px.gif") center/100px no-repeat}
+.dedicated-table .order-form::after{background:rgb(255, 255, 255) url("../img/louder/Ellipsis-1s-200px.gif") center/100px no-repeat}
+.form-other-container::after{background:rgb(255, 255, 255) url("../img/louder/Ellipsis-1s-200px.gif") center/100px no-repeat}
 .error-main{background-image:url(../img/404/star.webp)}
 }
 
@@ -6006,7 +6006,7 @@ input.error {
  @media (max-width: 500px){
 
 @supports (-webkit-appearance:none){
-.form-other-container::after{background:white url("../img/louder/Ellipsis-1s-200px.gif") 50% 20%/100px no-repeat}
+.form-other-container::after{background:rgb(255, 255, 255) url("../img/louder/Ellipsis-1s-200px.gif") 50% 20%/100px no-repeat}
 }
 
 }
