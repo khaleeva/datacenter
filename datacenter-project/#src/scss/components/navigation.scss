@@ -1,0 +1,133 @@
+.navigation{
+  display: flex;
+  align-items: center;
+
+  @media (max-width: 1023px) {
+    display: none;
+  }
+
+  & >*  {
+    padding: 40px 0;
+    position: relative;
+    margin-left: 30px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    @media (max-width: 1024px) {
+      margin-left: 15px;
+    }
+  }
+
+  @include hover {
+    & > li:hover .navigation__menu-sub {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translate(0px, 0px);
+    }
+  }
+
+
+}
+
+.navigation__menu {
+  color: $color-dark;
+  cursor: pointer;
+  @include font-style($size: 1.6rem, $weight: 400);
+
+  @media (max-width: 1200px) {
+    @include font-style($size: 1.4rem, $weight: 400);
+  }
+
+  @include hover {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &::after {
+    content: "";
+    background-image: url("../img/icons/Vector1.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 16px;
+    width: 16px;
+    margin-left: 5px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+.navigation__menu-sub{
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  min-width: 147px;
+  padding: 15px 25px 19px 19px;
+  transform: translate(0px, 10%);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  @extend %transition;
+
+
+  @media (max-width: 1024px) {
+    min-width: 100px;
+  }
+
+  li {
+    margin-bottom: 15px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &_contact {
+    li {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.menu-sub__link{
+  color: $color-dark;
+
+  @include hover {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.navigation__title{
+  //text-align: justify;
+}
+
+
+.link-contact{
+  color: $color-dark;
+  text-decoration: none!important;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  &_color{
+    background: linear-gradient(90deg, #ea5c2f 0%, #f3b921 100%);
+    background-clip: text;
+    color: transparent;
+  }
+
+
+}
+
+.horizontal-line {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(238, 238, 238, 1);
+  margin: 10px 0;
+}

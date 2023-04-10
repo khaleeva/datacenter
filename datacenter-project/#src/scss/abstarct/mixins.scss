@@ -1,0 +1,57 @@
+@mixin font($font_name, $file_name, $weight, $style) {
+  @font-face {
+    font-family: $font_name;
+    font-display: swap;
+    src: url("../fonts/#{$file_name}.woff2") format("woff2");
+    font-weight: #{$weight};
+    font-style: #{$style};
+  }
+}
+
+@mixin font-style($style: normal, $weight: 700, $size, $height: 120%){
+  font-style: $style;
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $height;
+}
+
+//@mixin button-border () {
+//  //border: 1px double transparent;
+//  //background: linear-gradient(0deg, $color-gradient-primary 0%, $color-gradient-secondary 100%);
+//  //box-shadow: inset 0 0 0 100vw $color-light;
+//  //display: inline-block;
+//  //border-radius: 16px;
+//
+//  @extend %gradient-border;
+//
+//  span {
+//    @extend %gradient-text;
+//    font-size: 1.6rem;
+//    font-weight: 700;
+//
+//    &:hover {
+//      @extend %transparent-bg;
+//      transition: all 0.1s linear;
+//
+//    }
+//  }
+//
+//  &:hover {
+//    @extend %gradient-bg;
+//    transition: all 0.1s linear;
+//    box-shadow: none;
+//  }
+//
+//  &:hover span {
+//    color: $color-light;
+//  }
+//}
+
+
+@mixin hover {
+  @media (hover:hover) {
+    @content;
+  }
+}
+
+

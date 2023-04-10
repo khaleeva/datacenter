@@ -1,0 +1,111 @@
+// REVIEW SECTION
+
+.review {
+    padding: 7rem 0 7.5rem;
+    overflow: auto;
+
+    .review__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .review__title{
+        text-align: center;
+    }
+
+    .review__content{
+        width: 100%;
+        margin: 3.8rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.7rem;
+
+        @media (max-width: 1023px) {
+            display: flex;
+            flex-direction: column;
+;            align-items: center;
+        }
+
+        @media (max-width: 420px) {
+            gap: 2rem;
+        }
+
+        .review__card {
+            width: 100%;
+            max-width: 588px;
+            min-height: 315px;
+            position: relative;
+
+            @media (max-width: 420px) {
+                min-height: 365px;
+                padding: 28px 37px 33px 24px;
+            }
+
+            .review__card-inner {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                @extend %border-shadow;
+                min-height: 315px;
+                padding: 34px 35px 33px 34px;
+                @extend %transition;
+
+                &_active{
+                    @extend %bg-color-primary;
+                    z-index: 1000;
+                    min-height: 100%;
+                    color: white;
+
+                }
+            }
+
+            .card-inner__title{
+                @include font-style($size: 1.6rem);
+            }
+
+            p {
+                margin-top: 0.2rem;
+                margin-bottom: 1.4rem;
+            }
+        }
+    }
+}
+
+.limiter {
+    max-height: 145px;
+    overflow: hidden;
+    @include font-style($size: 1.8rem, $height: 160%, $weight: 400);
+
+    @media (max-width: 420px) {
+        max-height: 182px;
+        @include font-style($size: 1.6rem, $height: 160%, $weight: 400);
+    }
+}
+
+.limiter.active-limiter {
+    max-height: 100%;
+  
+}
+
+.read-more-button {
+    cursor: pointer;
+    display: inline-block;
+    @include font-style($size: 1.8rem);
+    color: $color-primary;
+    margin-top: 2rem;
+    @media (max-width: 420px) {
+        @include font-style($size: 1.6rem);
+    }
+}
+
+.read-more-button.active {
+    color: white;
+}
+
+.review__button{
+    margin-top: 4rem;
+}
+

@@ -1,0 +1,102 @@
+// SERVICES SECTION
+.all-services {
+    padding-top: 8.5rem;
+
+    @media (max-width: 420px) {
+        padding-top: 3.5rem;
+    }
+}
+
+.all-services__container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+    .all-services__title {
+        margin-bottom: 4rem;
+    }
+
+    .all-services__content {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 0.5fr 1fr;
+        column-gap: 1.7rem;
+        row-gap: 1.7rem;
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr  1fr 0.5fr 0.5fr 1fr 1fr;
+            row-gap: 0.7rem;
+            justify-items: center;
+        }
+
+        .service-card{
+            width: 100%;
+            padding: 35px 45px 40px;
+            cursor: pointer;
+
+            @media (max-width: 768px) {
+                padding: 25px 24px 30px;
+            }
+
+            @media (min-width: 769px) {
+
+                @include hover{
+                    &:hover {
+                        background: $color-primary;
+                        box-shadow: 0 34px 74px rgba(62, 119, 187, 0.3);
+                        color: $color-light;
+                    }
+
+                    &:hover .service-card__link a {
+                        color: $color-light;
+                        border-color: $color-light;
+                    }
+
+                    &:hover .service-card__link li {
+                        color: $color-light;
+                        border-color: $color-light;
+                    }
+                }
+
+            }
+            //
+            //.services-item-title {
+            //    //font-size: $font30;
+            //    //font-weight: 700;
+            //
+            //    @media (max-width: 420px) {
+            //        font-size: 2.4rem;
+            //        line-height: 120%;
+            //        text-align: left;
+            //        margin-bottom: 1.78rem;
+            //    }
+            //}
+
+            .service-card__link {
+                li {
+                    width: fit-content;
+                    padding-top: 1.1rem;
+                    padding-bottom: 0.7rem;
+                    &:first-child {
+                        padding-top: 1.1rem;
+                    }
+
+                    a {
+                        color: $color-dark;
+                        @include font-style($size: 2rem, $weight: 400);
+                        border-bottom: 1px solid $color-dark;
+                        user-select: none;
+                        @media (max-width: 420px) {
+                            @include font-style($size: 1.6rem, $weight: 400);
+                            text-align: left;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+

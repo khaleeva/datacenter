@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "gulp-ttf2woff": "^1.1.1",
+    "gulp-ttf2woff2": "^4.0.1",
+    "gulp-webp-css": "^1.1.0",
+    "gulp-webp-html": "^1.0.2",
+    "imagemin-webp": "^6.0.0"
+  },
+  "devDependencies": {
+    "gulp-gh-pages": "^0.5.4",
+    "gulp-webp": "^4.0.1"
+  }
+}

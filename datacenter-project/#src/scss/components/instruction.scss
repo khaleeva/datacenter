@@ -1,0 +1,65 @@
+.section-instruction-container {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 9rem;
+
+    @media (max-width: 1024px) {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    h1 {
+        text-align: left;
+
+        @media (max-width: 1024px) {
+            text-align: center;
+        }
+
+        @media (max-width: 420px) {
+            font-size: 2.4rem;
+        }
+    }
+}
+
+.instruction-container-item {
+    flex-basis: 50%;
+    img {
+        width: 100%;
+        max-width: 486px;
+        height: auto;
+    }
+}
+
+.inner-text {
+    font-weight: 700;
+    font-size: 2.4rem;
+    line-height: 120%;
+    margin-top: 2.9rem;
+
+    @media (max-width: 420px) {
+        font-size: 1.6rem;
+    }
+}
+
+.inner-list {
+    margin-top: 2rem;
+    padding-left: 2rem;
+
+    li {
+        margin-bottom: 1rem;
+        font-size: 1.8rem;
+        line-height: 160%;
+        list-style-type: disc;
+
+        a {
+            color: $color-dark;
+            text-decoration: underline;
+            cursor: pointer;
+            font-weight: 700;
+        }
+
+        @media (max-width: 420px) {
+            font-size: 1.6rem;
+        }
+    }
+}

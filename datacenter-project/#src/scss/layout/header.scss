@@ -1,0 +1,43 @@
+//HEADER
+
+.header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2000;
+    box-shadow: 0 24px 22px -7px rgba(0, 0, 0, 0.03);
+    background-color: $color-light;
+    @media (max-width: 420px) {
+        min-height: 60px;
+    }
+}
+
+.header-container {
+    max-width: 1470px;
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 75px;
+
+    @media (max-width: 420px) {
+        height: 60px;
+    }
+}
+
+.header-button{
+    @media (max-width: 1023px) {
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+
+

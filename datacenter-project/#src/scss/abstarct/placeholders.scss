@@ -1,0 +1,54 @@
+%transition {
+  transition: all 0.3s ease 0s;
+}
+
+
+
+
+//тень блоков
+%border-shadow {
+  background: $color-light;
+  box-shadow: 0 24px 74px rgba(0, 0, 0, 0.07);
+  border-radius: 20px;
+}
+
+
+
+//градиентный бэкграунд элементов
+
+%bg-color-primary {
+  background: $color-primary;
+  box-shadow: 0 34px 74px rgba(62, 119, 187, 0.3);
+  color: $color-light;
+}
+
+//градиент бордера кнопок
+
+%gradient-border {
+  border: double 1px transparent;
+  border-radius: 16px;
+  background-image: linear-gradient(white, white), radial-gradient(circle at left bottom, #ea5c2f, #f3b921);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+
+//градиентный бэкграунд кнопок
+
+%gradient-bg {
+  background: linear-gradient(90deg, #ea5c2f 0%, #f3b921 100%);
+}
+
+//градиент текста кнопок
+
+%gradient-text{
+  background: linear-gradient(90deg, #ea5c2f 0%, #f3b921 100%);
+  background-clip: text;
+  color: transparent;
+}
+
+//прозрачный бэкграунд
+
+%transparent-bg {
+  background: transparent;
+  color: #fff;
+}

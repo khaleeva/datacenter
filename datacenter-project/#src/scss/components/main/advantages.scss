@@ -1,0 +1,137 @@
+// ADVANTAGES SECTION
+
+.advantages {
+    background-image: url('../img/advantages/bg2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 5.7rem;
+    padding-bottom: 4.8rem;
+    @media (max-width: 420px) {
+        padding-top: 3.8rem;
+        padding-bottom: 0;
+    }
+}
+
+    .advantages__title {
+        text-align: center;
+        color: $color-light;
+    }
+
+    .advantages__content {
+        margin-top: 3.57rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        column-gap: 1.7rem;
+        row-gap: 1.7rem;
+
+        @media (max-width: 420px) {
+            margin-top: 2.64rem;
+            row-gap: 0.7rem;
+        }
+
+        .opacity-block {
+            visibility: hidden;
+        }
+
+        .advantage {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 384px;
+            background: rgba(255, 255, 255, 0.09);
+            backdrop-filter: blur(24px);
+            border-radius: 20px;
+            padding: 2.5rem 1.5rem;
+
+            @media (max-width: 420px) {
+                padding: 1.3rem 1.7rem 2rem 1.7rem;
+                align-items: flex-start;
+            }
+
+            .advantage__image {
+                width: 209px;
+                height: 209px;
+                border-radius: 50%;
+                background: linear-gradient(90deg, rgba(31, 120, 224, 0.2) 0%, rgba(0, 194, 255, 0.2) 100%);
+                position: relative;
+
+                @media (max-width: 1200px) {
+                    width: 160px;
+                    height: 160px;
+                }
+                @media (max-width: 420px) {
+                    width: 64px;
+                    height: 64px;
+                }
+            }
+
+            .image__layer {
+                width: 169px;
+                height: 169px;
+                border-radius: 50%;
+                background: $color-primary;
+                background: linear-gradient(90deg, $color-gradient-layer1 0%, $color-gradient-layer2 100%);
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                @media (max-width: 1200px) {
+                    width: 120px;
+                    height: 120px;
+                }
+
+                @media (max-width: 420px) {
+                    width: 52px;
+                    height: 52px;
+                }
+
+                img {
+                    width: 100%;
+                    max-width: 96px;
+                    height: auto;
+
+                    @media (max-width: 1200px) {
+                        max-width: 80px;
+                    }
+
+                    @media (max-width: 420px) {
+                        max-width: 30px;
+                    }
+                }
+            }
+        }
+
+        .advantage__title {
+            margin-top: 2.5rem;
+            @include font-style($size: 2.4rem);
+            font-size: 2.4rem;
+            color: $color-light;
+            text-align: center;
+
+            @media (max-width: 420px) {
+                margin-top: 1.3rem;
+                @include font-style($size: 1.8rem);
+                text-align: left;
+            }
+        }
+
+        .advantage__text {
+            margin-top: 1.7rem;
+            @include font-style($size: 1.6rem, $height: 160%, $weight: 400);
+            color: $color-light;
+            text-align: center;
+
+            @media (max-width: 420px) {
+                margin-top: 0.8rem;
+                @include font-style($size: 1.4rem, $height: 160%, $weight: 400);
+                text-align: left;
+            }
+        }
+    }
+

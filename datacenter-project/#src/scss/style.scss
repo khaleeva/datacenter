@@ -1,0 +1,50 @@
+//abstract
+@import "./abstarct/variable";
+@import "./abstarct/mixins";
+@import "./abstarct/nullstyle";
+@import "./abstarct/placeholders";
+
+//base
+@import "./base/fonts";
+@import "./base/base";
+@import "./base/logo";
+@import "./base/buttons";
+@import "base/burger";
+@import "base/burger-menu";
+@import "base/accordeon";
+
+//layout
+@import "./layout/container";
+@import "./layout/header";
+@import "./layout/footer";
+@import "./layout/footer-mob";
+
+//components
+@import "./components/navigation";
+
+//main page
+@import "components/main/promo";
+@import "components/main/all-services";
+@import "./components/main/main-about";
+@import "./components/main/advantages";
+@import "./components/partners";
+@import "./components/main/review";
+@import "./components/main/offer";
+@import "./components/about-us";
+@import "./components/details";
+@import "./components/contacts";
+@import "./components/map";
+@import "./components/advices";
+@import "./components/colo";
+@import "./components/dedic";
+@import "./components/other";
+@import "./components/instruction";
+@import "./components/new-partners";
+@import "./components/payments";
+@import "./components/support";
+@import "./components/document";
+@import "./components/visited";
+@import "./components/article";
+@import "./components/error";
+@import "./components/servStyle";
+

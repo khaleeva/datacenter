@@ -1,0 +1,25 @@
+.logo{
+      width: 114px;
+      height: 51px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+          width: 100%;
+          max-width: 114px;
+          height: auto;
+      }
+
+}
+
+.footer__logo {
+  width: 47.33%;
+  max-width: 568px;
+  height: auto;
+  margin-top: 1.07rem;
+  background-image: url(../img/logo/dhb.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
