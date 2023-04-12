@@ -54,15 +54,10 @@ const ghPages = require('gulp-gh-pages');
 
 gulp.task('deploy', function() {
     return gulp.src('./datahata/**/*')
-        .pipe(ghPages({
-            branch: 'gh-pages',
-            remoteUrl: 'https://github.com/khaleeva/datacenter.git',
-            push: true,
-            message: 'Deployed to Github Pages'
-        }));
+        .pipe(ghPages());
 });
 
-function browserSync(params){
+function browserSync(){
     browsersync.init({
         server: {
             baseDir: "./" + project_folder + "/" 
@@ -144,7 +139,7 @@ function images(){
         .pipe(browsersync.stream()); 
 }
 
-function fonts(params){
+function fonts(){
     src(path.src.fonts)
     .pipe(ttf2woff())
     .pipe(dest(path.build.fonts))
@@ -155,9 +150,9 @@ function fonts(params){
 
 }
 
-function fontsStyle(params){
+function fontsStyle(){
     let file_content = fs.readFileSync(source_folder + '/scss/base/fonts.scss');
-    if (file_content == '') {
+    if (file_content === '') {
         fs.writeFile(source_folder + '/scss/base/fonts.scss', '', cb);
         return fs.readdir(path.build.fonts, function (err, items) {
             if (items) {
@@ -165,7 +160,7 @@ function fontsStyle(params){
                 for (var i = 0; i < items.length; i++) {
                     let fontname = items[i].split('.');
                     fontname = fontname[0];
-                    if (c_fontname != fontname) {
+                    if (c_fontname !== fontname) {
                         fs.appendFile(source_folder + '/scss/base/fonts.scss', '@include font("' + fontname + '", "' + fontname + '", "400", "normal");\r\n', cb);
                     }
                     c_fontname = fontname;
@@ -177,14 +172,14 @@ function fontsStyle(params){
 
 
 
-function watchFiles(params){
+function watchFiles(){
     gulp.watch([path.watch.html], html);
     gulp.watch([path.watch.css], css);  
     gulp.watch([path.watch.js], js); 
     gulp.watch([path.watch.img], images); 
 }
 
-function clean(params){
+function clean(){
     return del(path.clean);
 }
 
