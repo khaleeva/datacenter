@@ -80,12 +80,9 @@ h4 {
 
 //Стиль для заголовков секций
 
-.title-section {
+.title {
   text-align: center;
-
-  @media (max-width: 420px) {
-    font-size: 3rem;
-  }
+  margin-bottom: 4rem;
 }
 
 //кнопка с градиентным боредером
