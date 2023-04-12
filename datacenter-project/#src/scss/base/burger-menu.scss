@@ -9,7 +9,7 @@
   transition: all 0.5s linear;
   visibility: hidden;
 
-  @media (min-width: 1025px) {
+  @media (min-width: 1024px) {
     display: none;
   }
 
@@ -24,7 +24,7 @@
 
 .swipe-menu__container {
   width: 100%;
-  padding: 10px 20px 70px;
+  padding: 10px 20px 100px;
   position: absolute;
   top: 100%;
   left: 0;
@@ -40,6 +40,7 @@
 
   @media (min-width: 1024px) {
    min-height: 0;
+    display: none;
   }
 
 }

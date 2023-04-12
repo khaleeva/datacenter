@@ -1,5 +1,5 @@
 
-@@include('open-menu-from-bottom.js');
+@@include('open-menu-from-bottom-direction.js');
 @@include('set-height-for-opened-menu.js');
 @@include('toggleAccordion.js');
 @@include('setClasses.js');
