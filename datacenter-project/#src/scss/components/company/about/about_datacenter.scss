@@ -1,0 +1,90 @@
+// NEW FLEX SECTION
+
+.about-datacenter {
+  padding-top: 8.14rem;
+  padding-bottom: 2.14rem;
+
+  @media (max-width: 420px) {
+    padding-top: 6.43rem;
+    padding-bottom: 0.36rem;
+  }
+}
+
+.about-datacenter__content {
+  width: 100%;
+  display: flex;
+  column-gap: 15rem;
+  margin-bottom: 11.2rem;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 6.77rem;
+  }
+}
+
+.about-datacenter__info {
+  margin-top: 7rem;
+  flex-basis: 50%;
+
+  h3 {
+    margin-bottom: 2rem;
+    @media (max-width: 1024px) {
+      text-align: center;
+      flex-basis: 100%;
+    }
+  }
+
+
+  @media (max-width: 1024px) {
+    order: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+  }
+
+}
+
+.about-datacenter__text {
+  & > p {
+    margin-bottom: 1rem;
+    @include font-style($size: 1.8rem, $weight: 400, $height: 160%);
+
+    @media (max-width: 420px) {
+      @include font-style($size: 1.6rem, $weight: 400, $height: 160%);
+      margin-bottom: 0;
+    }
+
+  }
+}
+#server-img{
+  @media (max-width: 1024px) {
+    max-width: 260px;
+    height: auto;
+  }
+
+  @media (max-width: 768px) {
+    max-width: 200px;
+    height: auto;
+  }
+}
+
+.about-datacenter__img {
+  @media (max-width: 1024px) {
+    max-width: 260px;
+    height: auto;
+  }
+
+}
+
+.about-datacenter__button {
+  margin-top: 3rem;
+
+  @media (max-width: 480px) {
+    padding-left: 10px;
+    padding-right: 10px;
+    @include font-style($size: 1.2rem, $weight: 400);
+    text-align: center;
+  }
+}

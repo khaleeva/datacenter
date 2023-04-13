@@ -23,14 +23,16 @@
 @import "./components/navigation";
 
 //main page
-@import "components/main/promo";
-@import "components/main/all-services";
+@import "./components/main/promo";
+@import "./components/main/all-services";
 @import "./components/main/main-about";
 @import "./components/main/advantages";
 @import "./components/partners";
 @import "./components/main/review";
 @import "./components/main/offer";
-@import "./components/about-us";
+@import "./components/company/about/about-us";
+@import "./components/company/about/about-us_cards";
+@import "./components/company/about/about_datacenter";
 @import "./components/details";
 @import "./components/contacts";
 @import "./components/map";
