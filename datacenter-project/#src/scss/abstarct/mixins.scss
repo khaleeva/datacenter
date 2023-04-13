@@ -15,6 +15,20 @@
   line-height: $height;
 }
 
+@mixin map-fluid-container ($bg){
+  width: 100%;
+  height: 521px;
+  background-image: url($bg);
+  background-size: cover;
+  background-position: center center;
+  z-index: 2000;
+  cursor: pointer;
+
+  @media (max-width: 420px) {
+    background-position-y: -100px;
+  }
+}
+
 //@mixin button-border () {
 //  //border: 1px double transparent;
 //  //background: linear-gradient(0deg, $color-gradient-primary 0%, $color-gradient-secondary 100%);
