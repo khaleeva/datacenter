@@ -33,10 +33,10 @@ const IP_REGEXP = /^[1-9]([0-9]*)$/;
 
 let result = {}
 
-const tableBody = document.querySelectorAll('.table-body');
+const tableBody = document.querySelectorAll('.table__body');
 
 tableBody.forEach(table => {
-  const items = table.querySelectorAll('.table-body-item');
+  const items = table.querySelectorAll('.table__row');
   items.forEach(item => {
     const name = item.querySelector('[data-name]')
     if(name){

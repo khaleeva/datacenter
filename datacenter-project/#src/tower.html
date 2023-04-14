@@ -11,242 +11,26 @@
 </head>
 
 <body>
-    <div class="wrapper page-wrapper">
-        @@include('./components/layout/_header.html')
-        <main class="main">
-            <section class="section-services section-padding">
-                <div class="container">
-                    <div class="section-services-container">
-                        <h1 class="title-section">Размещение серверного <br> оборудования - В башенных корпусах</h1>
-                        <div class="section-wrapper" id="towerServer">
-                            <div class="container-services">
-                                <p class="panel-text">Предлагаем разместить Ваши сервера и другое телекоммуникационное
-                                    оборудование формата tower в нашем ЦОДе,
-                                    оборудованном всем необходимым для обеспечения бесперебойной работы.</p>
-                                <div class="services-table">
-                                    <div class="table-head">
-                                        <p>Наименование продукта</p>
-                                        <p>Стоимость BYN с НДС, в месяц</p>
-                                    </div>
-                                    <div class="table-body">
-                                        <div class="table-body-item">
-                                            <p>Размещение сервера (в tower исполнении) в шкафу, с блоком питания
-                                                мощностью до 250 Вт</p>
-                                            <p data-name="tower" id="costTower">144,00</p>
-                                        </div>
-                                        <div class="table-body-item">
-                                            <p>Каждые последующие 50 Вт мощности блока питания</p>
-                                            <p data-name="power" id="costPower"> 9,60</p>
-                                        </div>
-                                        <div class="table-body-item">
-                                            <p>Подключение второго блока питания</p>
-                                            <p data-name="supply" id="costSupply">26,40</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="btn-services">
-                                    <a class="btn-gr-bg order-btn"
-                                        href="https://my.datahata.by/"><span>Заказать</span></a>
-                                    <div class="calc-btn btn-gr-border" id='btn-tower'><span>Рассчитать стоимость</span>
-                                    </div>
-                                </div>
-                                <div class="info-services">
-                                    <p>В абонентскую плату включено:</p>
-                                    <ul>
-                                        <li>1 IPv4 и 1 IPv6 адрес;</li>
-                                        <li>1 порт подключения к коммутатору 1 Gb/s;</li>
-                                        <li>1 Tb входящего и 1 Tb исходящего внешнего трафика. В случае превышения
-                                            предоплаченного трафика стоимость следующего входящего 1 Gb составит 0,05
-                                            рублей, исходящего 1 Gb составит 0,1 рублей. </li>
-                                    </ul>
-                                    <div>Инструкция <a href="instruction.html">"Как разместить сервер"</a></div>
-                                </div>
-                                <div class="additional-services">
-                                    <div class="services-table">
-                                        <div class="table-head">
-                                            <p>Наименование продукта</p>
-                                            <p>Стоимость BYN с НДС, в месяц</p>
-                                        </div>
-                                        <div class="table-body">
-                                            <div class="table-body-item">
-                                                <p>Дополнительный порт 1 Gb/s</p>
-                                                <p data-name="port" id="costPort">12,00</p>
-                                            </div>
-                                            <div class="table-body-item">
-                                                <p>Дополнительный порт 10 Gb/s</p>
-                                                <p>135,00</p>
-                                            </div>
-                                            <div class="table-body-item">
-                                                <p>Дополнительный адрес IPv4</p>
-                                                <p data-name="ip" id="costIp">10,20</p>
-                                            </div>
-                                            <div class="table-body-item">
-                                                <p>Дополнительный адрес IPv6 (/64)</p>
-                                                <p>Бесплатно</p>
-                                            </div>
-                                            <div class="table-body-item">
-                                                <p>Дополнительный 1 Gb внешнего входящего трафика</p>
-                                                <p>0,05</p>
-                                            </div>
-                                            <div class="table-body-item">
-                                                <p>Дополнительный 1 Gb внешнего исходящего трафика</p>
-                                                <p>0,10</p>
-                                            </div>
-                                            <div class="table-body-item">
-                                                <p>Трафик внутри Республики Беларусь (BY-IX)</p>
-                                                <p>Бесплатно</p>
-                                            </div>
-                                            <div class="table-body-item">
-                                                <p>Порт 10 Mb/s без учета трафика</p>
-                                                <p>135,00</p>
-                                            </div>
-                                            <div class="table-body-item">
-                                                <p>Порт 100 Mb/s без учета трафика</p>
-                                                <p>553,80</p>
-                                            </div>
-                                            <div class="table-body-item">
-                                                <p>Порт 1000 Mb/s без учета трафика</p>
-                                                <p>По запросу</p>
-                                            </div>
-                                            <div class="table-body-item">
-                                                <p>Сеть IP/24</p>
-                                                <p>180,00</p>
-                                            </div>
-                                            <div class="table-body-item">
-                                                <p>Полка для размещения сервера без салазок (единоразово)</p>
-                                                <p>60,00</p>
-                                            </div>
-                                            <div class="table-body-item">
-                                                <p>Администрирование (1 чел.-час)</p>
-                                                <p>70,00</p>
-                                            </div>
-                                            <div class="table-body-item">
-                                                <p>Регистрация в БелГИЭ (единоразово)</p>
-                                                <p>0,5 базовой величины</p>
-                                            </div>
-                                            <div class="table-body-item">
-                                                <p>Канал БФТ (1 мес.)</p>
-                                                <p>45,00</p>
-                                            </div>
-                                            <div class="table-body-item">
-                                                <p>Локальное соединение "x-connect"</p>
-                                                <p>1,26 * L</p>
-                                            </div>
-                                            <div class="table-body-item">
-                                                <p>Прокладка оптоволоконного патч-корда (LC SM или ММ duplex), длиной L
-                                                    метров (единоразово)</p>
-                                                <p>54,00 + 6,48 * L</p>
-                                            </div>
-                                            <div class="table-body-item">
-                                                <p>Переходники (n - количество), шт. (единоразово)</p>
-                                                <p>32,40 * n</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+<div class="wrapper page-wrapper">
+    @@include('./components/layout/_header.html')
+    <main class="main">
+        <section class="services">
+            <div class="container services__container">
+                <h1 class="services__title">Размещение серверного <br> оборудования - В башенных корпусах</h1>
+                <div class="services__content" id="towerServer">
+                    @@include('components/services/colo/tower/_tower-wrapper.html')
                 </div>
-                <div class="wrapper-calc">
-                    <div class="calc-container">
-                        <div class="calc-form" id="unit-form">
-                            <div class="swipe-line" id="calc-swipe-line" data-swipe-threshold="20"
-                                data-swipe-timeout="500" data-swipe-ignore="false">
-                            </div>
-                            <div class="icon-calc">
-                                <div class="currency-button">
-                                    <div class="currency-icon">
-                                        <label class="radio" for="byn">
-                                            <input type="radio" id="byn" name="radio" value="byn" checked />
-                                            <div class="radio__text">BYN</div>
-                                        </label>
-                                    </div>
-                                    <div class="currency-icon">
-                                        <label class="radio" for="rub">
-                                            <input type="radio" id="rub" name="radio" value="rub" />
-                                            <div class="radio__text">RUB</div>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="close-icon">
-                                    <span class="close"></span>
-                                </div>
-                            </div>
-                            <div class="form-title">Расчёт стоимости</div>
-                            <div class="form-subtitle">Cумма заказа: </div>
-                            <div class="cost-info" data-value="BYN"></div>
-                            <div class="cost-calculation">
-                                <div class="cost-calculation-item">
-                                    <div class="calc-info">
-                                        <p>Расчет мощности: </p>
-                                        <div class="value" data-value="Вт">250 Вт</div>
-                                    </div>
-                                    <div class="slider-container">
-                                        <span class="progress-line"></span>
-                                        <div class="bar">
-                                            <span class="fill"></span>
-                                        </div>
-                                        <input type="range" value="0" min="250" max="1500" step="50" class="range"
-                                            id="power-range">
-                                    </div>
-                                </div>
-                                <div class="cost-calculation-item unit-item">
-                                    <div class="calc-info">
-                                        <p>Количество юнитов: </p>
-                                        <div class="value" data-value="U">1 U</div>
-                                    </div>
-                                    <div class="slider-container">
-                                        <span class="progress-line"></span>
-                                        <div class="bar">
-                                            <span class="fill"></span>
-                                        </div>
-                                        <input type="range" value="0" min="1" max="8" step="1" class="range"
-                                            id="unit-range">
-                                    </div>
-                                </div>
-                                <div class="cost-calculation-item">
-                                    <div class="calc-info">
-                                        <p>Количество портов: </p>
-                                        <div class="value" data-value="Gb/s">1 Gb/s</div>
-                                    </div>
-                                    <div class="slider-container">
-                                        <span class="progress-line"></span>
-                                        <div class="bar">
-                                            <span class="fill"></span>
-                                        </div>
-                                        <input type="range" value="0" min="1" max="8" step="1" class="range"
-                                            id="port-range">
-                                    </div>
-                                </div>
-                                <div class="cost-calculation-item input-container">
-                                    <p class="ip-error">Некорректный ввод</p>
-                                    <input type="text" id="input-ip" maxlength="4" placeholder="Количество IP">
-                                </div>
-                                <div class="cost-calculation-item checkbox-container">
-                                    <p>Второй блок питания</p>
-                                    <input type="checkbox" id="supply" class="checkbox-input" value="">
-                                    <label class="checkbox-label" for="supply"> </label>
-                                </div>
-                                <button class="btn-add-calc btn-gr-bg"><span>Добавить ещё</span></button>
-                            </div>
-                        </div>
-                        <div class="calc-table">
-                            <div class="calc-total-amount">
-                                <p class="total-text"></p>
-                                <div class="total"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
-         @@include('./components/layout/_footer.html')
-          @@include('./components/layout/_footer-mob.html')
-    </div>
+            </div>
+            @@include('components/base/_calculator.html')
+        </section>
 
-    <script src="js/swiped-events.min.js"></script>
-    <script src="js/script.min.js"></script>
+    </main>
+    @@include('./components/layout/_footer.html')
+    @@include('./components/layout/_footer-mob.html')
+</div>
+
+<script src="js/swiped-events.min.js"></script>
+<script src="js/script.min.js"></script>
 
 </body>
 

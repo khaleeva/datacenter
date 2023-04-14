@@ -1,7 +1,5 @@
 window.onload = function () {
     getDedicTariffPlan().then()
-
-
 };
 
 async function getDedicTariffPlan() {

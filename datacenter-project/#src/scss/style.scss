@@ -32,6 +32,8 @@
 @import "./components/partners";
 @import "./components/main/review";
 @import "./components/main/offer";
+
+//company
 @import "./components/company/about/about-us";
 @import "./components/company/about/about-us_cards";
 @import "./components/company/about/about_datacenter";
@@ -39,8 +41,13 @@
 @import "./components/company/details/details";
 @import "./components/company/contacts/contacts";
 
+//services
+@import "./components/services/colo/unit";
+@import "./components/services/colo/colo";
+
+
 @import "./components/advices";
-@import "./components/colo";
+
 @import "./components/dedic";
 @import "./components/other";
 @import "./components/instruction";

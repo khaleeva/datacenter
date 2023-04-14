@@ -5,6 +5,7 @@
   cursor: pointer;
   @extend %transition;
 
+
   &_bordered{
     border: 1px solid transparent;
     background: linear-gradient(0deg, $color-gradient-primary 0.08%, $color-gradient-secondary 155.74%);
@@ -13,6 +14,7 @@
     span {
       @extend %gradient-text;
       @include font-style($size: 1.6rem);
+
 
       @include hover{
         &:hover {
@@ -33,13 +35,15 @@
       }
     }
 
+
+
   }
 
   &_colored{
     background: linear-gradient(90deg, $color-gradient-primary 0%, $color-gradient-secondary 100%);
 
     &>*{
-      @include font-style($size: 2rem);
+      @include font-style($size: 1.6rem);
       color: $color-light;
     }
   }

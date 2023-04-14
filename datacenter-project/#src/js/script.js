@@ -4,7 +4,7 @@
 @@include('toggleAccordion.js');
 @@include('setClasses.js');
 @@include('swipe-menu.js');
-@@include('servicesAcc.js');
+@@include('openServiceAccordion.js');
 @@include('open-review-block.js');
 @@include('sendform.js');
 @@include('form.js');
