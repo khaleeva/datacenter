@@ -29,17 +29,30 @@ let rangeValue = 0;
 let currentCurrency;
 let currency;
 const IP_REGEXP = /^[1-9]([0-9]*)$/;
-const costServerElem = document.querySelector('#costServer');
-const costTowerElem = document.querySelector('#costTower');
-const costPowerElem = document.querySelector('#costPower');
-const costUnitElem = document.querySelector('#costUnit');
-const costSupplyElem = document.querySelector('#costSupply');
-const costPortElem = document.querySelector('#costPort');
-const costIpElem = document.querySelector('#costIp');
+
+
+let result = {}
+
+const tableBody = document.querySelectorAll('.table-body');
+
+tableBody.forEach(table => {
+  const items = table.querySelectorAll('.table-body-item');
+  items.forEach(item => {
+    const name = item.querySelector('[data-name]')
+    if(name){
+      const productName = name.getAttribute('data-name');
+      const productCost = parseFloat(name.textContent.replace(',', '.'));
+      result[productName] = productCost;
+    }
+  })
+
+})
+
+console.log(result)
+
 
 
 async function getCurrency() {
-
   let url = 'https://www.nbrb.by/api/exrates/rates/456/?periodicity=0';
   let response = await fetch(url);
   currentCurrency = await response.json();
@@ -57,36 +70,6 @@ if (calcBtnTower) {
   calcBtnTower.addEventListener('click', getCurrency);
 }
 
-if (document.querySelector("#unitServer")) {
-
-  costPower = parseFloat(costPowerElem.innerHTML.replace(/,/, '.'));
-  costSupply = parseFloat(costSupplyElem.innerHTML.replace(/,/, '.'));
-  costPort = parseFloat(costPortElem.innerHTML.replace(/,/, '.'));
-  costIp = parseFloat(costIpElem.innerHTML.replace(/,/, '.'));
-  costServer = parseFloat(costServerElem.innerHTML.replace(/,/, '.'));
-  costUnit = parseFloat(costUnitElem.innerHTML.replace(/,/, '.'));
-
-}
-
-if (document.querySelector("#towerServer")) {
-
-  costPower = parseFloat(costPowerElem.innerHTML.replace(/,/, '.'));
-  costSupply = parseFloat(costSupplyElem.innerHTML.replace(/,/, '.'));
-  costPort = parseFloat(costPortElem.innerHTML.replace(/,/, '.'));
-  costIp = parseFloat(costIpElem.innerHTML.replace(/,/, '.'));
-  costTower = parseFloat(costTowerElem.innerHTML.replace(/,/, '.'));
-
-}
-
-if (costServerElem && costTowerElem && costPowerElem && costUnitElem && costPortElem && costSupplyElem && costIpElem) {
-  costServer = parseFloat(costServerElem.innerHTML.replace(/,/, '.'));
-  costTower = parseFloat(costTowerElem.innerHTML.replace(/,/, '.'));
-  costPower = parseFloat(costPowerElem.innerHTML.replace(/,/, '.'));
-  costUnit = parseFloat(costUnitElem.innerHTML.replace(/,/, '.'));
-  costSupply = parseFloat(costSupplyElem.innerHTML.replace(/,/, '.'));
-  costPort = parseFloat(costPortElem.innerHTML.replace(/,/, '.'));
-  costIp = parseFloat(costIpElem.innerHTML.replace(/,/, '.'));
-}
 
 function validateIpInput(value) {
   return IP_REGEXP.test(value);
@@ -112,20 +95,20 @@ function getValue() {
   if (measure === 'Вт') {
     x = (this.value / 12.5) - 20;
     this.previousSibling.previousSibling.firstElementChild.style.width = x + '%';
-    powerValue = parseFloat((((this.value - 250) / 50) * costPower).toFixed(2));
+    powerValue = parseFloat((((this.value - 250) / 50) * result['power']).toFixed(2));
 
 
   } else if (measure === 'U') {
     x = (this.value * 14.286) - 14.286;
     this.previousSibling.previousSibling.firstElementChild.style.width = x + '%';
-    unitValue = parseFloat(((this.value * costUnit) - costUnit).toFixed(2));
+    unitValue = parseFloat(((this.value * result['unit']) - result['unit']).toFixed(2));
 
 
   } else if (measure === 'Gb/s') {
 
     x = (this.value * 14.286) - 14.286;
     this.previousSibling.previousSibling.firstElementChild.style.width = x + '%';
-    portValue = parseFloat(((this.value * costPort) - costPort).toFixed(2));
+    portValue = parseFloat(((this.value * result['port']) - result['port']).toFixed(2));
 
   }
 
@@ -137,7 +120,7 @@ if (document.querySelector('.checkbox-container')) {
   document.querySelector('.checkbox-container').addEventListener("change", function () {
 
     if (checkBox.checked) {
-      supplyValue = costSupply;
+      supplyValue = result['supply'];
     } else {
       supplyValue = 0;
     }
@@ -164,7 +147,7 @@ if (inputIp) {
 
     else {
       currentValue = inputIp.value - 1;
-      ipValue = parseFloat((currentValue * costIp).toFixed(2));
+      ipValue = parseFloat((currentValue * result['ip']).toFixed(2));
     }
 
     calcValue();
@@ -185,8 +168,8 @@ if (inputIp) {
 function calcValue() {
   let cost;
   if (costCalc.querySelector('.unit-item').style.display === 'block') {
-    cost = costServer;
-  } else cost = costTower;
+    cost = result['server'];
+  } else cost = result['tower'];
 
   sum = parseFloat(cost + powerValue + unitValue + ipValue + portValue + supplyValue);
 
@@ -354,9 +337,9 @@ if (calcBtnUnit) {
 
 
     if (rub.checked) {
-      currentCost.innerHTML = `&asymp; ${(costServer.toFixed(2) * currency).toFixed(2)} RUB`;
+      currentCost.innerHTML = `&asymp; ${(result['server'].toFixed(2) * currency).toFixed(2)} RUB`;
     } else {
-      currentCost.innerHTML = `${costServer.toFixed(2)} BYN `;
+      currentCost.innerHTML = `${result['server'].toFixed(2)} BYN `;
     }
 
   })
@@ -371,9 +354,9 @@ if (calcBtnTower) {
     document.querySelector('.unit-item').style.display = 'none';
 
     if (rub.checked) {
-      currentCost.innerHTML = `&asymp; ${(costTower.toFixed(2) * currency).toFixed(2)} RUB`;
+      currentCost.innerHTML = `&asymp; ${(result['tower'].toFixed(2) * currency).toFixed(2)} RUB`;
     } else {
-      currentCost.innerHTML = `${costTower.toFixed(2)} BYN`;
+      currentCost.innerHTML = `${result['tower'].toFixed(2)} BYN`;
     }
 
   })
@@ -413,12 +396,12 @@ function nullCalcValue() {
   if (costCalc) {
     if (rub.checked) {
       if (costCalc.querySelector('.unit-item').style.display === 'block') {
-        currentCost.innerHTML = `&asymp; ${(costServer.toFixed(2) * currency).toFixed(2)} RUB`;
-      } else currentCost.innerHTML = `&asymp; ${(costTower.toFixed(2) * currency).toFixed(2)} RUB`;
+        currentCost.innerHTML = `&asymp; ${(result['server'].toFixed(2) * currency).toFixed(2)} RUB`;
+      } else currentCost.innerHTML = `&asymp; ${(result['tower'].toFixed(2) * currency).toFixed(2)} RUB`;
     } else {
       if (costCalc.querySelector('.unit-item').style.display === 'block') {
-        currentCost.innerHTML = `${costServer.toFixed(2)} BYN`;
-      } else currentCost.innerHTML = `${costTower.toFixed(2)} BYN`;
+        currentCost.innerHTML = `${result['server'].toFixed(2)} BYN`;
+      } else currentCost.innerHTML = `${result['tower'].toFixed(2)} BYN`;
     }
   }
 }
