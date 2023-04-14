@@ -18,11 +18,11 @@ body.active-body {
 h1 {
   @include font-style($size: 4.6rem);
 
-  @media (max-width: 1024px) and (min-width: 769px) {
+  @media (max-width: 1024px) and (min-width: 421px) {
     @include font-style($size: 3rem);
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 420px) {
     @include font-style($size: 2.4rem);
   }
 
@@ -39,12 +39,16 @@ h2 {
 h3 {
   @include font-style($size: 3rem);
   @media (max-width: 768px) {
-    @include font-style($size: 2.4rem)
+    @include font-style($size: 2.4rem);
   }
 }
 
 h4 {
-  @include font-style($size: 2.4rem)
+  @include font-style($size: 2.4rem);
+
+  @media (max-width: 420px) {
+    @include font-style($size: 2rem)
+  }
 }
 
 .wrapper {

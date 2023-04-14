@@ -1,0 +1,24 @@
+.footer-navigation {
+  padding: 3rem 0;
+
+  .footer-navigation__title {
+    margin-bottom: 2.7rem;
+    text-align: center;
+    color: $color-light;
+  }
+
+  ul {
+    height: 240px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    li {
+      a {
+        @include font-style($size: 2rem, $weight: 400);
+        color: $color-light;
+      }
+    }
+  }
+}

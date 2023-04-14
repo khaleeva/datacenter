@@ -9,9 +9,11 @@
 @import "./base/base";
 @import "./base/logo";
 @import "./base/buttons";
-@import "base/burger";
-@import "base/burger-menu";
-@import "base/accordion";
+@import "./base/burger";
+@import "./base/burger-menu";
+@import "./base/accordion";
+@import "./base/navigation";
+@import "./base/contacts_nav";
 
 //layout
 @import "./layout/container";
@@ -34,9 +36,8 @@
 @import "./components/company/about/about-us_cards";
 @import "./components/company/about/about_datacenter";
 @import "./components/company/map/map";
-
-@import "./components/details";
-@import "./components/contacts";
+@import "./components/company/details/details";
+@import "./components/company/contacts/contacts";
 
 @import "./components/advices";
 @import "./components/colo";
