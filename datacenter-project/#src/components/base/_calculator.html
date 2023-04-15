@@ -1,38 +1,34 @@
 <div class="calculator__overlay">
-    <div class="calc-container">
-        <div class="calc-form" id="unit-form">
-            <div class="swipe-line" id="calc-swipe-line" data-swipe-threshold="20"
+    <div class="calculator__container">
+        <div class="calculator__form">
+            <div class="swipe-line" data-swipe-threshold="20"
                  data-swipe-timeout="500" data-swipe-ignore="false">
             </div>
-            <div class="icon-calc">
-                <div class="currency-button">
-                    <div class="currency-icon">
-                        <label class="radio" for="byn">
-                            <input type="radio" id="byn" name="radio" value="byn" checked />
-                            <div class="radio__text">BYN</div>
-                        </label>
-                    </div>
-                    <div class="currency-icon">
-                        <label class="radio" for="rub">
-                            <input type="radio" id="rub" name="radio" value="rub" />
-                            <div class="radio__text">RUB</div>
-                        </label>
-                    </div>
+            <div class="form__buttons-currency">
+                <div class="buttons-currency">
+                    <label class="button-currency__radio" for="byn">
+                        <input type="radio" id="byn" name="radio" value="byn" checked/>
+                        <div class="button-currency__text">BYN</div>
+                    </label>
+                    <label class="button-currency__radio" for="rub">
+                        <input type="radio" id="rub" name="radio" value="rub"/>
+                        <div class="button-currency__text">RUB</div>
+                    </label>
                 </div>
                 <div class="close-icon">
                     <span class="close"></span>
                 </div>
             </div>
-            <div class="form-title">Расчёт стоимости</div>
-            <div class="form-subtitle">Cумма заказа: </div>
-            <div class="cost-info" data-value="BYN"></div>
-            <div class="cost-calculation">
-                <div class="cost-calculation-item">
-                    <div class="calc-info">
+            <p class="form__title">Расчёт стоимости</p>
+            <p class="form__subtitle">Cумма заказа:</p>
+            <p class="form__cost" data-value="BYN"></p>
+            <div class="form__cost-calculate">
+                <div class="cost-calculate">
+                    <div class="cost-calculate__param">
                         <p>Расчет мощности: </p>
                         <div class="value" data-value="Вт">250 Вт</div>
                     </div>
-                    <div class="slider-container">
+                    <div class="cost-calculate__range">
                         <span class="progress-line"></span>
                         <div class="bar">
                             <span class="fill"></span>
@@ -41,12 +37,12 @@
                                id="power-range">
                     </div>
                 </div>
-                <div class="cost-calculation-item unit-item">
-                    <div class="calc-info">
+                <div class="cost-calculate cost-calculate__unit">
+                    <div class="cost-calculate__param">
                         <p>Количество юнитов: </p>
                         <div class="value" data-value="U">1 U</div>
                     </div>
-                    <div class="slider-container">
+                    <div class="cost-calculate__range">
                         <span class="progress-line"></span>
                         <div class="bar">
                             <span class="fill"></span>
@@ -55,12 +51,12 @@
                                id="unit-range">
                     </div>
                 </div>
-                <div class="cost-calculation-item">
-                    <div class="calc-info">
+                <div class="cost-calculate">
+                    <div class="cost-calculate__param">
                         <p>Количество портов: </p>
                         <div class="value" data-value="Gb/s">1 Gb/s</div>
                     </div>
-                    <div class="slider-container">
+                    <div class="cost-calculate__range">
                         <span class="progress-line"></span>
                         <div class="bar">
                             <span class="fill"></span>
@@ -69,16 +65,16 @@
                                id="port-range">
                     </div>
                 </div>
-                <div class="cost-calculation-item input-container">
+                <div class="cost-calculate cost-calculate_input">
                     <p class="ip-error">Некорректный ввод</p>
                     <input type="text" id="input-ip" maxlength="4" placeholder="Количество IP">
                 </div>
-                <div class="cost-calculation-item checkbox-container">
+                <div class="cost-calculate cost-calculate_checkbox">
                     <p>Второй блок питания</p>
                     <input type="checkbox" id="supply" class="checkbox-input" value="">
                     <label class="checkbox-label" for="supply"> </label>
                 </div>
-                <button class="btn-add-calc btn-gr-bg"><span>Добавить ещё</span></button>
+                <button class="button button_colored calculator__button"><span>Добавить ещё</span></button>
             </div>
         </div>
         <div class="calc-table">

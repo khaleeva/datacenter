@@ -26,12 +26,8 @@
     padding: 2rem;
   }
 
-  @media (max-width: 768px) {
-    padding: 1rem;
-  }
-
   @media (max-width: 420px) {
-    padding: 0.7rem;
+    padding: 1rem;
   }
 }
 
@@ -263,7 +259,7 @@
 }
 
 
-//calc
+//CALCULATOR
 
 
 .calculator__overlay {
@@ -274,14 +270,11 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   overflow: auto;
-  transition: top 0.3s ease 0s;
+  @extend %transition;
   visibility: hidden;
   opacity: 0;
-  z-index: 1000000;
+  z-index: 3000;
 
-  @media (max-width: 420px) {
-    top: 60px;
-  }
 }
 
 .calculator__overlay.active {
@@ -289,7 +282,7 @@
   opacity: 1;
 }
 
-.calc-container {
+.calculator__container {
   display: flex;
   justify-content: space-between;
   max-width: 768px;
@@ -328,7 +321,7 @@
   }
 }
 
-.calc-container.active-calc-container {
+.calculator__container.active-calc-container {
   max-width: 900px;
   transition: min-width 0.5s ease-in 0s;
 
@@ -412,7 +405,7 @@
   opacity: 1;
 }
 
-.calc-form {
+.calculator__form {
   max-width: 418px;
 
   min-height: 462px;
@@ -442,7 +435,7 @@
   }
 }
 
-.currency-button {
+.buttons-currency {
   position: absolute;
   top: 15px;
   left: 20px;
@@ -455,21 +448,21 @@
     transform: translateX(-50%);
   }
 
-  .radio input {
+  .button-currency__radio input {
     position: absolute;
     z-index: -1;
     opacity: 0;
     margin: 10px 0 0 7px;
   }
 
-  .radio__text {
+  .button-currency__text {
     font-weight: bold;
     position: relative;
     padding: 0 0 0 35px;
     cursor: pointer;
   }
 
-  .radio__text:before {
+  .button-currency__text:before {
     content: "";
     position: absolute;
     top: -3px;
@@ -482,7 +475,7 @@
     background: #fff;
   }
 
-  .radio__text:after {
+  .button-currency__text:after {
     content: "";
     position: absolute;
     left: 3px;
@@ -494,11 +487,11 @@
     transition: 0.2s;
   }
 
-  .radio input:checked + .radio__text:after {
+  .button-currency__radio input:checked + .button-currency__text:after {
     opacity: 1;
   }
 
-  .radio input:focus + .radio__text:before {
+  .button-currency__radio input:focus + .button-currency__text:before {
     box-shadow: 0px 3px 17px rgba(0, 0, 0, 0.15);
   }
 }
@@ -552,7 +545,7 @@
   background-color: $color-dark;
 }
 
-.form-title {
+.form__title {
   font-weight: 700;
   font-size: 2.4rem;
   line-height: 120%;
@@ -566,11 +559,11 @@
   }
 }
 
-.form-subtitle {
+.form__subtitle {
   text-align: center;
 }
 
-.cost-info {
+.form__cost {
   font-weight: 700;
   font-size: 3.6rem;
   line-height: 120%;
@@ -583,7 +576,7 @@
   }
 }
 
-.cost-calculation {
+.form__cost-calculate {
   width: 100%;
   padding: 3.43rem 3.14rem 3.57rem 2.78rem;
   display: flex;
@@ -600,7 +593,7 @@
   }
 }
 
-.calc-info {
+.cost-calculate__param {
   display: flex;
   align-items: center;
 
@@ -613,7 +606,7 @@
   }
 }
 
-.cost-calculation-item {
+.cost-calculate {
   width: 335px;
   padding-top: 1.57rem;
 
@@ -621,11 +614,11 @@
     width: 100%;
   }
 
-  .slider-container {
+  .cost-calculate__range {
     position: relative;
   }
 
-  .slider-container .progress-line {
+  .cost-calculate__range .progress-line {
     z-index: 1;
     position: absolute;
     top: 80%;
@@ -635,7 +628,7 @@
     background: rgba(0, 0, 0, 0.1);
   }
 
-  .slider-container .bar {
+  .cost-calculate__range .bar {
     position: absolute;
     z-index: 1;
     top: 80%;
@@ -646,10 +639,10 @@
     overflow: hidden;
   }
 
-  .slider-container .bar .fill,
-  .slider-container .bar .fill-unit {
+  .cost-calculate__range .bar .fill,
+  .cost-calculate__range .bar .fill-unit {
     display: block;
-    width: 0%;
+    width: 0;
     height: 4px;
     background: linear-gradient(90deg, #ea5c2f 0%, #f3b921 100%);
     border-radius: 5px 0 0 5px;
@@ -692,7 +685,7 @@
   }
 }
 
-.input-container input {
+.cost-calculate_input input {
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 16px;
   height: 52px;
@@ -708,7 +701,7 @@
   border: 1px solid orange;
 }
 
-.input-container {
+.cost-calculate_input {
   p {
     visibility: hidden;
     color: red;
@@ -721,7 +714,7 @@
   visibility: visible;
 }
 
-.checkbox-container {
+.cost-calculate_checkbox {
   position: relative;
   display: flex;
 }
@@ -774,14 +767,12 @@
   opacity: 0;
 }
 
-.btn-add-calc {
-  height: 52px;
-  width: 100%;
+
+.calculator__button{
   margin-top: 40px;
-  cursor: pointer;
 }
 
-.btn-add-calc.disabled {
+.calculator__button.disabled {
   background-color: lightGrey;
   display: flex;
   justify-content: center;
