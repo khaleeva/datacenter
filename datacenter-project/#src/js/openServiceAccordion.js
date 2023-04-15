@@ -17,7 +17,13 @@ function openAccordionService() {
     accordion_headers.forEach(header => header.addEventListener('click', (e) => {
 
         if (e.target.classList.contains('button__arrow')) {
-            e.target.classList.toggle('button__arrow_rotate')
+            accordion_headers.forEach(h => {
+                if (h !== header) {
+                    h.querySelector('.button__arrow').classList.remove('button__arrow_rotate');
+                }
+            });
+
+            e.target.classList.toggle('button__arrow_rotate');
 
             let current_body =  header.nextElementSibling;
 
@@ -34,6 +40,8 @@ function openAccordionService() {
 
         }
     }))
+
+
 }
 
 

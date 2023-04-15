@@ -331,7 +331,7 @@ if (calcBtnUnit) {
 
 
     document.body.classList.add('active-body');
-    document.querySelector('.wrapper-calc').classList.add('active')
+    document.querySelector('.calculator__overlay').classList.add('active')
     document.querySelector('.unit-item').style.display = 'block';
     document.querySelector('.calc-container').classList.add('active-calc');
 
@@ -349,7 +349,7 @@ if (calcBtnUnit) {
 if (calcBtnTower) {
   calcBtnTower.addEventListener('click', function () {
     document.body.classList.add('active-body');
-    document.querySelector('.wrapper-calc').classList.add('active');
+    document.querySelector('.calculator__overlay').classList.add('active');
     document.querySelector('.calc-container').classList.add('active-calc');
     document.querySelector('.unit-item').style.display = 'none';
 
@@ -414,8 +414,8 @@ function nullValue() {
     document.querySelector('.calc-container').classList.remove('active-calc-container');
   }
 
-  if (document.querySelector('.wrapper-calc')) {
-    document.querySelector('.wrapper-calc').classList.remove('active');
+  if (document.querySelector('.calculator__overlay')) {
+    document.querySelector('.calculator__overlay').classList.remove('active');
   }
 
   if (calcTable) {
@@ -459,7 +459,7 @@ if (closeIcon) {
 
 function removeClasses() {
   document.body.classList.remove('active-body');
-  document.querySelector('.wrapper-calc').classList.remove('active');
+  document.querySelector('.calculator__overlay').classList.remove('active');
   nullValue();
 }
 
