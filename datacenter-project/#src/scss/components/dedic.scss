@@ -25,23 +25,23 @@
 
     }
 
-    .order-form::after{
-        content: '';
-        position: absolute;
-        top:0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(255,255,255, 1) url("../img/louder/Ellipsis-1s-200px.gif") center / 100px no-repeat;
-        opacity: 0;
-        visibility: hidden;
-        @extend %border-shadow;
-    }
-
-    .order-form.get-data::after{
-        opacity: 1;
-        visibility: visible;
-    }
+    //.order-form::after{
+    //    content: '';
+    //    position: absolute;
+    //    top:0;
+    //    left: 0;
+    //    width: 100%;
+    //    height: 100%;
+    //    background: rgba(255,255,255, 1) url("../img/louder/Ellipsis-1s-200px.gif") center / 100px no-repeat;
+    //    opacity: 0;
+    //    visibility: hidden;
+    //    @extend %border-shadow;
+    //}
+    //
+    //.order-form.get-data::after{
+    //    opacity: 1;
+    //    visibility: visible;
+    //}
 
     .form-container{
         display: flex;

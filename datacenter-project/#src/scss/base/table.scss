@@ -15,13 +15,17 @@
   @include font-style($size: 2rem, $weight: 700);
   border-radius: 1.4rem 1.4rem 0 0;
   background-color: $color-light-grey;
-  padding: 2rem;
 
   @media (max-width: 1024px) {
     @include font-style($size: 1.6rem, $weight: 700);
   }
   @media (max-width: 768px) {
     @include font-style($size: 1.4rem, $weight: 700);
+
+  }
+
+  @media (max-width: 420px) {
+    @include font-style($size: 1.2rem, $weight: 700);
   }
 
   @media (max-width: 420px) {
@@ -31,36 +35,51 @@
   & > p{
     flex-basis: 50%;
     text-align: center;
+    height: 100%;
+    padding: 2rem;
   }
 
 
-
 }
 
-.table-body {
+.table__body {
   display: flex;
   flex-direction: column;
+
+  &_loading{
+    img{
+      max-width: 150px;
+      height: 100px;
+    }
+  }
+
 }
+
+
+
 
 .table__row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 2rem;
   @include font-style($size: 1.6rem, $weight: 400);
 
-  @media (max-width: 420px) {
-    padding: 1rem;
+  @media (max-width: 768px) {
     @include font-style($size: 1.4rem, $weight: 400);
   }
 
   & > p{
     flex-basis: 50%;
+    text-align: center;
+    height: 100%;
+    padding: 2rem;
+
+
+    @media (max-width: 420px) {
+      padding: 1rem;
+    }
   }
 
-  p:last-child {
-    text-align: center;
-  }
 
   &:nth-child(2n) {
     background-color: $color-light-grey;
@@ -68,6 +87,14 @@
 
   &:last-child {
     border-radius: 0 0 1.4rem 1.4rem;
-
   }
 }
+
+.text, .description,.price{
+  flex-basis: 33%;
+  @media (max-width: 480px) {
+    padding: 1rem;
+    @include font-style($size: 1.2rem, $weight: 400);
+  }
+}
+

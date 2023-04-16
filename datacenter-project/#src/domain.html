@@ -15,29 +15,13 @@
 
     <div class="wrapper page-wrapper">
         @@include('./components/layout/_header.html')
-
         <main class="main">
-            <section class="section-services section-padding" id="other-page">
-                <div class="container">
-                    <div class="section-services-container form-other-container get-data">
-                        <h1 class="title-section">Другие услуги - Регистрация доменов</h1>
-                        <div class="section-wrapper">
-                            <div class="container-services">
-                                <p class="panel-text">Вы можете зарегистрировать у нас следующие доменные имена:</p>
-                                <div class="services-table">
-                                    <div class="table-head">
-                                        <p>Зона домена</p>
-                                        <p>Стоимость BYN с НДС, в год</p>
-                                    </div>
-                                    <div class="table-body" id="domain">
-
-                                    </div>
-                                </div>
-                                <div class="btn-services">
-                                    <a class="btn-gr-bg order-btn"
-                                        href="https://my.datahata.by/"><span>Заказать</span></a>
-                                </div>
-                            </div>
+            <section class="services" id="other-page">
+                <div class="container services__container">
+                    <h1 class="services__title">Другие услуги - Регистрация доменов</h1>
+                    <div class="services__content">
+                        <div class="services__wrapper">
+                            @@include('components/services/other/_domain.html')
                         </div>
                     </div>
                 </div>

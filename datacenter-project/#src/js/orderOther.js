@@ -1,52 +1,85 @@
+
+// const formOther = document.querySelector('.form-other-container')
+// let state = {}
+
+
+
+
+    const tables = document.querySelectorAll('.table__body_loading');
+    tables.forEach(table => {
+        const loader = document.createElement('img');
+        loader.src = 'img/loader/loader.gif';
+        table.style.alignItems = 'center'
+        table.append(loader);
+
+        getData(function(data) {
+            if (data) {
+                table.style.alignItems = 'stretch';
+                table.removeChild(loader);
+            }
+        });
+    })
+
+
+
 const domain = document.getElementById('domain')
-const soft = document.getElementById('soft')
 const ssl = document.getElementById('ssl')
 const backup = document.getElementById('backup')
-const formOther = document.querySelector('.form-other-container')
-let state = {}
+const soft = document.getElementById('soft')
 
 
 function getOtherServices(sslType, domainType, backUpType) {
 
 
     if (ssl) {
-        generationHtml(sslType, ssl)
+        renderData(sslType, ssl)
     }
     if (domain) {
-        generationHtml(domainType, domain)
+        renderData(domainType, domain)
     }
     if (backup) {
-        generationHtml(backUpType, backup)
+        renderData(backUpType, backup)
     }
-
-
 }
 
 function getSoftServices(softType) {
 
     if (soft) {
-        generationHtml(softType,soft)
+       renderData(softType,soft)
     }
-
-
 }
 
 
-function generationHtml(data, elem) {
-    data.length ? elem.innerHTML = `${data.map(i => ` <div class="table-body-item" >
- ${elem===backup ? `<p className="text">${i.name_ru['$']} (за 1 ГБ) </p>` : `<p className="text">${i.name_ru['$']}</p>`}
-                                   
-                                    ${elem === ssl ? `<div class="ssl-description">?<div class="ssl-text-description">${i.description_ru['$']}</div></div>` : ''}
-                                    
-                                    ${elem===ssl ? `<p class ='price'>${Math.ceil((i.price.period['$cost']) * 1.2).toFixed(2)} BYN/год</p>`: ''}
-                                    ${elem===domain ? `<p class ='price'>${Math.ceil((i.price.period[1]['$cost']) * 1.2).toFixed(2)} BYN/год</p>`: ''}
-                                    ${elem===backup ? `<p class ='price'>${((i.addon[0].price.period[0]['$cost']) * 1.2).toFixed(2)} BYN/мес</p>`: ''}
-                                    ${elem===soft ? `<p class ='price'>${Math.ceil((i.price.period[0]['$cost']) * 1.2).toFixed(2)} BYN/мес</p>`: ``}
-         
-                                   
-                                    
-                                    
-                                </div>`).join('')}` : elem.closest('.accordion-section-services').style.display = 'none'
+
+function renderData(data, elem) {
+    switch (elem){
+        case backup: data.length ? backup.innerHTML = `${data.map(i => `<div class="table__row"> 
+                    <p class="text">${i.name_ru['$']} (за 1 ГБ) </p>
+                    <p class ='price'>${((i.addon[0].price.period[0]['$cost']) * 1.2).toFixed(2)} BYN/мес</p>
+        </div>`).join('')}` : backup.innerHTML = ''
+            break;
+        case ssl : data.length ? ssl.innerHTML = `${data.map(i => `<div class="table__row"> 
+                    <p class="text">${i.name_ru['$']}</p>
+                    <p class="description">${i.description_markdown_ru['$']}</p>
+                    <p class ='price'>${Math.ceil((i.price.period['$cost']) * 1.2).toFixed(2)} BYN/год</p>
+        </div>`).join('')}` : ssl.innerHTML = ''
+            break;
+        case domain: data.length ? domain.innerHTML = `${data.map(i => `<div class="table__row"> 
+                    <p class="text">${i.name_ru['$']}</p>
+                    <p class ='price'>${Math.ceil((i.price.period[1]['$cost']) * 1.2).toFixed(2)} BYN/год</p>
+        </div>`).join('')}` : domain.innerHTML = ''
+            break;
+        case soft: data.length ? soft.innerHTML = `${data.map(i => `<div class="table__row"> 
+                    <p class="text">${i.name_ru['$']}</p>
+                    <p class ='price'>${Math.ceil((i.price.period[0]['$cost']) * 1.2).toFixed(2)} BYN/мес</p>
+        </div>`).join('')}`: soft.innerHTML = ''
+            break;
+        default: return
+    }
+    if(document.getElementById('first-open-body')){
+        openAccordionService()
+    }
+
 
 
 }

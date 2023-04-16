@@ -1,5 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-    calculator()
+    if(document.querySelector('.calculator')){
+        calculator()
+    }
+
 });
 
 function calculator() {

@@ -16,31 +16,12 @@
     <div class="wrapper page-wrapper">
         @@include('./components/layout/_header.html')
         <main class="main">
-            <section class="section-services section-padding" id="other-page">
-                <div class="container">
-                    <div class="section-services-container form-other-container get-data">
-                        <h1 class="title-section">Другие услуги - SSL-сертификаты</h1>
-                        <div class="section-wrapper">
-                            <div class="container-services">
-                                <p class="panel-text">SSL-шифрование - это уже несколько лет не далекая фантастика, а
-                                    реальная необходимость для любого более-менее серьезного ресурса. HTTPS позволяет не
-                                    только зашифровать все данные, которые пользователь передает вам на ресурс, но и
-                                    гарантировать что пользователь просматривает именно ваш сайт. Сайты с https выше
-                                    ранжируются поисковыми системами.</p>
-                                <div class="services-table">
-                                    <div class="table-head">
-                                        <p>SSL-сертификат</p>
-                                        <p>Стоимость BYN с НДС, в год</p>
-                                    </div>
-                                    <div class="table-body" id="ssl">
-
-                                    </div>
-                                </div>
-                                <div class="btn-services">
-                                    <a class="btn-gr-bg order-btn"
-                                        href="https://my.datahata.by/"><span>Заказать</span></a>
-                                </div>
-                            </div>
+            <section class="services" id="other-page">
+                <div class="container services__container">
+                    <h1 class="services__title">Другие услуги - SSL-сертификаты</h1>
+                    <div class="services__content">
+                        <div class="services__wrapper">
+                            @@include('components/services/other/_ssl.html')
                         </div>
                     </div>
                 </div>

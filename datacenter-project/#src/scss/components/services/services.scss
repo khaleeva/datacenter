@@ -7,7 +7,7 @@
   margin-bottom: 4rem;
 }
 
-.services__wrapper{
+.services__wrapper {
   @extend %border-shadow;
 }
 
@@ -19,7 +19,7 @@
   }
 }
 
-.service__container, .services__additional{
+.service__container, .services__additional {
   padding: 4rem;
 
   @media (max-width: 1024px) {
@@ -32,11 +32,11 @@
 }
 
 .service__text {
-  &_mb{
+  &_mb {
     margin-bottom: 2rem;
   }
 
-  &_bold{
+  &_bold {
     font-weight: 700;
     margin-top: 1rem;
   }
@@ -46,14 +46,14 @@
 
   @media (max-width: 1024px) {
     @include font-style($size: 1.6rem, $height: 160%, $weight: 400);
-    &_bold{
+    &_bold {
       font-weight: 700;
     }
   }
 
   @media (max-width: 768px) {
     @include font-style($size: 1.4rem, $height: 160%, $weight: 400);
-    &_bold{
+    &_bold {
       font-weight: 700;
     }
   }
@@ -69,7 +69,7 @@
   display: flex;
   align-items: center;
   column-gap: 1.7rem;
-  margin-bottom: 3.9rem;
+  margin: 2rem 0;
 
   @media (max-width: 1024px) {
     flex-direction: column;
@@ -82,7 +82,7 @@
       text-align: center;
     }
 
-    & > button{
+    & > button {
       padding-left: 0;
       padding-right: 0;
     }
@@ -92,7 +92,10 @@
     row-gap: 0.7rem;
 
   }
+}
 
+a {
+  color: $color-primary;
 }
 
 .service__info {
@@ -109,9 +112,6 @@
     margin-bottom: 2rem;
   }
 
- a{
-   color: $color-primary;
- }
 
   p {
     @include font-style($size: 2rem, $weight: 700);
@@ -122,7 +122,7 @@
     }
   }
 
-  ul > li{
+  ul > li {
     list-style-type: disc;
     margin-bottom: 0.7rem;
     margin-left: 1.4rem;
@@ -135,20 +135,19 @@
 }
 
 
-
 // ALL SERVICES
 
-.all-services{
+.all-services {
   padding: 5rem 0 8rem;
 }
 
-.all-services__accordion{
+.all-services__accordion {
   display: flex;
   flex-direction: column;
   align-items: center;
   row-gap: 4rem;
 
-  .accordion__section{
+  .accordion__section {
     width: 100%;
     max-width: 1200px;
     padding: 0 3.7rem;
@@ -189,10 +188,11 @@
       font-size: 1.4rem;
     }
 
-    .button__arrow{
+    .button__arrow {
       @extend %transition;
       cursor: pointer;
-      &_rotate{
+
+      &_rotate {
         transform: rotate(-180deg);
       }
 
@@ -205,35 +205,33 @@
   }
 
 
-.accordion__body {
-  max-height: 0;
-  overflow: hidden;
- @extend %transition;
+  .accordion__body {
+    max-height: 0;
+    overflow: hidden;
+    @extend %transition;
 
-  @media (max-width: 1024px) {
-    padding: 0 1.4rem;
-  }
-
-  @media (max-width: 420px) {
-    padding: 0;
-  }
-
-
-  .subtitle-section,
-  h3 {
-    margin-top: 2rem;
-    font-size: 2rem;
-    font-weight: 700;
+    @media (max-width: 1024px) {
+      padding: 0 1.4rem;
+    }
 
     @media (max-width: 420px) {
-      padding: 0.7rem 1.4rem 0;
+      padding: 0;
+    }
+
+
+    .subtitle-section,
+    h3 {
+      margin-top: 2rem;
+      font-size: 2rem;
+      font-weight: 700;
+
+      @media (max-width: 420px) {
+        padding: 0.7rem 1.4rem 0;
+      }
     }
   }
-}
-
 
 }
-
 
 
 .all-services__text {
@@ -252,10 +250,12 @@
 
   ul {
     padding: 2rem;
+
     li {
       list-style-type: disc;
     }
   }
 }
+
 
 
