@@ -11,6 +11,7 @@ function getOtherServices(sslType, domainType, backUpType) {
 
     if (ssl) {
         generationHtml(sslType, ssl)
+
     }
     if (domain) {
         generationHtml(domainType, domain)
@@ -23,18 +24,19 @@ function getOtherServices(sslType, domainType, backUpType) {
 }
 
 function getSoftServices(softType) {
-
     if (soft) {
         generationHtml(softType,soft)
+
+
     }
-
-
 }
 
 
+
+
 function generationHtml(data, elem) {
-    data.length ? elem.innerHTML = `${data.map(i => ` <div class="table-body-item" >
- ${elem===backup ? `<p className="text">${i.name_ru['$']} (за 1 ГБ) </p>` : `<p className="text">${i.name_ru['$']}</p>`}
+    data.length ? elem.innerHTML = `${data.map(i => ` <div class="table__row"" >
+ ${elem===backup ? `<p class="text">${i.name_ru['$']} (за 1 ГБ) </p>` : `<p class="text">${i.name_ru['$']}</p>`}
                                    
                                     ${elem === ssl ? `<div class="ssl-description">?<div class="ssl-text-description">${i.description_ru['$']}</div></div>` : ''}
                                     
@@ -48,7 +50,7 @@ function generationHtml(data, elem) {
                                     
                                 </div>`).join('')}` : elem.closest('.accordion-section-services').style.display = 'none'
 
-
+    openAccordionService()
 }
 
 

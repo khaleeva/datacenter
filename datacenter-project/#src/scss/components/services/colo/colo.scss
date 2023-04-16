@@ -69,7 +69,7 @@
   display: flex;
   align-items: center;
   column-gap: 1.7rem;
-  margin-bottom: 3.9rem;
+  margin: 2rem 0;
 
   @media (max-width: 1024px) {
     flex-direction: column;
@@ -92,7 +92,10 @@
     row-gap: 0.7rem;
 
   }
+}
 
+a{
+  color: $color-primary;
 }
 
 .service__info {
@@ -109,9 +112,7 @@
     margin-bottom: 2rem;
   }
 
- a{
-   color: $color-primary;
- }
+
 
   p {
     @include font-style($size: 2rem, $weight: 700);

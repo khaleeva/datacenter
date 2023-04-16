@@ -9,7 +9,7 @@
 @@include('sendform.js');
 @@include('form.js');
 @@include('map.js');
-@@include('calc.js');
+@@include('calculator.js');
 @@include('orderDedic.js');
 @@include('orderOther.js');
 @@include('getServicesData.js');

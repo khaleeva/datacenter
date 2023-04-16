@@ -1,19 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
-    openAccordionService()
+    if (document.querySelector('.all-services__accordion')){
+        openAccordionService()
+    }
 });
 
 function openAccordionService() {
-    if(document.querySelectorAll('.all-services__accordion')){
+
         let firstOpenAccordionBody = document.getElementById('first-open-body');
-
-        const accordion_headers = document.querySelectorAll('.all-services__accordion .accordion__header');
-        // const accSection = document.querySelector('.colocation-services-accordion');
-        const accordion_bodies = document.querySelectorAll('.all-services__accordion .accordion__body');
-        //
-        // let dedicContent = document.getElementById('dedic-content');
-        // const innerLinks = document.querySelectorAll('.inner-link');
-        // let formHeight = document.querySelector('.form-container');
-
+        const accordion_container = document.querySelector('.all-services__accordion');
+        const accordion_headers = accordion_container.querySelectorAll('.accordion__header');
+        const accordion_bodies = accordion_container.querySelectorAll('.accordion__body');
         if( firstOpenAccordionBody){
             firstOpenAccordionBody.style.maxHeight = firstOpenAccordionBody.scrollHeight + 'px';
         }
@@ -30,7 +26,6 @@ function openAccordionService() {
                 });
 
                 e.target.classList.toggle('button__arrow_rotate');
-
                 let current_body =  header.nextElementSibling;
 
                 if (current_body.style.maxHeight) {
@@ -47,7 +42,6 @@ function openAccordionService() {
             }
         }))
 
-    } else return
 
 
 }

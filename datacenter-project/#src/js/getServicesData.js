@@ -13,13 +13,15 @@ async function getDedicTariffPlan() {
         let sslType = idType.filter(i => i.itemtype['$'] === '48')
         let domainType = idType.filter(i => i.itemtype['$'] === '49')
         let backUpType = idType.filter(i => i.itemtype['$'] === '66')
-
-
         if (document.getElementById("dedic-page")) {
             getServers(dedicType)
-        } else if ((document.getElementById("other-page"))) {
+        } else if (document.getElementById("other-page")) {
             getOtherServices(sslType, domainType, backUpType)
-        } else getSoftServices(softType)
+        } else if(document.getElementById('soft-page')){
+            getSoftServices(softType);
+            openAccordionService();
+        }
+
         if(formServer) {
             formServer.classList.remove('get-data')
         }

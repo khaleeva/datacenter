@@ -1,49 +1,4 @@
-//.other-table {
-//    .table-head-name {
-//        width: 100%;
-//        display: flex;
-//        justify-content: center;
-//        align-items: center;
-//        font-size: $font20;
-//        font-weight: 700;
-//        height: 51px;
-//
-//        @media (max-width: 1024px) {
-//            font-size: $font14;
-//        }
-//
-//        @media (max-width: 420px) {
-//            padding: 0.7rem;
-//            min-height: 75px;
-//            text-align: center;
-//        }
-//    }
-//
-//    .table-body-item {
-//        &:nth-child(2n) {
-//            background-color: $lightGrey;
-//        }
-//
-//        &:last-child {
-//            border-radius: 0 0 20px 20px;
-//
-//            @media (max-width: 420px) {
-//                border-radius: 0;
-//            }
-//        }
-//    }
-//}
-//
-//.other-btn-services {
-//    justify-content: space-between;
-//}
-//
-//.btn-text {
-//    max-width: 800px;
-//    @media (max-width: 420px) {
-//        padding: 0.7rem 1.4rem 0;
-//    }
-//}
+
 #domain{
   min-height: 550px;
   @media (max-width: 500px) {
@@ -51,242 +6,71 @@
   }
 }
 
-#soft{
-  min-height: 380px;
-  @media (max-width: 500px) {
-    min-height: 600px;
-  }
-}
-
-.form-other-container{
-  position: relative;
-
-
-  &::after{
-    content: '';
-    position: absolute;
-    top:0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255,255,255, 1) url("../img/louder/Ellipsis-1s-200px.gif") center / 100px no-repeat;
-    opacity: 0;
-    visibility: hidden;
-    border-radius: 20px;
-
-    @media (max-width: 500px) {
-      background: rgba(255,255,255, 1) url("../img/louder/Ellipsis-1s-200px.gif") 50% 20%/ 100px no-repeat;
-    }
-  }
-
-  &.get-data::after{
-    opacity: 1;
-    visibility: visible;
-  }
-  .table-body-item{
-    position: relative;
-  }
-
-  .ssl-description{
-    width: 16px;
-    height: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    @extend %gradient-border;
-    color: #ea5c2f;
-    cursor:pointer;
-    position: absolute;
-    top: 20%;
-    left: 1%;
-
-    &:hover .ssl-text-description{
-      opacity: 1;
-      visibility: visible;
-      transition: all 0.2s ease-out;
-    }
-  }
-
-  .ssl-text-description{
-    display: flex;
-    opacity: 0;
-    visibility: hidden;
-    @extend %border-shadow;
-    position: absolute;
-    min-width: 200px;
-    min-height: 100px;
-    bottom: 100%;
-    left: 100%;
-    z-index: 100;
-    color: black;
-    padding: 20px;
-  }
-
-}
-
-
-
-//.other-table{
-//  width: 100%;
-//  //min-height: 250px;
-//  display: flex;
-//  flex-direction: column;
-//  //justify-content: space-between;
-//  padding: 10px;
+//#soft{
+//  min-height: fit-content;
 //}
-//  .other-item-container{
-//    display: flex;
-//    flex-wrap: wrap;
+//
+//.form-other-container{
+//  position: relative;
+//
+//  &::after{
+//    content: '';
+//    position: absolute;
+//    top:0;
+//    left: 0;
 //    width: 100%;
-//    justify-content: flex-start;
+//    height: 100%;
+//    background: rgba(255,255,255, 1) url("../img/louder/Ellipsis-1s-200px.gif") center / 100px no-repeat;
+//    opacity: 0;
+//    visibility: hidden;
+//    border-radius: 16px;
 //
-//
-//
-//    .radio-container{
-//       display: flex;
-//        margin-right: 40px;
-//
-//
-//        .price{
-//          padding: 10px 0px 20px;
-//          font-weight: bold;
-//        }
-//
-//
-//        .radio input {
-//          position: absolute;
-//          z-index: -1;
-//          opacity: 0;
-//
-//        }
-//
-//        .radio__text {
-//          position: relative;
-//          padding: 10px 35px;
-//          cursor: pointer;
-//          p{
-//            position: relative;
-//            width: fit-content;
-//          }
-//
-//
-//          @media (max-width: 1200px) {
-//            padding-right: 10px;
-//            font-size: 10px;
-//
-//          }
-//        }
-//
-//        .radio__text:before {
-//          content: "";
-//          position: absolute;
-//          top: 33%;
-//          left: 0;
-//          width: 15px;
-//          height: 15px;
-//          border: 1px solid #fff;
-//          box-shadow: 0px 3px 17px rgba(0, 0, 0, 0.2);
-//          border-radius: 50%;
-//          background: #fff;
-//        }
-//
-//        .radio__text:after {
-//          content: "";
-//          position: absolute;
-//          top: 41%;
-//          left: 3px;
-//          width: 9px;
-//          height: 9px;
-//          border-radius: 50%;
-//          background: linear-gradient(90deg, #ea5c2f 0%, #f3b921 100%);
-//          opacity: 0;
-//          transition: 0.2s;
-//
-//        }
-//
-//
-//
-//        .radio input:checked + .radio__text:after {
-//          opacity: 1;
-//        }
-//
-//        .radio input:focus + .radio__text:before {
-//          box-shadow: 0px 3px 17px rgba(0, 0, 0, 0.2);
-//
-//        }
-//
-//
-//        label{
-//          cursor:pointer;
-//          width: 300px;
-//        }
-//
-//
-//      .ssl-description{
-//
-//        width: 16px;
-//        height: 16px;
-//        display: flex;
-//        align-items: center;
-//        justify-content: center;
-//        @extend %gradient-border;
-//        color: #ea5c2f;
-//        cursor:pointer;
-//        position: absolute;
-//        top: -10%;
-//        left: 90%;
-//
-//        &:hover .ssl-text-description{
-//          opacity: 1;
-//          visibility: visible;
-//          transition: all 0.2s ease-out;
-//        }
-//      }
-//
-//      .ssl-text-description{
-//        opacity: 0;
-//        visibility: hidden;
-//        @extend %border-shadow;
-//        position: absolute;
-//        min-width: 200px;
-//        height: 100px;
-//        bottom: 100%;
-//        left: 100%;
-//        z-index: 100;
-//        color: black;
-//        padding: 20px;
-//      }
-//
-//
+//    @media (max-width: 500px) {
+//      background: rgba(255,255,255, 1) url("../img/louder/Ellipsis-1s-200px.gif") 50% 20%/ 100px no-repeat;
 //    }
 //  }
-//  #result{
-//    padding-bottom: 35px;
+//
+//  &.get-data::after{
+//    opacity: 1;
+//    visibility: visible;
 //  }
-//  .result-order{
+//
+//
+//  .ssl-description{
+//    width: 16px;
+//    height: 16px;
 //    display: flex;
-//    width: 100%;
-//    justify-content: space-between;
 //    align-items: center;
-//    padding-top: 35px;
+//    justify-content: center;
+//    @extend %gradient-border;
+//    color: #ea5c2f;
+//    cursor:pointer;
+//    position: absolute;
+//    top: 20%;
+//    left: 1%;
 //
-//
-//    .result-order-title{
-//      font-size: $font24;
-//      font-weight: bold;
-//    }
-//
-//
-//
-//    .put-bucket{
-//      height: 50px;
-//      padding: 0 15px;
+//    &:hover .ssl-text-description{
+//      opacity: 1;
+//      visibility: visible;
+//      transition: all 0.2s ease-out;
 //    }
 //  }
 //
+//  .ssl-text-description{
+//    display: flex;
+//    opacity: 0;
+//    visibility: hidden;
+//    @extend %border-shadow;
+//    position: absolute;
+//    min-width: 200px;
+//    min-height: 100px;
+//    bottom: 100%;
+//    left: 100%;
+//    z-index: 100;
+//    color: black;
+//    padding: 20px;
+//  }
+//
 //}
-
-
-
 
 
