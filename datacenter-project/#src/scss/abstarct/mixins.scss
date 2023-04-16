@@ -30,6 +30,10 @@
 }
 
 
+@mixin gradient{
+  background: linear-gradient(90deg, $color-gradient-primary 0%, $color-gradient-secondary 100%);
+}
+
 
 //@mixin button-border () {
 //  //border: 1px double transparent;

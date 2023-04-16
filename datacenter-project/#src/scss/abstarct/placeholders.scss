@@ -19,15 +19,15 @@
   color: $color-light;
 }
 
-%gradient {
-  background: linear-gradient(90deg, $color-gradient-primary 0%, $color-gradient-secondary 100%);
-}
+//%gradient{
+//  background: $color-primary;
+//}
 
-%gradient-text{
-  @extend %gradient;
-  background-clip: text;
-  color: transparent;
-}
+//%gradient-text{
+//  @extend %gradient;
+//  background-clip: text;
+//  color: transparent;
+//}
 
 //градиент бордера кнопок
 
@@ -43,17 +43,15 @@
 
 //градиентный бэкграунд кнопок
 
-//%gradient-bg {
-//  background: linear-gradient(90deg, #ea5c2f 0%, #f3b921 100%);
-//}
+
 //
 ////градиент текста кнопок
 //
-//%gradient-text{
-//  background: linear-gradient(90deg, #ea5c2f 0%, #f3b921 100%);
-//  background-clip: text;
-//  color: transparent;
-//}
+%gradient-text{
+  background: linear-gradient(90deg, #ea5c2f 0%, #f3b921 100%);
+  background-clip: text;
+  color: transparent;
+}
 //
 ////прозрачный бэкграунд
 //

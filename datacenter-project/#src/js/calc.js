@@ -25,10 +25,13 @@ function calculator() {
 
     let measure = '';
     let currency_RUB;
-
+    let countServer = 1;
     let POWER = 0, UNIT = 0, PORT = 0, IP = 0, SUPPLY = 0;
     let TOTAL_SUM = 0;
     let tableCostData = {}
+
+
+
 
 
     tableBody.forEach(table => {
@@ -54,26 +57,31 @@ function calculator() {
 
     getCurrency()
 
-    if (buttonToOpenUnitCalculator) {
-        buttonToOpenUnitCalculator.addEventListener('click', function () {
-            document.body.classList.add('active-body')
-            document.querySelector('.calculator__overlay').classList.add('active')
-            document.querySelector('.cost-calculate__unit').classList.add('cost-calculate__unit_active');
-            document.querySelector('.calculator__container').classList.add('active-calc');
-            renderTotalCost(tableCostData['server'].toFixed(2))
-
-        })
+// открытие калькулятора
+    function openCalculator(data, action){
+        const innerWidth = window.innerWidth;
+        const heightDevice = window.innerHeight;
+        document.body.classList.add('active-body')
+        document.querySelector('.calculator__overlay').classList.add('calculator__overlay_active')
+        document.querySelector('.cost-calculate__unit').classList[action]('cost-calculate__unit_active');
+        if(innerWidth <= 768){
+            calculator_container.classList.add('calculator__container_swipe')
+            let minHeightBottomMenu = heightDevice * 0.8
+            let topPoint = heightDevice * 0.2
+            calculator_container.style.minHeight = `${minHeightBottomMenu}px`
+            calculator_container.style.minWidth = `${innerWidth}px`;
+            calculator_container.style.top = `${topPoint}px`
+        }
+        renderTotalCost(data.toFixed(2))
+        checkBox_BYN.checked = true;
     }
 
+    if (buttonToOpenUnitCalculator) {
+        buttonToOpenUnitCalculator.addEventListener('click', () => openCalculator(tableCostData['server'], 'add'))
+    }
 
     if (buttonToOpenTowerCalculator) {
-        buttonToOpenTowerCalculator.addEventListener('click', function () {
-            document.body.classList.add('active-body');
-            document.querySelector('.calculator__overlay').classList.add('active');
-            document.querySelector('.calculator__container').classList.add('active-calc');
-            document.querySelector('.cost-calculate__unit').classList.remove('cost-calculate__unit_active');
-            renderTotalCost(tableCostData['tower'].toFixed(2))
-        })
+        buttonToOpenTowerCalculator.addEventListener('click', () => openCalculator(tableCostData['tower'], 'remove'))
     }
 
 
@@ -198,6 +206,7 @@ function calculator() {
                 if (result_table_cells.length > 0) {
                     result_table_cells.forEach(cell => cell.remove())
                 }
+                countServer = 1;
                 changeDisabledStateForButton(false)
                 getNullValueCalculator()
             }
@@ -206,7 +215,7 @@ function calculator() {
 
 
     // рендер таблицы с серверами
-    function renderResultTable() {
+    function renderResultTable(count) {
         let totalSumForAllServers = 0;
         let cost = getTotalCostOfService();
         let data = getDataForResultTable();
@@ -214,23 +223,26 @@ function calculator() {
         result_table.classList.add('calculator__result-table_open');
         result_table_total.classList.add('result-table__total_visible');
         result_table_rows.innerHTML += `<div class="result-table__cell">
-            <div class="cell__name">Сервер ${data}</div>
+            <div class="cell__name">${count}. Сервер ${data}</div>
             <div class="cell__cost">${cost}</div>
         </div>`
+        document.querySelector('.point-to-scroll').scrollIntoView({ behavior: 'smooth', block: 'end' });
 
         for (let elem of document.querySelectorAll('.cell__cost')) {
             totalSumForAllServers = totalSumForAllServers + Number(elem.innerHTML);
             renderTotalCost(totalSumForAllServers.toFixed(2), document.querySelector('.total__cost'))
         }
 
-        if (result_table_rows.querySelectorAll('.result-table__cell').length >= 9) {
+        if (result_table_rows.querySelectorAll('.result-table__cell').length >= 10) {
             changeDisabledStateForButton(true)
         }
 
         getNullValueCalculator();
     }
 
-    addMoreServicesButton.addEventListener('click', renderResultTable);
+    addMoreServicesButton.addEventListener('click', () => {
+        renderResultTable(countServer++)
+    });
 
 
     // формирование данных для таблицы
@@ -304,9 +316,15 @@ function calculator() {
 // функция обнуления классов
 
     function removeActiveClasses() {
+        let innerWidth = window.innerWidth;
         document.body.classList.remove('active-body');
         calculator_container.classList.remove('calculator__container_result-table');
-        document.querySelector('.calculator__overlay').classList.remove('active');
+        if(innerWidth <= 768){
+            calculator_container.classList.remove('calculator__container_swipe');
+            calculator_container.style.minHeight = `0px`
+            calculator_container.style.top = `100%`
+        }
+        document.querySelector('.calculator__overlay').classList.remove('calculator__overlay_active')
         result_table.classList.remove('calculator__result-table_open');
 
         if (checkBox_RUB.checked) {
@@ -318,13 +336,21 @@ function calculator() {
         if (result_table_cells.length > 0) {
             result_table_cells.forEach(cell => cell.remove())
         }
-
         changeDisabledStateForButton(false)
         getNullValueCalculator();
     }
 
-    closeIcon.addEventListener('click', removeActiveClasses);
-    swipe_button.addEventListener('swiped-down', removeActiveClasses);
-    swipe_button.addEventListener('click', removeActiveClasses);
+    closeIcon.addEventListener('click', () => {
+        removeActiveClasses();
+        countServer = 1;
+    } );
+    swipe_button.addEventListener('swiped-down', () => {
+        removeActiveClasses();
+        countServer = 1;
+    } );
+    swipe_button.addEventListener('click', () => {
+        removeActiveClasses();
+        countServer = 1;
+    } );
 }
 
