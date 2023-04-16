@@ -90,65 +90,65 @@ h4 {
 }
 
 //кнопка с градиентным боредером
+//
+//.gradient-btn {
+//  @extend %gradient-border;
+//}
+//
+//.btn-gr-border {
+//  display: flex;
+//  justify-content: center;
+//  align-items: center;
+//  @extend %gradient-border;
+//  transition: all 0.1s linear;
+//  cursor: pointer;
+//
+//  span {
+//    @extend %gradient-text;
+//    font-size: 1.6rem;
+//    font-weight: 700;
+//
+//    &:hover {
+//      @extend %transparent-bg;
+//      transition: all 0.1s linear;
+//    }
+//  }
+//
+//  &:hover {
+//    @extend %gradient-bg;
+//    transition: all 0.1s linear;
+//  }
+//
+//  &:hover span {
+//    color: $color-light;
+//  }
+//
+//  //&:hover img{
+//  //    color:white;
+//  //}
+//}
 
-.gradient-btn {
-  @extend %gradient-border;
-}
+//.btn-gr-bg {
+//  display: flex;
+//  justify-content: center;
+//  align-items: center;
+//  border-radius: 16px;
+//  @extend %gradient;
+//  cursor: pointer;
+//
+//  span {
+//    font-size: 2rem;
+//    line-height: 120%;
+//    font-weight: 700;
+//    color: $color-light;
+//  }
+//
+//
+//}
 
-.btn-gr-border {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  @extend %gradient-border;
-  transition: all 0.1s linear;
-  cursor: pointer;
-
-  span {
-    @extend %gradient-text;
-    font-size: 1.6rem;
-    font-weight: 700;
-
-    &:hover {
-      @extend %transparent-bg;
-      transition: all 0.1s linear;
-    }
-  }
-
-  &:hover {
-    @extend %gradient-bg;
-    transition: all 0.1s linear;
-  }
-
-  &:hover span {
-    color: $color-light;
-  }
-
-  //&:hover img{
-  //    color:white;
-  //}
-}
-
-.btn-gr-bg {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 16px;
-  @extend %gradient-bg;
-  cursor: pointer;
-
-  span {
-    font-size: 2rem;
-    line-height: 120%;
-    font-weight: 700;
-    color: $color-light;
-  }
-
-
-}
-
-.block-shadow {
-  @extend %border-shadow;
-}
+//.block-shadow {
+//  @extend %border-shadow;
+//}
 
 .icon {
   display: inline-block;

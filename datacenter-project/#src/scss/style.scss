@@ -12,9 +12,11 @@
 @import "./base/burger";
 @import "./base/burger-menu";
 @import "./base/accordion";
-@import "./base/navigation";
+@import "./base/footer-navigation";
+@import "base/header-navigation";
 @import "./base/contacts_nav";
 @import "./base/table";
+
 
 //layout
 @import "./layout/container";
@@ -23,7 +25,7 @@
 @import "./layout/footer-mob";
 
 //components
-@import "./components/navigation";
+
 
 //main page
 @import "./components/main/promo";

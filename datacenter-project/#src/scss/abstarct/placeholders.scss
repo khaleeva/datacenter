@@ -3,15 +3,12 @@
 }
 
 
-
-
 //тень блоков
 %border-shadow {
   background: $color-light;
   box-shadow: 0 24px 74px rgba(0, 0, 0, 0.07);
   border-radius: 20px;
 }
-
 
 
 //градиентный бэкграунд элементов
@@ -22,7 +19,19 @@
   color: $color-light;
 }
 
+%gradient {
+  background: linear-gradient(90deg, $color-gradient-primary 0%, $color-gradient-secondary 100%);
+}
+
+%gradient-text{
+  @extend %gradient;
+  background-clip: text;
+  color: transparent;
+}
+
 //градиент бордера кнопок
+
+
 
 %gradient-border {
   border: double 1px transparent;
@@ -34,21 +43,21 @@
 
 //градиентный бэкграунд кнопок
 
-%gradient-bg {
-  background: linear-gradient(90deg, #ea5c2f 0%, #f3b921 100%);
-}
-
-//градиент текста кнопок
-
-%gradient-text{
-  background: linear-gradient(90deg, #ea5c2f 0%, #f3b921 100%);
-  background-clip: text;
-  color: transparent;
-}
-
-//прозрачный бэкграунд
-
-%transparent-bg {
-  background: transparent;
-  color: #fff;
-}
+//%gradient-bg {
+//  background: linear-gradient(90deg, #ea5c2f 0%, #f3b921 100%);
+//}
+//
+////градиент текста кнопок
+//
+//%gradient-text{
+//  background: linear-gradient(90deg, #ea5c2f 0%, #f3b921 100%);
+//  background-clip: text;
+//  color: transparent;
+//}
+//
+////прозрачный бэкграунд
+//
+//%transparent-bg {
+//  background: transparent;
+//  color: #fff;
+//}

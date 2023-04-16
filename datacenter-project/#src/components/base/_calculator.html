@@ -1,17 +1,17 @@
 <div class="calculator__overlay">
     <div class="calculator__container">
         <div class="calculator__form">
-            <div class="swipe-line" data-swipe-threshold="20"
+            <div class="swipe-line swipe-button" data-swipe-threshold="20"
                  data-swipe-timeout="500" data-swipe-ignore="false">
             </div>
             <div class="form__buttons-currency">
                 <div class="buttons-currency">
                     <label class="button-currency__radio" for="byn">
-                        <input type="radio" id="byn" name="radio" value="byn" checked/>
+                        <input type="radio" id="byn" name="currency" value="byn" checked/>
                         <div class="button-currency__text">BYN</div>
                     </label>
                     <label class="button-currency__radio" for="rub">
-                        <input type="radio" id="rub" name="radio" value="rub"/>
+                        <input type="radio" id="rub" name="currency" value="rub"/>
                         <div class="button-currency__text">RUB</div>
                     </label>
                 </div>
@@ -66,21 +66,22 @@
                     </div>
                 </div>
                 <div class="cost-calculate cost-calculate_input">
-                    <p class="ip-error">Некорректный ввод</p>
-                    <input type="text" id="input-ip" maxlength="4" placeholder="Количество IP">
+                    <p class="error">пожалуйста, введите число</p>
+                    <input type="text" id="ip" maxlength="3" placeholder="Количество IP">
                 </div>
                 <div class="cost-calculate cost-calculate_checkbox">
                     <p>Второй блок питания</p>
-                    <input type="checkbox" id="supply" class="checkbox-input" value="">
-                    <label class="checkbox-label" for="supply"> </label>
+                    <input type="checkbox" id="supply" class="checkbox" value="">
+                    <label class="checkbox__label" for="supply"> </label>
                 </div>
                 <button class="button button_colored calculator__button"><span>Добавить ещё</span></button>
             </div>
         </div>
-        <div class="calc-table">
-            <div class="calc-total-amount">
-                <p class="total-text"></p>
-                <div class="total"></div>
+        <div class="calculator__result-table">
+            <div class="result-table__rows"></div>
+            <div class="result-table__total">
+                <p class="total__text">Итого</p>
+                <div class="total__cost"></div>
             </div>
         </div>
     </div>
