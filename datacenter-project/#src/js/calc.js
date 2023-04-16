@@ -32,8 +32,6 @@ function calculator() {
 
 
 
-
-
     tableBody.forEach(table => {
         const items = table.querySelectorAll('.table__row');
         items.forEach(item => {
@@ -135,22 +133,12 @@ function calculator() {
 //Расчет стоимости IP
 
     ip_count.addEventListener('input', () => {
-
-        const IP_REGEXP = /^[1-9]([0-9]*)$/;
-        let validate_value = IP_REGEXP.test(ip_count.value);
-
-        if (validate_value || ip_count.value === '') {
-            error.classList.remove('error_visible');
             if (ip_count.value <= 1) {
                 IP = 0;
             } else {
                 let count = ip_count.value - 1;
                 IP = parseFloat((count * tableCostData['ip']).toFixed(2));
             }
-        } else {
-            error.classList.add('error_visible');
-        }
-
         getTotalCostOfService();
 
     })
