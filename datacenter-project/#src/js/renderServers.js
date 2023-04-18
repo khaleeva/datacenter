@@ -20,6 +20,10 @@ function renderCpu(data) {
     cpu_model.addEventListener('change', () => {
         getCPUValue(cpu_model, data)
     })
+
+    if(document.getElementById('first-open-body')){
+        openAccordionService()
+    }
 }
 
 function getCPUValue(cpu, data) {

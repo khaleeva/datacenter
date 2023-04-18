@@ -16,6 +16,9 @@ async function getData(callback) {
 
         if (document.getElementById("server-page")) {
             getServers(servers)
+            if(document.getElementById('first-open-body')){
+                openAccordionService()
+            }
         } else if (document.getElementById("other-page")) {
             getOtherServicesData(ssl, domain, back_up)
             if(document.getElementById('first-open-body')){
