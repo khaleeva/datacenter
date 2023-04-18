@@ -17,15 +17,12 @@
         @@include('./components/layout/_header.html')
 
         <main class="main">
-            <section class="section-services section-padding">
-                <div class="container">
-                    <div class="section-services-container">
-                        <h1 class="title-section">Купить сервер</h1>
-                        <div class="section-wrapper">
-                            <div class="container-services">
-                                <p class="panel-text server-text">Мы подберем оптимальную для вас конфигурацию сервера.
-                                    Для уточнения параметров и цен - <a href="contacts.html">свяжитесь с нами.</a></p>
-                            </div>
+            <section class="services">
+                <div class="container services__container">
+                    <h1 class="services__title">Купить сервер</h1>
+                    <div class="services__content">
+                        <div class="services__wrapper">
+                            @@include('components/services/dedic/_buy-server.html')
                         </div>
                     </div>
                 </div>
