@@ -67,7 +67,7 @@
 
     &>*{
       @include font-style($size: 1.6rem);
-      color: $color-dark;
+      color: $color-disabled;
     }
   }
 
