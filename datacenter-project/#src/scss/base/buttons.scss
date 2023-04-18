@@ -63,6 +63,7 @@
 
   &_disabled{
     background: $color-light-grey;
+    pointer-events: none;
 
     &>*{
       @include font-style($size: 1.6rem);

@@ -14,6 +14,12 @@
         }
         table.style.alignItems = 'center'
         table.append(loader);
+        if(table.parentNode.nextElementSibling.querySelector('.service__button')){
+            table.parentNode.nextElementSibling.querySelector('.service__button').classList.add('button_disabled')
+        }
+
+
+
 
         getData(function(data) {
             if (data) {
@@ -22,7 +28,9 @@
                 }
                 table.style.alignItems = 'stretch';
                 table.removeChild(loader);
-
+                if(table.parentNode.nextElementSibling.querySelector('.service__button')){
+                    table.parentNode.nextElementSibling.querySelector('.service__button').classList.remove('button_disabled')
+                }
             }
         });
     })
