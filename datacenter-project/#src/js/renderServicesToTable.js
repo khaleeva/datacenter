@@ -14,12 +14,9 @@
         }
         table.style.alignItems = 'center'
         table.append(loader);
-        if(table.parentNode.nextElementSibling.querySelector('.service__button')){
-            table.parentNode.nextElementSibling.querySelector('.service__button').classList.add('button_disabled')
+        if(document.querySelectorAll('.service__button')){
+            document.querySelectorAll('.service__button').forEach(btn => btn.classList.add('button_disabled'))
         }
-
-
-
 
         getData(function(data) {
             if (data) {
@@ -27,9 +24,11 @@
                     table.querySelector('.configurator').style.display = 'flex'
                 }
                 table.style.alignItems = 'stretch';
-                table.removeChild(loader);
-                if(table.parentNode.nextElementSibling.querySelector('.service__button')){
-                    table.parentNode.nextElementSibling.querySelector('.service__button').classList.remove('button_disabled')
+                if (table.contains(loader)) {
+                    table.removeChild(loader);
+                }
+                if(document.querySelectorAll('.service__button')){
+                    document.querySelectorAll('.service__button').forEach(btn => btn.classList.remove('button_disabled'))
                 }
             }
         });
