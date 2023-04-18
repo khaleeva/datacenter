@@ -14,47 +14,12 @@
     <div class="wrapper page-wrapper">
         @@include('./components/layout/_header.html')
         <main class="main">
-            <section class="section-services section-padding">
-                <div class="container">
-                    <div class="section-services-container">
-                        <h1 class="title-section">Размещение серверного <br> оборудования - Аренда стойки</h1>
-                        <div class="section-wrapper">
-                            <div class="container-services">
-                                <p class="panel-text">Предлагаем разместить Ваши сервера и другое телекоммуникационное
-                                    оборудование формата tower в нашем ЦОДе,
-                                    оборудованном всем необходимым для обеспечения бесперебойной работы.</p>
-                                <p class="panel-param">Параметры телекоммуникационного шкафа:</p>
-                                <div class="services-table">
-                                    <div class="table-body rack">
-                                        <div class="table-body-item">
-                                            <p>Вместительность 19" шкафа</p>
-                                            <p>42U для размещения оборудования</p>
-                                        </div>
-                                        <div class="table-body-item">
-                                            <p>Вместительность шкафа tower</p>
-                                            <p>16 мест для размещения tower-серверов</p>
-                                        </div>
-                                        <div class="table-body-item">
-                                            <p>Электрическая мощность</p>
-                                            <p>до 10 кВт на стойку</p>
-                                        </div>
-                                        <div class="table-body-item">
-                                            <p>Безопасность</p>
-                                            <p>PCI DSS - cовместимость</p>
-                                        </div>
-                                        <div class="table-body-item last-body-item">
-                                            <p>Дистрибуция питания</p>
-                                            <p>2 x zero unit PDU, опционально - управляемые zero unit PDU</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="btn-services">
-                                    <a class="btn-gr-bg order-btn"
-                                        href="https://my.datahata.by/"><span>Заказать</span></a>
-                                    <p class="rack-text">Расчет стоимости аренды телекоммуникационного шкафа
-                                        производится индивидуально для каждого клиента.</p>
-                                </div>
-                            </div>
+            <section class="services">
+                <div class="container services__container">
+                    <h1 class="services__title">Размещение серверного <br> оборудования - Аренда стойки</h1>
+                    <div class="services__content">
+                        <div class="services__wrapper">
+                            @@include('components/services/colo/rent-rack/_rent-rack.html')
                         </div>
                     </div>
                 </div>

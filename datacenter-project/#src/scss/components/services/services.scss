@@ -9,6 +9,16 @@
 
 .services__wrapper {
   @extend %border-shadow;
+
+  & .service__container{
+    padding-bottom: 1rem;
+  }
+
+  & .services__additional{
+    padding-top: 1rem;
+  }
+
+
 }
 
 .services__content {
@@ -21,6 +31,7 @@
 
 .service__container, .services__additional {
   padding: 4rem;
+
 
   @media (max-width: 1024px) {
     padding: 2rem;
