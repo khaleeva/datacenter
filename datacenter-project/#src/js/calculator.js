@@ -11,7 +11,6 @@ function calculator() {
     const tableBody = document.querySelectorAll('.table__body');
     const ranges = document.querySelectorAll('.range');
     const checkbox_second_supply = document.querySelector('.checkbox');
-    const error = document.querySelector('.error');
     const buttonToOpenUnitCalculator = document.querySelector("#btn-unit");
     const buttonToOpenTowerCalculator = document.querySelector("#btn-tower");
     const closeIcon = document.querySelector(".close-icon");

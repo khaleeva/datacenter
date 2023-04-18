@@ -1,19 +1,4 @@
 
-
-// let hddContainer = document.querySelector('.hdd');
-// let ramContainer = document.querySelector('.ram');
-
-
-
-// let resultServer = document.querySelector('.result-order');
-// let constructor = document.querySelector('.constructor');
-// let bucketBtn = document.querySelector(`#bucket-btn`);
-// let config = document.querySelector('.config-server');
-// let price = document.querySelector('.server-price');
-// let showMore_btn = document.querySelector('.showMore');
-// const formElement = document.getElementById('order-form');
-
-
 let stateHDD = {};
 let stateRAM = {};
 let stateCPU = {};
@@ -40,7 +25,7 @@ function renderCpu(data) {
 function getCPUValue(cpu, data) {
     let cpu_data = data.filter(item => item.id['$'] === cpu.value)
     let cpu_name = cpu_data[0].name_ru['$']
-    let price = Math.ceil((cpu_data.map(i => i.price.period[0]['$cost'])[0]) * 1.2)
+    let price = parseFloat((cpu_data.map(i => i.price.period[0]['$cost'])[0]) * TAX).toFixed(2)
     stateCPU[`cpu_select`] = {id: cpu.value, 'cpu_name': cpu_name, 'price': price}
     getAddons(cpu_data)
 
@@ -51,6 +36,7 @@ function getAddons(data) {
     let addons = data.map(addon => addon['addon']).flat(1)
     getRAMValue(addons)
     getHDDValue(addons)
+    getResult()
 }
 
 function getRAMValue(data) {
@@ -93,12 +79,12 @@ function getHDDValue(data) {
 
 function changeState(value, name_radio, data, label, price) {
 
-    let cost = Math.ceil(price) * TAX
+    let cost = parseFloat(price * TAX).toFixed(2)
     name_radio === 'ram_radio' ?
         stateRAM[name_radio] = {ram: value, id: data, label: label, 'price': cost}
         :
         stateHDD[name_radio] = {hdd: value, id: data, label: label, 'price': cost}
-
+    getResult()
 }
 
 
@@ -110,7 +96,7 @@ function renderRAM(data, id) {
 
     data.forEach((i, index) =>
         ram_container.innerHTML +=
-            `<p class="ram__title">Оперативная память</p>
+            `<p class="configurator__subtitle">Оперативная память</p>
                  <div class="ram__radio">
                        ${data[index].map(item =>
                             `<label class="radio__btn" for="ram${item.id['$']}_radio" >
@@ -151,8 +137,8 @@ function renderHDD(data, id) {
     if (data.length <= 2) {
         data.forEach((i, index) =>
             hdd_container.innerHTML +=
-                `<p class="ram__title">Выбрать жесткий диск ${index + 1}</p>
-                  <div class="box">
+                `<p class="configurator__subtitle">Выбрать жесткий диск ${index + 1}</p>
+                  <div class="hdd__radio">
                        ${data[index].map(item =>
                             `<label class="radio__btn" for="hdd${item.id['$']}${index + 1}_radio" >
                                     <input type="radio" 
@@ -169,8 +155,8 @@ function renderHDD(data, id) {
         )
     } else {
         firstHDD.forEach((i, index) => hdd_container.innerHTML +=
-            `<p class="ram__title">Выбрать жесткий диск ${index + 1}</p>
-                    <div class="box">
+            `<p class="configurator__subtitle">Выбрать жесткий диск ${index + 1}</p>
+                    <div class="hdd__radio">
                         ${firstHDD[index].map(item =>
                             `<label class="radio__btn" for="hdd${item.id['$']}${index + 1}_radio" >
                                  <input type="radio" 
@@ -186,7 +172,7 @@ function renderHDD(data, id) {
                     </div>`)
 
         lastHDD.forEach((i, index) => hdd_container.innerHTML +=
-                    `<p class="visible ram__title">Выбрать жесткий диск ${index + 3}</p>
+                    `<p class="visible configurator__subtitle">Выбрать жесткий диск ${index + 3}</p>
                     <div class="visible">
                         ${lastHDD[index].map(item =>
                             `<label class="radio__btn" for="hdd${item.id['$']}${index + 3}_radio" >
@@ -208,10 +194,10 @@ function renderHDD(data, id) {
         show_more_btn.addEventListener('click', function () {
             let hidden = document.querySelectorAll('.visible')
             for (let i = 0; i < showPerClick; i++) {
-                hidden[i].classList.add('box');
+                hidden[i].classList.add('hdd__radio');
                 hidden[i].classList.remove('visible');
             }
-            let box = document.querySelectorAll('div.box')
+            let box = document.querySelectorAll('div.hdd__radio')
             if (box.length === Object.keys(stateHDD).length) {
                 show_more_btn.style.display = 'none'
             }
@@ -222,6 +208,46 @@ function renderHDD(data, id) {
 
 }
 
+function getResult() {
+
+    const result = document.querySelector('.result__server')
+    const result_cost = document.querySelector('.result__cost')
+
+    const cpu = Object.keys(stateCPU).map(i => stateCPU[i].cpu_name)
+    const ram = Object.keys(stateRAM).map(i => stateRAM[i].label)
+    const hdd = Object.keys(stateHDD).map(i => stateHDD[i].label)
+
+    const cpu_price = Object.keys(stateCPU).map(i => Number(stateCPU[i].price))[0]
+    const ram_price = Object.keys(stateRAM).map(i => Number(stateRAM[i].price))[0]
+    const hdd_price = Object.keys(stateHDD).map(i => Number(stateHDD[i].price))
+
+
+    let sumOfHdd = hdd_price.reduce((sum, current) => sum + current, 0)
+
+    let totalSum =  (cpu_price + ram_price  + sumOfHdd).toFixed(2)
+
+
+    result_cost.innerHTML = `${totalSum}&nbsp<span>BYN/мес</span>`
+
+    result.innerHTML =
+        `<div class = 'server__config'>
+            <div class ='config-cpu'>${cpu}</div>
+        ${ram.length ? `<div class = 'config-ram'>Оперативная память - ${ram}</div>` : ''}
+            ${hdd.map((i, index) => i === 'Без диска' ? null :
+            `<p class = 'config-hdd'>Диск ${index + 1} - ${i}</p>`).join('')}
+        </div>`
+
+}
+
+
+if(document.querySelector('.result__btn')){
+    document.querySelector('.result__btn').addEventListener('click', function () {
+        const strCpu = Object.keys(stateCPU).map(i => stateCPU[i].id)
+        const strHdd = Object.keys(stateHDD).map(i => `26addon_${stateHDD[i].id}%3D${stateHDD[i].hdd}`).join('%')
+        const strRam = Object.keys(stateRAM).map(i => `26addon_${stateRAM[i].id}%3D${stateRAM[i].ram}`).join('%')
+        document.querySelector('.result__btn').href = `https://my.datahata.by/billmgr?func=register&redirect=startpage%3Ddedic%26startform%3Dquickorder%26pricelist%3D${strCpu}%26period%3D1%26project%3D1%${strHdd}%${strRam}%26redirect%3Dbasket`
+    })
+}
 
 
 

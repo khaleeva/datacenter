@@ -3,24 +3,16 @@
   display: flex;
   justify-content: space-between;
   height: 650px;
-  @media (max-width: 768px) {
-    //flex-direction: column;
-    //height: 800px;
+  @media (max-width: 740px) {
+    flex-direction: column;
+
   }
 }
 
-
-
 .configurator__content{
   flex-basis: 65%;
-  padding: 20px;
+  padding: 10px;
   overflow: auto;
-
-
-  h3{
-    //margin-top: 3rem;
-    text-align: center;
-  }
 
   &::-webkit-scrollbar, .todo-list::-webkit-scrollbar {
     width: 3px;
@@ -34,135 +26,58 @@
 }
 
 
-.configurator__result{
+.configurator__title{
+  text-align: center;
+
+  @media (max-width: 420px) {
+    font-size: 2rem;
+  }
+
+  &_light{
+    color: $color-light;
+    margin-bottom: 2rem;
+  }
+}
+
+.configurator__subtitle{
+  margin: 20px 0;
+  font-weight: bold;
+}
+
+
+.configurator__result {
   flex-basis: 35%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   background-color: $color-primary;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
-  padding: 20px;
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  padding: 2rem;
 
   @media (max-width: 768px) {
     flex-basis: 45%;
-    //border-top-right-radius: 0;
-    //border-bottom-right-radius: 20px;
-    //border-bottom-left-radius: 20px;
   }
 
-  h3{
-    color: $color-light;
-    text-align: center;
-    margin-bottom: 2rem;
+  @media (max-width: 768px) {
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 2rem;
   }
-
-  .config-cpu, .config-ram, .config-hdd{
-    color: white;
-    font-size: 1.6rem;
-    margin-bottom: 5px;
-    padding:5px 10px 0;
-  }
-
-  .horizontal-line{
-    width: 100%;
-    height: 1px;
-    background-color: rgba(237, 237, 237, 0.5);
-    margin: 20px 0;
-
-    //@media (max-width: 768px) {
-    //    margin: 20px;
-    //
-    //}
-  }
-
-  .result__server{
-    width: 100%;
-    text-align: justify;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-   overflow: auto;
-    //flex-grow: 1;
-  }
-
-  .server-price{
-    font-size: 3.6rem;
-    font-weight: bold;
-    color: $color-light;
-    //text-shadow: -3px 1px 10px rgba(237, 237, 237, 0.33);
-    flex-grow: 1;
-    //margin-top: 20px;
-
-    span{
-      font-size: 2.4rem;
-    }
-
-    @media (max-width: 768px) {
-      margin-bottom: 40px;
-    }
-
-    @media (max-width: 1024px) {
-      font-size: 3rem;
-
-      span{
-        font-size: 2rem;
-      }
-    }
-
-    @media (max-width: 420px) {
-      font-size: 2.4rem;
-
-      span{
-        font-size: 1.6rem;
-      }
-    }
-  }
-
-
-
-  //h3{
-  //  text-align: center;
-  //  margin-bottom: 30px;
-  //}
-
-  //.put-bucket{
-  //
-  //  height: 50px;
-  //  padding: 0 20px;
-  //  @media (max-width: 420px) {
-  //
-  //    height: 40px;
-  //
-  //    span{
-  //      font-size: 1.4rem;
-  //
-  //    }
-  //
-  //  }
-  //
-  //
-  //}
 }
 
-.cpu{
-
-  margin-top: 20px;
-  //padding: 20px;
-  padding-left: 20px;
-
-
-  @media (max-width: 420px) {
-
-    padding: 0px 0px 20px;
+  .horizontal-line {
+    width: 100%;
+    height: 1px;
+    background-color: $color-light-grey;
+    margin: 10px 0;
   }
 
-
-
-  .cpu__title{
-    margin: 20px 0;
-    font-weight: bold;
+.cpu{
+  margin-top: 20px;
+  padding-left: 20px;
+  @media (max-width: 420px) {
+    padding-left: 1rem;
   }
 
   .cpu__select{
@@ -200,150 +115,158 @@
     width: 100%;
   }
 
-  //.select:focus{
-  //  outline: none;
-  //  box-shadow: 0px 0px 0px 1px #f3b921 , 0px 0px 5px #ea5c2f ;
-  //
-  //}
 
 }
-.hdd, .ram{
-  display:flex;
-  flex-direction: column;
-  //padding: 0px 20px;
-  overflow: auto;
 
-  //@media (max-width: 420px) {
-  //
-  //  padding: 0px 0px 10px;
-  //}
 
-  .ram__title{
-    margin-bottom: 20px;
-    font-weight: 700;
-  }
 
-  .ram__text{
-    margin-bottom: 10px;
-    font-weight: 400;
 
+  .config-cpu, .config-ram, .config-hdd{
+    color: white;
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+    padding:5px 10px 0;
   }
 
 
-  .hdd__container, .ram__container{
-
+  .result__server{
+    width: 100%;
+    text-align: justify;
     display: flex;
     flex-direction: column;
-    padding-left: 20px;
+    justify-content: flex-start;
+   overflow: auto;
+  }
 
+  .result__cost{
+    @include font-style($size:3rem, $weight:700);
+    color: $color-light;
+    flex-grow: 1;
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 3rem;
 
-    .radio__btn{
-      position: relative;
-      width: 150px;
+    span{
+      font-size: 2.4rem;
+    }
 
-      @media (max-width: 768px) {
-        width: 140px;
+    @media (max-width: 1024px) {
+      font-size: 3rem;
+
+      span{
+        font-size: 2rem;
       }
-
     }
 
+    @media (max-width: 420px) {
+      font-size: 2.4rem;
 
-    .radio__btn input {
-      position: absolute;
-      left: -9px;
-      top: -3px;
-      //top:0;
-      //left: 0;
-      z-index: -1;
-      opacity: 0;
-
+      span{
+        font-size: 1.6rem;
+      }
     }
-
-    .radio__text {
-      position: relative;
-      padding: 10px 35px 10px;
-      cursor: pointer;
-
-      //
-      //@media (max-width: 1200px) {
-      //  padding-right: 10px;
-      //  font-size: 10px;
-      //}
-    }
-
-    .radio__text:before {
-      content: "";
-      position: absolute;
-      top: 7px;
-      left: 0;
-      width: 17px;
-      height: 17px;
-      border: 1px solid rgba(0, 0, 0, 0.12);
-      box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.2);
-      border-radius: 50%;
-      background: #fff;
-
-    }
-
-    .radio__text:after {
-      content: "";
-      position: absolute;
-      left: 3px;
-      top: 10px;
-      width: 11px;
-      height: 11px;
-      border-radius: 50%;
-      background: linear-gradient(90deg, #ea5c2f 0%, #f3b921 100%);
-      opacity: 0;
-      transition: 0.2s;
-    }
-
-    .radio__btn input:checked + .radio__text:after {
-      opacity: 1;
-    }
-
-    .radio__btn input:focus + .radio__text:before {
-      box-shadow: 0px 3px 17px rgba(0, 0, 0, 0.2);
-
-    }
-
-    .visible{
-      display: none;
-    }
-
-    .box,.ram__radio {
-      display: flex;
-      flex-wrap: wrap;
-      margin: 10px 0;
-      //margin-bottom: 20px;
-
-    }
+  }
 
 
+  .visible{
+    display: none;
+  }
 
-    input{
-      margin: 10px;
 
-    }
+.hdd, .ram {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
 
-    label{
-      cursor:pointer;
-      text-align: center;
+}
 
-    }
+.radio__btn{
+  position: relative;
+  width: 150px;
 
-    color{
-      background-color: #1f78e0;
-    }
+  @media (max-width: 768px) {
+    width: 140px;
+  }
 
+  & > input{
+    position: absolute;
+    left: -9px;
+    top: -3px;
+    z-index: -1;
+    opacity: 0;
+  }
+
+  & > input:checked + .radio__text:after {
+    opacity: 1;
+  }
+
+  & > input:focus + .radio__text:before {
+    box-shadow: 0 3px 17px rgba(0, 0, 0, 0.2);
+
+  }
+
+}
+
+.radio__text {
+  position: relative;
+  padding: 10px 35px 10px;
+  cursor: pointer;
+
+  @media (max-width: 420px) {
+    font-size: 1.2rem;
+  }
+
+  &:before{
+    content: "";
+    position: absolute;
+    top: 7px;
+    left: 0;
+    width: 17px;
+    height: 17px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-shadow: 0 1px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    background: $color-light;
+  }
+
+  &:after{
+    content: "";
+    position: absolute;
+    left: 3px;
+    top: 10px;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: linear-gradient(90deg, #ea5c2f 0%, #f3b921 100%);
+    opacity: 0;
+    transition: 0.2s;
   }
 }
 
+  .hdd__container, .ram__container{
+    display: flex;
+    flex-direction: column;
+    padding-left: 2rem;
 
-#bucket-btn{
+    @media (max-width: 420px) {
+      padding-left: 1rem;
+    }
+
+  }
+
+.hdd__radio,.ram__radio {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px 0;
+}
+
+
+
+.result__btn{
   @media (max-width: 768px) {
     span{
       font-size: 1.2rem;
     }
   }
+
 }
