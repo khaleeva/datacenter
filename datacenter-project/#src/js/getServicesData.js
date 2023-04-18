@@ -14,19 +14,18 @@ async function getData(callback) {
         callback(data)
 
 
-        if (document.getElementById("dedic-page")) {
+        if (document.getElementById("server-page")) {
             getServers(servers)
         } else if (document.getElementById("other-page")) {
-            getOtherServices(ssl, domain, back_up)
+            getOtherServicesData(ssl, domain, back_up)
             if(document.getElementById('first-open-body')){
                 openAccordionService()
             }
         } else if(document.getElementById('soft-page')){
-            getSoftServices(soft);
+            getSoftData(soft);
             if(document.getElementById('first-open-body')){
                 openAccordionService()
             }
-
         }
 
     } else {

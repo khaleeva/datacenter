@@ -6,6 +6,18 @@
   @extend %transition;
 
 
+  &_outline{
+    border: none;
+    background-color: $color-light;
+
+    span {
+      @extend %gradient-text;
+      @include font-style($size: 1.6rem);
+    }
+
+  }
+
+
   &_bordered{
     border: 1px solid transparent;
     box-shadow: inset 0 0 0 100vw $color-light;

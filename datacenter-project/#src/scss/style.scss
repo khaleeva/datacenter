@@ -17,6 +17,7 @@
 @import "./base/contacts_nav";
 @import "./base/table";
 @import "./base/calculator";
+@import "./base/calculator-configurator";
 
 
 //layout
@@ -47,12 +48,12 @@
 
 //services
 @import "components/services/services";
-
+@import "./components/services/dedic";
 
 @import "./components/advices";
 
-@import "./components/dedic";
-@import "./components/other";
+
+
 @import "./components/instruction";
 @import "./components/new-partners";
 @import "./components/payments";
@@ -61,5 +62,5 @@
 @import "./components/visited";
 @import "./components/article";
 @import "./components/error";
-@import "./components/servStyle";
+//@import "./components/servStyle";
 

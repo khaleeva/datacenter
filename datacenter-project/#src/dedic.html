@@ -13,192 +13,27 @@
 
 <body>
 
-    <div class="wrapper page-wrapper">
-        @@include('./components/layout/_header.html')
+<div class="wrapper page-wrapper">
+    @@include('./components/layout/_header.html')
+    <main class="main">
+        <section class="services" id="server-page">
+            <div class="container services__container">
+                <h1 class="services__title">Dedicated server в ЦОД ДатаХата</h1>
+                <div class="services__content">
+                    <div class="services__wrapper">
+                        @@include('./components/services/dedic/_dedic.html')
 
-        <main class="main">
-            <section class="section-services section-padding" id="dedic-page">
-                <div class="container">
-                    <div class="section-services-container">
-                        <h1 class="title-section">Аренда сервера - Dedicated</h1>
-                        <div class="section-wrapper" id="dedic">
-                            <div class="accordion-section-services dedic-section-services">
-                                <div class="accordion-header-services">Аренда сервера</div>
-                                <div class="accordion-panel-services dedic-panel" id="first-content">
-                                    <p class="panel-text">Услуга "Выделенный сервер" ("Dedicated", "дедикейтед") - это аренда
-                                        сервера, размещенного в нашем дата-центре с гарантированным доступом в сеть Интернет,
-                                        бесперебойным питанием, кондиционированием, а так же круглосуточной технической поддержкой.
-                                    </p>
-                                    <div class="dedic-table">
-                                        <div class="dedicated-table table__body_loading">
-                                            <div class="order-form get-data" id="order-form">
-                                                <div class="form-container">
-                                                    <div class="constructor">
-                                                        <h3>Конфигуратор выделенного сервера</h3>
-                                                        <div class="cpu-wrapper">
-                                                            <p class="cpu-title">Модель сервера и процессора</p>
-                                                            <div class="select-wrapper">
-
-                                                            </div>
-                                                        </div>
-                                                        <div class="ram-wrapper">
-                                                            <p class="ram-title">Оперативная память</p>
-                                                            <div class="ram-container">
-                                                            </div>
-                                                        </div>
-                                                        <div class="hdd-wrapper">
-                                                            <div class="radio-container">
-                                                            </div>
-                                                            <div class="showMore"><span>+ добавить еще диски</span></div>
-                                                        </div>
-
-                                                    </div>
-                                                    <div class="result-order">
-                                                        <h3>Итоговая конфигурация</h3>
-                                                        <div class="config-server">
-
-                                                        </div>
-                                                        <div class="horizontal-line"></div>
-                                                        <div class="server-price"></div>
-                                                        <a id="bucket-btn" class="btn-gr-bg put-bucket" target="_blank">
-                                                            <span>Добавить в корзину</span></a>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                        <div class="btn-services">
-                                            <div class="order-info">
-                                                <p>Под заказ (2-5 рабочих дней) доступны любые конфигурации серверов.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="info-services">
-                                        <p>В абонентскую плату включено:</p>
-                                        <ul>
-                                            <li>Автоматическая установка и переустановка ОС (Centos 6/7, Debian 7/8, Ubuntu,
-                                                FreeBSD, Windows);
-                                            </li>
-                                            <li>Автоматическая загрузка образа восстановления системы по сети;</li>
-                                            <li>Подключение к каналу связи на скорости 1 Gb/s;</li>
-                                            <li>IP KVM, доступный вам постоянно через VPN-соединение;</li>
-                                            <li>Гарантированное электропитание;</li>
-                                            <li>Круглосуточная техническая поддержка;</li>
-                                            <li>Предоставление одного IP-адреса;</li>
-                                            <li>Бесплатный белорусский трафик;</li>
-                                            <li>1 Tb исходящего и 1 Tb входящего внешнего трафика. В случае превышения
-                                                предоплаченного трафика стоимость следующего входящего 1 Gb составит 0,05 рублей,
-                                                исходящего 1 Gb составит 0,1 рублей.
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="additional-services">
-                                        <div class="services-table dedic-additional">
-                                            <div class="table-head">
-                                                <p>Наименование продукта</p>
-                                                <p>Стоимость BYN с НДС, в месяц</p>
-                                            </div>
-                                            <div class="table-body">
-                                                <div class="table-body-item">
-                                                    <p>Дополнительный порт 1 Gb/s</p>
-                                                    <p>12,00</p>
-                                                </div>
-                                                <div class="table-body-item">
-                                                    <p>Дополнительный порт 10 Gb/s</p>
-                                                    <p>135,00</p>
-                                                </div>
-                                                <div class="table-body-item">
-                                                    <p>Дополнительный адрес IPv4</p>
-                                                    <p>10,20</p>
-                                                </div>
-                                                <div class="table-body-item">
-                                                    <p>Дополнительный адрес IPv6 (/64)</p>
-                                                    <p>Бесплатно</p>
-                                                </div>
-                                                <div class="table-body-item">
-                                                    <p>Дополнительный 1 Gb внешнего входящего трафика</p>
-                                                    <p>0,05</p>
-                                                </div>
-                                                <div class="table-body-item">
-                                                    <p>Дополнительный 1 Gb внешнего исходящего трафика</p>
-                                                    <p>0,10</p>
-                                                </div>
-                                                <div class="table-body-item">
-                                                    <p>Трафик внутри Республики Беларусь (BY-IX)</p>
-                                                    <p>Бесплатно</p>
-                                                </div>
-                                                <div class="table-body-item">
-                                                    <p>Порт 10 Mb/s без учета трафика</p>
-                                                    <p>135,00</p>
-                                                </div>
-                                                <div class="table-body-item">
-                                                    <p>Порт 100 Mb/s без учета трафика</p>
-                                                    <p>553,80</p>
-                                                </div>
-                                                <div class="table-body-item">
-                                                    <p>Порт 1000 Mb/s без учета трафика</p>
-                                                    <p>По запросу</p>
-                                                </div>
-                                                <div class="table-body-item">
-                                                    <p>Сеть IP/24</p>
-                                                    <p>180,00</p>
-                                                </div>
-                                                <div class="table-body-item">
-                                                    <p>Полка для размещения сервера без салазок (единоразово)</p>
-                                                    <p>60,00</p>
-                                                </div>
-                                                <div class="table-body-item">
-                                                    <p>Администрирование (1 чел.-час)</p>
-                                                    <p>70,00</p>
-                                                </div>
-                                                <div class="table-body-item">
-                                                    <p>Регистрация в БелГИЭ (единоразово)</p>
-                                                    <p>0,5 базовой величины</p>
-                                                </div>
-                                                <div class="table-body-item">
-                                                    <p>Канал БФТ (1 мес.)</p>
-                                                    <p>45,00</p>
-                                                </div>
-                                                <div class="table-body-item">
-                                                    <p>Локальное соединение "x-connect"</p>
-                                                    <p>1,26 * L</p>
-                                                </div>
-                                                <div class="table-body-item">
-                                                    <p>Прокладка оптоволоконного патч-корда (LC SM или ММ duplex), длиной L метров
-                                                        (единоразово)</p>
-                                                    <p>54,00 + 6,48 * L</p>
-                                                </div>
-                                                <div class="table-body-item">
-                                                    <p>Переходники (n - количество), шт. (единоразово)</p>
-                                                    <p>32,40 * n</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="section-wrapper" id="server">
-                            <div class="accordion-section-services" id="three">
-                                <div class="accordion-header-services dedic-header">
-                                    <p>Купить сервер</p>
-                                    <p>Мы подберем оптимальную для вас конфигурацию сервера. Для уточнения параметров и цен - <a
-                                            href="contacts.html">свяжитесь с нами.</a></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                     </div>
                 </div>
-            </section>
-        </main>
-         @@include('./components/layout/_footer.html')
-          @@include('./components/layout/_footer-mob.html')
-    </div>
+            </div>
+        </section>
+    </main>
+    @@include('./components/layout/_footer.html')
+    @@include('./components/layout/_footer-mob.html')
+</div>
 
-    <script src="js/swiped-events.min.js"></script>
-    <script src="js/script.min.js"></script>
+<script src="js/swiped-events.min.js"></script>
+<script src="js/script.js"></script>
 
 </body>
 

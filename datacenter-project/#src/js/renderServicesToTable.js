@@ -9,13 +9,20 @@
     tables.forEach(table => {
         const loader = document.createElement('img');
         loader.src = 'img/loader/loader.gif';
+        if(table.classList.contains('table__body_dedicated')){
+            table.querySelector('.configurator').style.display = 'none'
+        }
         table.style.alignItems = 'center'
         table.append(loader);
 
         getData(function(data) {
             if (data) {
+                if(table.classList.contains('table__body_dedicated')){
+                    table.querySelector('.configurator').style.display = 'flex'
+                }
                 table.style.alignItems = 'stretch';
                 table.removeChild(loader);
+
             }
         });
     })
@@ -28,7 +35,7 @@ const backup = document.getElementById('backup')
 const soft = document.getElementById('soft')
 
 
-function getOtherServices(sslType, domainType, backUpType) {
+function getOtherServicesData(sslType, domainType, backUpType) {
 
 
     if (ssl) {
@@ -42,7 +49,7 @@ function getOtherServices(sslType, domainType, backUpType) {
     }
 }
 
-function getSoftServices(softType) {
+function getSoftData(softType) {
 
     if (soft) {
        renderData(softType,soft)

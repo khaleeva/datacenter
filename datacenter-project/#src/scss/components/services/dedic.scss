@@ -1,0 +1,72 @@
+.dedicated-head,
+.dedicated-body {
+    padding-left: 0;
+    p {
+        flex-basis: 25%;
+        text-align: center;
+    }
+
+    a {
+        cursor: pointer;
+    }
+
+    p:first-child {
+        flex-basis: 25%;
+    }
+}
+
+
+
+
+
+    //.order-form::after{
+    //    content: '';
+    //    position: absolute;
+    //    top:0;
+    //    left: 0;
+    //    width: 100%;
+    //    height: 100%;
+    //    background: rgba(255,255,255, 1) url("../img/louder/Ellipsis-1s-200px.gif") center / 100px no-repeat;
+    //    opacity: 0;
+    //    visibility: hidden;
+    //    @extend %border-shadow;
+    //}
+    //
+    //.order-form.get-data::after{
+    //    opacity: 1;
+    //    visibility: visible;
+    //}
+
+
+
+
+.dedic-header {
+    p:last-child {
+        font-size: 1.8rem;
+        line-height: 160%;
+        font-weight: normal;
+        padding-top: 2rem;
+        padding-bottom: 1.57rem;
+
+        @media (max-width: 420px) {
+            font-size: 1.4rem;
+        }
+    }
+    a {
+        text-decoration: underline;
+    }
+
+    &::after {
+        display: none;
+    }
+}
+
+
+.order-info {
+    @media (max-width: 1024px) {
+        align-self: flex-start;
+    }
+}
+
+
+

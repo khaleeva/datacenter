@@ -10,8 +10,8 @@
 @@include('form.js');
 @@include('map.js');
 @@include('calculator.js');
-@@include('orderDedic.js');
-@@include('orderOther.js');
+@@include('renderServers.js');
+@@include('renderServicesToTable.js');
 @@include('getServicesData.js');
 
 
