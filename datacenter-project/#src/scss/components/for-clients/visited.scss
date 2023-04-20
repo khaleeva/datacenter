@@ -1,0 +1,22 @@
+.visited{
+    padding: 7rem 0;
+}
+
+.visited__img{
+    max-width: 537px;
+    width: 100%;
+    height: auto;
+}
+
+.visited__title{
+    @media (max-width: 768px) {
+        text-align: center;
+        margin: 3rem 0;
+    }
+}
+
+.visited__content{
+    @media (max-width: 768px) {
+        order:2;
+    }
+}
