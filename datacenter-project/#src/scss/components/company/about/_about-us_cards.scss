@@ -45,13 +45,13 @@
     .card__description {
       max-width: 254px;
       text-align: left;
-      @include font-style($size: 1.6rem, $height: 120%, $weight: 400);
+      @include font($size: 1.6rem, $height: 120%, $weight: 400);
 
 
       @media (max-width: 420px) {
         min-width: 160px;
         height: 38px;
-        @include font-style($size: 1.4rem, $height: 120%, $weight: 400);
+        @include font($size: 1.4rem, $height: 120%, $weight: 400);
       }
 
       span {

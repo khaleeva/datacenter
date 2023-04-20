@@ -49,10 +49,10 @@
 .about-datacenter__text {
   & > p {
     margin-bottom: 1rem;
-    @include font-style($size: 1.8rem, $weight: 400, $height: 160%);
+    @include font($size: 1.8rem, $weight: 400, $height: 160%);
 
     @media (max-width: 420px) {
-      @include font-style($size: 1.6rem, $weight: 400, $height: 160%);
+      @include font($size: 1.6rem, $weight: 400, $height: 160%);
       margin-bottom: 0;
     }
 
@@ -84,7 +84,7 @@
   @media (max-width: 480px) {
     padding-left: 10px;
     padding-right: 10px;
-    @include font-style($size: 1.2rem, $weight: 400);
+    @include font($size: 1.2rem, $weight: 400);
     text-align: center;
   }
 }

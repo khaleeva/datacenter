@@ -87,11 +87,11 @@
 
                     a {
                         color: $color-dark;
-                        @include font-style($size: 2rem, $weight: 400);
+                        @include font($size: 2rem, $weight: 400);
                         border-bottom: 1px solid $color-dark;
                         user-select: none;
                         @media (max-width: 420px) {
-                            @include font-style($size: 1.6rem, $weight: 400);
+                            @include font($size: 1.6rem, $weight: 400);
                             text-align: left;
                         }
                     }

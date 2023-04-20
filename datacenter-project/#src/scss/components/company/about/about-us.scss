@@ -49,7 +49,7 @@
 }
 
 .about-us__text {
-  @include font-style($size: 1.8rem, $height: 160%, $weight: 400);
+  @include font($size: 1.8rem, $height: 160%, $weight: 400);
   margin-bottom: 0.7rem;
 
   @media(max-width: 768px) {
@@ -57,7 +57,7 @@
   }
 
   @media (max-width: 420px) {
-    @include font-style($size: 1.6rem, $height: 160%, $weight: 400);
+    @include font($size: 1.6rem, $height: 160%, $weight: 400);
     margin-bottom: 0;
   }
 }

@@ -64,7 +64,7 @@
 }
 
 .card-inner__title{
-    @include font-style($size: 1.6rem);
+    @include font($size: 1.6rem);
 }
 
 .limiter {
@@ -74,12 +74,12 @@
     -webkit-line-clamp: 5;
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
-    @include font-style($size: 1.8rem, $height: 160%, $weight: 400);
+    @include font($size: 1.8rem, $height: 160%, $weight: 400);
 
 
     @media (max-width: 420px) {
         max-height: 182px;
-        @include font-style($size: 1.6rem, $height: 160%, $weight: 400);
+        @include font($size: 1.6rem, $height: 160%, $weight: 400);
         &_active{
             max-height: 100%;
         }
@@ -94,11 +94,11 @@
 .read-more-button {
     cursor: pointer;
     display: inline-block;
-    @include font-style($size: 1.8rem);
+    @include font($size: 1.8rem);
     color: $color-primary;
     margin-top: 2rem;
     @media (max-width: 420px) {
-        @include font-style($size: 1.6rem);
+        @include font($size: 1.6rem);
     }
 
     &_active{

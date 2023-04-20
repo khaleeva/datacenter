@@ -73,12 +73,12 @@
         }
 
         .about__text {
-            @include font-style($size: 1.8rem, $height: 160%, $weight: 400);
+            @include font($size: 1.8rem, $height: 160%, $weight: 400);
             margin-bottom: 1rem;
             text-align: left;
 
             @media (max-width: 1200px) {
-                @include font-style($size: 1.6rem, $height: 160%, $weight: 400);
+                @include font($size: 1.6rem, $height: 160%, $weight: 400);
                 margin-bottom: 0;
             }
         }

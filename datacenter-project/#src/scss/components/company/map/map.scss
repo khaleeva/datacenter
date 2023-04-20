@@ -8,10 +8,10 @@
 
 .map__subtitle {
     text-align: center;
-    @include font-style($size: 1.8rem, $weight: 400);
+    @include font($size: 1.8rem, $weight: 400);
     margin-bottom: 4rem;
     @media (max-width: 420px) {
-        @include font-style($size: 1.6rem, $weight: 400);
+        @include font($size: 1.6rem, $weight: 400);
         margin-top: 0.65rem;
         margin-bottom: 2.6rem;
     }
@@ -50,12 +50,12 @@
 
 .map__card-title {
     text-align: center;
-    @include font-style($size: 3rem, $weight: 700);
+    @include font($size: 3rem, $weight: 700);
 
     padding: 2rem 0;
 
     @media (max-width: 420px) {
-        @include font-style($size: 1.8rem, $weight: 700);
+        @include font($size: 1.8rem, $weight: 700);
         padding: 1.2rem 2rem;
     }
 }

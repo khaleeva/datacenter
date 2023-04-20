@@ -143,9 +143,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  @include font-style($size: 1.4rem, $weight: 400);
+  @include font($size: 1.4rem, $weight: 400);
   @media (max-width: 768px) {
-    @include font-style($size: 1.2rem, $weight: 400);
+    @include font($size: 1.2rem, $weight: 400);
   }
 
 }
@@ -192,11 +192,11 @@
 }
 
 .total__text{
-  @include font-style($size: 1.6rem, $weight: 700);
+  @include font($size: 1.6rem, $weight: 700);
 }
 
 .total__cost {
-  @include font-style($size: 2rem, $weight: 700);
+  @include font($size: 2rem, $weight: 700);
 }
 
 .buttons-currency {
@@ -308,7 +308,7 @@
 }
 
 .form__title {
-  @include font-style($size: 2.4rem, $weight: 700);
+  @include font($size: 2.4rem, $weight: 700);
   text-align: center;
   margin-top: 5rem;
   margin-bottom: 2rem;
@@ -323,12 +323,12 @@
 }
 
 .form__cost {
-  @include font-style($size: 3.6rem, $weight: 700);
+  @include font($size: 3.6rem, $weight: 700);
   text-align: center;
   margin-top: 2rem;
 
   @media (max-width: 768px) {
-    @include font-style($size: 3.0rem, $weight: 700);
+    @include font($size: 3.0rem, $weight: 700);
   }
 
 }
@@ -355,7 +355,7 @@
 .cost-calculate__param {
   display: flex;
   align-items: center;
-  @include font-style($size: 1.6rem, $weight: 400);
+  @include font($size: 1.6rem, $weight: 400);
 
   & > div{
     margin-left: 10px;

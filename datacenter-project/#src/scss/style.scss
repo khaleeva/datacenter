@@ -25,6 +25,7 @@
 @import "./layout/header";
 @import "./layout/footer";
 @import "./layout/footer-mob";
+@import "layout/columns";
 
 //components
 
@@ -50,11 +51,11 @@
 @import "components/services/services";
 
 
+//for clients
+@import "./components/for-clients/instruction";
+
+
 @import "./components/advices";
-
-
-
-@import "./components/instruction";
 @import "./components/new-partners";
 @import "./components/payments";
 @import "./components/support";
@@ -62,5 +63,5 @@
 @import "./components/visited";
 @import "./components/article";
 @import "./components/error";
-//@import "./components/servStyle";
+
 

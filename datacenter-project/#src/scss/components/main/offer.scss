@@ -26,7 +26,7 @@
     @media(max-width: 420px){
         padding: 12px 28px ;
         span{
-            @include font-style($size: 1.6rem)
+            @include font($size: 1.6rem)
         }
     }
 

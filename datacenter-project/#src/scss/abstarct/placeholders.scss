@@ -19,20 +19,6 @@
   color: $color-light;
 }
 
-//%gradient{
-//  background: $color-primary;
-//}
-
-//%gradient-text{
-//  @extend %gradient;
-//  background-clip: text;
-//  color: transparent;
-//}
-
-//градиент бордера кнопок
-
-
-
 %gradient-border {
   border: double 1px transparent;
   border-radius: 16px;
@@ -41,21 +27,9 @@
   background-clip: content-box, border-box;
 }
 
-//градиентный бэкграунд кнопок
 
-
-//
-////градиент текста кнопок
-//
 %gradient-text{
   background: linear-gradient(90deg, #ea5c2f 0%, #f3b921 100%);
   background-clip: text;
   color: transparent;
 }
-//
-////прозрачный бэкграунд
-//
-//%transparent-bg {
-//  background: transparent;
-//  color: #fff;
-//}

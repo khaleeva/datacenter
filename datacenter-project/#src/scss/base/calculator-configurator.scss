@@ -139,7 +139,7 @@
   }
 
   .result__cost{
-    @include font-style($size:3rem, $weight:700);
+    @include font($size:3rem, $weight:700);
     color: $color-light;
     flex-grow: 1;
     display: flex;

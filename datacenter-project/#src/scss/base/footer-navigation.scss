@@ -16,7 +16,7 @@
 
     li {
       a {
-        @include font-style($size: 2rem, $weight: 400);
+        @include font($size: 2rem, $weight: 400);
         color: $color-light;
       }
     }

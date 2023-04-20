@@ -53,12 +53,12 @@
   p {
     margin-top: 0.7rem;
     span {
-      @include font-style($size: 2rem, $weight: 700);
+      @include font($size: 2rem, $weight: 700);
     }
   }
 
   address {
-    @include font-style($size: 2rem);
+    @include font($size: 2rem);
     text-align: center;
     color: $color-light;
   }
