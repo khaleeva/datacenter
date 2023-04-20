@@ -54,12 +54,14 @@
 //for clients
 @import "./components/for-clients/instruction";
 @import "./components/for-clients/payments";
+@import "./components/for-clients/support";
+@import "./components/for-clients/document";
 
 @import "./components/advices";
 @import "./components/new-partners";
 
-@import "./components/support";
-@import "./components/document";
+
+
 @import "./components/visited";
 @import "./components/article";
 @import "./components/error";

@@ -1,0 +1,97 @@
+.document{
+    padding: 7rem 0;
+}
+
+.document__title{
+    text-align: center;
+}
+
+.document__subtitle{
+    @include font($size: 2rem);
+    margin: 3rem 0;
+}
+
+.document__container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.document-block{
+    @extend %border-shadow;
+    max-width: 588px;
+    width: 588px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    padding: 0 9.2rem;
+    position: relative;
+    margin-bottom: 2rem;
+    @extend %transition;
+    @include font($size: 1.6rem, $weight: 400);
+
+    @media (max-width: 768px) {
+        max-width: 400px;
+        padding: 2rem 5rem 2rem 2rem;
+        height: auto;
+    }
+
+    @media (max-width: 420px) {
+        max-width: 300px;
+    }
+
+
+    &:before{
+        content: '';
+        position: absolute;
+        top:0;
+        left: -1px;
+        background-image: url('../img/document/light-paper.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: $color-primary;
+        width: 64px;
+        height: 100%;
+        border-radius: 20px;
+        @extend %transition;
+
+        @media (max-width: 768px) {
+            display: none;
+        }
+    }
+
+    &:after{
+        content: '';
+        position: absolute;
+        display: none;
+        top:0;
+        right: 0;
+        background-image: url('../img/document/download.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 64px;
+        height: 100%;
+
+        @media (max-width: 768px) {
+            display: block;
+        }
+    }
+
+    @include hover{
+        &:hover{
+            background-color: $color-primary;
+            color: $color-light;
+        }
+
+        &:hover:before{
+            background-color: $color-light;
+            background-image: url("../img/document/blue-paper.svg");
+        }
+    }
+
+
+}
+
+
+
+
