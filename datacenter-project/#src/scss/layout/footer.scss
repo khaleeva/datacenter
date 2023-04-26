@@ -7,22 +7,12 @@
         display: none;
     }
 
-    .footer__container {
-        display: flex;
-        justify-content: space-between;
-    }
 
     .footer__title {
         color: $color-light;
         margin-bottom: 2.2rem;
     }
 
-    .footer__navigation {
-        width: 41.67%;
-        display: flex;
-        justify-content: space-between;
-
-    }
 
     .footer__info {
         margin-bottom: 1.5rem;

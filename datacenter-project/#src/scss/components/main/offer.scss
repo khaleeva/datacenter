@@ -1,34 +1,30 @@
 // OFFER SECTION
 
 .offer {
-    padding: 8rem 0;
-    background-color: $color-primary;
+  background-color: $color-primary;
 
-    @media (max-width: 420px) {
-        padding-top: 3.6rem;
+
+  .offer__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .offer__title {
+      color: $color-light;
+      text-align: center;
+      margin-bottom: 1.78rem;
     }
-
-    .offer__container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        .offer__title {
-            color: $color-light;
-            text-align: center;
-            margin-bottom: 1.78rem;
-        }
-    }
+  }
 }
 
-.offer__button{
+.offer__button {
 
-    @media(max-width: 420px){
-        padding: 12px 28px ;
-        span{
-            @include font($size: 1.6rem)
-        }
+  @media(max-width: 420px) {
+    padding: 12px 28px;
+    span {
+      @include font($size: 1.6rem)
     }
+  }
 
 
 }

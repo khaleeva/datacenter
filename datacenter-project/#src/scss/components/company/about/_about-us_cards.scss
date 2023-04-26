@@ -1,37 +1,14 @@
 .about-us__cards {
   width: 100%;
   margin-top: 7rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.7rem;
-
-  @media(max-width: 1024px) {
-    flex-direction: column;
-    align-items: center;
-    margin-top: 5rem;
-  }
-
 
   .card {
     display: flex;
     align-items: center;
     column-gap: 1.7rem;
-    width: 32%;
     padding: 1.5rem;
     @extend %border-shadow;
     background: $color-light;
-
-    @media(max-width: 1024px) {
-      width: 380px;
-    }
-
-
-    @media (max-width: 420px) {
-      width: 280px;
-      padding: 1rem;
-      height: 75px;
-      column-gap: 1rem;
-    }
 
     .card__image {
       img {
@@ -47,10 +24,7 @@
       text-align: left;
       @include font($size: 1.6rem, $height: 120%, $weight: 400);
 
-
       @media (max-width: 420px) {
-        min-width: 160px;
-        height: 38px;
         @include font($size: 1.4rem, $height: 120%, $weight: 400);
       }
 

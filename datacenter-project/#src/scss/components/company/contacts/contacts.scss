@@ -1,14 +1,7 @@
 .contacts {
-    padding: 5rem 0;
     @media (max-width: 1024px) {
         display: none;
     }
-}
-
-.contacts__content{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
 }
 
 .contacts__title{
@@ -23,7 +16,7 @@
 }
 
 .contacts__img{
-    max-width: 600px;
+   width: 100%;
 }
 
 .contact{
@@ -38,6 +31,10 @@
 
         & > span{
             font-weight: 700;
+
+            & > a{
+                color: $color-dark;
+            }
         }
     }
 }
@@ -63,7 +60,6 @@
 
     .contacts-nav{
         row-gap: 1.85rem;
-
     }
 
     .contacts-nav__info{
@@ -71,6 +67,14 @@
 
         address{
             color: $color-dark;
+        }
+
+        p > span{
+            font-weight: 700;
+
+            & > a{
+                color: $color-dark;
+            }
         }
     }
 

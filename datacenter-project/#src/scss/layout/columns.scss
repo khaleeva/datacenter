@@ -4,6 +4,13 @@
     flex-direction: column;
     align-items: center;
   }
+
+  &_reverse{
+    @media (max-width: 768px) {
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+  }
 }
 
 .layout-3-column {
@@ -13,6 +20,12 @@
     width: 30%;
     display: block;
   }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
+
 }
 
 .layout-4-column {

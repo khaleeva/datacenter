@@ -1,7 +1,6 @@
 // REVIEW SECTION
 
 .review {
-    padding: 7rem 3.8rem 7.5rem;
     overflow: auto;
 }
 
@@ -32,7 +31,7 @@
 
 .review__card {
     width: 100%;
-    max-width: 588px;
+    padding: 3.4rem;
     height: 315px;
     position: relative;
 }
@@ -43,7 +42,7 @@
     left: 0;
     width: 100%;
     min-height: 315px;
-    padding: 34px 35px 33px 34px;
+    padding: 3.4rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
