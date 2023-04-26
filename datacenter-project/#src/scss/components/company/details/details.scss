@@ -32,9 +32,8 @@
 }
 
 .details__img {
-  width: 100%;
-  max-width: 510px;
-  height: auto;
+  max-width: 500px;
+
   @media (max-width: 768px) {
     display: none;
   }

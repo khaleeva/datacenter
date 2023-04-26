@@ -1,10 +1,4 @@
 
-// const formOther = document.querySelector('.form-other-container')
-// let state = {}
-
-
-
-
     const tables = document.querySelectorAll('.table__body_loading');
     tables.forEach(table => {
         const loader = document.createElement('img');
@@ -18,6 +12,10 @@
             document.querySelectorAll('.service__button').forEach(btn => btn.classList.add('button_disabled'))
         }
 
+        if(document.querySelectorAll('.button__arrow')){
+            document.querySelectorAll('.button__arrow').forEach(btn => btn.classList.add('button__arrow_disabled'))
+        }
+
         getData(function(data) {
             if (data) {
                 if(table.classList.contains('table__body_dedicated')){
@@ -29,6 +27,14 @@
                 }
                 if(document.querySelectorAll('.service__button')){
                     document.querySelectorAll('.service__button').forEach(btn => btn.classList.remove('button_disabled'))
+                }
+
+                if(document.querySelectorAll('.button__arrow')){
+                    document.querySelectorAll('.button__arrow').forEach(btn => btn.classList.remove('button__arrow_disabled'))
+                }
+
+                if(document.querySelector('.all-services__accordion')){
+                    openAccordionService()
                 }
             }
         });
@@ -90,9 +96,7 @@ function renderData(data, elem) {
             break;
         default: return
     }
-    if(document.getElementById('first-open-body')){
-        openAccordionService()
-    }
+
 
 
 

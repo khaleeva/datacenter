@@ -1,11 +1,8 @@
-.services {
-  padding: 5rem 0 8rem;
-}
 
-.services__title, .all-services__title {
-  text-align: center;
-  margin-bottom: 4rem;
-}
+//.services__title, .all-services__title {
+//  text-align: center;
+//  margin-bottom: 4rem;
+//}
 
 .services__wrapper {
   @extend %border-shadow;
@@ -42,39 +39,39 @@
   }
 }
 
-.service__text {
-  &_mb {
-    margin-bottom: 2rem;
-  }
-
-  &_bold {
-    font-weight: 700;
-    margin-top: 1rem;
-  }
-
-  @include font($size: 1.8rem, $height: 160%, $weight: 400);
-  text-align: justify;
-
-  @media (max-width: 1024px) {
-    @include font($size: 1.6rem, $height: 160%, $weight: 400);
-    &_bold {
-      font-weight: 700;
-    }
-  }
-
-  @media (max-width: 768px) {
-    @include font($size: 1.4rem, $height: 160%, $weight: 400);
-    &_bold {
-      font-weight: 700;
-    }
-  }
-
-  @media (max-width: 420px) {
-    padding: 0.7rem 1.4rem 0;
-    text-align: left;
-  }
-
-}
+//.service__text {
+//  &_mb {
+//    margin-bottom: 2rem;
+//  }
+//
+//  &_bold {
+//    font-weight: 700;
+//    margin-top: 1rem;
+//  }
+//
+//  @include font($size: 1.8rem, $height: 160%, $weight: 400);
+//  text-align: justify;
+//
+//  @media (max-width: 1024px) {
+//    @include font($size: 1.6rem, $height: 160%, $weight: 400);
+//    &_bold {
+//      font-weight: 700;
+//    }
+//  }
+//
+//  @media (max-width: 768px) {
+//    @include font($size: 1.4rem, $height: 160%, $weight: 400);
+//    &_bold {
+//      font-weight: 700;
+//    }
+//  }
+//
+//  @media (max-width: 420px) {
+//    padding: 0.7rem 1.4rem 0;
+//    text-align: left;
+//  }
+//
+//}
 
 .service__buttons {
   display: flex;
@@ -109,48 +106,8 @@ a {
   color: $color-primary;
 }
 
-.service__info {
-  @include font($size: 1.8rem, $weight: 400);
-  @media (max-width: 1024px) {
-    @include font($size: 1.4rem, $weight: 400);
-  }
-
-  @media (max-width: 420px) {
-    padding: 0 1.4rem;
-  }
-
-  & > * {
-    margin-bottom: 2rem;
-  }
-
-
-  p {
-    @include font($size: 2rem, $weight: 700);
-
-    @media (max-width: 1024px) {
-      @include font($size: 1.6rem, $weight: 700);
-
-    }
-  }
-
-  ul > li {
-    list-style-type: disc;
-    margin-bottom: 0.7rem;
-    margin-left: 1.4rem;
-
-    @media (max-width: 420px) {
-      margin-left: 1.4rem;
-    }
-  }
-
-}
-
 
 // ALL SERVICES
-
-.all-services {
-  padding: 5rem 0 8rem;
-}
 
 .all-services__accordion {
   display: flex;
@@ -200,6 +157,10 @@ a {
     }
 
     .button__arrow {
+      width: 30px;
+      height: 30px;
+      background-image: url("../img/icons/btn-rotate.svg");
+      background-position: center;background-size: contain;
       @extend %transition;
       cursor: pointer;
 
@@ -207,7 +168,12 @@ a {
         transform: rotate(-180deg);
       }
 
-      @media (max-width: 1024px) {
+      &_disabled{
+        background-image: url("../img/icons/btn-rotate-disabled.svg");
+        pointer-events: none;
+      }
+
+      @media (max-width: 768px) {
         width: 20px;
         height: 20px;
       }
@@ -252,20 +218,11 @@ a {
   padding: 4rem;
   margin-top: 6rem;
   color: $color-light;
-  font-size: 1.8rem;
 
   @media (max-width: 768px) {
-    font-size: 1.4rem;
     padding: 2rem;
   }
 
-  ul {
-    padding: 2rem;
-
-    li {
-      list-style-type: disc;
-    }
-  }
 }
 
 

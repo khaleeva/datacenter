@@ -12,7 +12,6 @@ body {
 }
 
 
-
 body.active-body {
   overflow: hidden;
 }
@@ -74,13 +73,12 @@ h4 {
   }
 }
 
-.section-padding{
- padding: 7rem 0;
+.section-padding {
+  padding: 7rem 0;
   @media (max-width: 420px) {
     padding: 3.5rem 0;
   }
 }
-
 
 
 //Стиль для заголовков секций
@@ -88,14 +86,81 @@ h4 {
 .title {
   text-align: center;
   margin-bottom: 4rem;
+
+  &_left{
+    text-align: left;
+    @media (max-width: 768px) {
+      text-align: center;
+    }
+  }
+
+  &_light{
+    color: $color-light;
+  }
+
+
+
 }
 
 
 .icon {
   display: inline-block;
+
   &_contact {
     margin-right: 5px;
   }
 
 }
 
+.image__container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+
+.paragraph{
+  @include font($size:1.8rem, $height:160%, $weight:400);
+  margin: 1rem 0;
+
+  @media (max-width: 420px) {
+    @include font($size:1.6rem, $height:160%, $weight:400);
+    margin: 0;
+  }
+
+  &_bold{
+    font-weight: 700;
+  }
+}
+
+.list{
+  margin-top: 2rem;
+  padding-left: 2rem;
+
+  & > li {
+    margin-bottom: 1rem;
+    @include font($size:1.8rem, $height: 160%, $weight: 400);
+    list-style-type: disc;
+
+    a {
+      color: $color-dark;
+      text-decoration: underline;
+      cursor: pointer;
+      @include font($size:1.8rem, $height: 160%, $weight: 700);
+      @media (max-width: 420px) {
+        @include font($size:1.6rem, $height: 160%, $weight: 700);
+      }
+    }
+
+    @media (max-width: 420px) {
+      @include font($size:1.6rem, $height: 160%, $weight: 400);
+    }
+  }
+}

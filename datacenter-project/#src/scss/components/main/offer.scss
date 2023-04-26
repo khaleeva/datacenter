@@ -8,17 +8,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    .offer__title {
-      color: $color-light;
-      text-align: center;
-      margin-bottom: 1.78rem;
-    }
   }
 }
 
 .offer__button {
-
   @media(max-width: 420px) {
     padding: 12px 28px;
     span {

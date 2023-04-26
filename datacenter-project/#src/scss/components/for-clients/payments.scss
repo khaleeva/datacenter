@@ -1,17 +1,11 @@
-.payments {
-    padding: 7rem 0;
 
-    @media (max-width: 768px) {
-        padding: 3.5rem 0;
-    }
 
-    .layout-2-column{
+.card__images{
 
-        @media (max-width: 768px) {
-            flex-direction: column;
-            align-items: center;
-        }
-
+    & > picture{
+        display: flex;
+        align-items: center;
+        margin-bottom: 2rem;
     }
 }
 
@@ -35,14 +29,7 @@
     }
 }
 
-.payments__text{
-    @include font($size:1.8rem, $height:160%, $weight:400);
-    margin: 1rem 0;
 
-    @media (max-width: 420px) {
-        @include font($size:1.4rem, $height:160%, $weight:400);
-    }
-}
 
 .payments__subtitle{
     margin: 3.9rem 0;
@@ -88,10 +75,15 @@
     }
 }
 
-.payments__img{
-    width: 100%;
-    max-width: 536px;
-    height: auto;
-
+.payments__img {
+    @media (max-width: 768px) {
+        display: none;
+    }
 }
 
+.payments__img-mob{
+    display: none;
+    @media (max-width: 768px) {
+        display: flex;
+    }
+}
