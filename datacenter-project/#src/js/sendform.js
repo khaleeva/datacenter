@@ -1,6 +1,7 @@
 
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('form');
+    const form_result = document.querySelector('.form__result');
     if (form) {
         form.addEventListener('submit', formSend);
     }
@@ -22,11 +23,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
             if (response.ok) {
-
                 let result = await response.json();
-                form.classList.add('display-none');
-                document.querySelector('#form-title').style.display = 'none';
-                document.querySelector('.form-send').classList.add('active');
+                form.classList.add('form_hidden');
+                form_result.classList.add('form__result_active');
             } else {
                 alert('Что-то пошло не так...')
                 form.reset();
@@ -63,14 +62,14 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function formAddError(input) {
-        input.parentElement.classList.add('error');
-        input.classList.add('error');
+        input.parentElement.classList.add('error-form');
+        input.classList.add('error-form');
     }
 
 
     function formRemoveError(input) {
-        input.parentElement.classList.remove('error');
-        input.classList.remove('error');
+        input.parentElement.classList.remove('error-form');
+        input.classList.remove('error-form');
     }
 
 
