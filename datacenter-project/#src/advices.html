@@ -9,93 +9,106 @@
     <title>Советы : Дата-центр Датахата</title>
 </head>
 <body>
-    <div class="wrapper page-wrapper">
-        @@include('./components/layout/_header.html')
-        <main class="main">
-            <section class="section-advices section-padding">
-                <div class="container">
-                    <div class="advices-container">
-                        <h1 class="title-section">Советы</h1>
-                        <div class="section-advices-item">
-                            <div class="section-advices-inner">
-                                <h2>Электроснабжение дата-центра</h2>
-                                <div class="limiter">
-                                    Энергоснабжение центра, согласно стандартизации, должно быть стабильным, чтобы
-                                    система не отказывала при возникновении необходимости в ремонте или отсутствии тока
-                                    в сети городской коммуникации. Востребованными считаются сети с двойной резервацией.
-                                    Они демонстрируют высокую устойчивость
-                                </div>
-                                <a href="article1.html" class="read-button">Читать подробнее</a>
-                            </div>
-                            <div class="section-advices-inner">
-                                <h2>Дата-центр: что это такое, зачем и кому он нужен</h2>
-                                <div class="limiter">
-                                    Современный ЦОД - это оптимальный вариант для обеспечения всей корпоративной IT -
-                                    инфраструктуры. В статье вы узнаете, какие дата-центры бывают, чем отличаются, кто
-                                    чаще всего является клиентами ЦОД и какими услугами могут пользоваться...
-                                </div>
-                                <a href="article2.html" class="read-button">Читать подробнее</a>
-                            </div>
-                            <div class="section-advices-inner">
-                                <h2>О уязвимостях UDP Amlification</h2>
-                                <div class="limiter">
-                                    Последнее время участились факты эксплуатации злоумышленниками уязвимостей UDP
-                                    Amlification. В этой статье приводится короткое описание уязвимостей, и способы их
-                                    устранения.
-                                </div>
-                                <a href="article3.html" class="read-button">Читать подробнее</a>
-                            </div>
-                            <div class="section-advices-inner">
-                                <h2>10 бесплатных инструментов для восстановления потерянных данных</h2>
-                                <div class="limiter">
-                                    Иногда, в результате программных сбоев, или по ошибке, из наших компьютеров
-                                    удаляются важные данные. Теперь же можно не беспокоиться об этом, поскольку в сети
-                                    существует множество бесплатных инструментов для восстановления данных...
-                                </div>
-                                <a href="article4.html" class="read-button">Читать подробнее</a>
-                            </div>
-                            <div class="section-advices-inner">
-                                <h2>Настройка резервного копирования в ISPmanager</h2>
-                                <div class="limiter">
-                                    Для того, что бы ваши данные всегда были в сохранности, мы рекомендуем вам настроить
-                                    резервное копирование на наш FTP-сервер.
-                                </div>
-                                <a href="article5.html" class="read-button">Читать подробнее</a>
-                            </div>
-                            <div class="section-advices-inner">
-                                <h2>Установка ISPmanager Lite</h2>
-                                <div class="limiter">
-                                    Панель управления личным серверов ISPmanager Lite разработана для того, что бы
-                                    упростить администрирование вашего сервера.
-                                </div>
-                                <a href="article6.html" class="read-button">Читать подробнее</a>
-                            </div>
-                            <div class="section-advices-inner">
-                                <h2>Оплата наших услуг через ЕРИП</h2>
-                                <div class="limiter">
-                                    ЕРИП (Единое Расчетное Информационное Пространство) - система, позволяющая проводить
-                                    оплаты с использованием банкоматов, инфокиосков в 12 600 пунктах банковского
-                                    обслуживания 28 банков, электронных денег WebMoney, EasyPay, WEBPAY и системы
-                                    мобильных платежей iPay.
-                                </div>
-                                <a href="article7.html" class="read-button">Читать подробнее</a>
-                            </div>
-                            <div class="section-advices-inner">
-                                <h2>Справочник полезных команд linux</h2>
-                                <div class="limiter">
-                                    Справочник полезных команд linux может быть полезен.
-                                </div>
-                                <a href="article8.html" class="read-button">Читать подробнее</a>
-                            </div>
+<div class="wrapper page-wrapper">
+    @@include('./components/layout/_header.html')
+    <main class="main">
+        <section class="advices section-padding">
+            <div class="container">
+                <h1 class="title">Советы</h1>
+                <div class="layout-2-column">
+                    <div class="advice__card">
+                        <h4>Электроснабжение дата-центра</h4>
+                        <div class="limiter">
+                            <p class="paragraph">Энергоснабжение центра, согласно стандартизации, должно быть
+                                стабильным, чтобы
+                                система не отказывала при возникновении необходимости в ремонте или отсутствии тока
+                                в сети городской коммуникации. Востребованными считаются сети с двойной...
+                            </p>
                         </div>
+                        <a href="article1.html" class="read-button">Читать подробнее</a>
+                    </div>
+                    <div class="advice__card">
+                        <h4>Дата-центр: что это такое, зачем и кому он нужен</h4>
+                        <div class="limiter">
+                            <p class="paragraph">
+                                Современный ЦОД - это оптимальный вариант для обеспечения всей корпоративной IT -
+                                инфраструктуры. В статье вы узнаете, какие дата-центры бывают, чем отличаются, кто
+                                чаще всего является клиентами ЦОД и какими услугами могут пользоваться...
+                            </p>
+                        </div>
+                        <a href="article2.html" class="read-button">Читать подробнее</a>
+                    </div>
+                    <div class="advice__card">
+                        <h4>О уязвимостях UDP Amlification</h4>
+                        <div class="limiter">
+                            <p class="paragraph">
+                                Последнее время участились факты эксплуатации злоумышленниками уязвимостей UDP
+                                Amlification. В этой статье приводится короткое описание уязвимостей, и способы их
+                                устранения...
+                            </p>
+                        </div>
+                        <a href="article3.html" class="read-button">Читать подробнее</a>
+                    </div>
+                    <div class="advice__card">
+                        <h4>10 бесплатных инструментов для восстановления потерянных данных</h4>
+                        <div class="limiter">
+                            <p class="paragraph">
+                                Иногда, в результате программных сбоев, или по ошибке, из наших компьютеров
+                                удаляются важные данные. Теперь же можно не беспокоиться об этом, поскольку в сети
+                                существует множество бесплатных инструментов для восстановления данных...
+                            </p>
+                        </div>
+                        <a href="article4.html" class="read-button">Читать подробнее</a>
+                    </div>
+                    <div class="advice__card">
+                        <h4>Настройка резервного копирования в ISPmanager</h4>
+                        <div class="limiter">
+                            <p class="paragraph">
+                                Для того, что бы ваши данные всегда были в сохранности, мы рекомендуем вам настроить
+                                резервное копирование на наш FTP-сервер.
+                            </p>
+                        </div>
+                        <a href="article5.html" class="read-button">Читать подробнее</a>
+                    </div>
+                    <div class="advice__card">
+                        <h4>Установка ISPmanager Lite</h4>
+                        <div class="limiter">
+                            <p class="paragraph">
+                                Панель управления личным серверов ISPmanager Lite разработана для того, что бы
+                                упростить администрирование вашего сервера.
+                            </p>
+                        </div>
+                        <a href="article6.html" class="read-button">Читать подробнее</a>
+                    </div>
+                    <div class="advice__card">
+                        <h4>Оплата наших услуг через ЕРИП</h4>
+                        <div class="limiter">
+                            <p class="paragraph">
+                                ЕРИП (Единое Расчетное Информационное Пространство) - система, позволяющая проводить
+                                оплаты с использованием банкоматов, инфокиосков в 12 600 пунктах банковского
+                                обслуживания 28 банков, электронных денег WebMoney, EasyPay...
+                            </p>
+                        </div>
+                        <a href="article7.html" class="read-button">Читать подробнее</a>
+                    </div>
+                    <div class="advice__card">
+                        <h4>Справочник полезных команд linux</h4>
+                        <div class="limiter">
+                            <p class="paragraph">
+                                Справочник полезных команд linux может быть полезен.
+                            </p>
+                        </div>
+                        <a href="article8.html" class="read-button">Читать подробнее</a>
                     </div>
                 </div>
-            </section>
-        </main>
-        @@include('./components/layout/_footer.html')
-        @@include('./components/layout/_footer-mob.html')
-    </div>
-    <script src="js/swiped-events.min.js"></script>
-    <script src="js/script.min.js"></script>
+
+            </div>
+        </section>
+    </main>
+    @@include('./components/layout/_footer.html')
+    @@include('./components/layout/_footer-mob.html')
+</div>
+<script src="js/swiped-events.min.js"></script>
+<script src="js/script.min.js"></script>
 </body>
 </html>
