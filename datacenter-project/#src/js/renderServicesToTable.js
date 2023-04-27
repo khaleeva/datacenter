@@ -2,6 +2,7 @@ const tables = document.querySelectorAll('.table__body_loading');
 tables.forEach(table => {
     const loader = document.createElement('img');
     loader.src = 'img/loader/loader.gif';
+    loader.alt = 'loader';
     if (table.classList.contains('table__body_dedicated')) {
         table.querySelector('.configurator').style.display = 'none'
     }

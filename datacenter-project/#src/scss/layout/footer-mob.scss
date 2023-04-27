@@ -1,18 +1,14 @@
 .footer-mob {
     width: 100%;
     background-color: $color-secondary;
-    padding: 3.2rem 0px 6.2rem 0px;
+    padding: 3.2rem 0 6.2rem 0;
 
     @media (min-width: 1024px) {
         display: none;
     }
 
 
-    .footer-mob__title {
-        color: $color-light;
-        margin-bottom: 5.23rem;
-        text-align: center;
-    }
+
 
     .contacts-nav__button{
         box-shadow: inset 0 0 0 100vw $color-secondary;
@@ -20,3 +16,9 @@
 
 }
 
+.footer-mob__title {
+    @include font($size:2rem, $weight: 700);
+    color: $color-light;
+    margin-bottom: 5.23rem;
+    text-align: center;
+}

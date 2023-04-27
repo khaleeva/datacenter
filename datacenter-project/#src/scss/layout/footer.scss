@@ -10,6 +10,7 @@
 
     .footer__title {
         color: $color-light;
+        @include font($size:2rem, $weight: 700);
         margin-bottom: 2.2rem;
     }
 
@@ -48,3 +49,4 @@
     }
 
 }
+
