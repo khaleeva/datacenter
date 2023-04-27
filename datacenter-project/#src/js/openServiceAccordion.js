@@ -25,6 +25,10 @@ function openAccordionService() {
                 }
             });
 
+            firstOpenAccordionBody.forEach(first => {
+                first.classList.remove('first-open-body')
+            })
+
             e.target.classList.toggle('button__arrow_rotate');
             let current_body = header.nextElementSibling;
 

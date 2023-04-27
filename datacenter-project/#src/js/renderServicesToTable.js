@@ -22,6 +22,7 @@
                     table.querySelector('.configurator').style.display = 'flex'
                 }
                 table.style.alignItems = 'stretch';
+
                 if (table.contains(loader)) {
                     table.removeChild(loader);
                 }
@@ -33,9 +34,13 @@
                     document.querySelectorAll('.button__arrow').forEach(btn => btn.classList.remove('button__arrow_disabled'))
                 }
 
-                if(document.querySelector('.all-services__accordion')){
-                    openAccordionService()
-                }
+                setTimeout(() => {
+                    if(document.querySelector('.all-services__accordion')){
+                        openAccordionService()
+                    }
+                }, 100)
+
+
             }
         });
     })

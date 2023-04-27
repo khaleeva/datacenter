@@ -1,5 +1,4 @@
 
-
 .card__images{
 
     & > picture{
@@ -9,36 +8,22 @@
     }
 }
 
-.payments__title{
-    margin: 2rem 0;
-    @media (max-width: 768px) {
-       text-align: center;
-        margin: 3rem 0;
-    }
-}
-
 .payments__container{
     & >*{
         margin-bottom: 4rem;
+
+        @media (max-width: 768px) {
+            margin-bottom: 2rem;
+        }
     }
 }
 
 .payments__content{
     @media (max-width: 768px) {
-        order:2;
+       margin-top: 2rem;
     }
 }
 
-
-
-.payments__subtitle{
-    margin: 3.9rem 0;
-    @include font($size:2.4rem);
-
-    @media (max-width: 768px) {
-       text-align: center;
-    }
-}
 
 .card{
     max-width: 588px;

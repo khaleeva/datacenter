@@ -133,10 +133,17 @@ h4 {
   @media (max-width: 420px) {
     @include font($size:1.6rem, $height:160%, $weight:400);
     margin: 0;
+
   }
 
   &_bold{
-    font-weight: 700;
+    @include font($size:1.8rem, $height:160%, $weight:700);
+
+    @media (max-width: 420px) {
+      @include font($size:1.6rem, $height:160%, $weight:700);
+      margin: 0;
+
+    }
   }
 }
 
