@@ -102,9 +102,7 @@
   }
 }
 
-a {
-  color: $color-dark;
-}
+
 
 
 // ALL SERVICES
@@ -123,7 +121,7 @@ a {
     @extend %border-shadow;
 
     @media (max-width: 768px) {
-      padding: 0 1rem;
+      padding: 0 0.5rem;
     }
 
   }

@@ -7,6 +7,7 @@ body {
   font-weight: 400;
   width: 100%;
   height: 100%;
+
 }
 
 
@@ -165,5 +166,19 @@ h4 {
     @media (max-width: 420px) {
       @include font($size:1.6rem, $height: 160%, $weight: 400);
     }
+  }
+}
+
+
+.link {
+  cursor: pointer;
+
+  &_dark{
+    color: $color-dark;
+  }
+
+  &_light{
+    color: $color-link;
+    text-decoration: underline;
   }
 }

@@ -12,11 +12,30 @@
     background: $color-light;
 
     .card__image {
-      img {
-        @media (max-width: 420px) {
-          max-width: 34px;
-          max-height: 34px;
-        }
+      width: 52px;
+      height: 52px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+
+      &_calendar {
+        background-image: url("../img/about-us/icons/calendar.svg");
+      }
+
+      &_square {
+        background-image: url("../img/about-us/icons/square.svg");
+      }
+
+      &_plug {
+        background-image: url("../img/about-us/icons/plug.svg");
+      }
+
+      &_build {
+        background-image: url("../img/about-us/icons/build.svg");
+      }
+
+      &_guard {
+        background-image: url("../img/about-us/icons/guard.svg");
       }
     }
 

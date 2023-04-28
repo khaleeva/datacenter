@@ -3,6 +3,11 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        & > .paragraph_bold{
+            text-align: center;
+            margin-top: 1rem;
+        }
     }
 }
 
