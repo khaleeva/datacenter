@@ -1,20 +1,31 @@
-const swipeBtn = document.querySelector(".swipe-line");
+document.addEventListener("DOMContentLoaded", function () {
+  swipeMenu();
+})
 
-swipeBtn.addEventListener('swiped-down', function () {
-  burger.classList.remove("burger_open");
-  overlay.classList.remove("overlay_active");
-  document.body.classList.remove('active-body');
-  setHeightForOpenedMenu()
-
-});
+const swipeMenu = () => {
+  const swipeBtn = document.querySelector(".swipe-line");
+  const burger = document.querySelector('.burger');
+  const overlay = document.querySelector(".overlay");
 
 
-swipeBtn.addEventListener('click', function () {
-  burger.classList.remove("burger_open");
-  overlay.classList.remove("overlay_active");
-  document.body.classList.remove('active-body');
-  setHeightForOpenedMenu()
-});
+  swipeBtn.addEventListener('swiped-down', function () {
+    burger.classList.remove("burger_open");
+    overlay.classList.remove("overlay_active");
+    document.body.classList.remove('active-body');
+    setHeightForOpenedMenu()
+
+  });
+
+
+  swipeBtn.addEventListener('click', function () {
+    burger.classList.remove("burger_open");
+    overlay.classList.remove("overlay_active");
+    document.body.classList.remove('active-body');
+    setHeightForOpenedMenu()
+  });
+}
+
+
 
 
 

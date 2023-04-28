@@ -1,5 +1,8 @@
 function toggleAccordion() {
     const accordion_headers = document.querySelectorAll(".accordion__header");
+    const burger = document.querySelector('.burger');
+    const accordion_bodies = document.querySelectorAll('.accordion__body');
+
     accordion_headers.forEach(header => header.addEventListener('click', function (e) {
             const current_header = e.target;
             const current_panel = current_header.nextElementSibling;

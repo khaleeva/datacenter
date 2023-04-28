@@ -34,6 +34,28 @@
   background: linear-gradient(90deg, $color-gradient-primary 0%, $color-gradient-secondary 100%);
 }
 
+@mixin image-first-layer($width, $height){
+  width: $width;
+  height: $height;
+  border-radius: 50%;
+  background: linear-gradient(90deg, rgba(31, 120, 224, 0.2) 0%, rgba(0, 194, 255, 0.2) 100%);
+  position: relative;
+}
+
+@mixin image-second-layer($width, $height, $color1, $color2){
+  width: $width;
+  height: $height;
+  border-radius: 50%;
+  background: linear-gradient(90deg, $color1 0%, $color2 100%);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
 //@mixin button-border () {
 //  //border: 1px double transparent;

@@ -118,9 +118,6 @@ function renderRAM(data, id) {
     )
 }
 
-
-
-
 function renderHDD(data, id) {
     const showPerClick = 4;
     let hdd_container = document.querySelector('.hdd__container');

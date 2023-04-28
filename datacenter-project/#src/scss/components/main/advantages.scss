@@ -32,59 +32,79 @@
     }
 
     .advantage__image {
-        width: 209px;
-        height: 209px;
-        border-radius: 50%;
-        background: linear-gradient(90deg, rgba(31, 120, 224, 0.2) 0%, rgba(0, 194, 255, 0.2) 100%);
-        position: relative;
+        @include image-first-layer(209px, 209px);
 
         @media (max-width: 1200px) {
-            width: 160px;
-            height: 160px;
+            @include image-first-layer(160px, 160px);
         }
         @media (max-width: 420px) {
-            width: 64px;
-            height: 64px;
+            @include image-first-layer(64px, 64px);
         }
     }
 
     .image__layer {
-        width: 169px;
-        height: 169px;
-        border-radius: 50%;
-        background: $color-primary;
-        background: linear-gradient(90deg, $color-gradient-layer1 0%, $color-gradient-layer2 100%);
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include image-second-layer(169px, 169px, $color-gradient-layer1, $color-gradient-layer2);
 
         @media (max-width: 1200px) {
-            width: 120px;
-            height: 120px;
+            @include image-second-layer(120px, 120px, $color-gradient-layer1, $color-gradient-layer2);
         }
 
         @media (max-width: 420px) {
-            width: 52px;
-            height: 52px;
+            @include image-second-layer(52px, 52px, $color-gradient-layer1, $color-gradient-layer2);
         }
 
-        img {
-            width: 100%;
-            max-width: 96px;
-            height: auto;
+        //img {
+        //    width: 100%;
+        //    max-width: 96px;
+        //    height: auto;
+        //
+        //    @media (max-width: 1200px) {
+        //        max-width: 80px;
+        //    }
+        //
+        //    @media (max-width: 420px) {
+        //        max-width: 30px;
+        //    }
+        //}
+    }
+}
 
-            @media (max-width: 1200px) {
-                max-width: 80px;
-            }
+.image__layer-img {
+    width: 96px;
+    height: 96px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
 
-            @media (max-width: 420px) {
-                max-width: 30px;
-            }
-        }
+    @media (max-width: 1200px) {
+        width: 80px;
+        height: 80px;
+    }
+
+    @media (max-width: 420px) {
+        width: 30px;
+        height: 30px;
+    }
+
+
+    &_people{
+        background-image: url("../img/advantages/icons/people.svg");
+    }
+
+    &_24{
+        background-image: url("../img/advantages/icons/24.svg");
+    }
+
+    &_handshake{
+        background-image: url("../img/advantages/icons/handshake.svg");
+    }
+
+    &_server{
+        background-image: url("../img/advantages/icons/server.svg");
+    }
+
+    &_guard{
+        background-image: url("../img/advantages/icons/guard.svg");
     }
 }
 

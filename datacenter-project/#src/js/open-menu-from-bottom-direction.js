@@ -2,12 +2,14 @@ document.addEventListener("DOMContentLoaded", function () {
    openMenuFromBottomDirection();
 })
 
-const burger = document.querySelector('.burger');
-const overlay = document.querySelector(".overlay");
-const accordion_bodies = document.querySelectorAll('.accordion__body');
+
 
 
 const openMenuFromBottomDirection = () => {
+   const burger = document.querySelector('.burger');
+   const overlay = document.querySelector(".overlay");
+   const accordion_bodies = document.querySelectorAll('.accordion__body');
+
    function toggleOpenMenuBurger() {
          burger.addEventListener('click', function () {
             burger.classList.toggle("burger_open");

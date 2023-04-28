@@ -12,6 +12,7 @@
 @@include('renderServers.js');
 @@include('renderServicesToTable.js');
 @@include('getServicesData.js');
+@@include('swiped-events.min.js');
 
 
 

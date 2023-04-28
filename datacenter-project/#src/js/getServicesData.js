@@ -13,7 +13,6 @@ async function getData(callback) {
 
         callback(data)
 
-
         if (document.getElementById("server-page")) {
             getServers(servers)
 
