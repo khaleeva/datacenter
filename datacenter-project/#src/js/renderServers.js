@@ -29,7 +29,7 @@ function renderCpu(data) {
 function getCPUValue(cpu, data) {
     let cpu_data = data.filter(item => item.id['$'] === cpu.value)
     let cpu_name = cpu_data[0].name_ru['$']
-    let price = parseFloat((cpu_data.map(i => i.price.period[0]['$cost'])[0]) * TAX).toFixed(2)
+    let price = Math.ceil((cpu_data.map(i => i.price.period[0]['$cost'])[0]) * TAX).toFixed(2)
     stateCPU[`cpu_select`] = {id: cpu.value, 'cpu_name': cpu_name, 'price': price}
     getAddons(cpu_data)
 
@@ -151,7 +151,7 @@ function renderHDD(data, id) {
                                            ${stateHDD[`hdd${index + 1}_radio`].hdd === item.id['$'] ? 'checked' : ""}
                                             onchange="changeState(this.value, this.name, dataset.value, dataset.text, ${item.price.period[0]['$cost']})" />
                                     <div class="radio__text">${item.name_ru['$']}</div>
-                            </label>`).join('')},
+                            </label>`).join('')}
                         </div>`
         )
     } else {
@@ -223,10 +223,12 @@ function getResult() {
     const hdd_price = Object.keys(stateHDD).map(i => Number(stateHDD[i].price))
 
 
+
+
+
     let sumOfHdd = hdd_price.reduce((sum, current) => sum + current, 0)
 
     let totalSum =  (cpu_price + ram_price  + sumOfHdd).toFixed(2)
-
 
     result_cost.innerHTML = `${totalSum}&nbsp<span>BYN/мес</span>`
 
@@ -246,7 +248,7 @@ if(document.querySelector('.result__btn')){
         const strCpu = Object.keys(stateCPU).map(i => stateCPU[i].id)
         const strHdd = Object.keys(stateHDD).map(i => `26addon_${stateHDD[i].id}%3D${stateHDD[i].hdd}`).join('%')
         const strRam = Object.keys(stateRAM).map(i => `26addon_${stateRAM[i].id}%3D${stateRAM[i].ram}`).join('%')
-        document.querySelector('.result__btn').href = `https://my.datahata.by/billmgr?func=register&redirect=startpage%3Ddedic%26startform%3Dquickorder%26pricelist%3D${strCpu}%26period%3D1%26project%3D1%${strHdd}%${strRam}%26redirect%3Dbasket`
+        window.open(`https://my.datahata.by/billmgr?func=register&redirect=startpage%3Ddedic%26startform%3Dquickorder%26pricelist%3D${strCpu}%26period%3D1%26project%3D1%${strHdd}%${strRam}%26redirect%3Dbasket`, '_blank')
     })
 }
 
