@@ -133,16 +133,18 @@ function calculator() {
 
 
 //Расчет стоимости IP
-
     ip_count.addEventListener('input', () => {
+        if(/^\d+$/.test(ip_count.value)){
             if (ip_count.value <= 1) {
                 IP = 0;
             } else {
                 let count = ip_count.value - 1;
                 IP = parseFloat((count * tableCostData['ip']).toFixed(2));
             }
-        getTotalCostOfService();
-
+            getTotalCostOfService();
+        } else{
+            ip_count.value = ip_count.value.slice(0, -1);
+        }
     })
 
 
