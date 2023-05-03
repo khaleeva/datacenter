@@ -72,7 +72,9 @@
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
 
-
+    & > p{
+        margin: 0;
+    }
 
     @media (max-width: 420px) {
         max-height: 182px;
