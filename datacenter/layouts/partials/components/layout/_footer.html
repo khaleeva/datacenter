@@ -14,7 +14,8 @@
                     </div>
                     <div class="footer__info">
                         <p class="paragraph">Адрес</p>
-                        <address>{{.Site.Params.OfficeAddress}}</address>
+                        <address>{{ safeHTML (replace .Site.Params.OfficeAddress "г." "<br>")}}</address>
+
                     </div>
                 </div>
                 <div class="footer__content">

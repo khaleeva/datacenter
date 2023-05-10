@@ -1,7 +1,11 @@
 {{ define "main" }}
 <section class="services section-padding">
     <div class="container services__container">
-        <h1 class="title">Размещение серверного <br> оборудования - В 19" стойках</h1>
+        {{ if .Params.Server }}
+        <h1 class="title">Размещение серверного <br> оборудования - {{.Params.ContentTitle}}</h1>
+        {{else}}
+        <h1 class="title"></h1>
+        {{end}}
         <div class="services__content" id="{{.Params.Id}}">
             <div class="services__wrapper">
                 {{ .Content }}

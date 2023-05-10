@@ -1,0 +1,129 @@
+[
+  {
+    "id": 1,
+    "name_service": "Дополнительный порт 1 Gb/s",
+    "cost": "18,00",
+    "data_name": "port",
+    "link": null
+  },
+  {
+    "id": 2,
+    "name_service": "Дополнительный порт 10 Gb/s",
+    "cost": "156,00",
+    "data_name": null,
+    "link": null
+  },
+  {
+    "id": 3,
+    "name_service": "Дополнительный адрес IPv4",
+    "cost": "10,20",
+    "data_name": "ip",
+    "link": null
+  },
+  {
+    "id": 4,
+    "name_service": "Дополнительный адрес IPv6 (/64)",
+    "cost": "Бесплатно",
+    "data_name": null,
+    "link": null
+  },
+  {
+    "id": 5,
+    "name_service": "Дополнительный 1 Gb внешнего входящего трафика",
+    "cost": "0,05",
+    "data_name": null,
+    "link": null
+  },
+  {
+    "id": 6,
+    "name_service": "Дополнительный 1 Gb внешнего исходящего трафика",
+    "cost": "0,10",
+    "data_name": null,
+    "link": null
+  },
+  {
+    "id": 7,
+    "name_service": "Трафик внутри Республики Беларусь (BY-IX)",
+    "cost": "Бесплатно",
+    "data_name": null,
+    "link": "https://noc.datahata.by/free.txt"
+  },
+  {
+    "id": 8,
+    "name_service": "Порт 10 Mb/s без учета трафика",
+    "cost": "156,00",
+    "data_name": null,
+    "link": null
+  },
+  {
+    "id": 9,
+    "name_service": "Порт 100 Mb/s без учета трафика",
+    "cost": "553,80",
+    "data_name": null,
+    "link": null
+  },
+  {
+    "id": 10,
+    "name_service": "Порт 1000 Mb/s без учета трафика",
+    "cost": "По запросу",
+    "data_name": null,
+    "link": null
+
+  },
+  {
+    "id": 11,
+    "name_service": "Аренда сети PA IPv4 /24",
+    "cost": "300,00",
+    "data_name": null,
+    "link": null
+  },
+  {
+    "id": 12,
+    "name_service": "Полка для размещения стоечного сервера без салазок (единоразово)",
+    "cost": "60,00",
+    "data_name": null,
+    "link": null
+  },
+  {
+    "id": 13,
+    "name_service": "Администрирование (1 чел.- час)",
+    "cost": "100,00",
+    "data_name": null,
+    "link": null
+  },
+  {
+    "id": 14,
+    "name_service": "Регистрация в БелГИЭ (единоразово)",
+    "cost": "0,5 базовой величины",
+    "data_name": null,
+    "link": null
+  },
+  {
+    "id": 15,
+    "name_service": "Канал БФТ (1 мес.)",
+    "cost": "54,00",
+    "data_name": null,
+    "link": null
+  },
+  {
+    "id": 16,
+    "name_service": "Локальное соединение \"x-connect\"",
+    "cost": "1,26 * L",
+    "data_name": null,
+    "link": null
+  },
+  {
+    "id": 17,
+    "name_service": "Прокладка оптоволоконного патч-корда (LC SM или ММ duplex), длиной L метров (единоразово)",
+    "cost": "54,00 + 6,48 * L",
+    "data_name": null,
+    "link": null
+  },
+  {
+    "id": 18,
+    "name_service": "Переходники (n - количество), шт. (единоразово)",
+    "cost": "32,40 * n",
+    "data_name": null,
+    "link": null
+  }
+]

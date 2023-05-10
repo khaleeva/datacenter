@@ -20,7 +20,14 @@
     {{end}}
     </main>
     {{ partial "components/layout/_footer.html" . }}
+    {{ if .Params.OtherFooter}}
+    <footer class="footer-contacts-mob">
+        {{ partial "components/base/_navigation-mob-footer.html" . }}
+    </footer>
+    {{else}}
     {{ partial "components/layout/_footer-mob.html" . }}
+    {{end}}
+
 </div>
 
 

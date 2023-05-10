@@ -31,7 +31,7 @@
         </div>
         <div class="contacts-nav__info">
             <p class="paragraph">Адрес</p>
-            <address>{{.Site.Params.OfficeAddress}}</address>
+            <address>{{ safeHTML (replace .Site.Params.OfficeAddress "г." "<br>")}}</address>
             <a class="button button_bordered contacts-nav__button" href="{{.Site.Params.MapLink}}"><span>Посмотреть на карте</span></a>
         </div>
     </div>

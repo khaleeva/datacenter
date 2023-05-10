@@ -1,0 +1,80 @@
+[
+  {
+    "name": "Размещение оборудования",
+    "subcategories": [
+      {
+        "name": "В 19\" стойках",
+        "url": "/services/colocation/rackmounted/"
+      },
+      {
+        "name": "В башенных серверах",
+        "url": "/services/colocation/tower/"
+      },
+      {
+        "name": "Аренда стойки",
+        "url": "/services/colocation/rack/"
+      }
+    ]
+  },
+  {
+    "name": "Серверы",
+    "subcategories": [
+      {
+        "name": "Аренда сервера",
+        "url": "/services/dedicated/dedicated/"
+      },
+      {
+        "name": "Купить сервер",
+        "url": "/services/dedicated/kupit-server/"
+      }
+    ]
+  },
+  {
+    "name": "Облачный хостинг",
+    "subcategories": [
+      {
+        "name": "Узнать подробнее",
+        "url": "https://mycloud.by/"
+      }
+    ]
+  },
+  {
+    "name": "IT-аутсорсинг",
+    "subcategories": [
+      {
+        "name": "Узнать подробнее",
+        "url": "https://xn&#45;&#45;80aikcthwb9g.xn&#45;&#45;90ais/"
+      }
+    ]
+  },
+  {
+    "name": "Другие услуги",
+    "subcategories": [
+      {
+        "name": "SSL-сертификат",
+        "url": "/services/other/ssl-sertifikatyi/"
+      },
+      {
+        "name": "Регистрация домена",
+        "url": "/services/other/registracziya-domenov/"
+      },
+      {
+        "name": "Место под бэкапы",
+        "url": "/services/other/backup/"
+      }
+    ]
+  },
+  {
+    "name": "Программное обеспечение",
+    "subcategories": [
+      {
+        "name": "ISPsystem",
+        "url": "/services/software/ispsystem/"
+      },
+      {
+        "name": "OnlyOffice",
+        "url": "https://www.onlyoffice.com/"
+      }
+    ]
+  }
+]
