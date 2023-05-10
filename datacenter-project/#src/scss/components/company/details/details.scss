@@ -6,19 +6,7 @@
 
 
 .details__info {
-  margin-top: 3rem;
-  @media (max-width: 420px) {
-    margin-top: 2rem;
-  }
-
-  //& > p {
-  //  margin-bottom: 0.3rem;
-  //  @include font($size: 2rem, $weight: 400);
-  //
-  //  @media (max-width: 420px) {
-  //    @include font($size: 1.4rem, $weight: 400)
-  //  }
-  //}
+  margin-top: 1rem;
 
   & > p > span {
     @include font($size: 1.8rem, $weight: 700);

@@ -1,0 +1,91 @@
+<div class="calculator__overlay">
+    <div class="calculator calculator__container">
+        <div class="calculator__form">
+            <div class="swipe-line swipe-button" data-swipe-threshold="20"
+                 data-swipe-timeout="500" data-swipe-ignore="false">
+            </div>
+            <div class="form__buttons-currency">
+                <div class="buttons-currency">
+                    <label class="button-currency__radio" for="byn">
+                        <input type="radio" id="byn" name="currency" value="byn" checked>
+                        <span class="button-currency__text">BYN</span>
+                    </label>
+                    <label class="button-currency__radio" for="rub">
+                        <input type="radio" id="rub" name="currency" value="rub">
+                        <span class="button-currency__text">RUB</span>
+                    </label>
+                </div>
+                <div class="close-icon">
+                    <span class="close"></span>
+                </div>
+            </div>
+            <p class="form__title">Расчёт стоимости</p>
+            <p class="form__subtitle">Cумма заказа:</p>
+            <p class="form__cost" data-value="BYN"></p>
+            <div class="form__cost-calculate">
+                <div class="cost-calculate">
+                    <div class="cost-calculate__param">
+                        <p>Расчет мощности: </p>
+                        <div class="value" data-value="Вт">250 Вт</div>
+                    </div>
+                    <div class="cost-calculate__range">
+                        <span class="progress-line"></span>
+                        <div class="bar">
+                            <span class="fill"></span>
+                        </div>
+                        <input type="range" value="0" min="250" max="1500" step="50" class="range"
+                               id="power-range">
+                    </div>
+                </div>
+                <div class="cost-calculate cost-calculate__unit">
+                    <div class="cost-calculate__param">
+                        <p>Количество юнитов: </p>
+                        <div class="value" data-value="U">1 U</div>
+                    </div>
+                    <div class="cost-calculate__range">
+                        <span class="progress-line"></span>
+                        <div class="bar">
+                            <span class="fill"></span>
+                        </div>
+                        <input type="range" value="0" min="1" max="8" step="1" class="range"
+                               id="unit-range">
+                    </div>
+                </div>
+                <div class="cost-calculate">
+                    <div class="cost-calculate__param">
+                        <p>Количество портов: </p>
+                        <div class="value" data-value="Gb/s">1 Gb/s</div>
+                    </div>
+                    <div class="cost-calculate__range">
+                        <span class="progress-line"></span>
+                        <div class="bar">
+                            <span class="fill"></span>
+                        </div>
+                        <input type="range" value="0" min="1" max="8" step="1" class="range"
+                               id="port-range">
+                    </div>
+                </div>
+                <div class="cost-calculate cost-calculate_input">
+                    <p class="error">пожалуйста, введите число</p>
+                    <input type="text" maxlength="3" id="ip" placeholder="Количество IP">
+                </div>
+                <div class="cost-calculate cost-calculate_checkbox">
+                    <p>Второй блок питания</p>
+                    <input type="checkbox" id="supply" class="checkbox" value="">
+                    <label class="checkbox__label" for="supply"> </label>
+                </div>
+                <button class="button button_colored calculator__button"><span>Добавить ещё</span></button>
+            </div>
+        </div>
+        <div class="calculator__result-table">
+            <div class="result-table__rows"></div>
+            <div class="result-table__total">
+                <p class="total__text">Итого</p>
+                <div class="total__cost"></div>
+            </div>
+        </div>
+        <div class="point-to-scroll"></div>
+    </div>
+</div>
+
+

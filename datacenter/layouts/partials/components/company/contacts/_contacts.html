@@ -1,0 +1,56 @@
+<section class="contacts section-padding">
+    <div class="container">
+        <div class="layout-2-column">
+            <h1 class="contacts__title">Наши контакты</h1>
+            <div class="contacts__info">
+                <h4>Отдел продаж</h4>
+                <div class="contact">
+                    Телефоны
+                    <p><span><a class="link link_dark" href="tel:{{.Site.Params.Phone1}}" target="_blank">{{.Site.Params.Phone1}} (A1)</a></span></p>
+                    <p><span><a class="link link_dark" href="tel:{{.Site.Params.Phone2}}" target="_blank">{{.Site.Params.Phone2}} (MTC)</a></span></p>
+                </div>
+                <div class="contact">
+                    Факс
+                    <p><span>{{ .Site.Params.Fax }}</span></p>
+                </div>
+                <div class="contact">
+                    Skype
+                    <p><span>datahata.sales</span></p>
+                </div>
+                <div class="contact">
+                    Telegram
+                    <p><span>{{.Site.Params.Phone2}}</span></p>
+                </div>
+                <div class="contact">
+                    Почта
+                    <p><span><a class="link link_dark" href="mailto:{{.Site.Params.Email}}" target="_blank">{{.Site.Params.Email}}</a></span></p>
+                </div>
+                <div class="contact">
+                    Время работы
+                    <p><span>с 9:00 до 18:00 | ПН - ПТ</span></p>
+                </div>
+                <h4>Тех.поддержка</h4>
+                {{partial "components/company/contacts/_support-contact.html" .}}
+
+            </div>
+            <div class="contacts__img image__container">
+                <img src="/img/contacts/email.png" alt="section-img">
+            </div>
+        </div>
+    </div>
+</section>
+<section class="contacts-mob">
+    <div class="contacts-mob__content">
+        <div class="container">
+            <h1 class="contacts-mob__title">Наши контакты</h1>
+            {{ partial "components/base/_contacts-nav__sales.html" . }}
+        </div>
+    </div>
+    <div class="contacts-mob__content contacts-mob__content_background">
+        <div class="container">
+            <h2 class="contacts-mob__title">Тех.поддержка</h2>
+            {{ partial "components/base/_contacts-nav__support.html" . }}
+        </div>
+    </div>
+</section>
+

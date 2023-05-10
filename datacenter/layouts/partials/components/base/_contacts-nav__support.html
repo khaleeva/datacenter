@@ -1,0 +1,36 @@
+<div class="contacts-nav">
+    <div class="contacts-nav__content">
+        <div class="contacts-nav__image">
+            <div class="contacts-nav__image-layer">
+                <div class="image-layer__img image-layer__img_post"></div>
+            </div>
+        </div>
+        <div class="contacts-nav__info">
+            <p class="paragraph">Почта</p>
+            <p><span>{{.Site.Params.SupportEmail}}</span></p>
+            <a class="button button_bordered contacts-nav__button" href="mailto:{{.Site.Params.SupportEmail}}"><span>Написать письмо</span></a>
+        </div>
+    </div>
+    <div class="contacts-nav__content">
+        <div class="contacts-nav__image">
+            <div class="contacts-nav__image-layer">
+                <div class="image-layer__img image-layer__img_phone"></div>
+            </div>
+        </div>
+        <div class="contacts-nav__info">
+            <p class="paragraph">Телефоны</p>
+            <a class="button button_bordered contacts-nav__button" href="tel:{{.Site.Params.SupportPhone1}}"><span>{{.Site.Params.SupportPhone1}}</span></a>
+            <a class="button button_bordered contacts-nav__button" href="tel:{{.Site.Params.SupportPhone2}}"><span>{{.Site.Params.SupportPhone2}}</span></a>
+        </div>
+    </div>
+    <div class="contacts-nav__content">
+        <div class="contacts-nav__info">
+            <p class="paragraph">Skype</p>
+            <p><span>datahata.support</span></p>
+        </div>
+        <div class="contacts-nav__info">
+            <p class="paragraph">Telegram</p>
+            <p><span><a class="link link_dark" href="{{.Site.Params.SupportTelegram}}" target="_blank">@datahata_support_bot</a></span></p>
+        </div>
+    </div>
+</div>

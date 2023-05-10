@@ -1,0 +1,22 @@
+{{ define "main" }}
+<section class="all-services section-padding">
+    <div class="container">
+        <h1 class="title">{{.Params.PageTitle}}</h1>
+        <div class="all-services__accordion">
+            {{ range .Pages }}
+            <div class="accordion__section">
+                <div class="accordion__header">
+                    <p>{{.Params.TitleAccordion}}</p>
+                    <div class="button__arrow {{.Params.ClassForButton}}"></div>
+                </div>
+                <div class="accordion__body {{.Params.Class}}">
+                    {{.Content}}
+                </div>
+            </div>
+            {{end}}
+        </div>
+        {{.Content}}
+    </div>
+
+</section>
+{{ end }}

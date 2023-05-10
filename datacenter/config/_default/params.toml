@@ -1,0 +1,39 @@
+# Company details
+companyName = "Общество с ограниченной ответственностью \"Датахата\""
+UNP = "191445401"
+BYN = "BY33BLNB30120000079425000933 (BYN)"
+USD = "BY25BLNB30120000079425001840 (USD)"
+EUR = "BY45BLNB30120000079425001978 (EUR)"
+RUB = "BY69BLNB30120000079425001643 (RUR)"
+bankAddress = 'в ОАО "БНБ-Банк", 220012, г. Минск, пр. Независимости, д. 87а'
+BIC = "БИК: BLNBBY2X"
+legalAddress = "220013, г. Минск, ул. Я Коласа 37-16"
+officeAddress = "220019, ул. Колхозная,д. 2-б, Минск, Беларусь."
+datacenterAddress = "г. Минск, ул. Шаранговича 19"
+headOfCompany = "Директор - Палышенкова Ирина Валентиновна, действует на основании Устава"
+numberOfDatacenter = "DB410D408ID320110627"
+
+#Contact details Sales
+phone1 = "+375 29 308 6666"
+phone2 = "+375 33 308 6666"
+fax = "+375 17 388 66 55"
+email = "sales@datahata.by"
+
+#Contact details Support
+supportTelegram = "https://t.me/datahata_support_bot"
+supportEmail = "help@datahata.by"
+supportPhone1 = "+375 29 309 6666"
+supportPhone2 = "+375 33 309 6666"
+
+
+# Navigation
+mapLink = "/company/map/"
+coloLink = "/services/colocation/rackmounted/"
+
+
+# Price Colocation
+# Обязательно указывать стоимость до сотых и использовать запятую
+server = "135,00"
+power = "12,00"
+unit = "66,00"
+supply = "36,00"

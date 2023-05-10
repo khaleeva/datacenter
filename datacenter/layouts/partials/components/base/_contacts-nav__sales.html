@@ -1,0 +1,38 @@
+<div class="contacts-nav">
+    <div class="contacts-nav__content">
+        <div class="contacts-nav__image">
+            <div class="contacts-nav__image-layer">
+                <div class="image-layer__img image-layer__img_post"></div>
+            </div>
+        </div>
+        <div class="contacts-nav__info">
+            <p class="paragraph">Почта</p>
+            <p><span>{{.Site.Params.Email}}</span></p>
+            <a class="button button_bordered contacts-nav__button" href="mailto:{{.Site.Params.Email}}"><span>Написать письмо</span></a>
+        </div>
+    </div>
+    <div class="contacts-nav__content">
+        <div class="contacts-nav__image">
+            <div class="contacts-nav__image-layer">
+                <div class="image-layer__img image-layer__img_phone"></div>
+            </div>
+        </div>
+        <div class="contacts-nav__info">
+            <p class="paragraph">Телефоны</p>
+            <a class="button button_bordered contacts-nav__button" href="tel:{{.Site.Params.Phone1}}"><span>{{.Site.Params.Phone1}}</span></a>
+            <a class="button button_bordered contacts-nav__button" href="tel:{{.Site.Params.Phone2}}"><span>{{.Site.Params.Phone2}}</span></a>
+        </div>
+    </div>
+    <div class="contacts-nav__content">
+        <div class="contacts-nav__image">
+            <div class="contacts-nav__image-layer">
+                <div class="image-layer__img image-layer__img_map"></div>
+            </div>
+        </div>
+        <div class="contacts-nav__info">
+            <p class="paragraph">Адрес</p>
+            <address>{{.Site.Params.OfficeAddress}}</address>
+            <a class="button button_bordered contacts-nav__button" href="{{.Site.Params.MapLink}}"><span>Посмотреть на карте</span></a>
+        </div>
+    </div>
+</div>
