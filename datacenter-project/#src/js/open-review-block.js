@@ -38,7 +38,7 @@ function openReviewBlock () {
         parent.classList.remove("review__card-inner_active");
         limiter.classList.remove("limiter_active");
     }
-}
+};
 
 
 

@@ -10,4 +10,4 @@ function setHeightForOpenedMenu(isOpen = false) {
         swipe_block.style.minHeight = `0px`
         swipe_block.style.top = `100%`
     }
-}
+};

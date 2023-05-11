@@ -1,0 +1,18 @@
+{{ define "main" }}
+
+<section class="services section-padding" id="{{ .Params.Id }}">
+        <div class="container services__container">
+            <h1 class="title">{{.Params.PageTitle}}</h1>
+            <div class="services__content">
+                <div class="services__wrapper">
+                    {{ .Content }}
+                    {{ if .Params.additional_content }}
+                    <div class="additional-content">
+                        {{ partial "components/services/colo/_additional-services.html" . }}
+                    </div>
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+    </section>
+ {{ end }}

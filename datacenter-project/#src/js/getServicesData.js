@@ -29,9 +29,9 @@ async function getData(callback) {
 
     if(document.querySelector('.all-services__accordion')){
         openAccordionService()
-    }
+    };
 
-}
+};
 
 
 

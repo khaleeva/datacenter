@@ -1,5 +1,9 @@
 {{ define "main" }}
-<section class="all-services section-padding">
+{{if .Params.Id}}
+<section class="all-services section-padding" id="{{.Params.Id}}">
+    {{else}}
+    <section class="all-services section-padding">
+        {{end}}
     <div class="container">
         <h1 class="title">{{.Params.PageTitle}}</h1>
         <div class="all-services__accordion">

@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     lazyLoadMaps()
-})
+});
 
 
 function lazyLoadMaps(){
@@ -29,7 +29,7 @@ function lazyLoadMaps(){
             })
         }
     }
-}
+};
 
 
 

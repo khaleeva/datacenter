@@ -30,7 +30,7 @@ const form = () => {
         partners_overlay.classList.add('new-partners__overlay_active');
         form_result.classList.remove('form__result_active');
         form.classList.remove('form_hidden');
-    }
+    };
 
     function closeSendForm() {
         form.reset();
@@ -43,23 +43,23 @@ const form = () => {
         document.body.classList.remove('active-body');
         partners_overlay.classList.remove('new-partners__overlay_active');
         form_result.classList.remove('form__result_active');
-    }
+    };
 
 
     if (openForm) {
         openForm.addEventListener('click', openSendForm)
-    }
+    };
 
     if (closeIconForm) {
         closeIconForm.addEventListener("click", closeSendForm)
-    }
+    };
 
 
     if (swipeFormLine) {
         swipeFormLine.addEventListener('swiped-down', closeSendForm)
         swipeFormLine.addEventListener('click', closeSendForm)
-    }
-}
+    };
+};
 
 
 

@@ -23,7 +23,7 @@ const swipeMenu = () => {
     document.body.classList.remove('active-body');
     setHeightForOpenedMenu()
   });
-}
+};
 
 
 

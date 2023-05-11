@@ -45,7 +45,7 @@ function calculator() {
             }
         })
 
-    })
+    });
 
     async function getCurrency() {
         let url = 'https://www.nbrb.by/api/exrates/rates/456/?periodicity=0';
@@ -53,7 +53,7 @@ function calculator() {
         let currentCurrency = await response.json();
         let RUB = currentCurrency.Cur_OfficialRate;
         currency_RUB = (100 / RUB).toFixed(2);
-    }
+    };
 
     getCurrency()
 
@@ -74,15 +74,15 @@ function calculator() {
         }
         renderTotalCost(data.toFixed(2))
         checkBox_BYN.checked = true;
-    }
+    };
 
     if (buttonToOpenUnitCalculator) {
         buttonToOpenUnitCalculator.addEventListener('click', () => openCalculator(tableCostData['server'], 'add'))
-    }
+    };
 
     if (buttonToOpenTowerCalculator) {
         buttonToOpenTowerCalculator.addEventListener('click', () => openCalculator(tableCostData['tower'], 'remove'))
-    }
+    };
 
 
     ranges.forEach(range => {
@@ -93,7 +93,7 @@ function calculator() {
             getValueFromRange(range)
         })
 
-    })
+    });
 
 
 //получение значений инпутов
@@ -122,14 +122,14 @@ function calculator() {
         }
 
         getTotalCostOfService();
-    }
+    };
 
     //Получение стоимости второго блока питания
 
     checkbox_second_supply.addEventListener('change', () => {
         SUPPLY = checkbox_second_supply.checked ? tableCostData['supply'] : 0
         getTotalCostOfService();
-    })
+    });
 
 
 //Расчет стоимости IP
@@ -145,7 +145,7 @@ function calculator() {
         } else{
             ip_count.value = ip_count.value.slice(0, -1);
         }
-    })
+    });
 
 
 // Расчет общей стоимости услуги
@@ -165,7 +165,7 @@ function calculator() {
         renderTotalCost(render_total_sum)
         return render_total_sum
 
-    }
+    };
 
     //Отрисовка итогой суммы в калькуляторе
 
@@ -176,7 +176,7 @@ function calculator() {
             elem.innerHTML = `${totalCount} BYN`;
         }
 
-    }
+    };
 
     function changeDisabledStateForButton(disabled) {
         addMoreServicesButton.disabled = disabled;
@@ -185,7 +185,7 @@ function calculator() {
         } else {
             addMoreServicesButton.classList.remove('button_disabled');
         }
-    }
+    };
 
 
     const buttons_currency = document.querySelectorAll('.button-currency__radio input[type="radio"]');
@@ -230,7 +230,7 @@ function calculator() {
         }
 
         getNullValueCalculator();
-    }
+    };
 
     addMoreServicesButton.addEventListener('click', () => {
         renderResultTable(countServer++)
@@ -258,7 +258,7 @@ function calculator() {
         } else supply = `${1}БП`;
 
         return `${type} ${power} ${ip} ${port} ${supply}`
-    }
+    };
 
 
 //Функция обнулить значения калькулятора
@@ -303,7 +303,7 @@ function calculator() {
                 renderTotalCost(tableCostData['tower'].toFixed(2))
         }
 
-    }
+    };
 
 // функция обнуления классов
 
@@ -344,5 +344,5 @@ function calculator() {
         removeActiveClasses();
         countServer = 1;
     } );
-}
+};
 

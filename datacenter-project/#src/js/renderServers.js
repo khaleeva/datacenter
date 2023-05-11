@@ -6,7 +6,7 @@ const TAX = 1.2; // 20% НДС
 
 function getServers(servers) {
     renderCpu(servers)
-}
+};
 
 function renderCpu(data) {
     let cpu_select = document.querySelector('.cpu__select');
@@ -24,7 +24,7 @@ function renderCpu(data) {
     if(document.getElementById('first-open-body')){
         openAccordionService()
     }
-}
+};
 
 function getCPUValue(cpu, data) {
     let cpu_data = data.filter(item => item.id['$'] === cpu.value)
@@ -33,7 +33,7 @@ function getCPUValue(cpu, data) {
     stateCPU[`cpu_select`] = {id: cpu.value, 'cpu_name': cpu_name, 'price': price}
     getAddons(cpu_data)
 
-}
+};
 
 
 function getAddons(data) {
@@ -41,7 +41,7 @@ function getAddons(data) {
     getRAMValue(addons)
     getHDDValue(addons)
     getResult()
-}
+};
 
 function getRAMValue(data) {
     let id_addon = data.map(item => item['enumeration'][1]?.id['$'] === '14' && item.id['$']).filter(i => i)
@@ -59,7 +59,7 @@ function getRAMValue(data) {
 
     renderRAM(RAM, id_addon)
 
-}
+};
 
 
 function getHDDValue(data) {
@@ -78,7 +78,7 @@ function getHDDValue(data) {
 
     renderHDD(HDD, id_addon)
 
-}
+};
 
 
 function changeState(value, name_radio, data, label, price) {
@@ -89,7 +89,7 @@ function changeState(value, name_radio, data, label, price) {
         :
         stateHDD[name_radio] = {hdd: value, id: data, label: label, 'price': cost}
     getResult()
-}
+};
 
 
 function renderRAM(data, id) {
@@ -116,7 +116,7 @@ function renderRAM(data, id) {
                             </label>`).join('')}
                  </div>`
     )
-}
+};
 
 function renderHDD(data, id) {
     const showPerClick = 4;
@@ -206,8 +206,7 @@ function renderHDD(data, id) {
         })
     }
 
-
-}
+};
 
 function getResult() {
 
@@ -221,10 +220,6 @@ function getResult() {
     const cpu_price = Object.keys(stateCPU).map(i => Number(stateCPU[i].price))[0]
     const ram_price = Object.keys(stateRAM).map(i => Number(stateRAM[i].price))[0]
     const hdd_price = Object.keys(stateHDD).map(i => Number(stateHDD[i].price))
-
-
-
-
 
     let sumOfHdd = hdd_price.reduce((sum, current) => sum + current, 0)
 
@@ -240,7 +235,7 @@ function getResult() {
             `<p class = 'config-hdd'>Диск ${index + 1} - ${i}</p>`).join('')}
         </div>`
 
-}
+};
 
 
 if(document.querySelector('.result__btn')){
@@ -250,7 +245,7 @@ if(document.querySelector('.result__btn')){
         const strRam = Object.keys(stateRAM).map(i => `26addon_${stateRAM[i].id}%3D${stateRAM[i].ram}`).join('%')
         window.open(`https://my.datahata.by/billmgr?func=register&redirect=startpage%3Ddedic%26startform%3Dquickorder%26pricelist%3D${strCpu}%26period%3D1%26project%3D1%${strHdd}%${strRam}%26redirect%3Dbasket`, '_blank')
     })
-}
+};
 
 
 

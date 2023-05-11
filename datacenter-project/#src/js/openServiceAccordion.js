@@ -45,9 +45,7 @@ function openAccordionService() {
 
         }
     }))
-
-
-}
+};
 
 
 
