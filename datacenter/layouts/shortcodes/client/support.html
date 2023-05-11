@@ -8,12 +8,16 @@
                     IT-инфраструктуры заказчиков на договорной основе.</p>
                 <p class="paragraph">Написать запрос (тикет) в службу технической поддержки вы можете в нашей биллинговой системе.</p>
                 <p class="paragraph">Получить консультацию дежурного специалиста можно круглосуточно:</p>
-                @@include('../company/contacts/_support-contact.html')
+
+                {{partial "components/company/contacts/_support-contact.html" .}}
+
             </div>
             <div class="image__container">
-                <img src="img/contacts/Email.png" alt="section-img">
+                <picture>
+                    <source srcset="/img/contacts/email.webp" type="image/webp">
+                    <img src="/img/contacts/email.png" alt="section-img">
+                </picture>
             </div>
-
         </div>
         <div class="layout-2-column">
             <div class="support__content">
@@ -33,9 +37,9 @@
                     <li>Администрирование вашего офисного IT-оборудования и сети;</li>
                     <li>Нестандартные технологические решения.</li>
                 </ul>
-                <p class="paragraph">Мы готовы обсудить с вами условия сотрудничества, напишите нам на <a href="mailto:sales@datahata.by">sales@datahata.by</a>
+                <p class="paragraph">Мы готовы обсудить с вами условия сотрудничества, напишите нам на <a class="link link_light" href="mailto:sales@datahata.by">sales@datahata.by</a>
                 </p>
-                <p class="paragraph">Узнать больше о услугах IT-аутсорсинга вы можете <a href="https://xn--80aikcthwb9g.xn--90ais/">по
+                <p class="paragraph">Узнать больше о услугах IT-аутсорсинга вы можете <a class="link link_light" href="https://xn--80aikcthwb9g.xn--90ais/">по
                     ссылке</a></p>
             </div>
 

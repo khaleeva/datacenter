@@ -13,6 +13,6 @@ server: "server"
 
 {{<services/colocation/server
 content = "Предлагаем разместить Ваши сервера и другое телекоммуникационное оборудование формата tower в нашем ЦОДе, оборудованном всем необходимым для обеспечения бесперебойной работы."
-id_btn = "btn-tower"  type = "tower">}}
+id = "btn-tower"  type = "tower">}}
 
 {{<services/colocation/calculator>}}

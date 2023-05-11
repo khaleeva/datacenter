@@ -1,38 +1,47 @@
 <nav class="header__navigation" aria-label="navigation-header">
-  <ul class="navigation">
-    {{- range site.Menus.main }}
-    <li class="navigation__menu"> {{ .Name }}
-      <ul class="navigation__menu-sub">
-        {{ range .Children }}
-        <li><a href="{{ .URL }}" class="menu-sub__link">{{ .Name }}</a></li>
-        {{ end }}
-      </ul>
-    </li>
-    {{ end }}
-        <li class="navigation__menu">Связаться с нами
-          <ul class="navigation__menu-sub navigation__menu-sub_contact">
-            <li class="navigation__title">Отдел продаж: работа с новымы и существующими клиентами</li>
-            <li>
-              <a class="menu-sub__link link-contact link-contact_color" href="mailto: {{.Site.Params.Email}}">
-                <img class="icon icon_contact" src="/img/header/icons/mail.svg" alt="mail" width="26" height="26">
-                {{.Site.Params.Email}}
-              </a>
-            </li>
-            <li><a class="menu-sub__link link-contact" href="tel: {{.Site.Params.Phone1}}">{{.Site.Params.Phone1}}</a></li>
-            <li><a class="menu-sub__link link-contact" href="tel: {{.Site.Params.Phone2}}">{{.Site.Params.Phone2}}</a></li>
-            <li class="horizontal-line"></li>
-            <li class="navigation__title">Техническая поддержка 24/7 для существующих клиентов</li>
-            <li><a class="menu-sub__link link-contact link-contact_color" href={{.Site.Params.SupportTelegram}}>
-              <img class="icon icon_contact" src="/img/header/icons/telegram.svg" alt="telegram" width="24" height="24">datahata_support_bot</a></li>
-
-            <li><a class="menu-sub__link link-contact link-contact_color"
-                   href="mailto:{{.Site.Params.SupportEmail}}">
-              <img class="icon icon_contact" src="/img/header/icons/mail.svg" alt="mail" width="26" height="26">{{.Site.Params.SupportEmail}}</a></li>
-            <li><a class="menu-sub__link link-contact" href="tel:{{.Site.Params.SupportPhone1}}">{{.Site.Params.SupportPhone1}}</a></li>
-            <li><a class="menu-sub__link link-contact" href="tel:{{.Site.Params.SupportPhone2}}">{{.Site.Params.SupportPhone2}}</a></li>
-          </ul>
+    <ul class="navigation">
+        {{ range site.Menus.main }}
+        <li class="navigation__menu"> {{ .Name }}
+            <ul class="navigation__menu-sub">
+                {{ range .Children }}
+                <li><a href="{{ .URL }}" class="menu-sub__link">{{ .Name }}</a></li>
+                {{ end }}
+            </ul>
         </li>
-  </ul>
+        {{ end }}
+        <li class="navigation__menu">Связаться с нами
+            <ul class="navigation__menu-sub navigation__menu-sub_contact">
+                <li class="navigation__title">Отдел продаж: работа с новымы и существующими клиентами</li>
+                <li>
+                    <a class="menu-sub__link link-contact link-contact_color" href="mailto: {{.Site.Params.Email}}">
+                        <img class="icon icon_contact" src="/img/header/icons/mail.svg" alt="mail" width="26"
+                             height="26">
+                        {{.Site.Params.Email}}
+                    </a>
+                </li>
+                <li><a class="menu-sub__link link-contact link-contact_color" href={{.Site.Params.Telegram}}>
+                    <img class="icon icon_contact" src="/img/header/icons/telegram.svg" alt="telegram" width="24"
+                         height="24">{{ safeHTML (replace .Site.Params.Telegram "https://t.me/" " ")}}</a></li>
+                <li><a class="menu-sub__link link-contact"
+                       href="tel: {{.Site.Params.Phone1}}">{{.Site.Params.Phone1}}</a></li>
+                <li><a class="menu-sub__link link-contact"
+                       href="tel: {{.Site.Params.Phone2}}">{{.Site.Params.Phone2}}</a></li>
+                <li class="horizontal-line"></li>
+                <li class="navigation__title">Техническая поддержка 24/7 для существующих клиентов</li>
+                <li><a class="menu-sub__link link-contact link-contact_color"
+                       href="mailto:{{.Site.Params.SupportEmail}}">
+                    <img class="icon icon_contact" src="/img/header/icons/mail.svg" alt="mail" width="26" height="26">{{.Site.Params.SupportEmail}}</a>
+                </li>
+                <li><a class="menu-sub__link link-contact link-contact_color" href={{.Site.Params.SupportTelegram}}>
+                    <img class="icon icon_contact" src="/img/header/icons/telegram.svg" alt="telegram" width="24"
+                         height="24">{{ safeHTML (replace .Site.Params.SupportTelegram "https://t.me/" " ")}}</a></li>
+                <li><a class="menu-sub__link link-contact" href="tel:{{.Site.Params.SupportPhone1}}">{{.Site.Params.SupportPhone1}}</a>
+                </li>
+                <li><a class="menu-sub__link link-contact" href="tel:{{.Site.Params.SupportPhone2}}">{{.Site.Params.SupportPhone2}}</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
 </nav>
 
 

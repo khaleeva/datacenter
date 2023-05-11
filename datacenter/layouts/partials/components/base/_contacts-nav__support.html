@@ -26,11 +26,11 @@
     <div class="contacts-nav__content">
         <div class="contacts-nav__info">
             <p class="paragraph">Skype</p>
-            <p><span>datahata.support</span></p>
+            <p><span>{{.Site.Params.SupportSkype}}</span></p>
         </div>
         <div class="contacts-nav__info">
             <p class="paragraph">Telegram</p>
-            <p><span><a class="link link_dark" href="{{.Site.Params.SupportTelegram}}" target="_blank">@datahata_support_bot</a></span></p>
+            <p><span><a class="link link_dark" href="{{.Site.Params.SupportTelegram}}" target="_blank">{{ safeHTML (replace .Site.Params.SupportTelegram "https://t.me/" " ")}}</a></span></p>
         </div>
     </div>
 </div>

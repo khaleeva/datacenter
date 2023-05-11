@@ -6,7 +6,7 @@ pageTitle: "Другие услуги - Регистрация доменов"
 contentTitle: "Регистрация доменов"
 description: "Компания Датахата предлагает услугу  Регистрация доменов  ☎ +375293086666, +375333086666"
 weight: "2"
-layout: "single-dedic"
+layout: "single-services"
 id: "other-page"
 ---
 

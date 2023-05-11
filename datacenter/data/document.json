@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "name": "Публичный договор возмездного оказания услуг",
+    "link": "https://www.datahata.by/public_conrtact_datahata.pdf"
+  },
+  {
+    "id": 2,
+    "name": "Политика конфиденциальности",
+    "link": "https://www.datahata.by/privacy_policy_dh.pdf"
+  },
+  {
+    "id": 3,
+    "name": "Соглашение на пользование услугами",
+    "link": "https://www.datahata.by/services_user_agreement_dh.pdf"
+  },
+  {
+    "id": 4,
+    "name": "Публичный договор о предоставлении неисключительной сублицензии на программное обеспечение",
+    "link": "https://www.datahata.by/public_conrtact_microsoft_dh.pdf"
+  }
+]

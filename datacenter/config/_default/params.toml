@@ -18,12 +18,15 @@ phone1 = "+375 29 308 6666"
 phone2 = "+375 33 308 6666"
 fax = "+375 17 388 66 55"
 email = "sales@datahata.by"
+telegram = "https://t.me/datahata_sales"
+skype = "datahata.sales"
 
 #Contact details Support
 supportTelegram = "https://t.me/datahata_support_bot"
 supportEmail = "help@datahata.by"
 supportPhone1 = "+375 29 309 6666"
 supportPhone2 = "+375 33 309 6666"
+supportSkype = "datahata.support"
 
 
 # Navigation

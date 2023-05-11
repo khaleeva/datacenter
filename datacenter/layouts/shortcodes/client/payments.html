@@ -16,28 +16,59 @@
                     <div class="card">
                         <p class="card__title">Способы оплаты</p>
                         <div class="card__images layout-4-column">
-                            <img src="img/payments/icons/mastercard.svg" alt="mastercard">
-                            <img src="img/payments/icons/mastercard-secure.svg" alt="mcsecure">
-                            <img src="img/payments/icons/visa.svg" alt="visa">
-                            <img src="img/payments/icons/visa-secure.svg" alt="visasecure">
-                            <img src="img/payments/icons/belcard.svg" alt="belcard">
-                            <img src="img/payments/icons/belarusbank.svg" alt="belarusbank">
-                            <img src="img/payments/icons/assist.svg" alt="assist">
+                            <picture>
+                                <source srcset="/img/payments/icons/mastercard.svg" type="image/webp">
+                                <img src="/img/payments/icons/mastercard.svg" alt="mastercard">
+                            </picture>
+                            <picture>
+                                <source srcset="/img/payments/icons/mastercard-secure.svg" type="image/webp">
+                                <img src="/img/payments/icons/mastercard-secure.svg" alt="mcsecure">
+                            </picture>
+                            <picture>
+                                <source srcset="/img/payments/icons/visa.svg" type="image/webp">
+                                <img src="/img/payments/icons/visa.svg" alt="visa">
+                            </picture>
+                            <picture>
+                                <source srcset="/img/payments/icons/visa-secure.svg" type="image/webp">
+                                <img src="/img/payments/icons/visa-secure.svg" alt="visasecure">
+                            </picture>
+                            <picture>
+                                <source srcset="/img/payments/icons/belcard.svg" type="image/webp">
+                                <img src="/img/payments/icons/belcard.svg" alt="belcard">
+                            </picture>
+                            <picture>
+                                <source srcset="/img/payments/icons/belarusbank.svg" type="image/webp">
+                                <img src="/img/payments/icons/belarusbank.svg" alt="belarusbank">
+                            </picture>
+                            <picture>
+                                <source srcset="/img/payments/icons/assist.svg" type="image/webp">
+                                <img src="/img/payments/icons/assist.svg" alt="assist">
+                            </picture>
                         </div>
                     </div>
                     <div class="card">
                         <p class="card__title">Оплата с использованием системы "Расчет" ЕРИП</p>
                         <div class="card-image">
-                            <img src="img/payments/icons/erip.svg" alt="ЕРИП">
+                            <picture>
+                                <source srcset="/img/payments/icons/erip.svg" type="image/webp">
+                                <img src="/img/payments/icons/erip.svg" alt="ЕРИП">
+                            </picture>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="payments__img image__container">
-                <img src="img/payments/coins.png" alt="section-img">
+                <picture>
+                    <source srcset="/img/payments/coins.webp" type="image/webp">
+                    <img src="/img/payments/coins.png" alt="section-img">
+                </picture>
+
             </div>
             <div class="payments__img-mob image__container">
-                <img src="img/payments/payment.png" alt="section-img">
+                <picture>
+                    <source srcset="/img/payments/payment.webp" type="image/webp">
+                    <img src="/img/payments/payment.png" alt="section-img">
+                </picture>
             </div>
         </div>
         <div class="layout-2-column">
@@ -55,11 +86,15 @@
         </div>
         <div class="layout-2-column">
             <div class="image__container">
-                <img src="img/main-about/about.png" alt="section-img">
+                <picture>
+                    <source srcset="/img/main-about/about.webp" type="image/webp">
+                    <img src="/img/main-about/about.png" alt="section-img">
+                </picture>
+
             </div>
             <div class="payments__content">
                 <p class="paragraph paragraph_bold">Наши реквизиты</p>
-                @@include('../company/details/_details-data.html')
+                {{partial "components/company/details/_details-data.html" . }}
             </div>
         </div>
         <div class="layout-2-column layout-2-column_reverse">
@@ -93,7 +128,11 @@
                 </ol>
             </div>
             <div class="image__container">
-                <img src="img/payments/money.png" alt="section-img">
+                <picture>
+                    <source srcset="/img/payments/money.webp" type="image/webp">
+                    <img src="/img/payments/money.png" alt="section-img">
+                </picture>
+
             </div>
 
         </div>

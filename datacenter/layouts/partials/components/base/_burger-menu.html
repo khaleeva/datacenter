@@ -3,7 +3,7 @@
         <div class="swipe-line" data-swipe-threshold="20" data-swipe-timeout="500" data-swipe-ignore="false">
         </div>
         <nav class="accordion" aria-label="navigation-accordion">
-            {{- range site.Menus.main }}
+            {{ range site.Menus.main }}
             <div class="accordion__header">{{ .Name }}</div>
                 <ul class="accordion__body">
                     {{ range .Children }}
@@ -16,6 +16,8 @@
         <div class="swipe-menu__contacts">
             <p class="swipe-menu__title">Продажи и обслуживание клиентов</p>
             <div class="swipe-menu__buttons">
+                <a class="button-circle button-circle_bordered" href="{{.Site.Params.Telegram}}">
+                    <img src="/img/header/icons/telegram.svg" alt="telegram" width="24" height="24"></a>
                 <a class="button-circle button-circle_bordered" href="mailto:{{.Site.Params.Email}}">
                     <img alt="mail" src="/img/header/icons/mail.svg" width="26" height="26">
                 </a>

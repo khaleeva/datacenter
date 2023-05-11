@@ -6,11 +6,11 @@
   </div>
   <div class="contact">
     Skype
-    <p><span>datahata.support</span></p>
+    <p><span>{{.Site.Params.SupportSkype}}</span></p>
   </div>
   <div class="contact">
     Telegram
-    <p><span><a href={{.Site.Params.SupportTelegram}} target="_blank">@datahata_support_bot</a></span></p>
+    <p><span><a href={{.Site.Params.SupportTelegram}} target="_blank">{{ safeHTML (replace .Site.Params.SupportTelegram "https://t.me/" " ")}}</a></span></p>
   </div>
   <div class="contact">
     Почта

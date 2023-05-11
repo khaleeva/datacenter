@@ -15,7 +15,7 @@ server: "server"
 
 {{<services/colocation/server 
 content = "Мы с удовольствием разместим на colocation ваши сервера и другое телекоммуникационное оборудование в собственном дата-центре, оборудованном всем необходимым для обеспечения бесперебойной работы."
-id_btn = "btn-unit"  type = "unit">}}
+id = "btn-unit"  type = "unit">}}
 
 {{<services/colocation/calculator>}}
 

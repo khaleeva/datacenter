@@ -1,5 +1,4 @@
 {{ define "main" }}
-
 <section class="services section-padding">
     <div class="container services__container">
         <h1 class="title">Размещение серверного <br> оборудования - {{.Params.ContentTitle}}</h1>
@@ -8,7 +7,7 @@
                 {{ .Content }}
                 {{ if .Params.additional_content }}
                 <div class="additional-content">
-                    {{ partial "components/services/_additional-services.html" . }}
+                    {{ partial "components/base/_additional-services.html" . }}
                 </div>
                 {{ end }}
             </div>

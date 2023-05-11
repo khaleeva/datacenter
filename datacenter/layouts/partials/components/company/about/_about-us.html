@@ -15,10 +15,34 @@
                     нашими клиентами мы прошли сертификацию по стандарту безопасности PCI-DSS.</p>
             </div>
             <div class="about__img image__container">
-                <img src="/img/main-about/about.png" alt="about datacenter" class="about-us__img">
+                <picture>
+                    <source srcset="/img/main-about/about.webp" type="image/webp">
+                    <img src="/img/main-about/about.png" alt="about datacenter" class="about-us__img">
+                </picture>
             </div>
         </div>
-        {{ partial "components/company/about/_about-us__cards.html" . }}
+        <div class="about-us__cards layout-3-column">
+            <div class="card">
+                <div class="card__image card__image_calendar"></div>
+                <p class="card__description">Введен в эксплуатацию <span>в 1 квартале 2011 года.</span></p>
+            </div>
+            <div class="card">
+                <div class="card__image card__image_square"></div>
+                <p class="card__description">Общая площадь дата-центра составляет <span>100 кв.м.</span></p>
+            </div>
+            <div class="card">
+                <div class="card__image card__image_plug"></div>
+                <p class="card__description">Средняя электрическая мощность одной стойки <span>– 5 кВт.</span></p>
+            </div>
+            <div class="card">
+                <div class="card__image card__image_build"></div>
+                <p class="card__description">Расположен на цокольном уровне, <span>в охраняемом здании.</span></p>
+            </div>
+            <div class="card">
+                <div class="card__image card__image_guard"></div>
+                <p class="card__description">Резервирование всех модулей по схеме <span>N+1.</span></p>
+            </div>
+        </div>
     </div>
 </section>
 
