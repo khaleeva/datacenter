@@ -5,7 +5,7 @@
         <div class="layout-2-column">
             {{ range .Pages }}
             <div class="advice__card">
-                <h4>{{ .Title}}</h4>
+                <h4>{{ .Params.PageTitle}}</h4>
                 <div class="limiter">
                     <p class="paragraph">{{ .Params.Text }}</p>
                 </div>

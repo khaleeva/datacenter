@@ -64,4 +64,12 @@
 
 }
 
+.article__block{
+  display: flex;
+  margin-top: 2rem;
+  gap: 2rem;
 
+  @media (max-width: 768px) {
+    flex-direction: column-reverse;
+  }
+}

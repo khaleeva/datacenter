@@ -1,5 +1,6 @@
 ---
 title: "Установка ISPmanager Lite"
+pageTitle: "Установка ISPmanager Lite"
 date: 2023-05-13T10:42:37+02:00 
 draft: false 
 description: "Установка ISPmanager Lite"
