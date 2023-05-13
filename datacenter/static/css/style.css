@@ -3189,7 +3189,7 @@ ymaps {
 }
 
 .article ol li {
-  list-style-type: none;
+  list-style-position: inside;
 }
 
 .article h2 {
