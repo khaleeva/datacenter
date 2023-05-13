@@ -1,0 +1,18 @@
+{{ define "main" }}
+<section class="advices section-padding">
+    <div class="container">
+        <h1 class="title">{{.Title}}</h1>
+        <div class="layout-2-column">
+            {{ range .Pages }}
+            <div class="advice__card">
+                <h4>{{ .Title}}</h4>
+                <div class="limiter">
+                    <p class="paragraph">{{ .Params.Text }}</p>
+                </div>
+                <a href="{{ .Permalink }}" class="read-button">Читать подробнее</a>
+            </div>
+            {{end}}
+        </div>
+    </div>
+</section>
+{{end}}

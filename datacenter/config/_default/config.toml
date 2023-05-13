@@ -2,6 +2,46 @@ baseURL = '/'
 languageCode = 'ru-RU'
 title = 'My New Hugo Site'
 staticDir = ["static"]
+# uglyURLs = true
+canonifyURLs = true
+relativeURLs = true
+
+[[section_templates]]
+  name = "company"
+  layout = "services"
+  [section_templates.permalinks]
+    permalink = "/company/:slug/"
+
+    [[section_templates]]
+      name = "client"
+      layout = "services"
+      [section_templates.permalinks]
+        permalink = "/client/:slug/"
+
+
+[[section_templates]]
+  name = "colocation"
+  layout = "services"
+  [section_templates.permalinks]
+    permalink = "/services/colocation/:slug/"
+
+[[section_templates]]
+  name = "dedicated"
+  layout = "services"
+  [section_templates.permalinks]
+    permalink = "/services/dedicated/:slug/"
+
+[[section_templates]]
+  name = "other"
+  layout = "services"
+  [section_templates.permalinks]
+    permalink = "/services/other/:slug/"
+
+[[section_templates]]
+  name = "software"
+  layout = "services"
+  [section_templates.permalinks]
+    permalink = "/services/software/:slug/"
 
 params = ["params"]
 
