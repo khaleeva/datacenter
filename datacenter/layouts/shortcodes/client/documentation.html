@@ -1,9 +1,0 @@
-<section class="document section-padding">
-    <div class="container document__container">
-        <h1 class="title">Документы</h1>
-        <p class="paragraph paragraph_bold">ООО "Датахата"</p>
-        {{ range .Site.Data.document}}
-            <a class="document-block link link_dark" href="{{.link }}" target="_blank">{{ .name }}</a>
-        {{end}}
-    </div>
-</section>
