@@ -138,12 +138,21 @@
    overflow: auto;
   }
 
+  .result__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    flex-grow: 1;
+
+    & > *{
+      text-align: center;
+      color: $color-light;
+    }
+  }
+
   .result__cost{
     @include font($size:3rem, $weight:700);
-    color: $color-light;
-    flex-grow: 1;
-    display: flex;
-    align-items: flex-end;
     margin-bottom: 3rem;
 
     span{

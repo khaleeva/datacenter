@@ -17,7 +17,8 @@
                     <li>Участвуют все услуги дата-центра;</li>
                     <li>Получение реального дохода.</li>
                 </ul>
-                <p class="paragraph">Напишите нам на <a class="link link_light" href="mailto:sales@datahata.by">sales@datahata.by </a>и узнайте
+                <p class="paragraph">Напишите нам на <a class="link link_light" href="mailto:sales@datahata.by">sales@datahata.by </a>и
+                    узнайте
                     подробности
                     партнерской программы. </p>
                 <button class="button button_colored partners-btn"><span>Стать партнёром</span></button>
@@ -29,37 +30,140 @@
 
         </div>
     </div>
-        <div class="new-partners__overlay">
-            <div class="new-partners__container">
-                <div class="form__container">
-                    <div class="close-icon" id="close-icon-partners">
-                        <span class="close"></span>
-                    </div>
-                    <div class="swipe-line" id="partners-swipe-line" data-swipe-threshold="20" data-swipe-timeout="500"
-                        data-swipe-ignore="false">
-                    </div>
-
-                    <form action="#" id="form" class="form">
-                        <p class="paragraph paragraph_bold">Заявка на партнёрскую программу</p>
-                        <input class="req" type="text" name="name" placeholder="Ваше имя">
-                        <input class="email req" type="email" name="email" placeholder="Почта">
-                        <textarea name="message" id="textarea" cols="10" rows="7"
-                            placeholder="Сообщение (не обязательно)"></textarea>
-                        <button type="submit" id="send-btn"
-                            class="button button_colored send__btn"><span>Отправить</span></button>
-                    </form>
-                    <div class="form__result">
-                        <div class="form__result-image">
-                            <div class="form__result-image-layer">
-                                <img src="img/icons/success.svg" alt="post">
-                            </div>
-                        </div>
-                        <p class="paragraph paragraph_bold">Заявка отправлена!</p>
-                        <p class="paragraph">Спасибо за ваше сообщение! </p>
-                        <p class="paragraph">Мы ответим вам в течении дня.</p>
-                        <a href="index.html" class="button button_colored send__btn"><span>Вернуться на главную</span></a>
-                    </div>
+    <div class="new-partners__overlay">
+        <div class="new-partners__container">
+            <div class="form__container">
+                <div class="close-icon" id="close-icon-partners">
+                    <span class="close"></span>
                 </div>
+                <div class="swipe-line" id="partners-swipe-line" data-swipe-threshold="20" data-swipe-timeout="500"
+                     data-swipe-ignore="false">
+                </div>
+
+                <!--                    <form action="#" id="form" class="form">-->
+                <!--                        <p class="paragraph paragraph_bold">Заявка на партнёрскую программу</p>-->
+                <!--                        <input class="req" type="text" name="name" placeholder="Ваше имя">-->
+                <!--                        <input class="email req" type="email" name="email" placeholder="Почта">-->
+                <!--                        <textarea name="message" id="textarea" cols="10" rows="7"-->
+                <!--                            placeholder="Сообщение (не обязательно)"></textarea>-->
+                <!--                        <button type="submit" id="send-btn"-->
+                <!--                            class="button button_colored send__btn"><span>Отправить</span></button>-->
+                <!--                    </form>-->
+
+                <form name="sampleForm" method="POST"
+                      action="//office.datahata.by/Products/CRM/HttpHandlers/webtoleadfromhandler.ashx"
+                      accept-charset="UTF-8" class="form">
+                    <meta content="text/html;charset=UTF-8" http-equiv="content-type">
+                    <h4 class="form__title">Заявка на партнёрскую программу</h4>
+                    <div id="sampleFormPanel">
+                        <input type="hidden" name="is_company" value="false">
+                        <div class="form__input">
+                            <p class="requiredField">Имя:</p>
+                            <input name="firstName" type="text">
+                        </div>
+
+                        <div class="form__input">
+                            <p> Фамилия:</p>
+                            <input name="lastName" type="text">
+                        </div>
+
+                        <div class="form__input">
+                            <p>Название компании:</p>
+                            <input name="companyName" type="text">
+                        </div>
+
+                        <div class="form__input">
+                            <p> Телефон:</p>
+                            <input name="contactInfo_Phone_1" type="text" id="phoneInput">
+                        </div>
+
+                        <div class="form__input">
+                            <p class="requiredField"> Еmail:</p>
+                            <input name="contactInfo_Email_1" type="email">
+                        </div>
+
+                        <input name="" value="Отправить данные" type="submit" class="button button_colored send__btn"
+                               onclick="javascript:
+                                   var isValid = true,
+                                   form = document.getElementById('sampleFormPanel'),
+                                   childs = form.getElementsByTagName('input'),
+                                   isCompany = null,
+                                   firstName = '',
+                                   lastName = '',
+                                   companyName = '',
+                                   fieldName = '',
+								   email = '',
+								   phone = '';
+								   for (var i = 0, n = childs.length; i < n; i++) {
+									   fieldName = childs[i].getAttribute('name');
+									   switch (fieldName) {
+										   case 'is_company': isCompany = childs[i].value.trim();
+										   break;
+										   case 'firstName': firstName = childs[i].value.trim();
+										   break;
+										   case 'lastName': lastName = childs[i].value.trim();
+										   break;
+										   case 'companyName': companyName = childs[i].value.trim();
+										   break;
+										    case 'contactInfo_Email_1': email = childs[i].value.trim();
+										   break;
+										   case 'contactInfo_Phone_1': phone = childs[i].value.trim();
+										   break;
+									   }
+								   }
+								   if (isCompany === 'false') {
+									   if (firstName === ''){
+										   if(typeof (toastr) === 'object' &amp;&amp; typeof (toastr.error) === 'function') toastr.error('Введите имя');
+										   else {addErrorClass('firstName')}
+										   isValid = false;
+									   }
+									   if(email === ''){
+										    if(typeof (toastr) === 'object' &amp;&amp; typeof (toastr.error) === 'function') toastr.error('Введите email');
+										   else {addErrorClass('contactInfo_Email_1')}
+
+										   isValid = false;
+									   } else if(!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(email)){
+										    if(typeof (toastr) === 'object' &amp;&amp; typeof (toastr.error) === 'function') toastr.error('Некорректный email');
+										   else {addErrorClass('contactInfo_Email_1')}
+										   isValid = false;
+									   }
+									   if(phone !== '' && !validatePhoneNumber(phone)){
+										      if(typeof (toastr) === 'object' &amp;&amp; typeof (toastr.error) === 'function') toastr.error('Некорректный номер');
+										   else {addErrorClass('phone');}
+										   isValid = false;
+									   }
+									   if(validatePhoneNumber(phone)){
+										   formatPhoneNumber(phone)
+									   }
+
+								   } else if (isCompany == 'true') {
+									   if(companyName == '') { if(typeof (toastr) === 'object' &amp;&amp; typeof (toastr.error) === 'function') toastr.error('Введите название компании');
+										   else alert('Введите название компании');
+										   isValid = false; }
+								   } else {
+									   isValid = false;
+								   }
+
+								    if(isValid){
+										    document.body.classList.remove('active-body');
+                                            document.querySelector('.new-partners__overlay').classList.remove('new-partners__overlay_active');
+								    } else {
+										alert('Проверьте правильность вводимых данных...')
+								    }
+								        return isValid;
+">
+                    </div>
+                    <input type="hidden" name="tag" value="Потенциальный клиент">
+                    <input type="hidden" name="return_url" value="https://www.datahata.by/">
+                    <input
+                        type="hidden" name="web_form_key" value="c8190c86-cc9c-43db-881e-7f6fb92197d5"><input
+                        type="hidden" name="notify_list" value="cf3c516b-ca44-4a7e-8cb8-65b346220173"><input
+                        type="hidden" name="managers_list" value="cf3c516b-ca44-4a7e-8cb8-65b346220173"><input
+                        type="hidden" name="share_type" value="0"></form>
+
+
             </div>
         </div>
+    </div>
 </section>
+

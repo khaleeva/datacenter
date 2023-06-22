@@ -1,70 +1,185 @@
 document.addEventListener('DOMContentLoaded', () => {
-    if(document.querySelector('.form')){
-        form()
-    }
+	if (document.querySelector('.form')) {
+		form()
+	}
 });
 
 
 const form = () => {
-    const closeIconForm = document.querySelector('#close-icon-partners');
-    const openForm = document.querySelector('.partners-btn');
-    const form = document.querySelector('.form');
-    const partners_overlay = document.querySelector('.new-partners__overlay');
-    const partners_container = document.querySelector('.new-partners__container');
-    const form_result = document.querySelector('.form__result');
-    const swipeFormLine = document.querySelector('#partners-swipe-line');
+	const closeIconForm = document.querySelector('#close-icon-partners');
+	const openForm = document.querySelector('.partners-btn');
+	const form = document.querySelector('.form');
+	const partners_overlay = document.querySelector('.new-partners__overlay');
+	const partners_container = document.querySelector('.new-partners__container');
+	const swipeFormLine = document.querySelector('#partners-swipe-line');
 
 
-    function openSendForm() {
-        const innerWidth = window.innerWidth;
-        const heightDevice = window.innerHeight;
-        if (innerWidth <= 768) {
-            partners_container.classList.add('new-partners__container_active')
-            let minHeightBottomMenu = heightDevice * 0.8
-            let topPoint = heightDevice * 0.3
-            partners_container.style.minHeight = `${minHeightBottomMenu}px`
-            partners_container.style.minWidth = `${innerWidth}px`;
-            partners_container.style.top = `${topPoint}px`
-        }
-        document.body.classList.add('active-body');
-        partners_overlay.classList.add('new-partners__overlay_active');
-        form_result.classList.remove('form__result_active');
-        form.classList.remove('form_hidden');
-    };
+	function openSendForm() {
+		form.reset();
+		resetClass();
+		const innerWidth = window.innerWidth;
+		const heightDevice = window.innerHeight;
+		if (innerWidth <= 768) {
+			partners_container.classList.add('new-partners__container_active')
+			let minHeightBottomMenu = null;
+			if(innerHeight < 800){
+				minHeightBottomMenu = heightDevice + 120
+			} else {
+				minHeightBottomMenu = heightDevice * 0.9
+			}
 
-    function closeSendForm() {
-        form.reset();
-        const innerWidth = window.innerWidth;
-        if (innerWidth <= 768) {
-            partners_container.classList.remove('new-partners__container_active');
-            partners_container.style.minHeight = `0px`
-            partners_container.style.top = `100%`
-        }
-        document.body.classList.remove('active-body');
-        partners_overlay.classList.remove('new-partners__overlay_active');
-        form_result.classList.remove('form__result_active');
-    };
+			let topPoint = heightDevice * 0.2
+			partners_container.style.minHeight = `${minHeightBottomMenu}px`
+			partners_container.style.minWidth = `${innerWidth}px`;
+			partners_container.style.top = `${topPoint}px`
+		}
+		document.body.classList.add('active-body');
+		partners_overlay.classList.add('new-partners__overlay_active');
+		form.classList.remove('form_hidden');
+	};
 
-
-    if (openForm) {
-        openForm.addEventListener('click', openSendForm)
-    };
-
-    if (closeIconForm) {
-        closeIconForm.addEventListener("click", closeSendForm)
-    };
+	function closeSendForm() {
+		form.reset();
+		resetClass();
+		const innerWidth = window.innerWidth;
+		if (innerWidth <= 768) {
+			partners_container.classList.remove('new-partners__container_active');
+			partners_container.style.minHeight = `0px`
+			partners_container.style.top = `100%`
+		}
+		document.body.classList.remove('active-body');
+		partners_overlay.classList.remove('new-partners__overlay_active');
+	};
 
 
-    if (swipeFormLine) {
-        swipeFormLine.addEventListener('swiped-down', closeSendForm)
-        swipeFormLine.addEventListener('click', closeSendForm)
-    };
+	if (openForm) {
+		openForm.addEventListener('click', openSendForm)
+	}
+	;
+
+	if (closeIconForm) {
+		closeIconForm.addEventListener("click", closeSendForm)
+	}
+	;
+
+
+	if (swipeFormLine) {
+		swipeFormLine.addEventListener('swiped-down', closeSendForm)
+		swipeFormLine.addEventListener('click', closeSendForm)
+	}
+	;
 };
 
 
+let iti;
+
+const phoneInput = document.getElementById('phoneInput');
+document.addEventListener('DOMContentLoaded', function () {
+
+	if(phoneInput){
+		iti = window.intlTelInput(phoneInput, {
+			preferredCountries: ['by', 'ru'],
+			customPlaceholder: function (selectedCountryPlaceholder, selectedCountryData) {
+				return '+' + selectedCountryData.dialCode;
+			},
+			utilsScript: 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js',
+		});
+	}
 
 
+})
 
+
+if (document.querySelector('.iti')) {
+	document.querySelector('.iti').tabIndex = '0';
+
+	phoneInput.addEventListener('focus', function () {
+		document.querySelector('.iti').style.border = `1px solid orange`
+	});
+
+	phoneInput.addEventListener('blur', function () {
+		document.querySelector('.iti').style.border = `1px solid rgba(0, 0, 0, 0.1)`
+	});
+
+}
+
+
+function validatePhoneNumber(phoneNumber) {
+	return iti.isValidNumber(phoneNumber);
+}
+
+
+// function formatPhoneNumber(phoneNumber) {
+// 	const data = iti.getSelectedCountryData();
+// 	const code = '+' + data.dialCode;
+// 	if (validatePhoneNumber(phoneNumber) && !phoneNumber.startsWith(code)) {
+// 		return phoneInput.value = code + phoneNumber;
+// 	} else if (validatePhoneNumber(phoneNumber) && !phoneNumber.startsWith(data.dialCode)){
+// 		return phoneInput.value = '+' + phoneNumber;
+// 	} else return phoneInput.value
+// }
+
+// function formatPhoneNumber(phoneNumber) {
+// 	const data = iti.getSelectedCountryData();
+// 	const code = '+' + data.dialCode;
+//
+// 	if (validatePhoneNumber(phoneNumber)) {
+// 		if (phoneNumber.startsWith(code)) {
+// 			return phoneInput.value; // Номер уже начинается с кода, возвращаем его без изменений
+// 		} else if (!phoneNumber.startsWith('+')) {
+// 			if (phoneNumber.startsWith(data.dialCode)) {
+// 				return phoneInput.value = code + phoneNumber.substring(data.dialCode.length); // Удаляем начальный код и добавляем общий код
+// 			} else {
+// 				return phoneInput.value = code + phoneNumber; // Номер без кода, добавляем код
+// 			}
+// 		}
+// 	}
+// }
+function formatPhoneNumber(phoneNumber) {
+	const data = iti.getSelectedCountryData();
+	const code = '+' + data.dialCode;
+
+	if (validatePhoneNumber(phoneNumber)) {
+		if (phoneNumber.startsWith(code)) {
+			console.log(phoneNumber, 'p1')
+			return phoneInput.value = phoneNumber;
+		} else if (!phoneNumber.startsWith('+')) {
+			if (phoneNumber.startsWith(data.dialCode)) {
+				console.log(code + phoneNumber.substring(data.dialCode.length), 'p2')
+				return phoneInput.value = code + phoneNumber.substring(data.dialCode.length);
+			} else {
+				console.log(code + phoneNumber, 'p3')
+				return phoneInput.value = code + phoneNumber;
+			}
+		}
+	}
+
+	return phoneInput.value = code + phoneNumber;
+}
+
+function addErrorClass(name) {
+	if (name === 'phone') {
+		if (document.querySelector('.iti')) {
+			document.querySelector('.iti').classList.add('error-form');
+		}
+
+	} else document.querySelector(`[name="${name}"]`).classList.add('error-form');
+}
+
+function resetClass() {
+	if (document.querySelector('.iti')) {
+		document.querySelector('.iti').classList.remove('error-form');
+	}
+
+	const form = document.getElementById('sampleFormPanel');
+	const childs = form.getElementsByTagName('input');
+
+	for (let i = 0; i < childs.length; i++) {
+		if (childs[i].classList.contains('error-form')) {
+			childs[i].classList.remove('error-form');
+		}
+	}
+}
 
 
 
