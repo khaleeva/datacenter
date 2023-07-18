@@ -1,10 +1,13 @@
 function setSlideWidth(deviceWidth, slides, flag) {
 	let elemWidth = 0;
 	slides.forEach((elem) => {
-		if (deviceWidth < 768) {
+		if (deviceWidth < 768 && deviceWidth >= 421) {
 			elem.style.width = `${deviceWidth - 40}px`;
 			elemWidth = deviceWidth - 40;
-		} else if (deviceWidth === 768) {
+		} else if(deviceWidth < 421){
+			elem.style.width = `${deviceWidth - 20}px`;
+			elemWidth = deviceWidth - 20;
+		}else if (deviceWidth === 768) {
 			if (flag) {
 				elem.style.width = `${(deviceWidth - 40) / 2 - 12}px`;
 				elemWidth = (deviceWidth - 40) / 2;
