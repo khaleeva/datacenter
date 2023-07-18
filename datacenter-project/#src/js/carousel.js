@@ -106,25 +106,28 @@ function initializeCarousel(data) {
 
 	carouselContainer.addEventListener('scroll', changeActiveIndicatorToScroll);
 
-	if(deviceWidth >= 768){
-		nextButton.addEventListener('click', () => {
-			if(deviceWidth > carouselWidth){
-				curPos += (sliderWidth / (sliderWidth / (deviceWidth / 2) ))
-			} else {
-				curPos += (sliderWidth / (sliderWidth / (elemWidth * 2) + 24));
-			}
-			slide(curPos, elemWidth);
-		});
+	if (nextButton && prevButton) {
+		if (deviceWidth >= 768) {
+			nextButton.addEventListener('click', () => {
+				if (deviceWidth > carouselWidth) {
+					curPos += (sliderWidth / (sliderWidth / (deviceWidth / 2)))
+				} else {
+					curPos += (sliderWidth / (sliderWidth / (elemWidth * 2) + 24));
+				}
+				slide(curPos, elemWidth);
+			});
 
-		prevButton.addEventListener('click', () => {
-			if(deviceWidth > carouselWidth){
-				curPos += (-sliderWidth / (sliderWidth / (deviceWidth / 2) ))
-			} else {
-				curPos += (-sliderWidth / (sliderWidth / (elemWidth * 2) + 24));
-			}
-			slide(curPos, elemWidth);
-		});
+			prevButton.addEventListener('click', () => {
+				if (deviceWidth > carouselWidth) {
+					curPos += (-sliderWidth / (sliderWidth / (deviceWidth / 2)))
+				} else {
+					curPos += (-sliderWidth / (sliderWidth / (elemWidth * 2) + 24));
+				}
+				slide(curPos, elemWidth);
+			});
+		}
 	}
+
 
 	arrowNextButton.addEventListener('click', () => {
 		increment(elemWidth);
