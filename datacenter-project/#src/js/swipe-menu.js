@@ -1,5 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
-  swipeMenu();
+  if(document.querySelector(".swipe-line")){
+    swipeMenu();
+  }
+
 })
 
 const swipeMenu = () => {

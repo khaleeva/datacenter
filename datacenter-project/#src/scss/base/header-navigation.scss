@@ -35,7 +35,7 @@
 .navigation__menu {
   color: $color-dark;
   cursor: pointer;
-  @include font($size: 1.6rem, $weight: 400);
+  @include font($size: 1.8rem, $weight: 400);
 
   @media (max-width: 1200px) {
     @include font($size: 1.4rem, $weight: 400);

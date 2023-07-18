@@ -1,0 +1,70 @@
+.hm-promo{
+  //padding-bottom: 8rem;
+  padding: 8rem 0;
+
+  @media (max-width:768px) {
+    //padding-bottom: 5.2rem;
+    padding: 5.2rem 0;
+  }
+}
+
+.hm-promo__container {
+  padding: 3.6rem 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1 {
+    color: $color-gradient-layer1;
+    @include font($size: 9rem);
+
+    @media (max-width:768px) {
+      @include font($size: 5.6rem);
+      margin-top: 45px;
+      margin-bottom: 25px;
+    }
+
+  }
+
+  h2 {
+    color: $color-secondary;
+    margin-bottom: 25px;
+    text-align: center;
+    @include font($size: 3rem, $weight: 600, $height: 110%);
+
+    @media (max-width:768px) {
+      @include font($size: 3rem, $weight: 600, $height: 120%);
+    }
+  }
+}
+
+
+.hm-promo__list {
+  padding: 0 45px 40px 125px;
+
+  @media (max-width:768px) {
+    align-items: flex-start;
+    padding-left: 65px;
+    padding-bottom: 30px;
+  }
+
+  & > * {
+    position: relative;
+    color: $hm-black-light;
+    @include font($size: 2rem, $weight: 400, $height: 140%);
+    margin-top: 24px;
+
+    @media (max-width:768px) {
+      margin-top: 0;
+      margin-bottom: 16px;
+    }
+
+
+    &:before {
+      content: url("./../img/hatamail/dot.svg");
+      position: absolute;
+      right: 100%;
+      top: 0;
+    }
+  }
+}

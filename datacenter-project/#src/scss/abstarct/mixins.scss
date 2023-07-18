@@ -105,4 +105,13 @@
   }
 }
 
+@mixin card-line($color, $width: 48px){
+  display: block;
+  width: $width;
+  height: 1px;
+  background: $color;
+}
 
+@mixin background-bordered-btn ($color: $color-light){
+  box-shadow: inset 0 0 0 100vw $color;
+}

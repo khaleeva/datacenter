@@ -1,0 +1,66 @@
+.hm-faq__cards{
+  margin-top: 64px;
+}
+
+.left-column, .right-column {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+
+.hm-faq__card {
+  border-radius: 8px;
+  background: $color-light-50;
+  padding: 32px;
+  height: min-content;
+
+  @media (max-width: 768px) {
+    &:last-child{
+      margin-bottom: 16px;
+    }
+  }
+
+
+}
+
+.card__header {
+  display: flex;
+  column-gap: 24px;
+  margin-bottom: 16px;
+
+
+  .card__header-text {
+    color: $hm-black-dark;
+    @include font($size: 2rem, $weight: 400, $height: 140%);
+
+    &_active {
+      color: $color-primary;
+
+    }
+  }
+}
+
+.card__body {
+  max-height: 0;
+  overflow: hidden;
+  padding-left: 50px;
+
+  & > p {
+    color: $hm-black-light;
+    @include font($size: 1.8rem, $weight: 400, $height: 140%);
+  }
+
+  &_height {
+    max-height: max-content;
+
+  }
+}
+
+.card__arrow {
+  align-self: flex-start;
+  cursor: pointer;
+
+  &_rotate{
+    transform: rotate(-180deg);
+  }
+}

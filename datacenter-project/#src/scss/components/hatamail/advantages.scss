@@ -1,0 +1,158 @@
+.hm-card__line {
+  @include card-line($hm-black-light-30);
+}
+
+
+.hm-card {
+  border-radius: 8px;
+  padding: 64px 78px;
+  background: $color-light-50;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  row-gap: 24px;
+
+
+  @media (max-width: 768px) {
+    padding: 40px 12px;
+    margin-bottom: 24px;
+  }
+
+  & > p {
+    @include font($size: 2rem, $weight: 400, $height: 140%);
+  }
+}
+
+.hm-card__text {
+  color: $color-primary;
+
+  &_bold {
+    @include font($size: 2rem, $weight: 600, $height: 140%);
+  }
+}
+
+.hm-card__security {
+  align-items: flex-start;
+  margin: 24px 0;
+  background: rgba(69, 69, 69, 0.10);
+  position: relative;
+  padding-bottom: 96px;
+
+  @media (max-width: 768px) {
+      align-items: center;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    @include card-line($color-light);
+    bottom: 32px;
+    transform: translateX(-50%);
+
+
+  }
+
+  h5 {
+    color: $hm-black-light;
+    @include font($size: 2rem, $weight: 400, $height: 140%);
+    margin-top: 32px;
+    text-align: left;
+    @media (max-width: 768px) {
+      text-align: center;
+    }
+  }
+}
+
+.security__card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 40px;
+  color: $hm-black-light;
+  @include font($size: 1.8rem, $weight: 400, $height: 140%);
+
+  @media (max-width: 768px) {
+    align-items: center;
+    &:last-child{
+      margin-bottom: 24px;
+    }
+  }
+
+  & > p {
+    margin-top: 8px;
+    text-align: left;
+
+
+    @media (max-width: 768px) {
+      text-align: center;
+    }
+  }
+
+
+}
+
+
+.hm-card__advantages{
+  align-items: flex-start;
+  text-align: left;
+  position: relative;
+  min-height: 363px;
+
+  @media (max-width: 768px){
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    min-height: max-content;
+    padding-bottom: 48px;
+  }
+
+  & > p {
+    color: $hm-black-light;
+    &:last-child{
+     flex-grow: 1;
+    }
+  }
+
+  &:after{
+    content: '';
+    @include card-line(#D9D9D9);
+    position: absolute;
+    left: 50%;
+    bottom: 32px;
+    transform: translateX(-50%);
+  }
+
+
+  &_color{
+    background: linear-gradient(315deg, rgba(207, 210, 250, 0.20) 0%, rgba(185, 217, 255, 0.20) 100%);
+  }
+}
+
+.advantages-support{
+  display: flex;
+  flex-direction: column;
+
+
+  @media (max-width: 768px){
+    margin-bottom: 24px;
+
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+
+  & > span{
+    color: #8DB3E0;
+    @include font($size: 2.4rem, $weight: 700);
+  }
+
+  & > p{
+    @include font($size: 1.8rem, $weight: 400, $height: 140%);
+    color: $hm-black-light;
+
+  }
+}
+

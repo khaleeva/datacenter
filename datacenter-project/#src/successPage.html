@@ -24,5 +24,12 @@
         </div>
     </section>
 </main>
+<script>
+	const referrer = localStorage.getItem('referrer');
+	setTimeout(function() {
+		window.location.href = `${referrer}`;
+		localStorage.removeItem('referrer')
+	}, 2500);
+</script>
 </body>
 </html>

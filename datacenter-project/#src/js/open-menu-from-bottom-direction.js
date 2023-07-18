@@ -1,5 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
-   openMenuFromBottomDirection();
+
+   if(document.querySelector('.burger')){
+      openMenuFromBottomDirection();
+   }
+
 })
 
 

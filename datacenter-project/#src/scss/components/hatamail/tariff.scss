@@ -1,0 +1,158 @@
+.hm-tariff__hm-calculator{
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+
+  @media(max-width: 768px){
+    flex-direction: column;
+    width: 100%;
+    align-items: stretch;
+  }
+}
+
+.hm-calculator{
+  border-radius: 16px;
+  background: $color-light;
+  padding: 64px 35px 98px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 534px;
+
+  @media(max-width: 768px){
+    max-width: 100%;
+    border-radius: 0 0 16px 16px;
+    padding: 48px 35px;
+  }
+
+
+  h5{
+    text-align: center;
+    color: $color-primary;
+    @include font($size: 2rem, $weight: 600);
+  }
+
+
+}
+
+.hm-calculator__buttons{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 10px;
+  row-gap: 24px;
+  margin-top: 56px;
+
+
+  .hm-calculator__label{
+    display: flex;
+    padding: 16px 24px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 36px;
+    border: 1px solid $hm-black-light-30;
+    background: $color-light;
+    color: rgba(69, 69, 69, 0.50);
+    @include font($size: 2rem, $weight: 400, $height: 140%);
+    position: relative;
+    cursor: pointer;
+
+    &:last-child{
+     align-self: center;
+    }
+
+    &_active{
+      border: 1px solid #252525;
+      color: #252525;
+    }
+  }
+
+  input[type='radio']{
+    opacity: 0;
+    position: absolute;
+  }
+}
+.hm-calculator__price{
+  padding: 80px 0;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 8px;
+
+  .price{
+    color: #000;
+    @include font($size: 4.8rem, $weight: 600);
+  }
+
+  & > p{
+    color: $hm-black-dark;
+    @include font($size: 2rem, $weight: 400, $height: 140%);
+  }
+}
+
+.hm-calculator__price-text{
+  display: none;
+  padding: 80px 0;
+  height: 250px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: $color-primary;
+  @include font($size: 2rem, $weight: 400, $height: 140%);
+}
+
+.hm-calculator__description{
+  border-radius: 16px 0 0 16px;
+  background: rgba(69, 69, 69, 0.10);
+  padding: 89px 44px 89px 84px;
+  max-width: 454px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+
+  @media(max-width: 768px){
+    max-width: 100%;
+    border-radius: 16px 16px 0 0;
+    padding: 48px 35px;
+  }
+
+  &:before, &:after{
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    @include card-line($color-light);
+  }
+
+  &:after{
+    bottom: 40px;
+  }
+  &:before{
+    top: 40px;
+  }
+
+  h5{
+    color: $hm-black-light;
+    @include font($size: 2rem, $weight: 600);
+  }
+
+
+  ul > li{
+    color: $hm-black-light;
+    @include font($size: 1.8rem, $weight: 400, $height: 140%);
+    margin-bottom: 16px;
+
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+
+}
+
+.description-icons{
+  margin: 40px 0 24px;
+  width: 100%;
+}

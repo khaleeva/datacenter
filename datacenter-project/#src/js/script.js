@@ -13,7 +13,8 @@
 @@include('renderServicesToTable.js');
 @@include('getServicesData.js');
 @@include('swiped-events.min.js');
-
+@@include('carousel.js');
+@@include('carousel1.js');
 
 
 

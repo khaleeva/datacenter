@@ -11,7 +11,8 @@
 
 
     .contacts-nav__button{
-        box-shadow: inset 0 0 0 100vw $color-secondary;
+        @include background-bordered-btn($color: $color-secondary);
+        //box-shadow: inset 0 0 0 100vw $color-secondary;
     }
 
 }

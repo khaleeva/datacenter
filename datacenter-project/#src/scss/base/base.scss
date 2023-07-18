@@ -1,5 +1,7 @@
+
 html {
   font-size: 10px;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -73,9 +75,10 @@ h4 {
 }
 
 .section-padding {
-  padding: 7rem 0;
-  @media (max-width: 420px) {
-    padding: 3.5rem 0;
+  padding: 8rem 0;
+  @media (max-width: 490px) {
+    //padding: 3.5rem 0;
+    padding: 5.2rem 0;
   }
 }
 
@@ -180,5 +183,114 @@ h4 {
   &_light{
     color: $color-link;
     text-decoration: underline;
+  }
+}
+
+
+.tag{
+  display: inline-flex;
+  padding: 8px 16px;
+  color:$color-primary;
+  border-radius: 3px;
+  border: 1px solid $color-primary;
+  margin-bottom: 16px;
+  @include font($size: 1.6rem, $weight: 400, $height: 140%);
+
+  &_no-border{
+    border: none;
+    @include font($size: 1.8rem, $weight: 400, $height: 140%);
+  }
+}
+
+.hm-main{
+  background: $hm-bg;
+}
+
+
+.hm__container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hm__title{
+  @include font($size: 4.6rem, $weight: 600, $height: 110%);
+  color: $hm-black-dark;
+  text-align: center;
+  margin-bottom: 24px;
+
+  @media(max-width: 768px){
+    @include font($size: 3rem, $weight: 600, $height: 120%);
+  }
+
+  @media (max-width: 420px) {
+    margin-bottom: 16px;
+  }
+}
+
+.hm__subtitle-block{
+  color: $hm-black-light;
+  @include font($size: 3rem, $weight: 600);
+
+  @media (max-width: 420px) {
+    @include font($size: 2.4rem, $weight: 600);
+  }
+}
+
+
+.btn-watch{
+  display: none;
+  @media (max-width: 520px) {
+    display: flex;
+    margin-bottom: 16px;
+  }
+}
+
+.hm__hidden-container{
+
+  @media (max-width: 520px) {
+    display: none;
+  }
+
+  &_active{
+    @media (max-width: 520px) {
+      display: flex;
+    }
+
+  }
+}
+
+
+.arrow-container{
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  @media (max-width: 767px) {
+    display: flex;
+  }
+}
+
+.arrow__item{
+}
+
+.item__indicator{
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  border: 1px solid $hm-black-light-30;
+  margin-right: 8px;
+
+  &:first-child{
+    margin-left: 8px;
+  }
+
+  &_active{
+    background: $hm-black-light-30;
   }
 }

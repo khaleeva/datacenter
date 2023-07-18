@@ -1,0 +1,120 @@
+.hm-services {
+
+  h4 {
+    color: $hm-black-light;
+    text-align: center;
+    @include font($size: 1.8rem, $weight: 400, $height: 140%);
+  }
+
+  .hm__carousel{
+    width: 100%;
+    position: relative;
+    padding-top: 6.4rem;
+
+    .prev, .next {
+      position: absolute;
+      top: 52%;
+      transform: translateY(-52%);
+      z-index: 100;
+      cursor: pointer;
+
+      @media (max-width: 767px) {
+        display: none;
+      }
+    }
+
+    .prev {
+      left: 10px;
+    }
+
+    .next {
+      right: 10px;
+    }
+  }
+
+  .carousel {
+    width: 100%;
+    overflow-x: scroll;
+    position: relative;
+    scrollbar-width: none;
+    cursor: pointer;
+
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+
+    &::-webkit-scrollbar-track {
+      height: 0;
+    }
+  }
+
+  .slides {
+    display: flex;
+    column-gap: 24px;
+    width: max-content;
+    height: 485px;
+  }
+
+  .slides li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 410px;
+    border-radius: 8px;
+    background:$color-light;
+    padding: 72px 0 32px;
+    position: relative;
+
+
+    @media (max-width: 768px) {
+      padding: 64px 8px 86px;
+    }
+
+
+    img{
+      @media (max-width: 420px) {
+        width: 48px;
+        height: 48px;
+      }
+    }
+
+
+
+
+    &:after{
+      content: '';
+      @include card-line(#D9D9D9, 25px);
+      position: absolute;
+      left: 50%;
+      bottom: 32px;
+      transform: translateX(-50%);
+
+      @media (max-width: 420px) {
+          bottom: 24px;
+      }
+    }
+
+    img{
+      margin-bottom: 40px;
+    }
+
+    h5{
+      margin-bottom: 24px;
+    }
+
+    p {
+      color: $hm-black-light;
+      @include font($size: 2rem, $weight: 400, $height: 140%);
+      padding: 0 48px;
+
+      @media (max-width: 420px) {
+        padding: 0 20px;
+      }
+    }
+
+    //&:last-child{
+    //  margin-right: 0;
+    //}
+  }
+}
