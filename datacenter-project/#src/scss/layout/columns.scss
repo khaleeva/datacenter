@@ -1,5 +1,5 @@
 .layout-2-column {
-  @include columns($width: 48%);
+  @include columns($width: 49%);
   @media (max-width: 768px) {
     flex-direction: column;
     align-items: center;

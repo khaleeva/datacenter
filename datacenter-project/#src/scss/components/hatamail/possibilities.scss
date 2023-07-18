@@ -75,7 +75,7 @@
 .hm__info{
   width: 100%;
   min-height: 732px;
-  margin-top: 40px;
+  margin-top: 24px;
   //border-radius: 36px;
 
   & > *{
@@ -208,7 +208,6 @@
   h5{
     color: $hm-black-dark;
     @include font($size: 1.8rem, $weight: 600, $height: 140%);
-    margin-bottom: 24px;
     text-align: center;
   }
 
@@ -218,7 +217,8 @@
     @include font($size: 1.8rem, $weight: 400, $height: 140%);
     list-style: disc;
     list-style-position: inside;
-    margin-bottom: 16px;
+    margin: 24px 0 16px;
+
     &:last-child{
       margin-bottom: 0;
 

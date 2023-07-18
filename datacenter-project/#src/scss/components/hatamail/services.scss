@@ -1,5 +1,11 @@
 .hm-services {
 
+  .hm__title{
+    @media (max-width: 420px) {
+      margin-bottom: 16px;
+    }
+  }
+
   h4 {
     color: $hm-black-light;
     text-align: center;
