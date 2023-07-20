@@ -37,6 +37,7 @@ function initializeCarousel(data) {
 		= data
 
 
+	console.log(elemWidth)
 
 	const sliderWidth = slider.offsetWidth;
 	const carouselWidth = carouselContainer.offsetWidth;

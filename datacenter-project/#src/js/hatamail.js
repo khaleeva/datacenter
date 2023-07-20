@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 		if (document.querySelector('.carousel')) {
+			const deviceWidth = window.innerWidth
 			const carouselContainer = document.querySelector('.carousel');
 			const slider = carouselContainer.querySelector('.slides');
 			const carouselSlides = slider.querySelectorAll('li');
@@ -14,20 +15,28 @@ document.addEventListener('DOMContentLoaded', () => {
 			const prev_arrow = document.querySelector('#carousel__arrow-prev');
 			const next_arrow = document.querySelector('#carousel__arrow-next');
 			const indicatorsContainer = arrow_container.querySelectorAll('.item__indicator');
-			let elemWidth = 0;
 
-			window.addEventListener('resize', () => {
-				const deviceWidth = window.innerWidth
+			const setWidth = (deviceWidth) => {
+				let elemWidth = 0;
 				if (deviceWidth < 768 && deviceWidth >= 421) {
 					elemWidth = deviceWidth - 40;
 				} else if (deviceWidth < 421) {
 					elemWidth = deviceWidth - 20;
 				} else if (deviceWidth === 768) {
 					elemWidth = (((deviceWidth - 40) / 2) + 12);
-					console.log(elemWidth)
 				} else {
 					elemWidth = 410;
 				}
+
+				return elemWidth;
+			}
+
+			const width = setWidth(deviceWidth);
+			carouselSlides.forEach(item => item.style.width = `${width}px`)
+
+			window.addEventListener('resize', () => {
+				const deviceWidth = window.innerWidth
+				const elemWidth = setWidth(deviceWidth)
 				carouselSlides.forEach(item => item.style.width = `${elemWidth}px`)
 				initializeCarousel({
 					deviceWidth,
@@ -41,10 +50,23 @@ document.addEventListener('DOMContentLoaded', () => {
 					elemWidth
 				});
 			})
+
+			initializeCarousel({
+				deviceWidth,
+				slider,
+				carouselContainer,
+				indicatorsContainer,
+				prevButton,
+				nextButton,
+				arrowPrevButton: prev_arrow,
+				arrowNextButton: next_arrow,
+				elemWidth: width
+			});
 		}
 
 
 		if (document.querySelector('.hm-possibilities')) {
+			const deviceWidth = window.innerWidth
 			const possibilities_info = document.querySelector('.hm__info');
 			const possibilities_infoContainer = document.querySelector('.hm__info-container')
 			const possibilities_items = possibilities_info.querySelectorAll('.hm__info__items');
@@ -53,21 +75,29 @@ document.addEventListener('DOMContentLoaded', () => {
 			const possibilities_indicators = arrows.querySelectorAll('.item__indicator');
 			const prev_arrow = document.querySelector('#possibilities__arrow-prev');
 			const next_arrow = document.querySelector('#possibilities__arrow-next');
-			let elemWidth;
-
-			window.addEventListener('resize', () => {
-				const deviceWidth = window.innerWidth
-				console.log(deviceWidth)
+			const setWidth = (deviceWidth) => {
+				let elemWidth = 0;
 				if (deviceWidth > 420) {
 					elemWidth = deviceWidth - 40;
 				} else {
 					elemWidth = deviceWidth - 20;
 				}
+				return elemWidth;
+			}
+			const width = setWidth(deviceWidth);
+			possibilities_items.forEach(item => {
+				item.style.width = `${width}px`
+				item.style.maxWidth = '1200px'
+			})
+
+			window.addEventListener('resize', () => {
+				const deviceWidth = window.innerWidth
+				const elemWidth = setWidth(deviceWidth)
 
 				possibilities_items.forEach(item => {
 					item.style.width = `${elemWidth}px`
 					item.style.maxWidth = '1200px'
-			})
+				})
 			initializeCarousel({
 				deviceWidth,
 				slider: possibilities_info,
@@ -79,9 +109,18 @@ document.addEventListener('DOMContentLoaded', () => {
 				arrowNextButton: next_arrow,
 				elemWidth
 			});
-		}
-	)
-
+		})
+			initializeCarousel({
+				deviceWidth,
+				slider: possibilities_info,
+				carouselContainer: possibilities_infoContainer,
+				indicatorsContainer: possibilities_indicators,
+				prevButton: null,
+				nextButton: null,
+				arrowPrevButton: prev_arrow,
+				arrowNextButton: next_arrow,
+				elemWidth: width
+			})
 	}
 
 	if (document.querySelectorAll('.tab-label')) {
