@@ -162,6 +162,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 4rem;
   }
   img {
     object-fit: contain;
@@ -191,7 +192,7 @@
   }
 
   .list-link{
-    color: $hm-purple;
+    color: $color-light;
     list-style: disc;
     list-style-position: inside;
   }
