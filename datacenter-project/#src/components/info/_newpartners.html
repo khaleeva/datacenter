@@ -147,6 +147,7 @@
 								    if(isValid){
 										    document.body.classList.remove('active-body');
                                             document.querySelector('.new-partners__overlay').classList.remove('new-partners__overlay_active');
+											localStorage.setItem('referrer', window.location.href);
 								    } else {
 										alert('Проверьте правильность вводимых данных...')
 								    }

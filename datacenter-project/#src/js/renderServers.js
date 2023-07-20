@@ -31,6 +31,8 @@ function getCPUValue(cpu, data) {
     let cpu_name = cpu_data[0].name_ru['$']
     let price = Math.ceil((cpu_data.map(i => i.price.period[0]['$cost'])[0]) * TAX).toFixed(2)
     stateCPU[`cpu_select`] = {id: cpu.value, 'cpu_name': cpu_name, 'price': price}
+    stateRAM = {}
+    stateHDD = {}
     getAddons(cpu_data)
 
 };
@@ -66,7 +68,7 @@ function getHDDValue(data) {
     let id_addon = data.map(item => item['enumeration'][1]?.id['$'] === '11' && item.id['$']).filter(i => i)
     let addons = data.map(item => item['enumeration'][1]).filter(i => i)
     let HDD = addons.filter(item => item.id['$'] === '11').map(item => item['enumerationitem'])
-
+    console.log(HDD, 'HDD')
     HDD.map((i, index) => {
         let name = `hdd${index + 1}_radio`;
         let value = i[0].id['$'];
