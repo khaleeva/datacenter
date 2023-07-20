@@ -23,7 +23,6 @@ function initializeCarousel(data) {
 	function changeActiveIndicatorToScroll() {
 		const scrollLeft = carouselContainer.scrollLeft;
 		const scrollIndex = Math.round(scrollLeft / carouselWidth);
-		console.log(scrollLeft)
 		if (scrollIndex !== prevActiveIndex) {
 			activeIndex = scrollIndex;
 			if (activeIndex <= indicatorsContainer.length - 1) {
