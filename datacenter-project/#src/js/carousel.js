@@ -1,43 +1,43 @@
-function setSlideWidth(deviceWidth, slides, flag) {
-	let elemWidth = 0;
-	slides.forEach((elem) => {
-		if (deviceWidth < 768 && deviceWidth >= 421) {
-			elem.style.width = `${deviceWidth - 40}px`;
-			elemWidth = deviceWidth - 40;
-		} else if(deviceWidth < 421){
-			elem.style.width = `${deviceWidth - 20}px`;
-			elemWidth = deviceWidth - 20;
-		}else if (deviceWidth === 768) {
-			if (flag) {
-				elem.style.width = `${(deviceWidth - 40) / 2 - 12}px`;
-				elemWidth = (deviceWidth - 40) / 2;
-			} else {
-				elemWidth = elem.offsetWidth;
-			}
-		} else {
-			elemWidth = 410;
-		}
-	});
-
-	return elemWidth;
-}
+// function setSlideWidth(deviceWidth, slides, flag) {
+// 	let elemWidth = 0;
+// 	slides.forEach((elem) => {
+// 		if (deviceWidth < 768 && deviceWidth >= 421) {
+// 			elem.style.width = `${deviceWidth - 40}px`;
+// 			elemWidth = deviceWidth - 40;
+// 		} else if(deviceWidth < 421){
+// 			elem.style.width = `${deviceWidth - 20}px`;
+// 			elemWidth = deviceWidth - 20;
+// 		}else if (deviceWidth === 768) {
+// 			if (flag) {
+// 				elem.style.width = `${(deviceWidth - 40) / 2 - 12}px`;
+// 				elemWidth = (deviceWidth - 40) / 2;
+// 			} else {
+// 				elemWidth = elem.offsetWidth;
+// 			}
+// 		} else {
+// 			elemWidth = 410;
+// 		}
+// 	});
+//
+// 	return elemWidth;
+// }
 
 function initializeCarousel(data) {
 	const {
 		deviceWidth,
 		slider,
 		carouselContainer,
-		carouselSlides,
 		indicatorsContainer,
 		prevButton,
 		nextButton,
 		arrowPrevButton,
-		arrowNextButton
+		arrowNextButton,
+		elemWidth
 	}
 		= data
 
 
-	const elemWidth = setSlideWidth(deviceWidth, carouselSlides, true);
+
 	const sliderWidth = slider.offsetWidth;
 	const carouselWidth = carouselContainer.offsetWidth;
 	let curPos = 0;
@@ -74,7 +74,7 @@ function initializeCarousel(data) {
 			slide(curPos, width);
 			changeActiveIndicator(activeIndex);
 		} else {
-			activeIndex = indicators.length - 1;
+			activeIndex = indicatorsContainer.length - 1;
 			changeActiveIndicator(activeIndex);
 			slide(sliderWidth, width);
 		}

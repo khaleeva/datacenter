@@ -5,6 +5,11 @@
   @media (max-width: 420px) {
     margin-top: 45px;
   }
+
+  @media (max-width: 350px) {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .hm-why__card{
@@ -16,7 +21,9 @@
   @media (max-width: 768px) {
     min-width: 165px;
 }
-
+  @media (max-width: 350px) {
+   max-width: 90px;
+  }
 
   & > span{
     color: $hm-black-light;
