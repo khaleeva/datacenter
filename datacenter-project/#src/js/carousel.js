@@ -1,26 +1,3 @@
-// function setSlideWidth(deviceWidth, slides, flag) {
-// 	let elemWidth = 0;
-// 	slides.forEach((elem) => {
-// 		if (deviceWidth < 768 && deviceWidth >= 421) {
-// 			elem.style.width = `${deviceWidth - 40}px`;
-// 			elemWidth = deviceWidth - 40;
-// 		} else if(deviceWidth < 421){
-// 			elem.style.width = `${deviceWidth - 20}px`;
-// 			elemWidth = deviceWidth - 20;
-// 		}else if (deviceWidth === 768) {
-// 			if (flag) {
-// 				elem.style.width = `${(deviceWidth - 40) / 2 - 12}px`;
-// 				elemWidth = (deviceWidth - 40) / 2;
-// 			} else {
-// 				elemWidth = elem.offsetWidth;
-// 			}
-// 		} else {
-// 			elemWidth = 410;
-// 		}
-// 	});
-//
-// 	return elemWidth;
-// }
 
 function initializeCarousel(data) {
 	const {
@@ -36,19 +13,17 @@ function initializeCarousel(data) {
 	}
 		= data
 
-
-	console.log(elemWidth)
-
 	const sliderWidth = slider.offsetWidth;
 	const carouselWidth = carouselContainer.offsetWidth;
 	let curPos = 0;
 	let activeIndex = 0;
 	let prevActiveIndex = null;
 
+
 	function changeActiveIndicatorToScroll() {
 		const scrollLeft = carouselContainer.scrollLeft;
 		const scrollIndex = Math.round(scrollLeft / carouselWidth);
-
+		console.log(scrollLeft)
 		if (scrollIndex !== prevActiveIndex) {
 			activeIndex = scrollIndex;
 			if (activeIndex <= indicatorsContainer.length - 1) {

@@ -37,6 +37,10 @@ document.addEventListener('DOMContentLoaded', () => {
 			window.addEventListener('resize', () => {
 				const deviceWidth = window.innerWidth
 				const elemWidth = setWidth(deviceWidth)
+				carouselContainer.scrollTo({
+					left: 0,
+					behavior: 'smooth'
+				});
 				carouselSlides.forEach(item => item.style.width = `${elemWidth}px`)
 				initializeCarousel({
 					deviceWidth,
@@ -93,6 +97,11 @@ document.addEventListener('DOMContentLoaded', () => {
 			window.addEventListener('resize', () => {
 				const deviceWidth = window.innerWidth
 				const elemWidth = setWidth(deviceWidth)
+
+				possibilities_infoContainer.scrollTo({
+					left: 0,
+					behavior: 'smooth'
+				});
 
 				possibilities_items.forEach(item => {
 					item.style.width = `${elemWidth}px`
@@ -171,7 +180,6 @@ document.addEventListener('DOMContentLoaded', () => {
 					if (input.value === 'null') {
 						document.querySelector('.hm-calculator__price').style.display = 'none';
 						document.querySelector('.hm-calculator__price-text').style.display = 'flex';
-						console.log('kkk')
 					} else {
 						document.querySelector('.hm-calculator__price').style.display = 'flex';
 						document.querySelector('.hm-calculator__price-text').style.display = 'none';
