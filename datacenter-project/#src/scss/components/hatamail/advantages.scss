@@ -6,7 +6,7 @@
 .hm-card {
   border-radius: 8px;
   padding: 64px 78px;
-  background: $color-light-50;
+  background: $hm-black-light-5;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -70,6 +70,10 @@
   .hm__title {
     margin-bottom: 6.4rem;
   }
+
+  .hm__subtitle-block{
+    color: $hm-black-dark;
+  }
 }
 
 .security__card {
@@ -132,10 +136,6 @@
     transform: translateX(-50%);
   }
 
-
-  &_color {
-    background: linear-gradient(315deg, rgba(207, 210, 250, 0.20) 0%, rgba(185, 217, 255, 0.20) 100%);
-  }
 }
 
 .advantages-support {
@@ -152,7 +152,7 @@
   }
 
   & > span {
-    color: #8DB3E0;
+    color: $hm-primary;
     @include font($size: 2.4rem, $weight: 700);
   }
 

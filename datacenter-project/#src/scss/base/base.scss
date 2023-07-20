@@ -190,9 +190,9 @@ h4 {
 .tag{
   display: inline-flex;
   padding: 8px 16px;
-  color:$color-primary;
+  color:$hm-primary;
   border-radius: 3px;
-  border: 1px solid $color-primary;
+  border: 1px solid $hm-primary;
   margin-bottom: 16px;
   @include font($size: 1.6rem, $weight: 400, $height: 140%);
 

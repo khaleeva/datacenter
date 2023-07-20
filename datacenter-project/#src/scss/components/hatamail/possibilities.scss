@@ -41,7 +41,8 @@
     cursor: pointer;
 
     &_active{
-      @extend %violet-gradient-bg;
+      background: $hm-primary-80;
+      color: $color-light;
     }
   }
 
@@ -78,10 +79,11 @@
   margin-top: 24px;
   //border-radius: 36px;
 
+
   & > *{
-    @extend %violet-gradient-bg;
-    border-radius: 36px;
     padding: 80px 0 68px;
+    background-color: $hm-primary-80;
+    border-radius: 8px;
 
 
     @media(max-width: 767px){
@@ -170,11 +172,12 @@
 .info__container{
   h5{
     margin-bottom: 32px;
+    color: $color-light;
   }
 
 
   ul > li{
-    color: $hm-black-light;
+    color: $color-light;
     @include font($size: 2rem, $weight: 400, $height: 140%);
     margin-bottom: 24px;
 
@@ -196,19 +199,24 @@
   padding: 0 80px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+
 
 
     @media (max-width: 520px) {
-      padding: 0 40px;
+      width: 100%;
+      padding: 24px;
       margin: 24px 0 40px;
+      align-items: center;
+      border-radius: 8px;
+      background-color: $color-light-50;
+
     }
 
 
   h5{
     color: $hm-black-dark;
     @include font($size: 1.8rem, $weight: 600, $height: 140%);
-    text-align: center;
+    text-align: left;
   }
 
 

@@ -15,7 +15,7 @@
   align-items: center;
 
   h1 {
-    color: $color-gradient-layer1;
+    color: $hm-primary;
     @include font($size: 9rem);
 
     @media (max-width:768px) {

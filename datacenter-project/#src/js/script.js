@@ -14,7 +14,7 @@
 @@include('getServicesData.js');
 @@include('swiped-events.min.js');
 @@include('carousel.js');
-@@include('carousel1.js');
+@@include('hatamail.js');
 
 
 

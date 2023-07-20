@@ -113,6 +113,12 @@
   align-items: center;
   flex-shrink: 0;
 
+
+  @media(max-width: 1000px){
+    flex-shrink: 1;
+  }
+
+
   @media(max-width: 768px){
     max-width: 100%;
     border-radius: 16px 16px 0 0;
@@ -147,6 +153,9 @@
 
     &:last-child{
       margin-bottom: 0;
+      @media(max-width: 768px){
+        margin-bottom: 16px;
+      }
     }
   }
 
@@ -155,4 +164,7 @@
 .description-icons{
   margin: 40px 0 24px;
   width: 100%;
+   & > *{
+       text-align: center;
+   }
 }
