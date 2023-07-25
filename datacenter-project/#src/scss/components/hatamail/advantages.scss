@@ -67,13 +67,15 @@
 }
 
 .hm-advantages {
+  .layout-2-column{
+    flex-wrap: nowrap;
+  }
   .hm__title {
     margin-bottom: 6.4rem;
     @media (max-width: 420px) {
       margin-bottom: 4rem;
     }
   }
-
 
 
   .hm__subtitle-block{

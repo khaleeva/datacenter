@@ -167,8 +167,15 @@
 
 .description-icons{
   margin: 40px 0 24px;
-  width: 100%;
+  justify-content: center;
+  max-width: 350px;
+  gap: 1rem;
    & > *{
-       text-align: center;
+     text-align: center;
+     @media (max-width: 768px) {
+       & > img{
+         width: 40px;
+       }
+     }
    }
 }
