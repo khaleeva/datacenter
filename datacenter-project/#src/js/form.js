@@ -141,14 +141,11 @@ function formatPhoneNumber(phoneNumber) {
 
 	if (validatePhoneNumber(phoneNumber)) {
 		if (phoneNumber.startsWith(code)) {
-			console.log(phoneNumber, 'p1')
 			return phoneInput.value = phoneNumber;
 		} else if (!phoneNumber.startsWith('+')) {
 			if (phoneNumber.startsWith(data.dialCode)) {
-				console.log(code + phoneNumber.substring(data.dialCode.length), 'p2')
 				return phoneInput.value = code + phoneNumber.substring(data.dialCode.length);
 			} else {
-				console.log(code + phoneNumber, 'p3')
 				return phoneInput.value = code + phoneNumber;
 			}
 		}

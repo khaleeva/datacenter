@@ -68,7 +68,6 @@ function getHDDValue(data) {
     let id_addon = data.map(item => item['enumeration'][1]?.id['$'] === '11' && item.id['$']).filter(i => i)
     let addons = data.map(item => item['enumeration'][1]).filter(i => i)
     let HDD = addons.filter(item => item.id['$'] === '11').map(item => item['enumerationitem'])
-    console.log(HDD, 'HDD')
     HDD.map((i, index) => {
         let name = `hdd${index + 1}_radio`;
         let value = i[0].id['$'];

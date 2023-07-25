@@ -1,5 +1,9 @@
 .hm-faq__cards{
   margin-top: 64px;
+
+  @media (max-width: 768px) {
+    margin-top: 0;
+  }
 }
 
 .left-column, .right-column {

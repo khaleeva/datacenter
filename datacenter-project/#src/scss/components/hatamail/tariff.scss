@@ -8,6 +8,10 @@
     width: 100%;
     align-items: stretch;
   }
+
+  @media(max-width: 420px){
+    margin-top: 0;
+  }
 }
 
 .hm-calculator{
