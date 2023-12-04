@@ -108,33 +108,6 @@ function validatePhoneNumber(phoneNumber) {
 	return iti.isValidNumber(phoneNumber);
 }
 
-
-// function formatPhoneNumber(phoneNumber) {
-// 	const data = iti.getSelectedCountryData();
-// 	const code = '+' + data.dialCode;
-// 	if (validatePhoneNumber(phoneNumber) && !phoneNumber.startsWith(code)) {
-// 		return phoneInput.value = code + phoneNumber;
-// 	} else if (validatePhoneNumber(phoneNumber) && !phoneNumber.startsWith(data.dialCode)){
-// 		return phoneInput.value = '+' + phoneNumber;
-// 	} else return phoneInput.value
-// }
-
-// function formatPhoneNumber(phoneNumber) {
-// 	const data = iti.getSelectedCountryData();
-// 	const code = '+' + data.dialCode;
-//
-// 	if (validatePhoneNumber(phoneNumber)) {
-// 		if (phoneNumber.startsWith(code)) {
-// 			return phoneInput.value; // Номер уже начинается с кода, возвращаем его без изменений
-// 		} else if (!phoneNumber.startsWith('+')) {
-// 			if (phoneNumber.startsWith(data.dialCode)) {
-// 				return phoneInput.value = code + phoneNumber.substring(data.dialCode.length); // Удаляем начальный код и добавляем общий код
-// 			} else {
-// 				return phoneInput.value = code + phoneNumber; // Номер без кода, добавляем код
-// 			}
-// 		}
-// 	}
-// }
 function formatPhoneNumber(phoneNumber) {
 	const data = iti.getSelectedCountryData();
 	const code = '+' + data.dialCode;

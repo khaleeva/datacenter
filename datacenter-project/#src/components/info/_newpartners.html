@@ -39,17 +39,6 @@
                 <div class="swipe-line" id="partners-swipe-line" data-swipe-threshold="20" data-swipe-timeout="500"
                      data-swipe-ignore="false">
                 </div>
-
-                <!--                    <form action="#" id="form" class="form">-->
-                <!--                        <p class="paragraph paragraph_bold">Заявка на партнёрскую программу</p>-->
-                <!--                        <input class="req" type="text" name="name" placeholder="Ваше имя">-->
-                <!--                        <input class="email req" type="email" name="email" placeholder="Почта">-->
-                <!--                        <textarea name="message" id="textarea" cols="10" rows="7"-->
-                <!--                            placeholder="Сообщение (не обязательно)"></textarea>-->
-                <!--                        <button type="submit" id="send-btn"-->
-                <!--                            class="button button_colored send__btn"><span>Отправить</span></button>-->
-                <!--                    </form>-->
-
                 <form name="sampleForm" method="POST"
                       action="//office.datahata.by/Products/CRM/HttpHandlers/webtoleadfromhandler.ashx"
                       accept-charset="UTF-8" class="form">
@@ -81,6 +70,7 @@
                             <p class="requiredField"> Еmail:</p>
                             <input name="contactInfo_Email_1" type="email">
                         </div>
+                        <div class="g-recaptcha" data-sitekey="6LeEdiApAAAAAKLbxYSrlRC-mpN-9-dhUHLI4QKW"></div>
 
                         <input name="" value="Отправить данные" type="submit" class="button button_colored send__btn"
                                onclick="javascript:
@@ -111,6 +101,16 @@
 										   break;
 									   }
 								   }
+								   var recaptchaResponse = grecaptcha.getResponse();
+                                     if (recaptchaResponse.length === 0) {
+
+                                        if (typeof (toastr) === 'object' && typeof (toastr.error) === 'function') {
+                                                 toastr.error('Пожалуйста, пройдите проверку reCAPTCHA');
+                                        } else {
+                                                alert('Пожалуйста, пройдите проверку reCAPTCHA');
+                                        }
+                                            isValid = false;
+                                    }
 								   if (isCompany === 'false') {
 									   if (firstName === ''){
 										   if(typeof (toastr) === 'object' &amp;&amp; typeof (toastr.error) === 'function') toastr.error('Введите имя');
@@ -157,7 +157,7 @@
                     <input type="hidden" name="tag" value="Потенциальный клиент">
                     <input type="hidden" name="return_url" value="https://www.datahata.by/">
                     <input
-                        type="hidden" name="web_form_key" value="c8190c86-cc9c-43db-881e-7f6fb92197d5"><input
+                            type="hidden" name="web_form_key" value="c8190c86-cc9c-43db-881e-7f6fb92197d5"><input
                         type="hidden" name="notify_list" value="cf3c516b-ca44-4a7e-8cb8-65b346220173"><input
                         type="hidden" name="managers_list" value="cf3c516b-ca44-4a7e-8cb8-65b346220173"><input
                         type="hidden" name="share_type" value="0">

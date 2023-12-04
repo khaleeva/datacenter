@@ -1,31 +1,51 @@
 <section class="hm-form section-padding" id="hm_form">
-  <div class="container hm__container hm-form__container">
-    <h3 class="hm__title hm__title-block">Подключить корпоративную почту HataMail</h3>
-    <h4>Или задать вопрос. Напишите нам!</h4>
-    <div class="hm-form__form-container">
-      <form name="sampleForm" method="POST"
-            action="//office.datahata.by/Products/CRM/HttpHandlers/webtoleadfromhandler.ashx"
-            accept-charset="UTF-8" class="form">
-        <meta content="text/html;charset=UTF-8" http-equiv="content-type">
-        <div id="sampleFormPanel">
-            <input type="hidden" name="is_company" value="false">
-            <input name="lastName" type="text" id="lastName">
-          <div class="layout-2-column">
-            <input name="firstName" type="text" placeholder="Имя *">
-            <input name="contactInfo_Phone_1" type="text" id="phoneInput">
-            <input name="companyName" type="text" placeholder="Компания">
-            <input name="contactInfo_Email_1" type="email" placeholder="Email *">
-          </div>
-          <textarea name="about" id="form_message" placeholder="Сообщение"></textarea>
-          <input name="" value="Отправить" type="submit" class="button button_colored send__btn"
-                 onclick="javascript:
+    <div class="container hm__container hm-form__container">
+        <h3 class="hm__title hm__title-block">Подключить корпоративную почту HataMail</h3>
+        <h4>Или задать вопрос. Напишите нам!</h4>
+        <div class="hm-form__form-container">
+            <form name="sampleForm" method="POST"
+                  action="//office.datahata.by/Products/CRM/HttpHandlers/webtoleadfromhandler.ashx"
+                  accept-charset="UTF-8" class="form">
+                <meta content="text/html;charset=UTF-8" http-equiv="content-type">
+                <p class="form__title">Заявка на партнёрскую программу</p>
+                <div id="sampleFormPanel">
+                    <input type="hidden" name="is_company" value="false">
+                    <div class="form__input">
+                        <p class="requiredField">Имя:</p>
+                        <input name="firstName" type="text">
+                    </div>
+
+                    <div class="form__input">
+                        <p> Фамилия:</p>
+                        <input name="lastName" type="text">
+                    </div>
+
+
+                    <div class="form__input">
+                        <p>Название компании:</p>
+                        <input name="companyName" type="text">
+                    </div>
+
+                    <div class="form__input">
+                        <p> Телефон:</p>
+                        <input name="contactInfo_Phone_1" type="text" id="phoneInput">
+                    </div>
+
+                    <div class="form__input">
+                        <p class="requiredField"> Еmail:</p>
+                        <input name="contactInfo_Email_1" type="text">
+                    </div>
+
+
+                    <input name="" value="Отправить данные" type="submit" class="button button_colored send__btn"
+                           onclick="javascript:
                                    var isValid = true,
+                                   error = false,
                                    form = document.getElementById('sampleFormPanel'),
                                    childs = form.getElementsByTagName('input'),
                                    isCompany = null,
                                    firstName = '',
                                    lastName = '',
-                                   about = '',
                                    companyName = '',
                                    fieldName = '',
 								   email = '',
@@ -37,9 +57,7 @@
 										   break;
 										   case 'firstName': firstName = childs[i].value.trim();
 										   break;
-                                           case 'lastName': lastName = childs[i].value.trim();
-                                           break;
-										   case 'about': about = childs[i].value.trim();
+										   case 'lastName': lastName = childs[i].value.trim();
 										   break;
 										   case 'companyName': companyName = childs[i].value.trim();
 										   break;
@@ -49,7 +67,7 @@
 										   break;
 									   }
 								   }
-						          if (isCompany === 'false') {
+								   if (isCompany === 'false') {
 									   if (firstName === ''){
 										   if(typeof (toastr) === 'object' &amp;&amp; typeof (toastr.error) === 'function') toastr.error('Введите имя');
 										   else {addErrorClass('firstName')}
@@ -84,8 +102,11 @@
 									   isValid = false;
 								   }
 
-								  if(isValid){
+								    if(isValid){
+										    document.body.classList.remove('active-body');
+                                            document.querySelector('.new-partners__overlay').classList.remove('new-partners__overlay_active');
 											localStorage.setItem('referrer', window.location.href);
+
 								    } else {
 										if(firstName === '' || email === ''){
 											alert('Заполните обязательные поля...')
@@ -95,21 +116,20 @@
 								    }
 								        return isValid;
 ">
-        </div>
-
-        <input type="hidden" name="tag" value="Потенциальный клиент">
-        <input type="hidden" name="return_url" value="https://www.datahata.by/success.html">
-        <input type="hidden" name="web_form_key" value="c8190c86-cc9c-43db-881e-7f6fb92197d5">
-        <input type="hidden" name="notify_list"
-               value="635de13e-235a-495b-a7b3-40b9e2a36ecd,
+                </div>
+                <input type="hidden" name="tag" value="Потенциальный клиент">
+                <input type="hidden" name="return_url" value="https://www.datahata.by/success.html">
+                <input type="hidden" name="web_form_key" value="c8190c86-cc9c-43db-881e-7f6fb92197d5">
+                <input type="hidden" name="notify_list"
+                       value="635de13e-235a-495b-a7b3-40b9e2a36ecd,
                                cf3c516b-ca44-4a7e-8cb8-65b346220173,
                                7779b419-d18e-4b61-bb4d-a415b177557f,
                                784ca0ef-aa3a-4dfd-a54a-f0d611a755a5,
                                c80c219a-b891-4aeb-bac5-67b01b6dd445">
-        <input type="hidden" name="managers_list"
-               value="635de13e-235a-495b-a7b3-40b9e2a36ecd,7779b419-d18e-4b61-bb4d-a415b177557f,784ca0ef-aa3a-4dfd-a54a-f0d611a755a5,c80c219a-b891-4aeb-bac5-67b01b6dd445,cf3c516b-ca44-4a7e-8cb8-65b346220173">
-        <input type="hidden" name="share_type" value="0">
-      </form>
+                <input type="hidden" name="managers_list"
+                       value="635de13e-235a-495b-a7b3-40b9e2a36ecd,7779b419-d18e-4b61-bb4d-a415b177557f,784ca0ef-aa3a-4dfd-a54a-f0d611a755a5,c80c219a-b891-4aeb-bac5-67b01b6dd445,cf3c516b-ca44-4a7e-8cb8-65b346220173">
+                <input type="hidden" name="share_type" value="0">
+            </form>
+        </div>
     </div>
-  </div>
 </section>
