@@ -167,6 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	if (document.querySelector('.hm-calculator__buttons')) {
 		const price = document.querySelector('.price');
+		const time_text = document.querySelector('.time');
 		const labelBtns = document.querySelectorAll('.hm-calculator__label');
 		labelBtns.forEach((label) => {
 			const input = label.querySelector('input[type="radio"]');
@@ -180,10 +181,13 @@ document.addEventListener('DOMContentLoaded', () => {
 					if (input.value === 'null') {
 						document.querySelector('.hm-calculator__price').style.display = 'none';
 						document.querySelector('.hm-calculator__price-text').style.display = 'flex';
+						document.querySelector('.hm-calculator__time-text').style.visibility = 'hidden';
 					} else {
 						document.querySelector('.hm-calculator__price').style.display = 'flex';
 						document.querySelector('.hm-calculator__price-text').style.display = 'none';
+						document.querySelector('.hm-calculator__time-text').style.visibility = 'visible';
 						price.innerText = input.value;
+						time_text.innerText = input.dataset.time;
 					}
 				}
 			});
