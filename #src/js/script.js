@@ -5,7 +5,6 @@
 @@include('swipe-menu.js');
 @@include('openServiceAccordion.js');
 @@include('open-review-block.js');
-@@include('sendform.js');
 @@include('form.js');
 @@include('map.js');
 @@include('calculator.js');
