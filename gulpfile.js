@@ -26,7 +26,7 @@ const path = {
         img: source_folder + "/img/**/*.{jpg,png,svg,gif,ico,webp}"
     },
 
-    clean: "./" + project_folder + "/" 
+    clean: "./" + project_folder + "/"
 }
 
 const {src, dest} = require('gulp');
@@ -53,10 +53,11 @@ gulp.task('deploy', function() {
         .pipe(ghPages());
 });
 
+
 function browserSync(){
     browsersync.init({
         server: {
-            baseDir: "./" + project_folder + "/" 
+            baseDir: "./" + project_folder + "/"
         },
         port: 3000,
         notify: false
@@ -68,7 +69,7 @@ function html(){
         .pipe(fileInclude())
         .pipe(webpHTML())
         .pipe(dest(path.build.html))
-        .pipe(browsersync.stream()); 
+        .pipe(browsersync.stream());
 }
 
 function css(){
@@ -92,10 +93,10 @@ function css(){
             rename({
                 extname: ".min.css"
             })
-        ) 
-       
+        )
+
         .pipe(dest(path.build.css))
-        .pipe(browsersync.stream()); 
+        .pipe(browsersync.stream());
 }
 
 
@@ -108,14 +109,14 @@ function js(){
             rename({
                 extname: ".min.js"
             })
-        ) 
+        )
         .pipe(dest(path.build.js))
-        .pipe(browsersync.stream()); 
+        .pipe(browsersync.stream());
 }
 
 function images(){
     return src(path.src.img)
-       
+
         .pipe(webp({
             quality: 70
         }))
@@ -132,7 +133,7 @@ function images(){
         }))
 
         .pipe(dest(path.build.img))
-        .pipe(browsersync.stream()); 
+        .pipe(browsersync.stream());
 }
 
 function fonts(){
@@ -170,9 +171,9 @@ function fontsStyle(){
 
 function watchFiles(){
     gulp.watch([path.watch.html], html);
-    gulp.watch([path.watch.css], css);  
-    gulp.watch([path.watch.js], js); 
-    gulp.watch([path.watch.img], images); 
+    gulp.watch([path.watch.css], css);
+    gulp.watch([path.watch.js], js);
+    gulp.watch([path.watch.img], images);
 }
 
 function clean(){
@@ -186,7 +187,7 @@ let watch = gulp.parallel(build, watchFiles, browserSync);
 exports.fontsStyle = fontsStyle;
 exports.fonts = fonts;
 exports.images = images;
-exports.js = js; 
+exports.js = js;
 exports.css = css;
 exports.html = html;
 exports.build = build;

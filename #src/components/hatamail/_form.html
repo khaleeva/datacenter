@@ -7,45 +7,26 @@
                   action="//office.datahata.by/Products/CRM/HttpHandlers/webtoleadfromhandler.ashx"
                   accept-charset="UTF-8" class="form">
                 <meta content="text/html;charset=UTF-8" http-equiv="content-type">
-                <p class="form__title">Заявка на партнёрскую программу</p>
                 <div id="sampleFormPanel">
                     <input type="hidden" name="is_company" value="false">
-                    <div class="form__input">
-                        <p class="requiredField">Имя:</p>
-                        <input name="firstName" type="text">
-                    </div>
-
-                    <div class="form__input">
-                        <p> Фамилия:</p>
-                        <input name="lastName" type="text">
-                    </div>
-
-
-                    <div class="form__input">
-                        <p>Название компании:</p>
-                        <input name="companyName" type="text">
-                    </div>
-
-                    <div class="form__input">
-                        <p> Телефон:</p>
+                    <input name="lastName" type="text" id="lastName">
+                    <div class="layout-2-column">
+                        <input name="firstName" type="text" placeholder="Имя *">
                         <input name="contactInfo_Phone_1" type="text" id="phoneInput">
+                        <input name="companyName" type="text" placeholder="Компания">
+                        <input name="contactInfo_Email_1" type="email" placeholder="Email *">
                     </div>
-
-                    <div class="form__input">
-                        <p class="requiredField"> Еmail:</p>
-                        <input name="contactInfo_Email_1" type="text">
-                    </div>
-
-
-                    <input name="" value="Отправить данные" type="submit" class="button button_colored send__btn"
+                    <textarea name="about" id="form_message" placeholder="Сообщение">Хочу заказать демонстрацию услугу корпоративной почты для своей компании. Свяжитесь пожалуйста со мной для обсуждения деталей.</textarea>
+                    <div class="g-recaptcha" data-sitekey="6LcMmiApAAAAAJuoPd9gtJz6CkE-R9GrPb0Ey0qo"></div>
+                    <input name="" value="Отправить" type="submit" class="button button_colored send__btn"
                            onclick="javascript:
                                    var isValid = true,
-                                   error = false,
                                    form = document.getElementById('sampleFormPanel'),
                                    childs = form.getElementsByTagName('input'),
                                    isCompany = null,
                                    firstName = '',
                                    lastName = '',
+                                   about = '',
                                    companyName = '',
                                    fieldName = '',
 								   email = '',
@@ -57,7 +38,9 @@
 										   break;
 										   case 'firstName': firstName = childs[i].value.trim();
 										   break;
-										   case 'lastName': lastName = childs[i].value.trim();
+                                           case 'lastName': lastName = childs[i].value.trim();
+                                           break;
+										   case 'about': about = childs[i].value.trim();
 										   break;
 										   case 'companyName': companyName = childs[i].value.trim();
 										   break;
@@ -67,7 +50,17 @@
 										   break;
 									   }
 								   }
-								   if (isCompany === 'false') {
+                                   	   var recaptchaResponse = grecaptcha.getResponse();
+                                     if (recaptchaResponse.length === 0) {
+
+                                        if (typeof (toastr) === 'object' && typeof (toastr.error) === 'function') {
+                                                 toastr.error('Пожалуйста, пройдите проверку reCAPTCHA');
+                                        } else {
+                                                alert('Пожалуйста, пройдите проверку reCAPTCHA');
+                                        }
+                                            isValid = false;
+                                    }
+						          if (isCompany === 'false') {
 									   if (firstName === ''){
 										   if(typeof (toastr) === 'object' &amp;&amp; typeof (toastr.error) === 'function') toastr.error('Введите имя');
 										   else {addErrorClass('firstName')}
@@ -102,11 +95,8 @@
 									   isValid = false;
 								   }
 
-								    if(isValid){
-										    document.body.classList.remove('active-body');
-                                            document.querySelector('.new-partners__overlay').classList.remove('new-partners__overlay_active');
+								  if(isValid){
 											localStorage.setItem('referrer', window.location.href);
-
 								    } else {
 										if(firstName === '' || email === ''){
 											alert('Заполните обязательные поля...')
@@ -117,6 +107,7 @@
 								        return isValid;
 ">
                 </div>
+
                 <input type="hidden" name="tag" value="Потенциальный клиент">
                 <input type="hidden" name="return_url" value="https://www.datahata.by/success.html">
                 <input type="hidden" name="web_form_key" value="c8190c86-cc9c-43db-881e-7f6fb92197d5">
