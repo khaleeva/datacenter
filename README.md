@@ -11,6 +11,7 @@ The following technologies were used in the development of this project:
 - **JavaScript**: Utilized for adding interactivity and functionality on the client-side.
 - **OnlyOffice Form**: Integrated solution for creating and processing forms, such as feedback and inquiries.
 - **swiped-events library**: Library for handling swipe events, enhancing user experience on touch-enabled devices.
+- **ISPSYSTEMS API**: Utilized for retrieving servers configurations and pricing information dynamically.
 
 
 ## Installation and Setup
