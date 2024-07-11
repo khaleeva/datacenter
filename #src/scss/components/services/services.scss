@@ -211,11 +211,12 @@
 
 
 .all-services__text {
+  max-width: 1200px;
   width: 100%;
   border-radius: 1.4rem;
   background-color: $color-primary;
   padding: 4rem;
-  margin-top: 6rem;
+  margin: 6rem auto 0;
   color: $color-light;
 
   @media (max-width: 768px) {

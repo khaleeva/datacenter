@@ -79,9 +79,8 @@
 
 .hm__info{
   min-height: 732px;
-  margin-top: 24px;
   width: max-content;
-  //border-radius: 36px;
+  margin: 24px auto 0;
 
 
   & > *{
@@ -105,11 +104,6 @@
       padding: 40px;
     }
   }
-
-
-  //@media (max-width: 420px) {
-  //  padding: 40px 0 48px;
-  //}
 
   @media(max-width: 520px){
     display: flex;

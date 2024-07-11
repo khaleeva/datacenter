@@ -1,7 +1,7 @@
-<header class="header">
-    <div class="container header-container">
+<header class="header container">
+    <div class="header-container">
         <a class="logo logo_header" href="index.html">
-            <img src="img/logo/dh.png" alt="logo" width="114" height="41">
+            <img src="img/logo/new-logo.svg" alt="logo" width="114" height="41">
         </a>
         <nav class="header__navigation" aria-label="navigation-header">
             <ul class="navigation">
@@ -37,36 +37,17 @@
                         <li><a class="menu-sub__link" href="partners.html">Партнерская программа</a></li>
                     </ul>
                 </li>
-                <li class="navigation__menu">Связаться с нами
-                    <ul class="navigation__menu-sub navigation__menu-sub_contact">
-                        <li class="navigation__title">Отдел продаж: работа с новымы и существующими клиентами</li>
-                        <li>
-                            <a class="menu-sub__link link-contact link-contact_color" href="mailto:sales@datahata.by">
-                                <img class="icon icon_contact" src="img/header/icons/mail.svg" alt="mail" width="26" height="26">
-                                sales@datahata.by
-                            </a>
-                        </li>
-                        <li><a class="menu-sub__link link-contact" href="tel:+375293086666">+375 29 308 6666</a></li>
-                        <li><a class="menu-sub__link link-contact" href="tel:+375333086666">+375 33 308 6666</a></li>
-                        <li class="horizontal-line"></li>
-                        <li class="navigation__title">Техническая поддержка 24/7 для существующих клиентов</li>
-                        <li><a class="menu-sub__link link-contact link-contact_color" href="https://t.me/datahata_support_bot">
-                            <img class="icon icon_contact" src="img/header/icons/telegram.svg" alt="telegram" width="24" height="24">datahata_support_bot</a></li>
-
-                        <li><a class="menu-sub__link link-contact link-contact_color"
-                               href="mailto:help@datahata.by">
-                            <img class="icon icon_contact" src="img/header/icons/mail.svg" alt="mail" width="26" height="26">help@datahata.by</a></li>
-                        <li><a class="menu-sub__link link-contact" href="tel:+375293096666">+375 29 309 6666</a></li>
-                        <li><a class="menu-sub__link link-contact" href="tel:+375333096666">+375 33 309 6666</a></li>
-                    </ul>
-                </li>
 
             </ul>
         </nav>
-        <a class="button button_bordered header-button" href="https://my.datahata.by/"><span>Вход</span></a>
-        <div class="burger">
-            <span class="burger__line"></span>
+        <div class="header__buttons-container">
+            <button class="custom-button-circle">
+                <img src="img/icons/Phone.svg" alt="phone">
+            </button>
+            <a class="custom-button-brand header-button" href="https://my.datahata.by/">Вход</a>
+            <button class="burger custom-button-circle"></button>
         </div>
+        @@include('../base/_burger-menu.html')
     </div>
-    @@include('../base/_burger-menu.html')
+
 </header>

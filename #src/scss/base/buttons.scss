@@ -102,3 +102,45 @@
   }
 }
 
+
+
+.custom-button{
+  &-brand{
+    display: flex;
+    //width: 120px;
+    height: 40px;
+    padding: 10px 20px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 32px;
+    border: 1px solid  rgba(0, 0, 0, 0.10);
+    background:  $Surface-Gray-Shades-Brand-M;
+    box-shadow: 0 0 16px 4px rgba(0, 0, 0, 0.10) inset;
+    color: rgba(255, 255, 255, 0.90);
+    font-variant-numeric: lining-nums proportional-nums;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: -0.36px;
+    transition: all 0.2s;
+
+    &:hover{
+      background: #130FBF;
+    }
+  }
+
+  &-circle{
+    display: flex;
+    width: 40px;
+    height: 40px;
+    padding: 10px 20px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 32px;
+    background: $Surface-Gray-Shades-Translucent-Brand-S;
+  }
+}
+
+
+

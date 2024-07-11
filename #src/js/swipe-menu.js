@@ -1,30 +1,18 @@
 document.addEventListener("DOMContentLoaded", function () {
-  if(document.querySelector(".swipe-line")){
+  if(document.querySelector(".swipe-menu__container")){
     swipeMenu();
   }
 
 })
 
 const swipeMenu = () => {
-  const swipeBtn = document.querySelector(".swipe-line");
   const burger = document.querySelector('.burger');
-  const overlay = document.querySelector(".overlay");
-
-
-  swipeBtn.addEventListener('swiped-down', function () {
+	const menu = document.querySelector('.swipe-menu__container')
+	menu.addEventListener('swiped-up', function () {
+      console.log('swipe')
     burger.classList.remove("burger_open");
-    overlay.classList.remove("overlay_active");
+    menu.classList.remove("swipe-menu__container_active");
     document.body.classList.remove('active-body');
-    setHeightForOpenedMenu()
-
-  });
-
-
-  swipeBtn.addEventListener('click', function () {
-    burger.classList.remove("burger_open");
-    overlay.classList.remove("overlay_active");
-    document.body.classList.remove('active-body');
-    setHeightForOpenedMenu()
   });
 };
 
