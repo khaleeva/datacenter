@@ -1,4 +1,16 @@
-.navigation{
+.header__navigation {
+  @include hover {
+    & > ul > li:hover .navigation__menu-sub {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translate(0px, 0px);
+    }
+  }
+}
+
+
+.navigation {
   display: flex;
   align-items: center;
 
@@ -6,9 +18,8 @@
     display: none;
   }
 
-  & >*  {
+  & > * {
     padding: 40px 0;
-    position: relative;
     margin-left: 30px;
 
     &:first-child {
@@ -19,16 +30,6 @@
       margin-left: 15px;
     }
   }
-
-  @include hover {
-    & > li:hover .navigation__menu-sub {
-      opacity: 1;
-      visibility: visible;
-      pointer-events: auto;
-      transform: translate(0px, 0px);
-    }
-  }
-
 
 }
 
@@ -60,21 +61,25 @@
   }
 }
 
-.navigation__menu-sub{
+.navigation__menu-sub {
+  border-radius: 24px;
+  background: #E6E6E6;
+  box-shadow: 0 0 16px 4px rgba(0, 0, 0, 0.10) inset;
   position: absolute;
-  top: 100%;
+  top: 0;
   left: 0;
+  z-index: -1;
   display: flex;
-  flex-direction: column;
   align-items: flex-start;
-  justify-content: space-around;
-  min-width: 147px;
-  padding: 15px 25px 19px 19px;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+  padding: 75px 25px 19px 19px;
   transform: translate(0px, 10%);
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  @extend %border-shadow;
   @extend %transition;
 
 
@@ -83,41 +88,35 @@
   }
 
   li {
-    margin-bottom: 15px;
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
+    border-radius: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.30);
+    background: #FFF;
+    box-shadow: 0 0 16px 4px rgba(0, 0, 0, 0.10) inset;
+    padding: 6px 12px;
 
-  &_contact {
-    li {
-      margin-bottom: 10px;
+    @include hover {
+      &:hover {
+        background: #E6E6E6;
+        border: 1px solid #FFFFFF4D;
+      }
     }
   }
 }
 
-.menu-sub__link{
+.menu-sub__link {
   color: $color-dark;
 
-  @include hover {
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-}
-
-.navigation__title{
-  //text-align: justify;
 }
 
 
-.link-contact{
+.link-contact {
   color: $color-dark;
-  text-decoration: none!important;
+  text-decoration: none !important;
   font-weight: 700;
   display: flex;
   align-items: center;
-  &_color{
+
+  &_color {
     background: linear-gradient(90deg, #ea5c2f 0%, #f3b921 100%);
     background-clip: text;
     color: transparent;
