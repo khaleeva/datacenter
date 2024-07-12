@@ -22,7 +22,7 @@ const form = () => {
 		if (innerWidth <= 768) {
 			partners_container.classList.add('new-partners__container_active')
 			let minHeightBottomMenu = null;
-			if(innerHeight < 800){
+			if (innerHeight < 800) {
 				minHeightBottomMenu = heightDevice + 120
 			} else {
 				minHeightBottomMenu = heightDevice * 0.9
@@ -76,7 +76,7 @@ let iti;
 const phoneInput = document.getElementById('phoneInput');
 document.addEventListener('DOMContentLoaded', function () {
 
-	if(phoneInput){
+	if (phoneInput) {
 		iti = window.intlTelInput(phoneInput, {
 			preferredCountries: ['by', 'ru'],
 			customPlaceholder: function (selectedCountryPlaceholder, selectedCountryData) {

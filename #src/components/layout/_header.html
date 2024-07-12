@@ -5,7 +5,7 @@
         </a>
         <nav class="header__navigation" aria-label="navigation-header">
             <ul class="navigation">
-                <li class="navigation__menu">Компания
+                <li class="navigation__menu"><span>Компания</span>
                     <ul class="navigation__menu-sub">
                         <li><a class="menu-sub__link" href="about.html">О нас</a></li>
                         <li><a class="menu-sub__link" href="map.html">Схема проезда</a></li>
@@ -13,7 +13,7 @@
                         <li><a class="menu-sub__link" href="contacts.html">Контакты</a></li>
                     </ul>
                 </li>
-                <li class="navigation__menu">Услуги
+                <li class="navigation__menu"><span>Услуги</span>
                     <ul class="navigation__menu-sub">
                         <li><a class="menu-sub__link" href="colocation.html">Размещение серверного оборудования</a></li>
                         <li><a class="menu-sub__link" href="dedicated.html">Аренда сервера</a></li>
@@ -22,7 +22,7 @@
                         <li><a class="menu-sub__link" href="other.html">Другие услуги</a></li>
                     </ul>
                 </li>
-                <li class="navigation__menu">Клиентам
+                <li class="navigation__menu"><span>Клиентам</span>
                     <ul class="navigation__menu-sub">
                         <li><a class="menu-sub__link" href="instruction.html">Как разместить сервер</a></li>
                         <li><a class="menu-sub__link" href="payments.html">Способы оплаты</a></li>
@@ -31,7 +31,7 @@
                         <li><a class="menu-sub__link" href="visited.html">Правила посещения дата-центра</a></li>
                     </ul>
                 </li>
-                <li class="navigation__menu">Инфо
+                <li class="navigation__menu"><span>Инфо</span>
                     <ul class="navigation__menu-sub">
                         <li><a class="menu-sub__link" href="review.html">Отзывы</a></li>
                         <li><a class="menu-sub__link" href="partners.html">Партнерская программа</a></li>
@@ -41,13 +41,14 @@
             </ul>
         </nav>
         <div class="header__buttons-container">
-            <button class="custom-button-circle">
+            <button id="contact_btn" class="custom-button-circle">
                 <img src="img/icons/Phone.svg" alt="phone">
             </button>
             <a class="custom-button-brand header-button" href="https://my.datahata.by/">Вход</a>
             <button class="burger custom-button-circle"></button>
         </div>
         @@include('../base/_burger-menu.html')
+        @@include('../base/_contactPopup.html')
     </div>
 
 </header>

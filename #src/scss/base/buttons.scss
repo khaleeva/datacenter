@@ -107,7 +107,7 @@
 .custom-button{
   &-brand{
     display: flex;
-    //width: 120px;
+    min-width: 120px;
     height: 40px;
     padding: 10px 20px;
     justify-content: center;

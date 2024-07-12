@@ -1,6 +1,5 @@
 
-@@include('open-menu-from-bottom-direction.js');
-@@include('set-height-for-opened-menu.js');
+@@include('open-menu.js');
 @@include('toggleAccordion.js');
 @@include('swipe-menu.js');
 @@include('openServiceAccordion.js');
@@ -14,6 +13,7 @@
 @@include('swiped-events.min.js');
 @@include('carousel.js');
 @@include('hatamail.js');
+@@include('openContactPopup.js');
 
 
 

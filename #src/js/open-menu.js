@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
 	if (document.querySelector('.burger')) {
-		openMenuFromBottomDirection();
+		openBurgerMenu();
 	}
 
 })
 
 
-const openMenuFromBottomDirection = () => {
+const openBurgerMenu = () => {
 	const burger = document.querySelector('.burger');
 	const menu = document.querySelector('.swipe-menu__container')
 
@@ -22,7 +22,6 @@ const openMenuFromBottomDirection = () => {
 			if (isOpen) {
 				accordion_bodies.forEach(body => body.classList.remove('accordion__body_open'));
 			}
-			// setHeightForOpenedMenu(isOpen)
 		})
 	}
 
