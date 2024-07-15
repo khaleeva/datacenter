@@ -3,6 +3,10 @@ document.addEventListener("DOMContentLoaded", function () {
     swipeMenu();
   }
 
+	if(document.querySelector("#modal")){
+		swipeModal();
+	}
+
 })
 
 const swipeMenu = () => {
@@ -16,7 +20,14 @@ const swipeMenu = () => {
 };
 
 
-
+const swipeModal = () => {
+	const modal = document.querySelector("#modal")
+	const modal_overlay = document.querySelector('.modal-overlay')
+	modal.addEventListener('swiped', function () {
+		document.body.classList.remove('active-body');
+		modal_overlay.classList.remove("modal-overlay_open");
+	});
+};
 
 
 
