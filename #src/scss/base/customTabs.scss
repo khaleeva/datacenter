@@ -1,0 +1,60 @@
+.custom-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-grow: 1;
+  width: 376px;
+
+  &__container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 12px;
+    gap: 8px;
+    border-radius: 40px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    background: rgba(0, 0, 0, 0.05);
+    height: 52px;
+  }
+
+  &__tab {
+    display: flex;
+    width: 100%;
+    flex-grow: 1;
+
+    & > label {
+      width: 100%;
+      position: relative;
+      padding: 8px 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 4px;
+      border: 1px solid transparent;
+      color: rgba(0, 0, 0, 0.3);
+      font-variant-numeric: lining-nums proportional-nums;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 20px;
+      letter-spacing: -0.32px;
+      cursor: pointer;
+
+      & > input[type='radio'] {
+        visibility: hidden;
+        position: absolute;
+        z-index: -1;
+      }
+    }
+  }
+}
+
+
+.label-active {
+  color: rgba(0, 0, 0, 0.9) !important;
+  border-radius: 96px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: #fff;
+  box-shadow: 0 0 16px 4px rgba(0, 0, 0, 0.1) inset;
+}

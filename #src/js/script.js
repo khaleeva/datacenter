@@ -14,6 +14,9 @@
 @@include('carousel.js');
 @@include('hatamail.js');
 @@include('openContactPopup.js');
+@@include('vps-calculator.js');
+@@include('vps-helpers.js');
+@@include('renderVpsInputs.js');
 
 
 
