@@ -1,8 +1,14 @@
+.vps-page {
+  background-image: url("./../../../img/vps/Elipse.svg");
+  background-repeat: no-repeat;
+}
+
 .vps {
+
   font-family: inter, sans-serif;
 
 
-  &__promo{
+  &__promo {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,7 +16,8 @@
     padding-top: 115px;
     padding-bottom: 80px;
 
-    & > h1{
+
+    & > h1 {
       color: rgba(0, 0, 0, 0.80);
       text-align: center;
       font-variant-numeric: lining-nums proportional-nums;
@@ -22,7 +29,7 @@
       margin-bottom: 16px;
     }
 
-    & > p{
+    & > p {
       color: #808080;
       text-align: center;
       font-variant-numeric: lining-nums proportional-nums;
@@ -33,13 +40,13 @@
       letter-spacing: -0.36px;
       margin-bottom: 40px;
 
-      & > span{
+      & > span {
         color: rgba(0, 0, 0, 0.90);
         font-weight: 500;
       }
     }
 
-    & > .custom-button-brand{
+    & > .custom-button-brand {
       height: 64px;
     }
   }
@@ -53,6 +60,35 @@
     border-radius: 24px;
     border: 1px solid rgba(0, 0, 0, 0.05);
     background: rgba(0, 0, 0, 0.05);
+
+    &-total {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap:4px;
+      &-title{
+        color: #808080;
+        text-align: center;
+        font-variant-numeric: lining-nums proportional-nums;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: -0.36px;
+      }
+      color: #1A1A1A;
+      text-align: center;
+      font-variant-numeric: lining-nums proportional-nums;
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 40px;
+      letter-spacing: -0.64px;
+    }
+
+    & > .custom-button-brand{
+      height: 48px;
+    }
 
     &-container {
       display: flex;
