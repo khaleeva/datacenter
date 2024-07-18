@@ -29,18 +29,88 @@ document.addEventListener("DOMContentLoaded", async () => {
     const dataSelectForTab = getDataSelectForTabs(vps_addons);
     const dataBooleanForTab = getDataBooleanForTabs(vps_addons);
 
+    dataForRange.forEach((addon) => {
+      initValue(
+        getVPSAddonName[addon.name_ru["$"]],
+        addon.id["$"],
+        getMinValue(addon.name_ru["$"], addon.addonmin["$"]),
+        Number(addon.price.period[0]["$cost"]),
+      );
+    });
+
+    initValue("service", 0, 1, 0);
+
+    dataSelectForTab.forEach((addon) => {
+      addon.enumeration[1].enumerationitem.forEach((d) =>
+        initValue(
+          addon.intname["$"],
+          d.id["$"],
+          d.id["$"],
+          Number(d.price.period[0]["$cost"]),
+        ),
+      );
+    });
+
+    dataBooleanForTab.forEach((addon) => {
+      initValue(
+        "support",
+        addon.id["$"],
+        true,
+        Number(addon.price.period[0]["$cost"]),
+      );
+    });
+
     const innerHTMLRanges = generateCustomVpsRange(dataForRange);
     const innerHTMLSelectTabs = generateCustomVpsTabs(dataSelectForTab);
     const innerHTMLBooleanTabs = generateCustomVpsTabs(dataBooleanForTab);
 
+    const servicesRange = `<div class="custom-range">
+      <div class="custom-range__label">${getIcon["Количество серверов для заказа"]}
+        <p>Количество серверов для заказа</p>
+        <div  class="label" data-value="шт">${1}<span>шт</span></div>
+      </div>
+      <div class="custom-range__slider">
+        <span class="custom-range__slider-track"></span>
+        <div class="custom-range__slider-progress">
+          <span class="fill"></span>
+        </div>
+        <input
+            data-name='service'
+            data-value=${null}
+            class="custom-range__slider-input"
+            type="range"
+            min=${1}
+            max=${vps[0].max_multiple_order_count["$"]}
+            value="0"
+            id=${null}
+            step=${1}
+        />
+        <div class="custom-range__ticks">
+          ${generateSpanElements(1, +vps[0].max_multiple_order_count["$"], 1)}
+        </div>
+      </div>
+    </div>`;
+
+    // const supportTab = `<div class="custom-tabs" style="width: 170px">
+    //                 <p>Техническая поддержка</p>
+    //                 <div class="custom-tabs__container">
+    //                     <div class="custom-tabs__tab">
+    //  			            <label>Включена
+    //  			                <input type="radio"/>
+    //  			            </label>
+ 	// 		            </div>
+    //                 </div>
+    //              </div>`
+
+    const innerHTMLAllRanges = innerHTMLRanges.concat(servicesRange);
     const innerHTMLTabs = innerHTMLSelectTabs.concat(innerHTMLBooleanTabs);
 
-    const ranges = generateInputsContainer(innerHTMLRanges);
+    const ranges = generateInputsContainer(innerHTMLAllRanges);
     const tabs = generateInputsContainer(innerHTMLTabs);
 
     const total_cost = document.createElement("div");
     total_cost.classList.add("vps__calculator-total");
-    total_cost.innerHTML = `<p class="vps__calculator-total-title">Итоговая цена виртуального сервера</p><p>${getTotalSum()}</p>`;
+    total_cost.innerHTML = `<p class="vps__calculator-total-title">Итоговая цена виртуального сервера</p><p>${getTotalSum()} BYN/месяц</p>`;
 
     const order_button = document.createElement("button");
     order_button.classList.add(
@@ -59,10 +129,18 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 });
 
+function initValue(name, id, value, price) {
+  vps_state[name] = {
+    id,
+    price,
+    value,
+  };
+}
+
 function updateTotalCost() {
   const total_cost = document.querySelector(".vps__calculator-total");
 
-  total_cost.innerHTML = `<p class="vps__calculator-total-title">Итоговая цена виртуального сервера</p><p>${getTotalSum()}</p>`;
+  total_cost.innerHTML = `<p class="vps__calculator-total-title">Итоговая цена виртуального сервера</p><p>${getTotalSum()} BYN/месяц</p>`;
 }
 
 function getTotalSum() {
@@ -72,7 +150,9 @@ function getTotalSum() {
       total += vps_state[key].price;
     }
   }
-  return total.toFixed(2);
+
+  console.log(vps_state);
+  return total.toFixed(2) * vps_state["service"].value;
 }
 
 function generateInputsContainer(innerHTML) {
@@ -178,7 +258,7 @@ function getValueFromRange(range) {
       value: range.value,
     };
   } else {
-    vps_state[name] = { value: range.value };
+    vps_state["service"] = { id: null, value: range.value, price: null };
   }
 
   updateTotalCost();

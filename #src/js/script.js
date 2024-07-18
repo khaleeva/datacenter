@@ -17,6 +17,7 @@
 @@include('vps-calculator.js');
 @@include('vps-helpers.js');
 @@include('renderVpsInputs.js');
+@@include('accordion.js');
 
 
 

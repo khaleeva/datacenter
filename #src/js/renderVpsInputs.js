@@ -27,6 +27,9 @@ function generateSpanElements(min, max, step) {
   return spanElements;
 }
 
+
+
+
 function generateCustomVpsRange(data) {
   return data
     .map(
