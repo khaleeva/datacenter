@@ -28,6 +28,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     const dataForRange = getDataForRange(vps_addons);
     const dataSelectForTab = getDataSelectForTabs(vps_addons);
     const dataBooleanForTab = getDataBooleanForTabs(vps_addons);
+    const dataForSelect = vps[0].itemtypeparam.find(
+      (i) => i.id["$"] == "106",
+    ).itemtypeparamvalue;
 
     dataForRange.forEach((addon) => {
       initValue(
@@ -37,6 +40,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         Number(addon.price.period[0]["$cost"]),
       );
     });
+
+    initValue("os", dataForSelect[0].id["$"], dataForSelect[0].id["$"], null);
 
     initValue("service", 0, 1, 0);
 
@@ -63,6 +68,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     const innerHTMLRanges = generateCustomVpsRange(dataForRange);
     const innerHTMLSelectTabs = generateCustomVpsTabs(dataSelectForTab);
     const innerHTMLBooleanTabs = generateCustomVpsTabs(dataBooleanForTab);
+
+    const innerHTMLSelect = generateCustomSelect(dataForSelect);
 
     const servicesRange = `<div class="custom-range">
       <div class="custom-range__label">${getIcon["Количество серверов для заказа"]}
@@ -91,22 +98,12 @@ document.addEventListener("DOMContentLoaded", async () => {
       </div>
     </div>`;
 
-    // const supportTab = `<div class="custom-tabs" style="width: 170px">
-    //                 <p>Техническая поддержка</p>
-    //                 <div class="custom-tabs__container">
-    //                     <div class="custom-tabs__tab">
-    //  			            <label>Включена
-    //  			                <input type="radio"/>
-    //  			            </label>
- 	// 		            </div>
-    //                 </div>
-    //              </div>`
-
     const innerHTMLAllRanges = innerHTMLRanges.concat(servicesRange);
-    const innerHTMLTabs = innerHTMLSelectTabs.concat(innerHTMLBooleanTabs);
-
+    const innerHTMLTabs = innerHTMLSelect
+      .concat(innerHTMLSelectTabs)
+      .concat(innerHTMLBooleanTabs);
+    const tabs = generateInputsContainer(innerHTMLTabs, "background");
     const ranges = generateInputsContainer(innerHTMLAllRanges);
-    const tabs = generateInputsContainer(innerHTMLTabs);
 
     const total_cost = document.createElement("div");
     total_cost.classList.add("vps__calculator-total");
@@ -119,13 +116,14 @@ document.addEventListener("DOMContentLoaded", async () => {
     );
     order_button.innerHTML = `Добавить в коризну ${addToBasket}`;
 
-    vps_calculator.append(ranges);
     vps_calculator.append(tabs);
+    vps_calculator.append(ranges);
     vps_calculator.append(total_cost);
     vps_calculator.append(order_button);
 
     changeRangeValue();
     changeCustomTab();
+    selectOption();
   }
 });
 
@@ -155,9 +153,14 @@ function getTotalSum() {
   return total.toFixed(2) * vps_state["service"].value;
 }
 
-function generateInputsContainer(innerHTML) {
+function generateInputsContainer(innerHTML, className) {
   const div = document.createElement("div");
-  div.classList.add("vps__calculator-container");
+  if (className) {
+    div.classList.add("vps__calculator-container", className);
+  } else {
+    div.classList.add("vps__calculator-container");
+  }
+
   div.innerHTML = innerHTML;
   return div;
 }
@@ -285,6 +288,49 @@ function checkCurrentTick(sliderTicks, value) {
       span.style.background = "#808080";
       span.style.borderColor = "#B3B3B3";
       span.style.color = "#808080";
+    }
+  });
+}
+
+function selectOption() {
+  const customSelect = document.querySelector(".custom-select");
+  const trigger = customSelect.querySelector(".custom-select-trigger");
+  const options = customSelect.querySelector(".custom-options");
+  const arrow = customSelect.querySelector(".custom-select-arrow");
+
+  trigger.addEventListener("click", function () {
+    options.classList.toggle("open");
+    if (options.classList.contains("open")) {
+      trigger.classList.add("active");
+      arrow.classList.add("arrow-rotate");
+    } else {
+      arrow.classList.remove("arrow-rotate");
+      trigger.classList.remove("active");
+    }
+  });
+
+  options.addEventListener("click", function (e) {
+    if (e.target.classList.contains("custom-option")) {
+      const id = e.target.getAttribute("data-value");
+      vps_state["os"] = { id, value: id, price: null };
+      const selectedOption = e.target.innerText;
+      console.log(vps_state);
+      trigger.querySelector("span").innerText = selectedOption;
+      options.querySelectorAll(".custom-option").forEach((option) => {
+        option.classList.remove("selected");
+      });
+      e.target.classList.add("selected");
+      options.classList.remove("open");
+      trigger.classList.remove("active");
+      arrow.classList.remove("arrow-rotate");
+    }
+  });
+
+  document.addEventListener("click", function (e) {
+    if (!customSelect.contains(e.target)) {
+      options.classList.remove("open");
+      arrow.classList.remove("arrow-rotate");
+      trigger.classList.remove("active");
     }
   });
 }

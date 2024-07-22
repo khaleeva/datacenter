@@ -156,10 +156,10 @@
     justify-content: center;
     align-items: center;
     border-radius: 32px;
-    background: $Surface-Gray-Shades-Translucent-Brand-S;
+    background-color: $Surface-Gray-Shades-Translucent-Brand-S;
 
     &:hover {
-      background: #1914FE4D;
+      background-color: #1914FE4D;
     }
   }
 }

@@ -15,6 +15,7 @@
     justify-content: center;
     padding-top: 115px;
     padding-bottom: 80px;
+    height: 100vh;
 
 
     & > h1 {
@@ -49,6 +50,9 @@
     & > .custom-button-brand {
       height: 64px;
     }
+  }
+
+  &__custom-calculator{
   }
 
   &__calculator {
@@ -96,13 +100,20 @@
       align-items: center;
       gap: 60px;
       width: 100%;
+
+      &.background{
+        gap: 50px;
+        border-radius: 24px;
+        background: rgba(25, 20, 254, 0.05);
+        padding: 16px;
+      }
     }
   }
 
   &__advantages{
     height: 100%;
     min-height: 1071px;
-    padding-top: 320px;
+    padding-top: 80px;
     background-image: url("./../../../img/vps/Elipse-right.svg");
     background-repeat: no-repeat;
     background-position: center right;
@@ -110,15 +121,70 @@
   }
 
   &__company{
-    padding-top: 360px;
+    padding-top: 80px;
+
+    &-blocks{
+      display: flex;
+      flex-wrap: wrap;
+      padding: 60px 0;
+      width: 100%;
+      gap:24px;
+
+      & > .vps__block{
+        display: flex;
+        flex-direction: column;
+        width: 422px;
+        height: 422px;
+        justify-content: center;
+        align-items: center;
+        padding: 130px 75px;
+        border-radius: 422px;
+        border: 1px solid rgba(0, 0, 0, 0.10);
+        background: #FFF;
+        box-shadow: 0 0 64px 4px rgba(100, 122, 141, 0.20) inset;
+
+        & > p:first-child{
+          color: rgba(0, 0, 0, 0.90);
+          text-align: center;
+          font-variant-numeric: lining-nums proportional-nums;
+          font-size: 100px;
+          font-style: normal;
+          font-weight: 900;
+          line-height: 110%;
+          letter-spacing: -2px;
+        }
+        & > p:last-child{
+          color: #808080;
+          text-align: center;
+          font-variant-numeric: lining-nums proportional-nums;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 24px;
+          letter-spacing: -0.36px;
+        }
+
+        &_active{
+          box-shadow: 0 0 64px 4px #EAE9FF inset;
+        }
+
+      }
+    }
+  }
+
+  &__partners{
+    height: 200px;
+    & > *{
+      filter: grayscale(100%);
+    }
   }
 
   &__faq{
-    padding-top: 360px;
+    padding-top: 80px;
   }
 
   &__form{
-    padding-top: 220px;
+    padding-top: 80px;
     background-image: url("./../../../img/vps/Elipse-left.svg");
     background-repeat: no-repeat;
     background-position: center left;
@@ -159,4 +225,31 @@
       margin-bottom: 60px;
     }
   }
+
+  .swiper {
+    height: 100%;
+
+    .swiper-wrapper{
+     height: 100%;
+
+      .slick-list{
+        height: 100%;
+
+        .slick-track{
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  .slick-slide{
+    width: 200px !important;
+    height: 200px !important;
+    flex-shrink: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+  }
 }
+
+
