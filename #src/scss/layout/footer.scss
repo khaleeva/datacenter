@@ -89,7 +89,7 @@
 
   &__title {
     color: #FFF;
-    font-variant-numeric: lining-nums proportional-nums;
+
     font-size: 24px;
     font-style: normal;
     font-weight: 600;
@@ -100,7 +100,7 @@
 
   .footer__text {
     color: rgba(255, 255, 255, 0.80);
-    font-variant-numeric: lining-nums proportional-nums;
+
     @include font($style: normal, $weight: 400, $size: 12px, $height: 16px);
     letter-spacing: -0.24px;
   }

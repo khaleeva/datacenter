@@ -17,27 +17,31 @@
     padding-bottom: 80px;
     height: 100vh;
 
+    @media (max-width: 1024px) {
+      padding-top: 0;
+    }
+
 
     & > h1 {
       color: rgba(0, 0, 0, 0.80);
       text-align: center;
-      font-variant-numeric: lining-nums proportional-nums;
-      font-size: 120px;
-      font-style: normal;
-      font-weight: 600;
-      line-height: 100%;
+      @include font($weight: 600, $size: 120px, $height: 100%);
       letter-spacing: -2.4px;
       margin-bottom: 16px;
+
+      @media (max-width: 1024px) {
+        @include font($weight: 600, $size: 70px, $height: 100%);
+      }
+
+      @media (max-width:640px) {
+        @include font($weight: 600, $size: 40px, $height: 100%);
+      }
     }
 
     & > p {
       color: #808080;
       text-align: center;
-      font-variant-numeric: lining-nums proportional-nums;
-      font-size: 18px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 24px;
+      @include font($weight: 400, $size: 18px, $height: 24px);
       letter-spacing: -0.36px;
       margin-bottom: 40px;
 
@@ -52,8 +56,12 @@
     }
   }
 
-  &__custom-calculator{
+  &__custom-calculator {
     padding-top: 100px;
+
+    @media (max-width: 1024px) {
+      padding-top: 80px;
+    }
   }
 
   &__calculator {
@@ -66,32 +74,35 @@
     border: 1px solid rgba(0, 0, 0, 0.05);
     background: rgba(0, 0, 0, 0.05);
 
+
+    @media (max-width: 640px) {
+      padding: 16px;
+    }
+
     &-total {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap:4px;
-      &-title{
+      gap: 4px;
+
+      &-title {
         color: #808080;
         text-align: center;
-        font-variant-numeric: lining-nums proportional-nums;
-        font-size: 18px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 24px;
+        @include font($weight: 400, $size: 18px, $height: 24px);
         letter-spacing: -0.36px;
       }
+
       color: #1A1A1A;
       text-align: center;
-      font-variant-numeric: lining-nums proportional-nums;
-      font-size: 32px;
-      font-style: normal;
-      font-weight: 600;
-      line-height: 40px;
+      @include font($weight: 600, $size: 32px, $height: 40px);
       letter-spacing: -0.64px;
+
+      @media (max-width: 640px) {
+        @include font($weight: 600, $size: 28px, $height: 36px);
+      }
     }
 
-    & > .custom-button-brand{
+    & > .custom-button-brand {
       height: 48px;
     }
 
@@ -102,44 +113,83 @@
       gap: 60px;
       width: 100%;
 
-      &.background{
+      @media (max-width: 1024px) {
+        justify-content: center;
+
+          &:after{
+            content: '';
+            display: block;
+            flex-basis: 45%;
+            height: 52px;
+          }
+
+        & > *{
+          flex-basis: 45%;
+        }
+      }
+
+
+      @media (max-width: 640px) {
+        flex-direction: column;
+        flex-wrap: nowrap;
+
+        & > *{
+          flex-basis: 100%;
+        }
+      }
+
+
+
+      &.background {
         gap: 50px;
         border-radius: 24px;
         background: rgba(25, 20, 254, 0.05);
         padding: 16px;
+
+        @media (max-width: 1024px) {
+         justify-content: center;
+        }
+
+        @media (max-width: 640px) {
+
+        }
       }
     }
   }
 
-  &__advantages{
+  &__advantages {
     height: 100%;
     min-height: 1071px;
-    padding-top: 80px;
+    padding-top: 260px;
     background-image: url("./../../../img/vps/Elipse-right.svg");
     background-repeat: no-repeat;
     background-position: center right;
     background-size: contain;
 
-    &-section{
+    &-section {
       margin: 60px 0;
       width: 100%;
       display: flex;
       gap: 64px;
+
+      @media (max-width: 1024px) {
+        flex-direction: column;
+      }
     }
 
-    &-column{
+    &-column {
       display: flex;
       flex-direction: column;
       gap: 64px;
       flex-basis: 50%;
     }
 
-    &-items{
-     display: flex;
+    &-items {
+      display: flex;
       flex-direction: column;
       gap: 24px;
 
-      & > .line{
+      & > .line {
         display: inline-block;
         height: 1px;
         width: 100%;
@@ -147,38 +197,38 @@
       }
     }
 
-    &-item{
+    &-item {
       display: flex;
       align-items: center;
       justify-content: space-between;
 
-      & > h4{
+
+      & > h4 {
         color: #1A1A1A;
-        font-variant-numeric: lining-nums proportional-nums;
-        font-size: 28px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 100%;
+        @include font($weight: 400, $size: 28px, $height: 100%);
         letter-spacing: -0.56px;
       }
 
-      & > span{
+      & > span {
         color: #808080;
-        font-variant-numeric: lining-nums proportional-nums;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 20px;
+        @include font($weight: 400, $size: 16px, $height: 20px);
         letter-spacing: -0.32px;
       }
 
+      @media (max-width: 640px) {
+        &:last-child{
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
 
 
       & > div {
         display: flex;
         flex-direction: column;
         gap: 4px;
-        & > p{
+
+        & > p {
           display: flex;
           padding: 2px 8px;
           justify-content: center;
@@ -187,28 +237,33 @@
           border-radius: 6px;
           background: rgba(100, 122, 141, 0.05);
           color: #5C6F81;
-          font-variant-numeric: lining-nums proportional-nums;
-          font-size: 14px;
-          font-style: normal;
-          font-weight: 400;
-          line-height: 18px;
+          @include font($weight: 400, $size: 14px, $height: 18px);
           letter-spacing: -0.28px;
         }
       }
     }
   }
 
-  &__company{
-    padding-top: 80px;
+  &__company {
+    padding-top: 260px;
 
-    &-blocks{
+    &-blocks {
       display: flex;
       flex-wrap: wrap;
       padding: 60px 0;
       width: 100%;
-      gap:24px;
+      gap: 24px;
 
-      & > .vps__block{
+      @media (max-width: 1024px) {
+       justify-content: center;
+      }
+
+      @media (max-width: 768px) {
+       gap:16px;
+      }
+
+
+      & > .vps__block {
         display: flex;
         flex-direction: column;
         width: 422px;
@@ -221,28 +276,34 @@
         background: #FFF;
         box-shadow: 0 0 64px 4px rgba(100, 122, 141, 0.20) inset;
 
-        & > p:first-child{
+
+        @media (max-width: 1024px) {
+          width: 365px;
+          height: 365px;
+        }
+
+        @media (max-width: 768px) {
+          width: 356px;
+          height: 356px;
+        }
+
+        & > p:first-child {
           color: rgba(0, 0, 0, 0.90);
           text-align: center;
-          font-variant-numeric: lining-nums proportional-nums;
-          font-size: 100px;
-          font-style: normal;
-          font-weight: 900;
-          line-height: 110%;
+
+          @include font($weight: 900, $size: 100px, $height: 110%);
           letter-spacing: -2px;
         }
-        & > p:last-child{
+
+        & > p:last-child {
           color: #808080;
           text-align: center;
-          font-variant-numeric: lining-nums proportional-nums;
-          font-size: 18px;
-          font-style: normal;
-          font-weight: 400;
-          line-height: 24px;
+
+          @include font($weight: 400, $size: 18px, $height: 24px);
           letter-spacing: -0.36px;
         }
 
-        &_active{
+        &_active {
           box-shadow: 0 0 64px 4px #EAE9FF inset;
         }
 
@@ -250,18 +311,19 @@
     }
   }
 
-  &__partners{
+  &__partners {
     height: 200px;
-    & > *{
+
+    & > * {
       filter: grayscale(100%);
     }
   }
 
-  &__faq{
+  &__faq {
     padding-top: 80px;
   }
 
-  &__form{
+  &__form {
     padding-top: 80px;
     background-image: url("./../../../img/vps/Elipse-left.svg");
     background-repeat: no-repeat;
@@ -269,58 +331,64 @@
     background-size: contain;
   }
 
-  &__section{
+  &__section {
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    & > h2{
+    & > h2 {
       color: rgba(0, 0, 0, 0.90);
       text-align: center;
-      font-variant-numeric: lining-nums proportional-nums;
-      font-size: 80px;
-      font-style: normal;
-      font-weight: 500;
-      line-height: 100%;
+
+      @include font($weight: 500, $size: 80px, $height: 100%);
       letter-spacing: -1.6px;
       margin-bottom: 16px;
 
-      & > span{
-      color: rgba(0, 0, 0, 0.30);
+      @media (max-width: 1024px) {
+        @include font($weight: 500, $size: 60px, $height: 100%);
+      }
+
+      @media (max-width: 640px) {
+        @include font($weight: 600, $size: 24px, $height: 28px);
+      }
+
+      & > span {
+        color: rgba(0, 0, 0, 0.30);
       }
     }
 
-    & > p{
+    & > p {
       max-width: 1100px;
       color: #808080;
       text-align: center;
-      font-variant-numeric: lining-nums proportional-nums;
-      font-size: 18px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 24px;
+
+      @include font($weight: 400, $size: 18px, $height: 24px);
       letter-spacing: -0.36px;
       margin-bottom: 60px;
+
+      @media (max-width: 640px) {
+        @include font($weight: 400, $size: 12px, $height: 16px);
+      }
     }
   }
 
   .swiper {
     height: 100%;
 
-    .swiper-wrapper{
-     height: 100%;
+    .swiper-wrapper {
+      height: 100%;
 
-      .slick-list{
+      .slick-list {
         height: 100%;
 
-        .slick-track{
+        .slick-track {
           height: 100%;
         }
       }
     }
   }
 
-  .slick-slide{
+  .slick-slide {
     width: 200px !important;
     height: 200px !important;
     flex-shrink: 0;

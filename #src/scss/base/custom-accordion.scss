@@ -19,11 +19,7 @@
   align-items: center;
   gap: 14.9rem;
   color: rgba(0, 0, 0, 0.30);
-  font-variant-numeric: lining-nums proportional-nums;
-  font-size: 40px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 48px;
+  @include font($weight: 600, $size: 48px, $height: 48px);
   letter-spacing: -0.8px;
   text-align: left;
   padding: 34px 0;
@@ -34,6 +30,18 @@
   text-decoration: none;
   margin: 0;
   border: 0;
+
+  @media (max-width: 1024px) {
+    @include font($weight: 600, $size: 32px, $height: 40px);
+  }
+
+  @media (max-width: 640px) {
+    @include font($weight: 600, $size: 18px, $height: 24px);
+
+    & > p{
+      max-width: 290px;
+    }
+  }
 }
 
 
@@ -55,6 +63,12 @@
   top: 50%;
   right: 0;
   transform: translateY(-50%);
+
+  @media (max-width: 640px) {
+    width: 20px;
+    height: 20px;
+    border-radius: 6px;
+  }
 }
 
 
@@ -67,13 +81,8 @@
   transition-property: height, visibility;
   transition-timing-function: ease;
   color: rgba(0, 0, 0, 0.80);
-  font-variant-numeric: lining-nums proportional-nums;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 24px;
+  @include font($weight: 400, $size: 18px, $height: 24px);
   letter-spacing: -0.36px;
-
 
   & > p, ul{
     margin-bottom: 8px;
@@ -120,6 +129,12 @@
   right: 0;
   top: 50%;
   transform: translateY(-50%);
+
+  @media (max-width: 640px) {
+    width: 20px;
+    height: 20px;
+    border-radius: 6px;
+  }
 }
 
 
