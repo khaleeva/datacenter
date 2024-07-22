@@ -53,6 +53,7 @@
   }
 
   &__custom-calculator{
+    padding-top: 100px;
   }
 
   &__calculator {
@@ -118,6 +119,83 @@
     background-repeat: no-repeat;
     background-position: center right;
     background-size: contain;
+
+    &-section{
+      margin: 60px 0;
+      width: 100%;
+      display: flex;
+      gap: 64px;
+    }
+
+    &-column{
+      display: flex;
+      flex-direction: column;
+      gap: 64px;
+      flex-basis: 50%;
+    }
+
+    &-items{
+     display: flex;
+      flex-direction: column;
+      gap: 24px;
+
+      & > .line{
+        display: inline-block;
+        height: 1px;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.15);
+      }
+    }
+
+    &-item{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      & > h4{
+        color: #1A1A1A;
+        font-variant-numeric: lining-nums proportional-nums;
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 100%;
+        letter-spacing: -0.56px;
+      }
+
+      & > span{
+        color: #808080;
+        font-variant-numeric: lining-nums proportional-nums;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px;
+        letter-spacing: -0.32px;
+      }
+
+
+
+      & > div {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        & > p{
+          display: flex;
+          padding: 2px 8px;
+          justify-content: center;
+          align-items: center;
+          gap: 6px;
+          border-radius: 6px;
+          background: rgba(100, 122, 141, 0.05);
+          color: #5C6F81;
+          font-variant-numeric: lining-nums proportional-nums;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 18px;
+          letter-spacing: -0.28px;
+        }
+      }
+    }
   }
 
   &__company{
