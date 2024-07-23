@@ -6,7 +6,7 @@ async function getDataFromBillmng() {
   const url = `https://my.datahata.by/billmgr?func=pricelist.export&elid=1&out=json&onlyavailable=on`;
   try {
     const vps_calculator = document.querySelector(".vps__calculator");
-    vps_calculator.innerHTML = loader
+    vps_calculator.innerHTML = loader;
     const response = await fetch(url);
     return await response.json();
   } catch (e) {
@@ -14,11 +14,12 @@ async function getDataFromBillmng() {
   } finally {
     const vps_calculator = document.querySelector(".vps__calculator");
     vps_calculator.innerHTML = "";
-    console.log("Finally");
   }
 }
 
 let vps_state = {};
+
+let baseSum = 0;
 
 document.addEventListener("DOMContentLoaded", async () => {
   const vps_calculator = document.querySelector(".vps__calculator");
@@ -29,6 +30,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     const vps = typeOfService.filter((i) => i.itemtype["$"] === "3");
     const vps_addons = vps[0].addon;
 
+    baseSum = Number(vps[0].price.period[0]['$cost'])
+
     const dataForRange = getDataForRange(vps_addons);
     const dataSelectForTab = getDataSelectForTabs(vps_addons);
     const dataBooleanForTab = getDataBooleanForTabs(vps_addons);
@@ -36,16 +39,17 @@ document.addEventListener("DOMContentLoaded", async () => {
       (i) => i.id["$"] == "106",
     ).itemtypeparamvalue;
 
+
     dataForRange.forEach((addon) => {
       initValue(
-        getVPSAddonName[addon.name_ru["$"]],
-        addon.id["$"],
-        getMinValue(addon.name_ru["$"], addon.addonmin["$"]),
-        Number(addon.price.period[0]["$cost"]),
+          getVPSAddonName[addon.name_ru["$"]],
+          addon.id["$"],
+          getMinValue(addon.name_ru["$"], addon.addonmin["$"]),
+          0,
       );
     });
 
-    initValue("os", dataForSelect[0].id["$"], dataForSelect[0].id["$"], null);
+    initValue("os", dataForSelect[0].id["$"], dataForSelect[0].id["$"], 0);
 
     initValue("service", 0, 1, 0);
 
@@ -68,6 +72,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         Number(addon.price.period[0]["$cost"]),
       );
     });
+
+    console.log(vps_state);
 
     const innerHTMLRanges = generateCustomVpsRange(dataForRange);
     const innerHTMLSelectTabs = generateCustomVpsTabs(dataSelectForTab);
@@ -141,7 +147,6 @@ function initValue(name, id, value, price) {
 
 function updateTotalCost() {
   const total_cost = document.querySelector(".vps__calculator-total");
-
   total_cost.innerHTML = `<p class="vps__calculator-total-title">Итоговая цена виртуального сервера</p><p>${getTotalSum()} BYN/месяц</p>`;
 }
 
@@ -152,10 +157,9 @@ function getTotalSum() {
       total += vps_state[key].price;
     }
   }
-
-  console.log(vps_state);
-  return total.toFixed(2) * vps_state["service"].value;
+  return (((total + baseSum) * 1.2) * vps_state["service"].value).toFixed(2);
 }
+
 
 function generateInputsContainer(innerHTML, className) {
   const div = document.createElement("div");
