@@ -13,13 +13,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-top: 115px;
-    padding-bottom: 80px;
-    height: 100vh;
-
-    @media (max-width: 1024px) {
-      padding-top: 0;
-    }
+    padding-top: 115px !important;
+    padding-bottom: 80px !important;
 
 
     & > h1 {
@@ -76,7 +71,7 @@
 
 
     @media (max-width: 640px) {
-      padding: 16px;
+      padding: 32px 16px;
     }
 
     &-total {
@@ -164,6 +159,10 @@
     background-repeat: no-repeat;
     background-position: center right;
     background-size: contain;
+
+    @media (max-width: 1024px) {
+      padding-top: 100px;
+    }
 
     &-btn {
       margin-top: 60px;
@@ -261,6 +260,10 @@
   &__company {
     padding-top: 260px;
 
+    @media (max-width: 1024px) {
+      padding-top: 100px;
+    }
+
     &-blocks {
       display: flex;
       flex-wrap: wrap;
@@ -334,15 +337,25 @@
   }
 
   &__faq {
-    padding-top: 80px;
+    padding-top: 260px;
+
+    @media (max-width: 1024px) {
+      padding-top: 100px;
+    }
   }
 
   &__form {
-    padding-top: 80px;
+    padding-top: 260px;
+    padding-bottom: 200px;
     background-image: url("./../../../img/vps/Elipse-left.svg");
     background-repeat: no-repeat;
     background-position: center left;
     background-size: contain;
+
+    @media (max-width: 1024px) {
+      padding-top: 100px;
+      padding-bottom: 80px;
+    }
   }
 
   &__section {
