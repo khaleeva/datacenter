@@ -5,11 +5,15 @@ const addToBasket = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="
 async function getDataFromBillmng() {
   const url = `https://my.datahata.by/billmgr?func=pricelist.export&elid=1&out=json&onlyavailable=on`;
   try {
+    const vps_calculator = document.querySelector(".vps__calculator");
+    vps_calculator.innerHTML = loader
     const response = await fetch(url);
     return await response.json();
   } catch (e) {
     console.error(e);
   } finally {
+    const vps_calculator = document.querySelector(".vps__calculator");
+    vps_calculator.innerHTML = "";
     console.log("Finally");
   }
 }
