@@ -85,11 +85,6 @@ function generateCustomVpsTabs(data) {
 }
 
 function generateCustomTab(data, name) {
-
-  console.log(data, 'hjg')
-
-
-
   if (data.enumeration && data.enumeration.length > 0) {
     return data.enumeration[1].enumerationitem
       .reverse()
@@ -116,7 +111,6 @@ function generateCustomTab(data, name) {
 }
 
 function generateCustomSelect(data) {
-  console.log(data, 'select')
   const options = data
     .map(
       (d, index) =>

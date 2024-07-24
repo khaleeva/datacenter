@@ -665,7 +665,5 @@ if (acc) {
 			window.Accordion = Accordion
 		}
 	})(window)
-
-	console.log('jgfjhgj')
 	new Accordion('.custom-accordion')
 }

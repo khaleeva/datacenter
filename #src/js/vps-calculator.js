@@ -152,10 +152,7 @@ function initValue(name, id, value, price) {
   };
 
   const params = generateUrlParams(vps_state);
-  console.log(params, "params");
   vps_order_url = `https://my.datahata.by?func=register&redirect=startpage%3Dvds%26startform%3Dvds%252Eorder%252Eparam%26pricelist%3D2187%26period%3D1%26project%3D1%${params}`;
-
-  console.log(vps_order_url);
 }
 
 function updateTotalCost() {
@@ -188,8 +185,9 @@ function generateUrlParams(state) {
       : `26addon_2198%3D81`;
 
   const os = state.os ? `26ostempl%3D${state.os.id}` : "";
+  const service = state.service ? `26addon_${state.service.id}%3D${state.service.value}` : "";
 
-  return `${ram}%${cpu}%${ip4}%${port}%${space}%${backup}%${panel}%${support}%${ipv6subnet_prefix}%${os}`;
+  return `${ram}%${cpu}%${ip4}%${port}%${space}%${backup}%${panel}%${support}%${ipv6subnet_prefix}%${service}%${os}`;
 }
 
 function getTotalSum() {
@@ -279,8 +277,6 @@ function changeCustomTab() {
         price: +Number(price).toFixed(2),
       };
 
-      console.log(vps_state);
-
       updateTotalCost();
 
       groupInputs.forEach((groupInput) => {
@@ -366,9 +362,7 @@ function selectOption() {
     if (e.target.classList.contains("custom-option")) {
       const id = e.target.getAttribute("data-value");
       vps_state["os"] = { id, value: 0, price: 0 };
-      console.log(vps_state);
       const selectedOption = e.target.innerText;
-      console.log(vps_state);
       trigger.querySelector("span").innerText = selectedOption;
       options.querySelectorAll(".custom-option").forEach((option) => {
         option.classList.remove("selected");
