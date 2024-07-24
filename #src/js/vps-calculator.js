@@ -18,8 +18,8 @@ async function getDataFromBillmng() {
 }
 
 let vps_state = {};
-
 let baseSum = 0;
+let vps_order_url = "";
 
 document.addEventListener("DOMContentLoaded", async () => {
   const vps_calculator = document.querySelector(".vps__calculator");
@@ -30,7 +30,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     const vps = typeOfService.filter((i) => i.itemtype["$"] === "3");
     const vps_addons = vps[0].addon;
 
-    baseSum = Number(vps[0].price.period[0]['$cost'])
+    baseSum = Number(vps[0].price.period[0]["$cost"]);
+
+    console.log(vps);
 
     const dataForRange = getDataForRange(vps_addons);
     const dataSelectForTab = getDataSelectForTabs(vps_addons);
@@ -39,26 +41,25 @@ document.addEventListener("DOMContentLoaded", async () => {
       (i) => i.id["$"] == "106",
     ).itemtypeparamvalue;
 
-
     dataForRange.forEach((addon) => {
       initValue(
-          getVPSAddonName[addon.name_ru["$"]],
-          addon.id["$"],
-          getMinValue(addon.name_ru["$"], addon.addonmin["$"]),
-          0,
+        getVPSAddonName[addon.name_ru["$"]],
+        addon.id["$"],
+        getMinValue(addon.name_ru["$"], addon.addonmin["$"]),
+        0,
       );
     });
 
-    initValue("os", dataForSelect[0].id["$"], dataForSelect[0].id["$"], 0);
+    initValue("os", dataForSelect[0].intname["$"], 0, 0);
 
-    initValue("service", 0, 1, 0);
+    initValue("service", vps[0].id["$"], 1, 0);
 
     dataSelectForTab.forEach((addon) => {
       addon.enumeration[1].enumerationitem.forEach((d) =>
         initValue(
           addon.intname["$"],
           d.id["$"],
-          d.id["$"],
+          "on",
           Number(d.price.period[0]["$cost"]),
         ),
       );
@@ -68,7 +69,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       initValue(
         "support",
         addon.id["$"],
-        true,
+        "on",
         Number(addon.price.period[0]["$cost"]),
       );
     });
@@ -126,6 +127,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     );
     order_button.innerHTML = `Добавить в коризну ${addToBasket}`;
 
+    if (order_button) {
+      order_button.addEventListener("click", () => {
+        window.open(vps_order_url, "_blank");
+      });
+    }
+
     vps_calculator.append(tabs);
     vps_calculator.append(ranges);
     vps_calculator.append(total_cost);
@@ -143,11 +150,46 @@ function initValue(name, id, value, price) {
     price,
     value,
   };
+
+  const params = generateUrlParams(vps_state);
+  console.log(params, "params");
+  vps_order_url = `https://my.datahata.by?func=register&redirect=startpage%3Dvds%26startform%3Dvds%252Eorder%252Eparam%26pricelist%3D2187%26period%3D1%26project%3D1%${params}`;
+
+  console.log(vps_order_url);
 }
 
 function updateTotalCost() {
   const total_cost = document.querySelector(".vps__calculator-total");
   total_cost.innerHTML = `<p class="vps__calculator-total-title">Итоговая цена виртуального сервера</p><p>${getTotalSum()} BYN/месяц</p>`;
+}
+
+function generateUrlParams(state) {
+  const ram = state.ram ? `26addon_${state.ram.id}%3D${state.ram.value}` : "";
+  const cpu = state.cpu ? `26addon_${state.cpu.id}%3D${state.cpu.value}` : "";
+  const ip4 = state.ip4 ? `26addon_${state.ip4.id}%3D${state.ip4.value}` : "";
+  const port = state.port
+    ? `26addon_${state.port.id}%3D${state.port.value}`
+    : "";
+  const space = state.space
+    ? `26addon_${state.space.id}%3D${state.space.value}`
+    : "";
+  const backup = state.backup
+    ? state.backup.value === 0
+      ? `26addon_2208%3D2210`
+      : `26addon_2208%26addon_${state.backup.id}%3D${state.backup.value}`
+    : "";
+  const panel = state.panel ? `26addon_2190%3D${state.panel.id}` : "";
+  const support = state.support
+    ? `26addon_${state.support.id}%3D${state.support.value}`
+    : "";
+  const ipv6subnet_prefix =
+    state.ipv6subnet_prefix && state.ipv6subnet_prefix.id !== "ipv6"
+      ? `26addon_2198%3D${state.ipv6subnet_prefix.id}`
+      : `26addon_2198%3D81`;
+
+  const os = state.os ? `26ostempl%3D${state.os.id}` : "";
+
+  return `${ram}%${cpu}%${ip4}%${port}%${space}%${backup}%${panel}%${support}%${ipv6subnet_prefix}%${os}`;
 }
 
 function getTotalSum() {
@@ -157,9 +199,10 @@ function getTotalSum() {
       total += vps_state[key].price;
     }
   }
-  return (((total + baseSum) * 1.2) * vps_state["service"].value).toFixed(2);
+  const params = generateUrlParams(vps_state);
+  vps_order_url = `https://my.datahata.by?func=register&redirect=startpage%3Dvds%26startform%3Dvds%252Eorder%252Eparam%26pricelist%3D2187%26period%3D1%26project%3D1%${params}`;
+  return ((total + baseSum) * 1.2 * vps_state["service"].value).toFixed(2);
 }
-
 
 function generateInputsContainer(innerHTML, className) {
   const div = document.createElement("div");
@@ -235,6 +278,8 @@ function changeCustomTab() {
         value: input.value,
         price: +Number(price).toFixed(2),
       };
+
+      console.log(vps_state);
 
       updateTotalCost();
 
@@ -320,7 +365,8 @@ function selectOption() {
   options.addEventListener("click", function (e) {
     if (e.target.classList.contains("custom-option")) {
       const id = e.target.getAttribute("data-value");
-      vps_state["os"] = { id, value: id, price: null };
+      vps_state["os"] = { id, value: 0, price: 0 };
+      console.log(vps_state);
       const selectedOption = e.target.innerText;
       console.log(vps_state);
       trigger.querySelector("span").innerText = selectedOption;

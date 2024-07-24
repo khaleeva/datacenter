@@ -73,7 +73,7 @@ function generateCustomVpsTabs(data) {
                           d.intname["$"] === "ipv6subnet_prefix"
                             ? `<div class="custom-tabs__tab">
      			            <label for='ipv6'>Нет
-     			                <input type="radio" data-value=${0} data-name="ipv6subnet_prefix" name=${d.id["$"]} id='ipv6' value=${null} />
+     			                <input type="radio" data-value=${0} data-name="ipv6subnet_prefix" name=${d.id["$"]} id='ipv6' value='off' />
      			            </label>
  			            </div>`
                             : ""
@@ -85,6 +85,11 @@ function generateCustomVpsTabs(data) {
 }
 
 function generateCustomTab(data, name) {
+
+  console.log(data, 'hjg')
+
+
+
   if (data.enumeration && data.enumeration.length > 0) {
     return data.enumeration[1].enumerationitem
       .reverse()
@@ -98,23 +103,24 @@ function generateCustomTab(data, name) {
       .join("");
   } else {
     return `<div class="custom-tabs__tab">
-                 <label for='support-active'>Включена
-                     <input type="radio" data-value=${data.price.period[0]["$cost"]} data-name="support" name=${data.id["$"]} id='support-active' value=${true} />
+                 <label for='support-active'>Включенo
+                     <input type="radio" data-value=${data.price.period[0]["$cost"]} data-name="support" name=${data.id["$"]} id='support-active' value='on' />
                  </label>
              </div>
              <div class="custom-tabs__tab">
                  <label for='support-inactive'>Нет
-                     <input type="radio" data-value=${0} data-name="support" name=${data.id["$"]} id='support-inactive' value=${false} />
+                     <input type="radio" data-value=${0} data-name="support" name=${data.id["$"]} id='support-inactive' value='off' />
                  </label>
              </div>`;
   }
 }
 
 function generateCustomSelect(data) {
+  console.log(data, 'select')
   const options = data
     .map(
       (d, index) =>
-        `<span class='custom-option ${index === 0 ? 'selected' : ''}' data-value=${d.id['$']}>${d.name["$"]}</span>`,
+        `<span class='custom-option ${index === 0 ? 'selected' : ''}' data-value=${d.intname['$']}>${d.name["$"]}</span>`,
     )
     .join("");
 
