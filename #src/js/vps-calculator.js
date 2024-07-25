@@ -185,7 +185,7 @@ function generateUrlParams(state) {
       : `26addon_2198%3D81`;
 
   const os = state.os ? `26ostempl%3D${state.os.id}` : "";
-  const service = state.service ? `26addon_${state.service.id}%3D${state.service.value}` : "";
+  const service = state.service ? `26order_count%3D${state.service.value}` : "";
 
   return `${ram}%${cpu}%${ip4}%${port}%${space}%${backup}%${panel}%${support}%${ipv6subnet_prefix}%${service}%${os}`;
 }
