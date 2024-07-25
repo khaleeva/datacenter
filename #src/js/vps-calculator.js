@@ -1,4 +1,3 @@
-
 async function getDataFromBillmng() {
   const url = `https://my.datahata.by/billmgr?func=pricelist.export&elid=1&out=json&onlyavailable=on`;
   try {
@@ -166,7 +165,7 @@ function generateUrlParams(state) {
   const backup = state.backup
     ? state.backup.value === 0
       ? `26addon_2208%3D2210`
-      : `26addon_2208%26addon_${state.backup.id}%3D${state.backup.value}`
+      : `26addon_2208%3D${state.backup.id}%26addon_${state.backup.id}%3D${state.backup.value}`
     : "";
   const panel = state.panel ? `26addon_2190%3D${state.panel.id}` : "";
   const support = state.support
@@ -292,18 +291,21 @@ function getValueFromRange(range) {
   const value = range.value;
   const min = range.min;
   const max = range.max;
+  const step = range.step;
 
   const price = range.getAttribute("data-value");
   const name = range.getAttribute("data-name");
 
   if (name !== "service") {
+    const additionalSteps = Math.floor((value - min) / step);
+    const calculatedPrice = additionalSteps * price;
     vps_state[name] = {
       id: range.id,
-      price: +Number(price * range.value - price * range.min).toFixed(2),
-      value: range.value,
+      price: +Number(calculatedPrice).toFixed(2),
+      value: +range.value,
     };
   } else {
-    vps_state["service"] = { id: null, value: range.value, price: null };
+    vps_state["service"] = { id: null, value: +range.value, price: null };
   }
 
   updateTotalCost();
