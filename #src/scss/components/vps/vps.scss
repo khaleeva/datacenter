@@ -1,12 +1,10 @@
 .vps-page {
-  background-image: url("./../../../img/vps/Elipse.svg");
+  font-family: inter, sans-serif !important;
+  background-image: url("../img/vps/Elipse.svg");
   background-repeat: no-repeat;
 }
 
 .vps {
-
-  font-family: inter, sans-serif;
-
 
   &__promo {
     display: flex;
@@ -155,7 +153,7 @@
     height: 100%;
     min-height: 1071px;
     padding-top: 260px;
-    background-image: url("./../../../img/vps/Elipse-right.svg");
+    background-image: url("../img/vps/Elipse-right.svg");
     background-repeat: no-repeat;
     background-position: center right;
     background-size: contain;
@@ -166,6 +164,7 @@
 
     &-btn {
       margin-top: 60px;
+      height: 48px;
       align-self: center;
     }
 
@@ -202,15 +201,15 @@
       & > .line {
         display: inline-block;
         height: 1px;
+        flex-shrink: 0;
         width: 100%;
         background-color: rgba(0, 0, 0, 0.15);
       }
     }
 
     &-item {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       gap: 20px;
 
 
@@ -222,10 +221,17 @@
       }
 
       & > span {
+        max-width: 440px;
         color: #808080;
         @include font($weight: 400, $size: 16px, $height: 20px);
         letter-spacing: -0.32px;
         text-align: left;
+        align-self: flex-start;
+
+
+        //@media (max-width: 1800px) {
+        //  max-width: 300px;
+        //}
       }
 
       @media (max-width: 640px) {
@@ -239,9 +245,11 @@
       & > div:last-child {
         display: flex;
         flex-direction: column;
+        justify-content: flex-end;
         gap: 4px;
 
         & > p {
+          width: fit-content;
           display: flex;
           padding: 2px 8px;
           justify-content: center;
@@ -265,26 +273,35 @@
     }
 
     &-blocks {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr;
       padding: 60px 0;
       width: 100%;
       gap: 24px;
 
-      @media (max-width: 1024px) {
-        justify-content: center;
+      @media (max-width: 1890px) {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        justify-items: center;
       }
 
       @media (max-width: 768px) {
         gap: 16px;
       }
 
+      @media (max-width: 767px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+      }
+
 
       & > .vps__block {
         display: flex;
         flex-direction: column;
-        width: 422px;
+        width: 100%;
         height: 422px;
+
         justify-content: center;
         align-items: center;
         padding: 130px 75px;
@@ -292,12 +309,6 @@
         border: 1px solid rgba(0, 0, 0, 0.10);
         background: #FFF;
         box-shadow: 0 0 64px 4px rgba(100, 122, 141, 0.20) inset;
-
-
-        @media (max-width: 1024px) {
-          width: 365px;
-          height: 365px;
-        }
 
         @media (max-width: 768px) {
           width: 356px;
@@ -347,7 +358,7 @@
   &__form {
     padding-top: 260px;
     padding-bottom: 200px;
-    background-image: url("./../../../img/vps/Elipse-left.svg");
+    background-image: url("../img/vps/Elipse-left.svg");
     background-repeat: no-repeat;
     background-position: center left;
     background-size: contain;

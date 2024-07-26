@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			const setWidth = (deviceWidth) => {
 				let elemWidth = 0;
 				if (deviceWidth > 420) {
-					elemWidth = deviceWidth - 40;
+					elemWidth = deviceWidth - 60;
 				} else {
 					elemWidth = deviceWidth - 20;
 				}
