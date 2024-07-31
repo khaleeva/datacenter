@@ -44,8 +44,23 @@
       }
     }
 
-    & > .custom-button-brand {
-      height: 64px;
+    &-btns{
+      display: flex;
+      gap: 8px;
+
+      @media (max-width: 768px) {
+        flex-direction: column;
+      }
+
+
+      & > .custom-button-brand {
+        height: 64px;
+        width: 384px;
+
+        @media (max-width: 400px) {
+          width: 328px;
+        }
+      }
     }
   }
 
@@ -58,12 +73,17 @@
 
 
     .tariff {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
+      display: flex;
       gap: 24px;
+      @media (max-width: 1280px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+      }
 
-      @media (max-width: 1500px) {
+      @media (max-width: 1024px) {
+        display: grid;
         grid-template-columns: 1fr 1fr;
+        justify-items: center;
       }
 
       @media (max-width: 640px) {
@@ -105,10 +125,13 @@
         padding: 24px 20px;
         flex-direction: column;
         align-items: flex-start;
-        //gap: 80px;
         flex: 1 0 0;
         border-radius: 32px;
         height: 558px;
+        width: 100%;
+        max-width: 422px;
+
+
 
         &_light {
           border: 1px solid rgba(0, 0, 0, 0.10);
@@ -155,8 +178,12 @@
           font-size: 24px;
 
           & > span {
-            font-size: 80px;
+            font-size: 60px;
             font-weight: 700;
+
+            @media (max-width: 768px) {
+              font-size: 40px;
+            }
           }
         }
 
@@ -282,15 +309,38 @@
     background-position: center right;
     background-size: contain;
 
+
+    &-btns{
+      display: flex;
+      gap: 8px;
+      margin-top: 60px;
+      height: 48px;
+      align-self: center;
+
+      @media (max-width: 768px) {
+        flex-direction: column;
+      }
+
+
+      & > .custom-button-brand {
+        height: 64px;
+        width: 384px;
+
+        @media (max-width: 400px) {
+          width: 328px;
+        }
+      }
+    }
+
     @media (max-width: 1024px) {
       padding-top: 100px;
     }
 
-    &-btn {
-      margin-top: 60px;
-      height: 48px;
-      align-self: center;
-    }
+    //&-btn {
+    //  margin-top: 60px;
+    //  height: 48px;
+    //  align-self: center;
+    //}
 
     &-section {
       margin: 60px 0;
@@ -399,24 +449,22 @@
     &-blocks {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr;
-      grid-template-rows: 1fr;
+      justify-items: center;
       padding: 60px 0;
       width: 100%;
       gap: 24px;
 
       @media (max-width: 1890px) {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        justify-items: center;
+        gap: 16px;
+        //flex-wrap: wrap;
       }
 
-      @media (max-width: 768px) {
-        gap: 16px;
+      @media (max-width: 1295px) {
+        grid-template-columns: 1fr 1fr;
       }
 
       @media (max-width: 767px) {
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr;
       }
 
 
@@ -425,14 +473,33 @@
         flex-direction: column;
         width: 100%;
         height: 422px;
-
         justify-content: center;
         align-items: center;
-        padding: 130px 75px;
         border-radius: 422px;
         border: 1px solid rgba(0, 0, 0, 0.10);
         background: #FFF;
         box-shadow: 0 0 64px 4px rgba(100, 122, 141, 0.20) inset;
+
+
+        @media (max-width: 1890px) {
+          width: 320px;
+          height: 320px;
+        }
+
+        @media (max-width: 1400px) {
+          width: 300px;
+          height: 300px;
+        }
+
+        @media (max-width: 1295px) {
+          width: 422px;
+          height: 422px;
+        }
+
+        @media (max-width: 900px) {
+          width: 320px;
+          height: 320px;
+        }
 
         @media (max-width: 768px) {
           width: 356px;
@@ -450,6 +517,7 @@
         & > p:last-child {
           color: #808080;
           text-align: center;
+          max-width: 250px;
 
           @include font($weight: 400, $size: 18px, $height: 24px);
           letter-spacing: -0.36px;
