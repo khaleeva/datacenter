@@ -1,8 +1,6 @@
 function getPriceForAddon(value, min, step, price) {
   const additionalSteps = Math.floor((value - min) / step);
 
-  console.log(additionalSteps);
-
   const calculatedPrice = additionalSteps * price;
   return +Number(calculatedPrice).toFixed(2);
 }
@@ -207,7 +205,7 @@ function generateBlockDetail(type, totalPrice, link, ...state) {
                 <p style="color: ${type === "black" ? "rgba(0, 0, 0, 0.30)" : "rgba(255, 255, 255, 0.30)"}">за месяц</p>
             </div>
             <div class="tariff__card-characteristics">${paragraphs}</div>
-            <button class='custom-button-brand ${type === 'black' ? "custom-button-brand_brand-outlined" : "custom-button-brand_brand-shadow"}' style="margin-top: auto; height: 48px; " onclick="window.open('${link}', '_blank');">Заказать</button>
+            <button class='custom-button-brand ${type === "black" ? "custom-button-brand_brand-outlined" : "custom-button-brand_brand-shadow"}' style="margin-top: auto; height: 48px; " onclick="window.open('${link}', '_blank');">Заказать</button>
           `;
 }
 

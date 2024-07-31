@@ -119,11 +119,11 @@
         &_optima {
           border: 1px solid rgba(0, 0, 0, 0.10);
           background: #FFF;
-          box-shadow: 0 0 64px 4px rgba(25, 20, 254, 0.15) inset;
+          box-shadow: 0 0 64px 4px $Surface-Gray-Shades-Translucent-Brand-S inset;
         }
 
         &_best {
-          background: #1914FE;
+          background: $Surface-Gray-Shades-Brand-M;
           box-shadow: 0 0 64px 4px rgba(255, 255, 255, 0.90) inset;
 
           h2 {

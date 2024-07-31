@@ -32,7 +32,7 @@
 
   &.active{
     background: #E9EAF5;
-    border: 1px solid #1914FE;
+    border: 1px solid $Surface-Gray-Shades-Brand-M;
   }
 
 }
@@ -41,7 +41,7 @@
   fill: #1A1A1A;
   &.arrow-rotate{
     transform: rotate(180deg);
-    fill:#1914FE;
+    fill:$Surface-Gray-Shades-Brand-M;
   }
 }
 
@@ -81,5 +81,5 @@
 
 .custom-option:hover,
 .custom-option.selected {
-  color: #1914FE;
+  color: $Surface-Gray-Shades-Brand-M;
 }
