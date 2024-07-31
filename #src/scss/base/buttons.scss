@@ -113,12 +113,7 @@
     justify-content: center;
     align-items: center;
     border-radius: 32px;
-
-
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 24px;
+    @include font($size: 18px, $weight: 600, $height: 24px);
     letter-spacing: -0.36px;
     transition: all 0.2s;
     gap: 10px;
@@ -141,6 +136,25 @@
 
       &:hover {
         background: #1914FE4D;
+      }
+    }
+
+    &_brand-outlined{
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      background-color: transparent;
+
+      &:hover {
+        background: rgba(0, 0, 0, 0.05);
+      }
+    }
+
+    &_brand-shadow{
+      border: 1px solid rgba(255, 255, 255, 0.30);
+      background: #FFF;
+      box-shadow: 0 0 16px 4px rgba(0, 0, 0, 0.10) inset;
+
+      &:hover{
+        background: #E6E6E6;
       }
     }
 

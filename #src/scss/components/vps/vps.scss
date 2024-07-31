@@ -49,6 +49,146 @@
     }
   }
 
+  &__custom-tariffs {
+    padding-top: 100px;
+
+    @media (max-width: 1024px) {
+      padding-top: 80px;
+    }
+
+
+    .tariff {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 24px;
+
+      @media (max-width: 1500px) {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      @media (max-width: 640px) {
+        grid-template-columns: 1fr;
+      }
+
+      &__details {
+        width: 100%;
+        display: flex;
+        flex-grow: 1;
+
+
+        &_loader {
+          align-items: center;
+          justify-content: center;
+        }
+
+        &_best, &_max {
+          color: rgba(255, 255, 255, 0.90);
+        }
+      }
+
+
+      &__name {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        & > h2 {
+          @include font($weight: 400, $size: 18px, $height: 24px);
+          color: rgba(0, 0, 0, 0.90);
+          letter-spacing: -0.36px;
+        }
+
+      }
+
+      &__card {
+        display: flex;
+        padding: 24px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        //gap: 80px;
+        flex: 1 0 0;
+        border-radius: 32px;
+        height: 558px;
+
+        &_light {
+          border: 1px solid rgba(0, 0, 0, 0.10);
+          background: #FFF;
+          box-shadow: 0 0 64px 4px rgba(255, 255, 255, 0.90) inset;
+        }
+
+        &_optima {
+          border: 1px solid rgba(0, 0, 0, 0.10);
+          background: #FFF;
+          box-shadow: 0 0 64px 4px rgba(25, 20, 254, 0.15) inset;
+        }
+
+        &_best {
+          background: #1914FE;
+          box-shadow: 0 0 64px 4px rgba(255, 255, 255, 0.90) inset;
+
+          h2 {
+            color: rgba(255, 255, 255, 0.90);
+          }
+        }
+
+        &_max {
+          background: #000003;
+          box-shadow: 0 0 64px 4px rgba(255, 255, 255, 0.90) inset;
+
+          h2 {
+            color: rgba(255, 255, 255, 0.90);
+          }
+        }
+      }
+
+      &__card-detail {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        margin-top: 24px
+      }
+
+      &__card-cost {
+
+        & > p:first-child {
+          font-size: 24px;
+
+          & > span {
+            font-size: 80px;
+            font-weight: 700;
+          }
+        }
+
+        & > p:last-child{
+          font-size: 18px;
+        }
+      }
+
+      &__card-characteristics {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        & > div {
+          display: flex;
+          align-items: center;
+          gap: 6px;
+
+          & > div {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+
+            & > p:first-child {
+              font-weight: 600;
+            }
+          }
+        }
+      }
+    }
+  }
+
   &__custom-calculator {
     padding-top: 100px;
 
@@ -100,37 +240,24 @@
     }
 
     &-container {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
       gap: 60px;
       width: 100%;
 
-      @media (max-width: 1024px) {
-        justify-content: center;
 
-        &:after {
-          content: '';
-          display: block;
-          flex-basis: 45%;
-          height: 52px;
-        }
-
-        & > * {
-          flex-basis: 45%;
-        }
+      @media (max-width: 1830px) {
+        grid-template-columns: 1fr 1fr 1fr;
       }
 
-
-      @media (max-width: 640px) {
-        flex-direction: column;
-        flex-wrap: nowrap;
-
-        & > * {
-          flex-basis: 100%;
-        }
+      @media (max-width: 1460px) {
+        grid-template-columns: 1fr 1fr;
       }
 
+      @media (max-width: 715px) {
+        grid-template-columns: 1fr;
+        justify-items: center;
+      }
 
       &.background {
         gap: 50px;
@@ -138,12 +265,9 @@
         background: rgba(25, 20, 254, 0.05);
         padding: 16px;
 
-        @media (max-width: 1024px) {
+        @media (max-width: 715px) {
           justify-content: center;
-        }
-
-        @media (max-width: 640px) {
-
+          padding: 16px 8px;
         }
       }
     }

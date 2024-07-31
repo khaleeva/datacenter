@@ -1,5 +1,6 @@
 
 .custom-range {
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
@@ -33,11 +34,11 @@
 
   &__slider {
     position: relative;
-    width: 376px;
-
-    @media (max-width: 640px) {
-      width: 296px;
-    }
+    width: 100%;
+    //
+    //@media (max-width: 640px) {
+    //  width: 296px;
+    //}
 
     &-track {
       z-index: 1;

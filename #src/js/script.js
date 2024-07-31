@@ -18,6 +18,7 @@
 @@include('vps-helpers.js');
 @@include('renderVpsInputs.js');
 @@include('accordion.js');
+@@include('generateTariffCard.js');
 
 
 

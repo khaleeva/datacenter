@@ -1,14 +1,44 @@
 async function getDataFromBillmng() {
+  const vps_calculator = document.querySelector(".vps__calculator");
+  const tariffLight = document.querySelector("#light");
+  const tariffOptima = document.querySelector("#optima");
+  const tariffBest = document.querySelector("#best");
+  const tariffMax = document.querySelector("#max");
   const url = `https://my.datahata.by/billmgr?func=pricelist.export&elid=1&out=json&onlyavailable=on`;
   try {
-    const vps_calculator = document.querySelector(".vps__calculator");
     vps_calculator.innerHTML = loader;
+    tariffLight.classList.add('tariff__details_loader')
+    tariffOptima.classList.add('tariff__details_loader')
+    tariffBest.classList.add('tariff__details_loader')
+    tariffMax.classList.add('tariff__details_loader')
+    tariffLight.innerHTML = card_loader;
+    tariffOptima.innerHTML = card_loader;
+    tariffBest.innerHTML = card_loader;
+    tariffMax.innerHTML = card_loader;
     const response = await fetch(url);
-    return await response.json();
+    const data = await response.json();
+    if (data) {
+      const typeOfService = data.doc.pricelist;
+      const vps = typeOfService.filter((i) => i.itemtype["$"] === "3");
+      const vps_addons = vps[0].addon;
+      vps_calculator.innerHTML = "";
+
+      if (vps_addons) {
+        tariffLight.classList.remove('tariff__details_loader')
+        tariffOptima.classList.remove('tariff__details_loader')
+        tariffBest.classList.remove('tariff__details_loader')
+        tariffMax.classList.remove('tariff__details_loader')
+
+        tariffLight.innerHTML = generateTariffDetails(Number(vps[0].price.period[0]["$cost"]), vps_addons, 'light');
+        tariffOptima.innerHTML = generateTariffDetails(Number(vps[0].price.period[0]["$cost"]), vps_addons, 'optima');
+        tariffBest.innerHTML = generateTariffDetails(Number(vps[0].price.period[0]["$cost"]), vps_addons, 'best');
+        tariffMax.innerHTML = generateTariffDetails(Number(vps[0].price.period[0]["$cost"]), vps_addons, 'max');
+      }
+    }
+    return data;
   } catch (e) {
     console.error(e);
   } finally {
-    const vps_calculator = document.querySelector(".vps__calculator");
     vps_calculator.innerHTML = "";
   }
 }
@@ -19,7 +49,6 @@ let vps_order_url = "";
 
 document.addEventListener("DOMContentLoaded", async () => {
   const vps_calculator = document.querySelector(".vps__calculator");
-
   if (vps_calculator) {
     const response = await getDataFromBillmng();
     const typeOfService = response.doc.pricelist;
@@ -154,32 +183,32 @@ function updateTotalCost() {
 
 function generateUrlParams(state) {
   const ram = state.ram ? `26addon_${state.ram.id}%3D${state.ram.value}` : "";
-  const cpu = state.cpu ? `26addon_${state.cpu.id}%3D${state.cpu.value}` : "";
-  const ip4 = state.ip4 ? `26addon_${state.ip4.id}%3D${state.ip4.value}` : "";
+  const cpu = state.cpu ? `%26addon_${state.cpu.id}%3D${state.cpu.value}` : "";
+  const ip4 = state.ip4 ? `%26addon_${state.ip4.id}%3D${state.ip4.value}` : "";
   const port = state.port
-    ? `26addon_${state.port.id}%3D${state.port.value}`
+    ? `%26addon_${state.port.id}%3D${state.port.value}`
     : "";
   const space = state.space
-    ? `26addon_${state.space.id}%3D${state.space.value}`
+    ? `%26addon_${state.space.id}%3D${state.space.value}`
     : "";
   const backup = state.backup
     ? state.backup.value === 0
-      ? `26addon_2208%3D2210`
-      : `26addon_2208%3D${state.backup.id}%26addon_${state.backup.id}%3D${state.backup.value}`
+      ? `%26addon_2208%3D2210`
+      : `%26addon_2208%3D${state.backup.id}%26addon_${state.backup.id}%3D${state.backup.value}`
     : "";
-  const panel = state.panel ? `26addon_2190%3D${state.panel.id}` : "";
+  const panel = state.panel ? `%26addon_2190%3D${state.panel.id}` : "";
   const support = state.support
-    ? `26addon_${state.support.id}%3D${state.support.value}`
+    ? `%26addon_${state.support.id}%3D${state.support.value}`
     : "";
   const ipv6subnet_prefix =
     state.ipv6subnet_prefix && state.ipv6subnet_prefix.id !== "ipv6"
-      ? `26addon_2198%3D${state.ipv6subnet_prefix.id}`
-      : `26addon_2198%3D81`;
+      ? `%26addon_2198%3D${state.ipv6subnet_prefix.id}`
+      : `%26addon_2198%3D81`;
 
-  const os = state.os ? `26ostempl%3D${state.os.id}` : "";
-  const service = state.service ? `26order_count%3D${state.service.value}` : "";
+  const os = state.os ? `%26ostempl%3D${state.os.id}` : "";
+  const service = state.service ? `%26order_count%3D${state.service.value}` : "";
 
-  return `${ram}%${cpu}%${ip4}%${port}%${space}%${backup}%${panel}%${support}%${ipv6subnet_prefix}%${service}%${os}`;
+return `${ram}${cpu}${ip4}${port}${space}${backup}${panel}${support}${ipv6subnet_prefix}${service}${os}`;
 }
 
 function getTotalSum() {
