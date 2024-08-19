@@ -1,8 +1,12 @@
+
 .vps-page {
   font-family: inter, sans-serif !important;
-  background-image: url("../img/vps/Elipse.svg");
-  background-repeat: no-repeat;
+  background-image: url("../img/vps/Elipse.svg"), url("../img/vps/Elipse-rotate.svg");
+  background-repeat: no-repeat, no-repeat;
+  background-position: top center, bottom center;
+  background-size: contain;
 }
+
 
 .vps {
 
@@ -44,7 +48,7 @@
       }
     }
 
-    &-btns{
+    &-btns {
       display: flex;
       gap: 8px;
 
@@ -132,7 +136,6 @@
         max-width: 422px;
 
 
-
         &_light {
           border: 1px solid rgba(0, 0, 0, 0.10);
           background: #FFF;
@@ -187,7 +190,7 @@
           }
         }
 
-        & > p:last-child{
+        & > p:last-child {
           font-size: 18px;
         }
       }
@@ -310,7 +313,7 @@
     background-size: contain;
 
 
-    &-btns{
+    &-btns {
       display: flex;
       gap: 8px;
       margin-top: 60px;
