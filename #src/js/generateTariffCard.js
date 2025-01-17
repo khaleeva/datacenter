@@ -154,7 +154,6 @@ function generateTariffDetails(baseSum, vps_addons, type) {
 }
 
 function generateBlockDetail(type, totalPrice, link, ...state) {
-    console.log(...state)
     const paragraphs = state
         .map(
             (s) =>
@@ -166,7 +165,7 @@ function generateBlockDetail(type, totalPrice, link, ...state) {
             <div class="tariff__card-cost">  
                 <p><span>${totalPrice}</span>&nbsp;BYN</p>
                 <p style="color: ${type === "black" ? "rgba(0, 0, 0, 0.30)" : "rgba(255, 255, 255, 0.30)"}">за месяц</p>
-            </div>
+            </div>         
             <div class="tariff__card-characteristics">${paragraphs}</div>
             <button class='custom-button-brand ${type === "black" ? "custom-button-brand_brand-outlined" : "custom-button-brand_brand-shadow"}' style="margin-top: auto; height: 48px; " onclick="window.open('${link}', '_blank');">Заказать</button>
           `;

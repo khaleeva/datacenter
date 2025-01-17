@@ -118,6 +118,11 @@
     transition: all 0.2s;
     gap: 10px;
 
+    &_size{
+      width: 100%;
+      height: 64px;
+    }
+
 
     &_brand {
       border: 1px solid rgba(0, 0, 0, 0.10);

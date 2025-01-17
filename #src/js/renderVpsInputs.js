@@ -31,7 +31,7 @@ function generateCustomVpsRange(data) {
   return data
     .map(
       (addon) => `<div class="custom-range">
-        <div class="custom-range__label">${getIcon[addon.name_ru["$"]]}
+        <div class="custom-range__label">${getIcon[addon.id["$"]]}
             <p>${getTitle(addon.name_ru["$"])}</p>
             <div  class="label" data-value="${addon.measure[1].name_ru["$"]}">${getMinValue(addon.name_ru["$"], addon.addonmin["$"])}<span>${addon.measure[1].name_ru["$"]}</span></div>
         </div>
@@ -41,7 +41,7 @@ function generateCustomVpsRange(data) {
                     <span class="fill"></span>
                 </div>
                 <input
-                data-name=${getVPSAddonName[addon.name_ru["$"]]}
+                data-name=${getVPSAddonName[addon.id["$"]]}
                 data-value=${Number(addon.price.period[0]["$cost"]).toFixed(2) ?? 0}
                         class="custom-range__slider-input"
                         type="range"
@@ -68,7 +68,7 @@ function generateCustomVpsTabs(data) {
                  <div class="custom-tabs">
                     <p>${d.name_ru["$"]}</p>
                     <div class="custom-tabs__container">
-                        ${generateCustomTab(d, d.intname["$"])}
+                       
                         ${
                           d.intname["$"] === "ipv6subnet_prefix"
                             ? `<div class="custom-tabs__tab">
@@ -78,6 +78,7 @@ function generateCustomVpsTabs(data) {
  			            </div>`
                             : ""
                         }
+                        ${generateCustomTab(d, d.intname["$"])}
                     </div>
                  </div>`,
     )
@@ -97,16 +98,18 @@ function generateCustomTab(data, name) {
       )
       .join("");
   } else {
-    return `<div class="custom-tabs__tab">
-                 <label for='support-active'>Включенo
-                     <input type="radio" data-value=${data.price.period[0]["$cost"]} data-name="support" name=${data.id["$"]} id='support-active' value='on' />
-                 </label>
-             </div>
+    return `
              <div class="custom-tabs__tab">
                  <label for='support-inactive'>Нет
                      <input type="radio" data-value=${0} data-name="support" name=${data.id["$"]} id='support-inactive' value='off' />
                  </label>
-             </div>`;
+             </div>
+             <div class="custom-tabs__tab">
+                 <label for='support-active'>Включенo
+                     <input type="radio" data-value=${data.price.period[0]["$cost"]} data-name="support" name=${data.id["$"]} id='support-active' value='on' />
+                 </label>
+             </div>
+`;
   }
 }
 

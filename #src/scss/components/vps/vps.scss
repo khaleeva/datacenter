@@ -158,8 +158,8 @@
         }
 
         &_max {
-          background: #000003;
-          box-shadow: 0 0 64px 4px rgba(255, 255, 255, 0.90) inset;
+          background: #4E5B69;
+          box-shadow: 0 0 64px 4px rgba(255, 255, 255, 0.70) inset;
 
           h2 {
             color: rgba(255, 255, 255, 0.90);
@@ -223,7 +223,7 @@
     padding-top: 100px;
 
     @media (max-width: 1024px) {
-      padding-top: 80px;
+      padding-top: 80px !important;
     }
   }
 
@@ -628,6 +628,46 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: 50%;
+  }
+}
+
+.vlan {
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    &-main {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    &-paragraph{
+      text-align: center;
+      font-size: 16px;
+    }
+  }
+
+  &__calculator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 80px auto;
+    max-width: 600px;
+    background: rgba(25, 20, 254, 0.05);
+    padding: 12px 24px;
+    border-radius: 32px;
+    gap: 32px;
+
+    &-container {
+      display: grid;
+      grid-template-columns: 1fr !important;
+      width: 100%;
+      margin-bottom: 32px;
+    }
   }
 }
 
