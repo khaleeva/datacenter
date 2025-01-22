@@ -87,8 +87,11 @@ function generateCustomVpsTabs(data) {
 
 function generateCustomTab(data, name) {
   if (data.enumeration && data.enumeration.length > 0) {
-    return data.enumeration[1].enumerationitem
-      .reverse()
+    const renderData =
+      data.id["$"] === "2198"
+        ? data.enumeration[1].enumerationitem
+        : data.enumeration[1].enumerationitem.reverse();
+    return renderData
       .map(
         (d) => `<div class="custom-tabs__tab">
      			<label for=${d.id["$"]}>${getTabsName[d.name_ru["$"]] || d.name_ru["$"]}
@@ -117,11 +120,11 @@ function generateCustomSelect(data) {
   const options = data
     .map(
       (d, index) =>
-        `<span class='custom-option ${index === 0 ? 'selected' : ''}' data-value=${d.intname['$']}>${d.name["$"]}</span>`,
+        `<span class='custom-option ${index === 0 ? "selected" : ""}' data-value=${d.intname["$"]}>${d.name["$"]}</span>`,
     )
     .join("");
 
-  const defaultValue = data[0].name['$']
+  const defaultValue = data[0].name["$"];
 
   return ` <div class="custom-select-container">
  	<label><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">

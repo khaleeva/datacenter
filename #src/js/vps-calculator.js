@@ -24,6 +24,8 @@ async function getDataFromBillmng() {
 
       const vps = typeOfService.filter((i) => i.itemtype["$"] === "3");
 
+      console.log(vps)
+
       const vps_addons = vps[0].addon;
 
       vps_calculator.innerHTML = "";
@@ -126,11 +128,11 @@ document.addEventListener("DOMContentLoaded", async () => {
       });
     });
 
-    console.log(vps_state)
-
     dataBooleanForTab.forEach((addon) => {
       initValue("support", addon.id["$"], "off", 0);
     });
+
+    console.log(dataSelectForTab)
 
     const innerHTMLRanges = generateCustomVpsRange(dataForRange);
     const innerHTMLSelectTabs = generateCustomVpsTabs(dataSelectForTab);
@@ -324,7 +326,6 @@ function getTotalSum() {
 function getTotalVlanSum() {
   let total = vlan_state["vlan"].price;
   vlan_order_url = `https://my.datahata.by?func=register&redirect=startpage%3Dvirtual%255Fnetwork%26startform%3Dvirtual%255Fnetwork%252Eorder%252Eparam%26pricelist%3D2243%26period%3D1%26project%3D1%26addon_${vlan_state["vlan"].id}%3D${vlan_state["vlan"].value}`;
-  console.log(vlan_order_url);
   return ((baseVlanSum + total) * 1.2).toFixed(2);
 }
 
@@ -357,7 +358,7 @@ function getDataSelectForTabs(addons) {
 
 function getDataBooleanForTabs(addons) {
   return addons.filter(
-    (addon) => addon.addontype["$"] === "1" && addon.id["$"] === "2225",
+    (addon) => addon.addontype["$"] === "1" || addon.id["$"] === "2225" || addon.id["$"] === "2195",
   );
 }
 
