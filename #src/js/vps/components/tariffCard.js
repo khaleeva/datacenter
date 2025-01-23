@@ -9,7 +9,7 @@ class TariffCard {
             {id: "2211", name: 'backup', measure: 'Гб'},
             {id: "2190", name: 'panel', measure: ''},
             {id: "2225", name: 'support', measure: ''},
-            {id: "2225", name: 'os', measure: ''},
+            {id: "2198", name: 'ipv6subnet_prefix', measure: ''},
         ]
     }
 
@@ -26,7 +26,7 @@ class TariffCard {
                         return `<div>${s.value === 'off' ? "" : s.icon}
                         <div>
                             <p>${typeof s.value === "string" ? "" : s.value}&nbsp;${s.measure}</p>
-                            <p>${s.value === 'off' ? "" : s.name}</p>
+                            <p>${s.value === 'off' ? "" : s.name_ru}</p>
                         </div>
                     </div>`
                     }
@@ -102,7 +102,8 @@ class TariffCard {
     createState({addons, value, color_icon}) {
 
         this.os = {
-            name: "Операционная система",
+            name_ru: "Операционная система",
+            name: "os",
             id: "VM6_ISPsystem_Windows-10-RUS",
             price: 0,
             value: 0,
@@ -123,9 +124,13 @@ class TariffCard {
             this.icon = this.getColorIcon(color_icon)
 
 
+            this.panel_id = value['panel'] === "off" ? "111" : "110"
+
+
             return {
-                name: this.addon.name,
-                id: addon.id,
+                name_ru: this.addon.name,
+                name: addon.name,
+                id: addon.name === 'panel' ? this.panel_id : addon.id,
                 price: this.price,
                 value: value[addon.name],
                 icon: this.icon,
@@ -138,19 +143,38 @@ class TariffCard {
     }
 
     generateUrlParams(state) {
+
         this.params = state.map((s) => {
             this.param = ''
             if (s.name === 'backup') {
                 this.param = s ? s.value === 0
-                        ? `%26addon_2208%3D2210`
-                        : `%26addon_2208%3D${s.id}%26addon_${s.id}%3D${s.value}`
+                        ? `26addon_2208%3D2210`
+                        : `26addon_2208%3D${s.id}%26addon_${s.id}%3D${s.value}`
                     : "";
+            } else if (s.name === 'ipv6subnet_prefix') {
+                this.param = s.id === '2198' ? `26addon_2198%3D111` : `26addon_2198%3D${s.id}`
+
+            }  else if (s.name === 'panel') {
+                this.param = s ? `26addon_2190%3D${s.id}` : "";
+            } else if (s.name === 'servers') {
+                this.param = s
+                    ? `26order_count%3D${s.value}`
+                    : "";
+            } else if (s.name === 'os') {
+                this.param = s ? `26ostempl%3D${s.id}` : ""
             } else {
                 this.param = s ? `26addon_${s.id}%3D${s.value}` : ""
             }
             return this.param
         })
 
-        return this.params.join('')
+        return this.params.join('%')
     }
 }
+
+
+
+// const a = `https://my.datahata.by/billmgr?func=register&redirect=startpage%3Dvds%26startform%3Dvds%252Eorder%252Eparam%26pricelist%3D2187%26period%3D1%26project%3D1%26addon_2189%3D2%26addon_2192%3D1%26addon_2191%3D1%26addon_2194%3D5%26addon_2208%3D2211%26addon_2211%3D10%26addon_2190%3D111%26addon_2225%3Doff%26addon_2198%3D81%26ostempl%3DVM6_ISPsystem_Windows-10-RUS`
+// const b = `https://my.datahata.by/billmgr?func=register&redirect=startpage%3Dvds%26startform%3Dvds%252Eorder%252Eparam%26pricelist%3D2187%26period%3D1%26project%3D1%26addon_2189%3D226addon_2191%3D126addon_2192%3D126addon_2194%3D526addon_2208%3D2211%26addon_2211%3D1026addon_2190%3D11126addon_2225%3Doff26addon_2198%3D8126ostempl%3DVM6_ISPsystem_Windows-10-RUS`
+// https://my.datahata.by/billmgr?func=register&redirect=startpage%3Dvds%26startform%3Dvds%252Eorder%252Eparam%26pricelist%3D2187%26period%3D1%26project%3D1%26addon_2189%3D2%26addon_2192%3D1%26addon_2191%3D1%26addon_2212%3D50%26addon_2194%3D5%26addon_2208%3D2210%26addon_2190%3D110%26addon_2225%3Doff%26addon_2198%3D81%26order_count%3D1%26ostempl%3DVM6_ISPsystem_Alma-Linux-8
+// https://my.datahata.by/billmgr?func=register&redirect=startpage%3Dvds%26startform%3Dvds%252Eorder%252Eparam%26pricelist%3D2187%26period%3D1%26project%3D1%26addon_2189%3D2%26addon_2191%3D1%26addon_2192%3D1%26addon_2194%3D5%26addon_2208%3D2210%26addon_2212%3D50%26addon_2225%3Doff%26addon_2190%3D110%26addon_2198%3Dipv6%%26order_count%3D1%26ostempl%3DVM6_ISPsystem_Alma-Linux-8
