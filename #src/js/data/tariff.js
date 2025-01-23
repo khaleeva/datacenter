@@ -1,4 +1,4 @@
-const tariff_values = {
+const vps_card_values = {
     light_state_values: {
         ram: 2,
         ip4: 1,

@@ -15,11 +15,12 @@
 @@include('hatamail.js');
 @@include('openContactPopup.js');
 @@include('accordion.js');
-@@include('vps/api/apiService.js');
-@@include('vps/vps.js');
-@@include('vps/tariffCard.js')
-@@include('vps/data/tariff.js');
+@@include('vps/vps-calculator.js');
 @@include('vps/vps-helpers.js');
+@@include('vps/renderVpsInputs.js');
+@@include('vps/generateTariffCard.js');
+@@include('data/tariff.js');
+
 
 
 
