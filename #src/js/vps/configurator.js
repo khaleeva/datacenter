@@ -1,4 +1,4 @@
-class App {
+class Configurator {
   constructor() {
     this.apiService = new ApiService();
     this.tariffCard = new TariffCard()
@@ -21,18 +21,21 @@ class App {
     this.tariffMax.innerHTML = card_loader;
 
     try {
-      this.vps_addons = await this.apiService.getData();
-      if (this.vps_addons) {
+      this.data = await this.apiService.getData();
+      if (this.data) {
         this.tariffLight.classList.remove("tariff__details_loader");
         this.tariffOptima.classList.remove("tariff__details_loader");
         this.tariffBest.classList.remove("tariff__details_loader");
         this.tariffMax.classList.remove("tariff__details_loader");
-        // await this.tariffCard.generateTariffCharacteristic()
+        this.tariffLight.innerHTML = this.tariffCard.draw({data: this.data,  type: 'light', color_icon: 'black'})
+        this.tariffOptima.innerHTML = this.tariffCard.draw({data: this.data,  type: 'optima', color_icon: 'black'})
+        this.tariffBest.innerHTML = this.tariffCard.draw({data: this.data,  type: 'best', color_icon: 'white'})
+        this.tariffMax.innerHTML = this.tariffCard.draw({data: this.data,  type: 'max', color_icon: 'white'})
       }
     } catch (error) {}
 
   }
 }
 
-const app = new App();
-await app.start();
+const configurator = new Configurator();
+configurator.start();

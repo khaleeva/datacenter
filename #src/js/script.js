@@ -16,10 +16,12 @@
 @@include('openContactPopup.js');
 @@include('accordion.js');
 @@include('vps/api/apiService.js');
-@@include('vps/vps.js');
+@@include('vps-helpers.js');
 @@include('vps/tariffCard.js')
+@@include('vps/configurator.js');
+
 @@include('vps/data/tariff.js');
-@@include('vps/vps-helpers.js');
+
 
 
 

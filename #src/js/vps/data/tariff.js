@@ -1,5 +1,5 @@
 const tariff_values = {
-    light_state_values: {
+    light: {
         ram: 2,
         ip4: 1,
         cpu: 1,
@@ -8,7 +8,7 @@ const tariff_values = {
         panel: "off",
         support: "off",
     },
-    optima_state_values: {
+    optima: {
         ram: 5,
         ip4: 2,
         cpu: 2,
@@ -17,7 +17,7 @@ const tariff_values = {
         panel: "on",
         support: "off",
     },
-    best_state_values: {
+    best: {
         ram: 8,
         ip4: 4,
         cpu: 4,
@@ -27,7 +27,7 @@ const tariff_values = {
         support: "on",
     },
 
-    max_state_values: {
+    max: {
         ram: 16,
         ip4: 8,
         cpu: 8,
