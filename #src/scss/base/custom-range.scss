@@ -7,10 +7,16 @@
   flex-shrink: 0;
 
   &__label {
+    width: 100%;
     display: flex;
     align-items: center;
     gap: 0.2rem;
     font-family: inter, sans-serif;
+
+    &-input{
+      background: transparent;
+    }
+
 
     & > p {
       color: rgba(0, 0, 0, 0.9);
@@ -24,11 +30,18 @@
 
     & > .label {
       display: flex;
+      margin-left: auto;
       align-items: center;
       justify-content: center;
       border-radius: 6px;
       background: rgba(0, 0, 0, 0.05);
       padding: 2px 8px;
+      min-width: 80px;
+      max-width: 100px;
+
+      &:focus-within {
+        background: rgba(25, 20, 254, 0.20);
+      }
     }
   }
 

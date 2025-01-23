@@ -27,13 +27,27 @@ function generateSpanElements(min, max, step) {
   return spanElements;
 }
 
+const renderLabelInput = (addon) => {
+  return addon.id["$"] === "2244"
+    ? `<span class="custom-range__label-span">${getMinValue(addon.name_ru["$"], addon.addonmin["$"])}</span>`
+    : `<input class="custom-range__label-input" type="number"
+               step=${addon.addonstep["$"]}
+               min=${getMinValue(addon.name_ru["$"], addon.addonmin["$"])}
+               max=${addon.addonmax["$"]}
+               value=${getMinValue(addon.name_ru["$"], addon.addonmin["$"])}
+        />`;
+};
+
 function generateCustomVpsRange(data) {
   return data
     .map(
       (addon) => `<div class="custom-range">
         <div class="custom-range__label">${getIcon[addon.id["$"]]}
             <p>${getTitle(addon.name_ru["$"])}</p>
-            <div  class="label" data-value="${addon.measure[1].name_ru["$"]}">${getMinValue(addon.name_ru["$"], addon.addonmin["$"])}<span>${addon.measure[1].name_ru["$"]}</span></div>
+            <div class="label" data-value="${addon.measure[1].name_ru["$"]}">
+            ${renderLabelInput(addon)}
+            <span>${addon.measure[1].name_ru["$"]}</span>
+            </div>
         </div>
             <div class="custom-range__slider">
                 <span class="custom-range__slider-track"></span>
@@ -68,16 +82,6 @@ function generateCustomVpsTabs(data) {
                  <div class="custom-tabs">
                     <p>${d.name_ru["$"]}</p>
                     <div class="custom-tabs__container">
-                       
-                        ${
-                          d.intname["$"] === "ipv6subnet_prefix"
-                            ? `<div class="custom-tabs__tab">
-     			            <label for='ipv6'>Нет
-     			                <input type="radio" data-value=${0} data-name="ipv6subnet_prefix" name=${d.id["$"]} id='ipv6' value='off' />
-     			            </label>
- 			            </div>`
-                            : ""
-                        }
                         ${generateCustomTab(d, d.intname["$"])}
                     </div>
                  </div>`,
@@ -94,7 +98,7 @@ function generateCustomTab(data, name) {
     return renderData
       .map(
         (d) => `<div class="custom-tabs__tab">
-     			<label for=${d.id["$"]}>${getTabsName[d.name_ru["$"]] || d.name_ru["$"]}
+     			<label for=${d.id["$"]}>${getTabsName[d.id["$"]] || d.name_ru["$"]}
      			<input type="radio" data-name=${name} data-value=${d.price.period[0]["$cost"]} name=${data.id["$"]} id=${d.id["$"]} value=${d.id["$"]} />
      			</label>
  			</div>`,

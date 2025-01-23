@@ -14,12 +14,12 @@
 @@include('carousel.js');
 @@include('hatamail.js');
 @@include('openContactPopup.js');
-@@include('vps-calculator.js');
-@@include('vps-helpers.js');
-@@include('renderVpsInputs.js');
 @@include('accordion.js');
-@@include('generateTariffCard.js');
-@@include('data/vpsCardValues.js');
+@@include('vps/api/apiService.js');
+@@include('vps/vps.js');
+@@include('vps/tariffCard.js')
+@@include('vps/data/tariff.js');
+@@include('vps/vps-helpers.js');
 
 
 

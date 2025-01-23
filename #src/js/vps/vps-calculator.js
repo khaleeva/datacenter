@@ -24,8 +24,6 @@ async function getDataFromBillmng() {
 
       const vps = typeOfService.filter((i) => i.itemtype["$"] === "3");
 
-      console.log(vps)
-
       const vps_addons = vps[0].addon;
 
       vps_calculator.innerHTML = "";
@@ -111,12 +109,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     dataSelectForTab.forEach((addon) => {
       addon.enumeration[1].enumerationitem.forEach((d) => {
         if (addon.id["$"] === "2198") {
-          initValue(
-              addon.intname["$"],
-              'ipv6',
-              "off",
-              0,
-          );
+          initValue(addon.intname["$"], "ipv6", "off", 0);
         } else {
           initValue(
             addon.intname["$"],
@@ -132,8 +125,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       initValue("support", addon.id["$"], "off", 0);
     });
 
-    console.log(dataSelectForTab)
-
     const innerHTMLRanges = generateCustomVpsRange(dataForRange);
     const innerHTMLSelectTabs = generateCustomVpsTabs(dataSelectForTab);
     const innerHTMLBooleanTabs = generateCustomVpsTabs(dataBooleanForTab);
@@ -143,7 +134,14 @@ document.addEventListener("DOMContentLoaded", async () => {
     const serversRange = `<div class="custom-range">
       <div class="custom-range__label">${getIcon["Количество серверов для заказа"]}
         <p>Количество серверов для заказа</p>
-        <div  class="label" data-value="шт">${1}<span>шт</span></div>
+        <div  class="label" data-value="шт">
+        <input class="custom-range__label-input" type="number"
+               step=${1}
+               min=${1}
+               max=${20}
+               value=${1}
+        />
+        <span>шт</span></div>
       </div>
       <div class="custom-range__slider">
         <span class="custom-range__slider-track"></span>
@@ -199,6 +197,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     changeRangeValue();
     changeCustomTab();
     selectOption();
+    changeRangeValueFromLabelInput();
   }
 
   if (vlan_calculator) {
@@ -318,6 +317,7 @@ function getTotalSum() {
       total += vps_state[key].price;
     }
   }
+
   const params = generateUrlParams(vps_state);
   vps_order_url = `https://my.datahata.by?func=register&redirect=startpage%3Dvds%26startform%3Dvds%252Eorder%252Eparam%26pricelist%3D2187%26period%3D1%26project%3D1%${params}`;
   return ((total + baseSum) * 1.2 * vps_state["servers"].value).toFixed(2);
@@ -358,7 +358,10 @@ function getDataSelectForTabs(addons) {
 
 function getDataBooleanForTabs(addons) {
   return addons.filter(
-    (addon) => addon.addontype["$"] === "1" || addon.id["$"] === "2225" || addon.id["$"] === "2195",
+    (addon) =>
+      addon.addontype["$"] === "1" ||
+      addon.id["$"] === "2225" ||
+      addon.id["$"] === "2195",
   );
 }
 
@@ -367,12 +370,80 @@ function changeRangeValue(isVlan) {
   ranges.forEach((range) => {
     range.addEventListener("input", () => {
       const mainParent = range.parentNode.parentNode;
-      const valueElemOutput = mainParent.querySelector(
-        ".custom-range__label .label",
+      const valueInputOutput = mainParent.querySelector(
+        ".custom-range__label .label input",
       );
-      const measure = valueElemOutput.getAttribute("data-value");
-      valueElemOutput.innerHTML = `${range.value} ${measure}`;
+      const valueElemOutput = mainParent.querySelector(
+        ".custom-range__label .label .custom-range__label-span",
+      );
+
+      if (valueElemOutput) {
+        valueElemOutput.innerHTML = `${range.value}`;
+      }
+
+      if (valueInputOutput) {
+        valueInputOutput.value = `${range.value}`;
+      }
+
       getValueFromRange(range, isVlan);
+    });
+  });
+}
+
+function changeRangeValueFromLabelInput() {
+  const label_inputs = document.querySelectorAll(".custom-range__label-input");
+
+  label_inputs.forEach((input) => {
+    const range =
+        input.parentElement.parentElement.nextElementSibling.querySelector(
+            ".custom-range__slider-input"
+        );
+
+    const min = parseFloat(input.min) || 0;
+    const max = parseFloat(input.max) || 100;
+    const step = parseFloat(input.step) || 1;
+
+    input.addEventListener("input", () => {
+      // Позволяем временно вводить любое значение, включая пустое
+      if (input.value === "") return;
+
+      const inputValue = parseFloat(input.value);
+
+      // Проверка на шаг (если значение не кратно шагу, отклоняем)
+      if ((inputValue - min) % step !== 0) {
+        input.setCustomValidity("Значение должно быть кратно шагу.");
+      } else {
+        input.setCustomValidity(""); // Если шаг верный, сбрасываем ошибку
+      }
+
+      // Присваиваем значение range
+      range.value = input.value;
+      getValueFromRange(range);
+    });
+
+    // Проверка диапазона после завершения ввода
+    input.addEventListener("blur", () => {
+      if (input.value === "") {
+        input.value = min; // Устанавливаем минимальное значение, если поле пустое
+      }
+
+      // Приводим значение к диапазону
+      if (input.value < min) {
+        input.value = min;
+      }
+      if (input.value > max) {
+        input.value = max;
+      }
+
+      // Проверка на шаг при потере фокуса
+      const inputValue = parseFloat(input.value);
+      if ((inputValue - min) % step !== 0) {
+        input.value = Math.round((inputValue - min) / step) * step + min;
+      }
+
+      // Обновляем значение range
+      range.value = input.value;
+      getValueFromRange(range);
     });
   });
 }
@@ -453,7 +524,7 @@ function getValueFromRange(range, isVlan) {
       value: +range.value,
     };
   }
-
+  console.log(vps_state);
   if (!isVlan) {
     updateTotalCost();
   } else {
