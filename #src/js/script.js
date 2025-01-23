@@ -18,7 +18,10 @@
 @@include('vps/api/apiService.js');
 @@include('vps-helpers.js');
 @@include('vps/tariffCard.js')
-@@include('vps/configurator.js');
+@@include('vps/tariff.js')
+@@include('vps/vps-configurator.js')
+@@include('vps/vlan-configurator.js')
+@@include('vps/app.js');
 
 @@include('vps/data/tariff.js');
 

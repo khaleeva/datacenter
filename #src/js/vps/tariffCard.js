@@ -1,6 +1,16 @@
 class TariffCard {
     constructor() {
         this.url = "https://my.datahata.by?func=register&redirect=startpage%3Dvds%26startform%3Dvds%252Eorder%252Eparam%26pricelist%3D2187%26period%3D1%26project%3D1%";
+        this.addons_data = [
+            {id: "2189", name: 'ram', measure: 'Гб'},
+            {id: "2191", name: 'ip4', measure: 'Шт'},
+            {id: "2192", name: 'cpu', measure: 'Шт'},
+            {id: "2194", name: 'space', measure: 'Гб'},
+            {id: "2211", name: 'backup', measure: 'Гб'},
+            {id: "2190", name: 'panel', measure: ''},
+            {id: "2225", name: 'support', measure: ''},
+            {id: "2225", name: 'os', measure: ''},
+        ]
     }
 
 
@@ -9,13 +19,13 @@ class TariffCard {
 
         this.link_url = `${this.url}${this.tariffCardData.params}`
 
-        this.characteristics = Object.values(this.tariffCardData.state)
+        this.characteristics = this.tariffCardData.state
             .map(
                 (s) => {
                     if (s.value) {
                         return `<div>${s.value === 'off' ? "" : s.icon}
                         <div>
-                            <p>${typeof s.value === "string" ? "" : s.value}${s.measure}</p>
+                            <p>${typeof s.value === "string" ? "" : s.value}&nbsp;${s.measure}</p>
                             <p>${s.value === 'off' ? "" : s.name}</p>
                         </div>
                     </div>`
@@ -39,29 +49,23 @@ class TariffCard {
 
 
     generateTariffCharacteristic({data, type, color_icon}) {
-        this.state = this.createStateObject({addons: data.vps_addons, value: tariff_values[type], color_icon})
+        this.state = this.createState({addons: data.vps_addons, value: tariff_values[type], color_icon})
         this.params = this.generateUrlParams(this.state)
         this.totalCost = this.getTotalTariffCost({base_cost: data.vps_cost, state: this.state})
         return {state: this.state, params: this.params, totalCost: this.totalCost}
     }
 
     findAddon(id, addons) {
-        return addons.find((d) => d.id["$"] === id);
-        // this.current_addon = addons.find((d) => d.id["$"] === id);
-        // return {
-        //     name: this.current_addon.name_ru["$"],
-        //     min_value: +this.current_addon.addonmin["$"],
-        //     step: +this.current_addon.addonstep["$"],
-        //     cost: +this.current_addon.price.period[0]["$cost"] || +this.current_addon.enumeration[1].enumerationitem[1].price,
-        //
-        // }
+        this.current_addon = addons.find((d) => d.id["$"] === id);
+
+        return {
+            name: this.current_addon.name_ru["$"] ? this.current_addon.name_ru["$"] : '',
+            min_value: this.current_addon.addonmin['$'] ? +this.current_addon.addonmin["$"] : 0,
+            step: this.current_addon.addonstep["$"] ? +this.current_addon.addonstep["$"] : 0,
+            cost: this.current_addon.price ? +this.current_addon.price.period[0]["$cost"] : +this.current_addon.enumeration[1].enumerationitem[1].price.period[0]["$cost"],
+        }
     }
 
-    getPriceForAddon(value, min, step, price) {
-        this.additionalSteps = Math.floor((value - min) / step);
-        this.calculatedPrice = this.additionalSteps * price;
-        return +Number(this.calculatedPrice).toFixed(2);
-    }
 
     getColorIcon(color) {
         return color === "black" ? check_icon : check_icon_white
@@ -74,140 +78,79 @@ class TariffCard {
                 this.total += state[key].price;
             }
         }
+
+
         return ((this.total + base_cost) * 1.2).toFixed(2);
     }
 
-    createStateObject({addons, value, color_icon}) {
-        return {
-            ram: {
-                name: this.findAddon("2189", addons).name,
-                id: "2189",
-                price: this.getPriceForAddon(
-                    value.ram,
-                    +this.findAddon("2189", addons).addonmin["$"],
-                    +this.findAddon("2189", addons).addonstep["$"],
-                    this.findAddon("2189", addons).price.period[0]["$cost"],
-                ),
-                value: value.ram,
-                measure: "ГБ",
-                icon: this.getColorIcon(color_icon),
-            },
-            ip4: {
-                name: this.findAddon("2191", addons).name_ru["$"],
-                id: "2191",
-                price: this.getPriceForAddon(
-                    value.ip4,
-                    +this.findAddon("2191", addons).addonmin["$"],
-                    +this.findAddon("2191", addons).addonstep["$"],
-                    this.findAddon("2191", addons).price.period[0]["$cost"],
-                ),
-                value: value.ip4,
-                measure: "Шт",
-                icon: this.getColorIcon(color_icon),
-            },
-            cpu: {
-                name: this.findAddon("2192", addons).name_ru["$"],
-                id: "2192",
-                price: this.getPriceForAddon(
-                    value.cpu,
-                    +this.findAddon("2192", addons).addonmin["$"],
-                    +this.findAddon("2192", addons).addonstep["$"],
-                    this.findAddon("2192", addons).price.period[0]["$cost"],
-                ),
-                value: value.cpu,
-                measure: "Шт",
-                icon: this.getColorIcon(color_icon),
-            },
-            space: {
-                name: this.findAddon("2194", addons).name_ru["$"],
-                id: "2194",
-                price: this.getPriceForAddon(
-                    value.space,
-                    +this.findAddon("2194", addons).addonmin["$"],
-                    +this.findAddon("2194", addons).addonstep["$"],
-                    this.findAddon("2194", addons).price.period[0]["$cost"],
-                ),
-                value: value.space,
-                measure: "ГБ",
-                icon: this.getColorIcon(color_icon),
-            },
-            backup: {
-                name: "",
-                id: "2211",
-                price: this.getPriceForAddon(
-                    value.backup + 10,
-                    +this.findAddon("2211", addons).addonmin["$"],
-                    +this.findAddon("2211", addons).addonstep["$"],
-                    this.findAddon("2211", addons).price.period[0]["$cost"],
-                ),
-                value: value.backup,
-                measure: "ГБ",
-                icon: this.getColorIcon(color_icon),
-            },
-            os: {
-                name: "",
-                id: "VM6_ISPsystem_Windows-10-RUS",
-                price: 0,
-                value: 0,
-                measure: "",
-                icon: this.getColorIcon(color_icon),
-            },
-            panel: {
-                name: "Панель управления",
-                id: value.panel === "off" ? "111" : "110",
-                price:
-                    value.panel === "off"
-                        ? 0
-                        : +this.findAddon("2190", addons).enumeration[1].enumerationitem[1].price
-                            .period[0]["$cost"],
-                value: value.panel,
-                measure: "",
-                icon: this.getColorIcon(color_icon),
-            },
-            support: {
-                name: "Администрирование сервера",
-                id: 2225,
-                price:
-                    value.support === "off"
-                        ? 0
-                        : +this.findAddon("2225", addons).price.period[0]["$cost"],
-                value: value.support,
-                measure: "",
-                icon: this.getColorIcon(color_icon),
-            },
-        };
+
+    getPriceForAddon({value, min, step, cost}) {
+
+        if (value === 'off') {
+            return 0
+        }
+
+        if (value === 'on') {
+            return cost
+        }
+
+        this.additionalSteps = Math.floor((value - min) / step);
+        this.calculatedPrice = this.additionalSteps * cost;
+        return +this.calculatedPrice.toFixed(2);
+    }
+
+    createState({addons, value, color_icon}) {
+
+        this.os = {
+            name: "Операционная система",
+            id: "VM6_ISPsystem_Windows-10-RUS",
+            price: 0,
+            value: 0,
+            measure: "",
+            icon: this.icon
+        }
+
+        this.state = this.addons_data.map((addon) => {
+            this.addon = this.findAddon(addon.id, addons);
+            this.price = this.getPriceForAddon(
+                {
+                    value: addon.name === 'backup' ? value[addon.name] + 10 : value[addon.name],
+                    min: this.addon.min_value,
+                    step: this.addon.step,
+                    cost: this.addon.cost,
+                }
+            )
+            this.icon = this.getColorIcon(color_icon)
+
+
+            return {
+                name: this.addon.name,
+                id: addon.id,
+                price: this.price,
+                value: value[addon.name],
+                icon: this.icon,
+                measure: addon.measure
+            }
+        })
+
+
+        return [...this.state, this.os]
     }
 
     generateUrlParams(state) {
-        this.ram = state.ram ? `26addon_${state.ram.id}%3D${state.ram.value}` : "";
-        this.cpu = state.cpu ? `%26addon_${state.cpu.id}%3D${state.cpu.value}` : "";
-        this.ip4 = state.ip4 ? `%26addon_${state.ip4.id}%3D${state.ip4.value}` : "";
-        this.port = state.port
-            ? `%26addon_${state.port.id}%3D${state.port.value}`
-            : "";
-        this.space = state.space
-            ? `%26addon_${state.space.id}%3D${state.space.value}`
-            : "";
-        this.backup = state.backup
-            ? state.backup.value === 0
-                ? `%26addon_2208%3D2210`
-                : `%26addon_2208%3D${state.backup.id}%26addon_${state.backup.id}%3D${state.backup.value}`
-            : "";
-        this.panel = state.panel ? `%26addon_2190%3D${state.panel.id}` : "";
-        this.support = state.support
-            ? `%26addon_${state.support.id}%3D${state.support.value}`
-            : "";
-        this.ipv6subnet_prefix =
-            state.ipv6subnet_prefix && state.ipv6subnet_prefix.id !== "ipv6"
-                ? `%26addon_2198%3D${state.ipv6subnet_prefix.id}`
-                : `%26addon_2198%3D81`;
+        this.params = state.map((s) => {
+            this.param = ''
+            if (s.name === 'backup') {
+                this.param = s ? s.value === 0
+                        ? `%26addon_2208%3D2210`
+                        : `%26addon_2208%3D${s.id}%26addon_${s.id}%3D${s.value}`
+                    : "";
+            } else {
+                this.param = s ? `26addon_${s.id}%3D${s.value}` : ""
+            }
+            return this.param
+        })
 
-        this.os = state.os ? `%26ostempl%3D${state.os.id}` : "";
-        this.servers = state.servers
-            ? `%26order_count%3D${state.servers.value}`
-            : "";
-
-        return `${this.ram}${this.cpu}${this.ip4}${this.port}${this.space}${this.backup}${this.panel}${this.support}${this.ipv6subnet_prefix}${this.servers}${this.os}`;
+        return this.params.join('')
     }
-
 }
