@@ -105,15 +105,16 @@ function generateCustomTab(data, name) {
       )
       .join("");
   } else {
+    const name_tab = data.id["$"] === '2197' ? 'ipv6' : 'support'
     return `
              <div class="custom-tabs__tab">
-                 <label for='support-inactive'>Нет
-                     <input type="radio" data-value=${0} data-name="support" name=${data.id["$"]} id='support-inactive' value='off' />
+                 <label for="${name_tab}_off">Нет
+                     <input type="radio" data-value=${0} data-name=${name_tab} name=${data.id["$"]} id="${name_tab}_off" value='off' />
                  </label>
              </div>
              <div class="custom-tabs__tab">
-                 <label for='support-active'>Включенo
-                     <input type="radio" data-value=${data.price.period[0]["$cost"]} data-name="support" name=${data.id["$"]} id='support-active' value='on' />
+                 <label for="${name_tab}_on">Включенo
+                     <input type="radio" data-value=${data.price.period[0]["$cost"]} data-name=${name_tab} name=${data.id["$"]} id="${name_tab}_on" value='on' />
                  </label>
              </div>
 `;

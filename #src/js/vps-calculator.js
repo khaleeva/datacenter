@@ -122,7 +122,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
 
     dataBooleanForTab.forEach((addon) => {
-      initValue("support", addon.id["$"], "off", 0);
+      const name = addon.id["$"] === '2197' ? 'ipv6' : 'support'
+      initValue(name , addon.id["$"], "off", 0);
     });
 
     const innerHTMLRanges = generateCustomVpsRange(dataForRange);
@@ -470,7 +471,7 @@ function changeCustomTab() {
       const price = input.getAttribute("data-value");
 
       vps_state[name] = {
-        id: name === "support" ? input.name : input.id,
+        id: name === "support" || name === 'ipv6' ? input.name : input.id,
         value: input.value,
         price: +Number(price).toFixed(2),
       };
