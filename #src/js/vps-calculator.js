@@ -525,7 +525,6 @@ function getValueFromRange(range, isVlan) {
       value: +range.value,
     };
   }
-  console.log(vps_state);
   if (!isVlan) {
     updateTotalCost();
   } else {

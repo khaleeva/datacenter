@@ -19,7 +19,7 @@
 @@include('vps-helpers.js');
 @@include('renderVpsInputs.js');
 @@include('generateTariffCard.js');
-@@include('data/tariff.js');
+
 
 
 
