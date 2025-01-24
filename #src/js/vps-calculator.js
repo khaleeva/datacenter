@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     dataSelectForTab.forEach((addon) => {
       addon.enumeration[1].enumerationitem.forEach((d) => {
         if (addon.id["$"] === "2198") {
-          initValue(addon.intname["$"], "ipv6", "off", 0);
+          initValue(addon.intname["$"], '111', "111", 0);
         } else {
           initValue(
             addon.intname["$"],
