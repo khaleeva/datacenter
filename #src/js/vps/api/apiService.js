@@ -13,12 +13,8 @@ class ApiService {
                 const vps = typeOfService.filter((i) => i.itemtype["$"] === "3");
                 const vps_addons = vps[0].addon;
                 const vps_cost = Number(vps[0].price.period[0]["$cost"]);
-
-
                 return {vps_addons, vps_cost, vps: vps[0]}
-
             }
-
         } catch (error) {
             console.log(error);
             return null;

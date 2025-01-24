@@ -4,22 +4,21 @@ class App {
         this.tariff = new Tariff();
         this.vps = new VpsConfigurator();
         this.vlan = new VlanConfigurator();
-        this.vps_calculator = document.querySelector(".vps__calculator");
-        this.vlan_calculator = document.querySelector(".vlan__calculator");
+
 
     }
 
     async start() {
+        this.tariff.showHideLoader(true)
         try {
-            this.vps_calculator.innerHTML = loader;
-            this.vlan_calculator.innerHTML = loader;
-            this.tariff.showHideLoader(true)
+            // this.vps_calculator.innerHTML = loader;
+            // this.vlan_calculator.innerHTML = loader;
             this.data = await this.apiService.getData();
             if (this.data) {
-                this.vps_calculator.innerHTML = this.vps.render(this.data);
-                this.vlan_calculator.innerHTML = '';
+                // this.vps_calculator.innerHTML =
+                // this.vlan_calculator.innerHTML = '';
                 this.tariff.render(this.data)
-
+                this.vps.render(this.data)
                 this.vlan.render(this.data)
             }
         } catch (error) {

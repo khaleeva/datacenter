@@ -8,6 +8,7 @@ class TariffCard {
             {id: "2194", name: 'space', measure: 'Гб'},
             {id: "2211", name: 'backup', measure: 'Гб'},
             {id: "2190", name: 'panel', measure: ''},
+            {id: "2197", name: 'ipv6', measure: ''},
             {id: "2225", name: 'support', measure: ''},
             {id: "2198", name: 'ipv6subnet_prefix', measure: ''},
         ]
