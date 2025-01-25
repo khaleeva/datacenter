@@ -18,7 +18,7 @@ class TariffCard {
     draw({data, type, color_icon}) {
         this.tariffCardData = this.generateTariffCharacteristic({data, type, color_icon})
 
-        this.link_url = `${this.url}${this.tariffCardData.params}`
+        this.link_url = `${this.URL}${this.tariffCardData.params}`
 
         this.characteristics = this.tariffCardData.state
             .map(

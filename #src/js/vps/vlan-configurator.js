@@ -10,7 +10,7 @@ class VlanConfigurator {
         this.vlan_order_url = "";
     }
 
-    prepareInitialData(data){
+    prepareInitialData(data) {
         this.typeRangeData = data.vlan.addons.filter(
             (addon) =>
                 addon.addontype["$"] === "2" &&
@@ -28,25 +28,21 @@ class VlanConfigurator {
 
         this.vlan_order_url = `${this.URL}${this.vlan_state["vlan"].id}%3D${this.vlan_state["vlan"].value}`;
 
-        return  {
+        return {
             rangeAddons: this.typeRangeData,
         }
     }
 
 
-
-
-
-    render(data){
+    render(data) {
         this.baseSum = data.vlan.baseCost;
-        const { rangeAddons } = this.prepareInitialData(data)
+        const {rangeAddons} = this.prepareInitialData(data)
         this.innerHTMLRanges = this.inputs.generateRanges(rangeAddons);
         this.ranges = this.vps.generateConfiguratorContainer(this.innerHTMLRanges, 'vlan__calculator-container');
 
 
         this.order_button = this.vps.createOrderButton({
             id: 'vlan_btn',
-            url: this.vlan_order_url,
             isVlan: true,
             className: 'custom-button-brand_size',
             value: 1,
@@ -68,7 +64,7 @@ class VlanConfigurator {
         return ((this.baseSum + this.total) * 1.2).toFixed(2);
     }
 
-    createConfiguratorTitle(){
+    createConfiguratorTitle() {
         const title = document.createElement("div");
         title.innerHTML = `<div class="vlan__title"><div class="vlan__title-main">${vlan_icon}<h3>VLAN</h3></div>
         <p class="vlan__title-paragraph">Закрытая виртуальная сеть между вашими виртуальными машинами. Оптимально при заказе 2 и более серверов</p></div>`;

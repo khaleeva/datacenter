@@ -104,14 +104,14 @@ class VpsConfigurator {
         this.ranges = this.generateConfiguratorContainer(this.innerHTMLAllRanges, '');
         this.tabs = this.generateConfiguratorContainer(this.innerHTMLTabs, 'background');
 
+        this.total_cost = this.createTotalCostBlock()
+
         this.order_button = this.createOrderButton({
             id: 'vps_btn',
-            url: this.vps_order_url,
             isVlan: false,
             className: '',
             value: null
         })
-        this.total_cost = this.createTotalCostBlock()
 
         this.vps_calculator.append(this.tabs);
         this.vps_calculator.append(this.ranges)
@@ -123,10 +123,18 @@ class VpsConfigurator {
         this.changeRangeValue(this.vps_state);
         this.changeRangeValueFromLabelInput();
 
+        if (this.order_button){
+            this.order_button.href = this.vps_order_url
+            // this.setCurrentUrlToButton(this.vps_order_url, this.order_button)
+        }
+
+
+
     }
 
 
     getTotalSum() {
+        this.order_button = document.getElementById('vps_btn')
         this.total = this.tariffCard.getTotalCost({
             state: this.vps_state,
             base_cost: this.baseSum,
@@ -135,7 +143,23 @@ class VpsConfigurator {
 
         this.params = this.tariffCard.generateUrlParams(Object.values(this.vps_state));
         this.vps_order_url = `${this.tariffCard.URL}${this.params}`;
+        if(this.order_button){
+            this.order_button.href = this.vps_order_url
+        }
         return this.total
+    }
+
+    updateTotalPriceDisplay() {
+        const total_cost = document.querySelector(".vps__calculator-total");
+        total_cost.innerHTML = `<p class="vps__calculator-total-title">Итоговая цена виртуального сервера</p><p>${this.getTotalSum()} BYN/месяц</p>`;
+    }
+
+    createTotalCostBlock() {
+        this.total_cost = document.createElement("div");
+        this.total_cost.classList.add("vps__calculator-total");
+        this.total_cost.innerHTML = `<p class="vps__calculator-total-title">Итоговая цена виртуального сервера</p><p>${this.getTotalSum()} BYN/месяц</p>`;
+
+        return this.total_cost
     }
 
     changeCustomTab() {
@@ -183,12 +207,6 @@ class VpsConfigurator {
     }
 
 
-    updateTotalPriceDisplay() {
-        const total_cost = document.querySelector(".vps__calculator-total");
-        total_cost.innerHTML = `<p class="vps__calculator-total-title">Итоговая цена виртуального сервера</p><p>${this.getTotalSum()} BYN/месяц</p>`;
-    }
-
-
     changeRangeValue(state, isVlan) {
         const ranges = document.querySelectorAll(".custom-range__slider-input");
         ranges.forEach((range) => {
@@ -197,13 +215,6 @@ class VpsConfigurator {
                 const valueLabelOutput = mainParent.querySelector(
                     ".custom-range__label .label input",
                 );
-                // const valueElemOutput = mainParent.querySelector(
-                //     ".custom-range__label .label .custom-range__label-span",
-                // );
-                // console.log(valueElemOutput)
-                // if (valueElemOutput) {
-                //     valueElemOutput.innerHTML = `${range.value}`;
-                // }
 
                 if (valueLabelOutput) {
                     valueLabelOutput.value = `${range.value}`;
@@ -228,27 +239,14 @@ class VpsConfigurator {
             const step = parseFloat(input.step) || 1;
 
             input.addEventListener("input", () => {
-                // Позволяем временно вводить любое значение, включая пустое
                 if (input.value === "") return;
-
-                const inputValue = parseFloat(input.value);
-
-                // Проверка на шаг (если значение не кратно шагу, отклоняем)
-                if ((inputValue - min) % step !== 0) {
-                    input.setCustomValidity("Значение должно быть кратно шагу.");
-                } else {
-                    input.setCustomValidity(""); // Если шаг верный, сбрасываем ошибку
-                }
-
-                // Присваиваем значение range
                 range.value = input.value;
-                this.getValueFromRange(range);
+                this.getValueFromRange(range, this.vps_state, false);
             });
 
-            // Проверка диапазона после завершения ввода
             input.addEventListener("blur", () => {
                 if (input.value === "") {
-                    input.value = min; // Устанавливаем минимальное значение, если поле пустое
+                    input.value = min;
                 }
 
                 // Приводим значение к диапазону
@@ -267,7 +265,7 @@ class VpsConfigurator {
 
                 // Обновляем значение range
                 range.value = input.value;
-                this.getValueFromRange(range);
+                this.getValueFromRange(range, this.vps_state, false);
             });
         });
     }
@@ -355,15 +353,6 @@ class VpsConfigurator {
         this.checkCurrentTick(sliderTicks, value);
     }
 
-
-    createTotalCostBlock() {
-        this.total_cost = document.createElement("div");
-        this.total_cost.classList.add("vps__calculator-total");
-        this.total_cost.innerHTML = `<p class="vps__calculator-total-title">Итоговая цена виртуального сервера</p><p>${this.getTotalSum()} BYN/месяц</p>`;
-
-        return this.total_cost
-    }
-
     checkCurrentTick(sliderTicks, value) {
         const spans = sliderTicks.querySelectorAll("span");
         spans.forEach((span) => {
@@ -418,17 +407,18 @@ class VpsConfigurator {
     }
 
 
-
-    createOrderButton({id, url, isVlan, className, value, totalSum}) {
-        this.order_button = document.createElement("button");
+    createOrderButton({id, isVlan, className, value, totalSum}) {
+        this.order_button = document.createElement("a");
         this.order_button.id = id;
-        if(className){
+        this.order_button.target = '_blank';
+        this.order_button.href = this.vps_order_url
+        if (className) {
             this.order_button.classList.add(
                 "custom-button-brand",
                 "custom-button-brand_brand",
                 className
             );
-        } else{
+        } else {
             this.order_button.classList.add(
                 "custom-button-brand",
                 "custom-button-brand_brand",
@@ -438,7 +428,7 @@ class VpsConfigurator {
         if (this.order_button && !isVlan) {
             this.order_button.innerHTML = `Добавить в коризну ${addToBasket}`;
 
-        } else{
+        } else {
             this.order_button.innerHTML = `<div>
             <p class="vlan__btn-name">Добавить в коризну ${addToBasket}</p>
             <p style="font-size: 14px; font-weight: normal"><span class="vlan__total-sum">${totalSum}</span> BYN/месяц</p>
@@ -450,10 +440,6 @@ class VpsConfigurator {
             );
         }
 
-        this.order_button.addEventListener("click", () => {
-            window.open(url, "_blank");
-        });
-
         return this.order_button
     }
 
@@ -461,6 +447,19 @@ class VpsConfigurator {
     //     const total_cost = document.querySelector(".vlan__total-sum");
     //     total_cost.innerHTML = `${getTotalVlanSum()}`;
     // }
+
+    setCurrentUrlToButton(url, order_btn) {
+        console.log(url, '2')
+
+        if(order_btn){
+            console.log(url, '3')
+
+            // order_btn.addEventListener("click", () => {
+            //     window.open(url, "_blank");
+            // });
+        }
+
+    }
 
 
 }
