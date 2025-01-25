@@ -15,6 +15,7 @@
 @@include('other/hatamail.js');
 @@include('other/openContactPopup.js');
 @@include('other/accordion.js');
+
 @@include('vps/api/apiService.js');
 @@include('vps/vps-helpers.js');
 @@include('vps/components/tariffCard.js')

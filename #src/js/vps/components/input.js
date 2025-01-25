@@ -1,15 +1,38 @@
-class CustomInput {
+class CustomInputs {
 
-    generateRange(addon_data) {
+    generateRanges(addon_data) {
         return addon_data
             .map(
-                (addon) =>
-                    `<div class="custom-range">
-                        <div class="custom-range__label">${getIcon[addon.id["$"]]}
-                            <p>${getTitle(addon.name_ru["$"])}</p>
-                            <div class="label" data-value="${addon.measure[1].name_ru["$"]}">
-                                ${this.generateRangeLabel(addon)}
-                                <span>${addon.measure[1].name_ru["$"]}</span>
+                (addon) => {
+                    this.id = addon.id["$"];
+                    this.name = addon.name_ru["$"];
+                    this.measure = addon.measure[1].name_ru["$"];
+                    this.min = +addon.addonmin["$"];
+                    this.max = +addon.addonmax["$"];
+                    this.step = addon.addonstep["$"];
+                    this.cost = +Number(addon.price.period[0]["$cost"]).toFixed(2) ?? 0;
+
+
+                    return this.generateRange({
+                        id: this.id,
+                        name: this.name,
+                        measure: this.measure,
+                        min: this.min,
+                        max: this.max,
+                        step: this.step,
+                        cost: this.cost,
+                    })
+                }
+            ).join("");
+    }
+
+    generateRange({id, name, measure, min, max, step, cost}) {
+        return `<div class="custom-range">
+                        <div class="custom-range__label">${getIcon[id ?? 'server']}
+                            <p>${getTitle(name)}</p>
+                            <div class="label" data-value="${measure}">
+                                ${this.generateRangeLabel({id, measure, min, max, step})}
+                                <span>${measure}</span>
                             </div>
                         </div>
                         <div class="custom-range__slider">
@@ -18,29 +41,41 @@ class CustomInput {
                                 <span class="fill"></span>
                             </div>
                             <input
-                                data-name=${getVPSAddonName[addon.id["$"]]}
-                                data-value=${Number(addon.price.period[0]["$cost"]).toFixed(2) ?? 0}
+                                data-name=${getVPSAddonName[id] ?? 'servers'}
+                                data-value=${cost}
                                 class="custom-range__slider-input"
                                 type="range"
-                                min=${this.getMinValue(addon.id["$"], addon.addonmin["$"])}
-                                max=${addon.addonmax["$"]}
+                                min=${this.getMinValue(id, min)}
+                                max=${max}
                                 value="0"
-                                id=${addon.id["$"]}
-                                step=${addon.addonstep["$"]}
+                                id=${id}
+                                step=${step}
                             />
                             <div class="custom-range__ticks">
-                                ${this.generateSpanElements(this.getMinValue(addon.id["$"], addon.addonmin["$"]), +addon.addonmax["$"], addon.addonstep["$"])}
+                                ${this.generateSpanElements(this.getMinValue(id, min), max, step)}
                              </div>
                         </div>
 
-                    </div>`,).join("");
+                    </div>`
     }
+
+    generateServersRange(max) {
+        return this.generateRange({
+            id: null,
+            cost: null,
+            name: 'Количество серверов для заказа',
+            measure: 'Шт',
+            min: 1,
+            max,
+            step: 1
+        })
+    };
 
     generateOsSelect(data) {
         const options = data
             .map(
                 (d, index) =>
-                    `<span class='custom-option ${index === 0 ? "selected" : ""}' data-value=${d.intname["$"]}>${d.name["$"]}</span>`
+                    `<span class="custom-option ${index === 0 ? "selected" : ""}" data-value=${d.intname["$"]}>${d.name["$"]}</span>`
             )
             .join("");
 
@@ -78,53 +113,14 @@ class CustomInput {
                  <div class="custom-tabs">
                     <p>${d.name_ru["$"]}</p>
                     <div class="custom-tabs__container">
-                        ${this.generateTab(d, d.intname["$"])}
+                        ${this.generateTabContainer(d, d.intname["$"])}
                     </div>
                  </div>`,
             )
             .join("");
     }
 
-    generateServersRange(max) {
-        return `<div class="custom-range">
-      <div class="custom-range__label">${getIcon["server"]}
-        <p>Количество серверов для заказа</p>
-        <div  class="label" data-value="шт">
-        <input class="custom-range__label-input" type="number"
-               step=${1}
-               min=${1}
-               max=${20}
-               value=${1}
-        />
-        <span>шт</span></div>
-      </div>
-      <div class="custom-range__slider">
-        <span class="custom-range__slider-track"></span>
-        <div class="custom-range__slider-progress">
-          <span class="fill"></span>
-        </div>
-        <input
-            data-name='servers'
-            data-value=${null}
-            class="custom-range__slider-input"
-            type="range"
-            min=${1}
-            max=${max}
-            value="0"
-            id=${null}
-            step=${1}
-        />
-        <div class="custom-range__ticks">
-          ${this.generateSpanElements(1, max, 1)}
-        </div>
-      </div>
-    </div>`
-    };
-
-    generateTab(data, name) {
-
-        console.log(data, '!!!')
-
+    generateTabContainer(data, name) {
         if (data.enumeration && data.enumeration.length > 0) {
             const renderData =
                 data.id["$"] === "2198"
@@ -132,42 +128,62 @@ class CustomInput {
                     : data.enumeration[1].enumerationitem.reverse();
             return renderData
                 .map(
-                    (d) => `<div class="custom-tabs__tab">
-     			<label for=${d.id["$"]}>${getTabsName[d.id["$"]] || d.name_ru["$"]}
-     			<input type="radio" data-name=${name} data-value=${d.price.period[0]["$cost"]} name=${data.id["$"]} id=${d.id["$"]} value=${d.id["$"]} />
-     			</label>
- 			</div>`,
+                    (d) => this.generateTab({
+                        id: d.id["$"],
+                        data_id: data.id["$"],
+                        name_tab: name,
+                        cost: d.price.period[0]["$cost"],
+                        name_ru: d.name_ru["$"],
+                        value: d.id["$"],
+                    }),
                 )
                 .join("");
         } else {
             this.name = data.id["$"] === '2197' ? 'ipv6' : 'support'
-            return `
-             <div class="custom-tabs__tab">
-                 <label for=${this.name}>Нет
-                     <input type="radio" data-value=${0} data-name=${this.name} name=${data.id["$"]} id=${this.name} value='off' />
-                 </label>
-             </div>
-             <div class="custom-tabs__tab">
-                 <label id=${this.name}>Включенo
-                     <input type="radio" data-value=${data.price.period[0]["$cost"]} data-name=${this.name} name=${data.id["$"]} id=${this.name} value='on' />
-                 </label>
-             </div>`;
+
+            this.offTab = this.generateTab({
+                id: `${this.name}_off`,
+                data_id: data.id["$"],
+                name_tab: this.name,
+                cost: 0,
+                name_ru: 'Нет',
+                value: 'off'
+            })
+            this.onTab = this.generateTab({
+                id: `${this.name}_on`,
+                data_id: data.id["$"],
+                name_tab: this.name,
+                cost: data.price.period[0]["$cost"],
+                name_ru: "Включено",
+                value: 'on'
+            })
+            return `${this.offTab}${this.onTab}`
+
         }
     }
 
-    generateRangeLabel(addon) {
-        return addon.id["$"] === "2244"
-            ? `<span class="custom-range__label-span">${this.getMinValue(addon.id["$"], addon.addonmin["$"])}</span>`
+    generateTab({id, data_id, name_tab, cost, name_ru, value}) {
+        return `<div class="custom-tabs__tab">
+     			    <label for=${id}>
+                        ${getTabsName[id] || name_ru}
+     			        <input type="radio" data-name=${name_tab} data-value=${cost} name=${data_id} id=${id} value=${value} />
+     			    </label>
+ 			    </div>`
+    }
+
+    generateRangeLabel({id, min, max, step}) {
+        return id === "2244"
+            ? `<span class="custom-range__label-span">${this.getMinValue(id, min)}</span>`
             : `<input class="custom-range__label-input" type="number"
-               step=${addon.addonstep["$"]}
-               min=${this.getMinValue(addon.id["$"], addon.addonmin["$"])}
-               max=${addon.addonmax["$"]}
-               value=${this.getMinValue(addon.id["$"], addon.addonmin["$"])}
+               step=${step}
+               min=${this.getMinValue(id, min)}
+               max=${max}
+               value=${this.getMinValue(id, min)}
         />`;
     }
 
     getMinValue(id, value) {
-        return id === '2208' ? 0 : +value
+        return id === '2211' ? 0 : +value
     }
 
     generateSpanElements(min, max, step) {

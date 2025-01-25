@@ -13,7 +13,15 @@ class ApiService {
                 const vps = typeOfService.filter((i) => i.itemtype["$"] === "3");
                 const vps_addons = vps[0].addon;
                 const vps_cost = Number(vps[0].price.period[0]["$cost"]);
-                return {vps_addons, vps_cost, vps: vps[0]}
+
+                const vlan = typeOfService.filter((i) => i.itemtype["$"] === "66192");
+                const vlan_addons = vlan[0].addon;
+                const vlan_cost = Number(vlan[0].price.period[0]["$cost"]);
+
+                return {
+                    vps: {addons: vps_addons, baseCost: vps_cost, configuration: vps[0]},
+                    vlan: {addons: vlan_addons, baseCost: vlan_cost, configuration: vps[0]}
+                }
             }
         } catch (error) {
             console.log(error);

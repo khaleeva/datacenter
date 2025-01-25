@@ -1,6 +1,6 @@
 class TariffCard {
     constructor() {
-        this.url = "https://my.datahata.by?func=register&redirect=startpage%3Dvds%26startform%3Dvds%252Eorder%252Eparam%26pricelist%3D2187%26period%3D1%26project%3D1%";
+        this.URL = "https://my.datahata.by?func=register&redirect=startpage%3Dvds%26startform%3Dvds%252Eorder%252Eparam%26pricelist%3D2187%26period%3D1%26project%3D1%";
         this.addons_data = [
             {id: "2189", name: 'ram', measure: 'Гб'},
             {id: "2191", name: 'ip4', measure: 'Шт'},
@@ -50,9 +50,9 @@ class TariffCard {
 
 
     generateTariffCharacteristic({data, type, color_icon}) {
-        this.state = this.createState({addons: data.vps_addons, value: tariff_values[type], color_icon})
+        this.state = this.createState({addons: data.vps.addons, value: tariff_values[type], color_icon})
         this.params = this.generateUrlParams(this.state)
-        this.totalCost = this.getTotalTariffCost({base_cost: data.vps_cost, state: this.state})
+        this.totalCost = this.getTotalCost({base_cost: data.vps.baseCost, state: this.state, quantity: 1})
         return {state: this.state, params: this.params, totalCost: this.totalCost}
     }
 
@@ -72,7 +72,7 @@ class TariffCard {
         return color === "black" ? check_icon : check_icon_white
     }
 
-    getTotalTariffCost({base_cost, state}) {
+    getTotalCost({state, base_cost, quantity}) {
         this.total = 0;
         for (let key in state) {
             if (state[key].price) {
@@ -80,8 +80,7 @@ class TariffCard {
             }
         }
 
-
-        return ((this.total + base_cost) * 1.2).toFixed(2);
+        return ((this.total + base_cost) * 1.2 * quantity).toFixed(2);
     }
 
 
@@ -129,7 +128,7 @@ class TariffCard {
 
 
             return {
-                name_ru: this.addon.name,
+                name_ru: addon.name === 'backup' ? 'для резервного копирования' : this.addon.name,
                 name: addon.name,
                 id: addon.name === 'panel' ? this.panel_id : addon.id,
                 price: this.price,
@@ -155,7 +154,7 @@ class TariffCard {
             } else if (s.name === 'ipv6subnet_prefix') {
                 this.param = s.id === '2198' ? `26addon_2198%3D111` : `26addon_2198%3D${s.id}`
 
-            }  else if (s.name === 'panel') {
+            } else if (s.name === 'panel') {
                 this.param = s ? `26addon_2190%3D${s.id}` : "";
             } else if (s.name === 'servers') {
                 this.param = s
@@ -173,9 +172,3 @@ class TariffCard {
     }
 }
 
-
-
-// const a = `https://my.datahata.by/billmgr?func=register&redirect=startpage%3Dvds%26startform%3Dvds%252Eorder%252Eparam%26pricelist%3D2187%26period%3D1%26project%3D1%26addon_2189%3D2%26addon_2192%3D1%26addon_2191%3D1%26addon_2194%3D5%26addon_2208%3D2211%26addon_2211%3D10%26addon_2190%3D111%26addon_2225%3Doff%26addon_2198%3D81%26ostempl%3DVM6_ISPsystem_Windows-10-RUS`
-// const b = `https://my.datahata.by/billmgr?func=register&redirect=startpage%3Dvds%26startform%3Dvds%252Eorder%252Eparam%26pricelist%3D2187%26period%3D1%26project%3D1%26addon_2189%3D226addon_2191%3D126addon_2192%3D126addon_2194%3D526addon_2208%3D2211%26addon_2211%3D1026addon_2190%3D11126addon_2225%3Doff26addon_2198%3D8126ostempl%3DVM6_ISPsystem_Windows-10-RUS`
-// https://my.datahata.by/billmgr?func=register&redirect=startpage%3Dvds%26startform%3Dvds%252Eorder%252Eparam%26pricelist%3D2187%26period%3D1%26project%3D1%26addon_2189%3D2%26addon_2192%3D1%26addon_2191%3D1%26addon_2212%3D50%26addon_2194%3D5%26addon_2208%3D2210%26addon_2190%3D110%26addon_2225%3Doff%26addon_2198%3D81%26order_count%3D1%26ostempl%3DVM6_ISPsystem_Alma-Linux-8
-// https://my.datahata.by/billmgr?func=register&redirect=startpage%3Dvds%26startform%3Dvds%252Eorder%252Eparam%26pricelist%3D2187%26period%3D1%26project%3D1%26addon_2189%3D2%26addon_2191%3D1%26addon_2192%3D1%26addon_2194%3D5%26addon_2208%3D2210%26addon_2212%3D50%26addon_2225%3Doff%26addon_2190%3D110%26addon_2198%3Dipv6%%26order_count%3D1%26ostempl%3DVM6_ISPsystem_Alma-Linux-8
