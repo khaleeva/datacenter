@@ -167,7 +167,6 @@ class TariffCard {
             }
             return this.param
         })
-
         return this.params.join('%')
     }
 }

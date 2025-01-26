@@ -1,6 +1,6 @@
 class VpsConfigurator {
     constructor() {
-        // this.vlan = new VlanConfigurator()
+        this.tariff = new Tariff()
         this.inputs = new CustomInputs()
         this.tariffCard = new TariffCard()
         this.vps_state = {};
@@ -108,6 +108,7 @@ class VpsConfigurator {
 
         this.order_button = this.createOrderButton({
             id: 'vps_btn',
+            url: this.vps_order_url,
             isVlan: false,
             className: '',
             value: null
@@ -119,50 +120,94 @@ class VpsConfigurator {
         this.vps_calculator.append(this.order_button);
 
         this.selectOs()
-        this.changeCustomTab();
-        this.changeRangeValue(this.vps_state);
-        this.changeRangeValueFromLabelInput();
-
-        if (this.order_button){
-            this.order_button.href = this.vps_order_url
-            // this.setCurrentUrlToButton(this.vps_order_url, this.order_button)
-        }
-
-
-
+        this.changeCustomTab({
+            state: this.vps_state,
+            isVlan: false,
+            baseSum: this.baseSum,
+            billing_url: this.tariffCard.URL,
+            id_btn: 'vps_btn'
+        });
+        this.changeRangeValue({
+            state: this.vps_state,
+            isVlan: false,
+            baseSum: this.baseSum,
+            billing_url: this.tariffCard.URL,
+            id_btn: 'vps_btn'
+        });
+        this.changeRangeValueFromLabelInput({
+            state: this.vps_state,
+            isVlan: false,
+            baseSum: this.baseSum,
+            billing_url: this.tariffCard.URL,
+            id_btn: 'vps_btn'
+        });
     }
 
+    getTotalSum({id_btn, state, billing_url, isVlan, baseSum}) {
+        this.order_button = document.getElementById(id_btn)
+        this.total = 0;
+        this.url_with_params = ''
 
-    getTotalSum() {
-        this.order_button = document.getElementById('vps_btn')
-        this.total = this.tariffCard.getTotalCost({
-            state: this.vps_state,
-            base_cost: this.baseSum,
-            quantity: this.vps_state["servers"].value
-        })
+        if (isVlan) {
+            this.url_with_params = `${billing_url}${state["vlan"].id}%3D${state["vlan"].value}`;
+            this.total = ((baseSum + state["vlan"].price) * 1.2).toFixed(2);
+        } else {
+            this.total = this.tariffCard.getTotalCost({
+                state: state,
+                base_cost: baseSum,
+                quantity: state["servers"].value
+            })
 
-        this.params = this.tariffCard.generateUrlParams(Object.values(this.vps_state));
-        this.vps_order_url = `${this.tariffCard.URL}${this.params}`;
-        if(this.order_button){
-            this.order_button.href = this.vps_order_url
+
+
+
+            this.params = this.tariffCard.generateUrlParams(Object.values(state));
+            this.url_with_params = `${this.tariffCard.URL}${this.params}`;
+        }
+
+        if (this.order_button) {
+            this.order_button.href = this.url_with_params
         }
         return this.total
     }
 
-    updateTotalPriceDisplay() {
-        const total_cost = document.querySelector(".vps__calculator-total");
-        total_cost.innerHTML = `<p class="vps__calculator-total-title">Итоговая цена виртуального сервера</p><p>${this.getTotalSum()} BYN/месяц</p>`;
+    updateTotalPriceDisplay({state, isVlan, baseSum, billing_url, id_btn}) {
+        this.totalSum = this.getTotalSum({
+            id_btn,
+            state,
+            isVlan,
+            baseSum,
+            billing_url,
+        })
+
+
+        if (!isVlan) {
+            const total_cost = document.querySelector(".vps__calculator-total");
+            total_cost.innerHTML = `<p class="vps__calculator-total-title">Итоговая цена виртуального сервера</p><p>${this.totalSum} BYN/месяц</p>`;
+        } else {
+            const total_cost = document.querySelector(".vlan__total-sum");
+            total_cost.innerHTML = `${this.totalSum}`;
+        }
+
     }
 
     createTotalCostBlock() {
         this.total_cost = document.createElement("div");
         this.total_cost.classList.add("vps__calculator-total");
-        this.total_cost.innerHTML = `<p class="vps__calculator-total-title">Итоговая цена виртуального сервера</p><p>${this.getTotalSum()} BYN/месяц</p>`;
+        this.totalSum = this.getTotalSum({
+            id_btn: 'vps_btn',
+            state: this.vps_state,
+            isVlan: false,
+            baseSum: this.baseSum,
+            billing_url: this.tariffCard.URL,
+        })
+
+        this.total_cost.innerHTML = `<p class="vps__calculator-total-title">Итоговая цена виртуального сервера</p><p>${this.totalSum} BYN/месяц</p>`;
 
         return this.total_cost
     }
 
-    changeCustomTab() {
+    changeCustomTab({state, isVlan, baseSum, billing_url, id_btn}) {
         this.tabsContainer = document.querySelectorAll(".custom-tabs");
         this.tabLabels = document.querySelectorAll(".custom-tabs__tab label");
         this.tabsContainer.forEach((tab) => {
@@ -183,14 +228,14 @@ class VpsConfigurator {
                 const name = input.getAttribute("data-name");
                 const price = input.getAttribute("data-value");
 
-                this.vps_state[name] = {
+                state[name] = {
                     name,
                     id: name === "support" || name === "ipv6" ? input.name : input.id,
                     value: input.value,
                     price: +Number(price).toFixed(2),
                 };
 
-                this.updateTotalPriceDisplay();
+                this.updateTotalPriceDisplay({state, isVlan, baseSum, billing_url, id_btn});
 
                 groupInputs.forEach((groupInput) => {
                     const groupLabel = groupInput.closest("label");
@@ -207,25 +252,33 @@ class VpsConfigurator {
     }
 
 
-    changeRangeValue(state, isVlan) {
+    changeRangeValue({state, isVlan, baseSum, billing_url, id_btn}) {
         const ranges = document.querySelectorAll(".custom-range__slider-input");
         ranges.forEach((range) => {
             range.addEventListener("input", () => {
                 const mainParent = range.parentNode.parentNode;
-                const valueLabelOutput = mainParent.querySelector(
+                const valueLabelVpsOutput = mainParent.querySelector(
                     ".custom-range__label .label input",
                 );
 
-                if (valueLabelOutput) {
-                    valueLabelOutput.value = `${range.value}`;
+                const valueLabelVlanOutput = mainParent.querySelector(
+                    ".custom-range__label .label .custom-range__label-span",
+                );
+
+                if (valueLabelVlanOutput) {
+                    valueLabelVlanOutput.innerHTML = `${range.value}`;
                 }
 
-                this.getValueFromRange(range, state, isVlan);
+                if (valueLabelVpsOutput) {
+                    valueLabelVpsOutput.value = `${range.value}`;
+                }
+
+                this.getValueFromRange({range, state, isVlan, baseSum, billing_url, id_btn});
             });
         });
     }
 
-    changeRangeValueFromLabelInput() {
+    changeRangeValueFromLabelInput({state, isVlan, baseSum, billing_url, id_btn}) {
         const label_inputs = document.querySelectorAll(".custom-range__label-input");
 
         label_inputs.forEach((input) => {
@@ -241,7 +294,7 @@ class VpsConfigurator {
             input.addEventListener("input", () => {
                 if (input.value === "") return;
                 range.value = input.value;
-                this.getValueFromRange(range, this.vps_state, false);
+                this.getValueFromRange({range, state, isVlan, baseSum, billing_url, id_btn});
             });
 
             input.addEventListener("blur", () => {
@@ -249,7 +302,6 @@ class VpsConfigurator {
                     input.value = min;
                 }
 
-                // Приводим значение к диапазону
                 if (input.value < min) {
                     input.value = min;
                 }
@@ -257,15 +309,13 @@ class VpsConfigurator {
                     input.value = max;
                 }
 
-                // Проверка на шаг при потере фокуса
                 const inputValue = parseFloat(input.value);
                 if ((inputValue - min) % step !== 0) {
                     input.value = Math.round((inputValue - min) / step) * step + min;
                 }
 
-                // Обновляем значение range
                 range.value = input.value;
-                this.getValueFromRange(range, this.vps_state, false);
+                this.getValueFromRange({range, state, isVlan, baseSum, billing_url, id_btn});
             });
         });
     }
@@ -312,7 +362,7 @@ class VpsConfigurator {
         });
     }
 
-    getValueFromRange(range, state, isVlan) {
+    getValueFromRange({range, state, isVlan, baseSum, billing_url, id_btn}) {
         let fill_range = range.previousElementSibling.querySelector(".fill");
         const sliderTicks = range.nextElementSibling;
         const value = range.value;
@@ -334,7 +384,7 @@ class VpsConfigurator {
                 value: +range.value,
             };
         } else if (name === "servers") {
-            state["servers"] = {id: null, value: +range.value, price: null};
+            state["servers"] = {name: 'servers', id: null, value: +range.value, price: 0};
             this.disabledOrderBtn(+range.value)
         } else if (name === "vlan") {
             state["vlan"] = {
@@ -343,10 +393,8 @@ class VpsConfigurator {
                 value: +range.value,
             };
         }
-        if (!isVlan) {
-            this.updateTotalPriceDisplay();
-        }
 
+        this.updateTotalPriceDisplay({state, isVlan, baseSum, billing_url, id_btn});
         const normalizedValue = ((value - min) / (max - min)) * 100;
 
         fill_range.style.width = normalizedValue + "%";
@@ -407,11 +455,11 @@ class VpsConfigurator {
     }
 
 
-    createOrderButton({id, isVlan, className, value, totalSum}) {
+    createOrderButton({id, url, isVlan, className, value, totalSum}) {
         this.order_button = document.createElement("a");
         this.order_button.id = id;
         this.order_button.target = '_blank';
-        this.order_button.href = this.vps_order_url
+        this.order_button.href = url
         if (className) {
             this.order_button.classList.add(
                 "custom-button-brand",
@@ -429,9 +477,10 @@ class VpsConfigurator {
             this.order_button.innerHTML = `Добавить в коризну ${addToBasket}`;
 
         } else {
-            this.order_button.innerHTML = `<div>
-            <p class="vlan__btn-name">Добавить в коризну ${addToBasket}</p>
-            <p style="font-size: 14px; font-weight: normal"><span class="vlan__total-sum">${totalSum}</span> BYN/месяц</p>
+            this.order_button.innerHTML = `
+            <div style="display: flex; flex-direction: column; align-items: center; justify-content: center">
+                <p class="vlan__btn-name" style="display: flex; align-items: center; justify-content: center; gap:2px;">Добавить в коризну ${addToBasket}</p>
+                <p style="font-size: 14px; font-weight: normal"><span class="vlan__total-sum">${totalSum}</span> BYN/месяц</p>
             </div>`;
 
             this.order_button.disabled = this.disable(
@@ -442,25 +491,6 @@ class VpsConfigurator {
 
         return this.order_button
     }
-
-    // updateTotalVlanCost() {
-    //     const total_cost = document.querySelector(".vlan__total-sum");
-    //     total_cost.innerHTML = `${getTotalVlanSum()}`;
-    // }
-
-    setCurrentUrlToButton(url, order_btn) {
-        console.log(url, '2')
-
-        if(order_btn){
-            console.log(url, '3')
-
-            // order_btn.addEventListener("click", () => {
-            //     window.open(url, "_blank");
-            // });
-        }
-
-    }
-
 
 }
 

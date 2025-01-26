@@ -27,6 +27,7 @@ class CustomInputs {
     }
 
     generateRange({id, name, measure, min, max, step, cost}) {
+
         return `<div class="custom-range">
                         <div class="custom-range__label">${getIcon[id ?? 'server']}
                             <p>${getTitle(name)}</p>
@@ -34,6 +35,7 @@ class CustomInputs {
                                 ${this.generateRangeLabel({id, measure, min, max, step})}
                                 <span>${measure}</span>
                             </div>
+                           ${this.getTips(id)}
                         </div>
                         <div class="custom-range__slider">
                             <span class="custom-range__slider-track"></span>
@@ -214,6 +216,16 @@ class CustomInputs {
         }
 
         return this.spanElements;
+    }
+
+    getTips(id) {
+        this.tips = {
+            '2194': 'Допустимы только значения, кратные 5.',
+            '2211': 'Допустимы только значения, кратные 10.',
+            '2212': 'Допустимы только значения, кратные 50.'
+        }
+
+        return this.tips[id] ? `<div class="label_tip">${getIcon['tips']}<div class="tip">${this.tips[id]}</div></div>` : ''
     }
 
 }

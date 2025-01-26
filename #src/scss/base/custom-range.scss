@@ -39,6 +39,39 @@
       min-width: 80px;
       max-width: 100px;
 
+      &_tip{
+        position: relative;
+        cursor: pointer;
+
+        & .tip {
+          display: none;
+          position: absolute;
+          right: 20px;
+          top: -25px;
+          width: 320px;
+          max-width: 328px;
+          border-radius: 8px;
+          background: rgba(25, 20, 254, 0.10);
+          backdrop-filter: blur(8px);
+          padding: 6px 12px;
+
+          @media (max-width: 365px){
+            right: -15px;
+            top: -30px;
+            width: 300px;
+            padding: 6px;
+          }
+        }
+
+        &:hover > svg{
+          fill: rgba(25, 20, 254, 0.10);
+        }
+
+        &:hover .tip {
+          display: block;
+        }
+      }
+
       &:focus-within {
         background: rgba(25, 20, 254, 0.20);
       }
