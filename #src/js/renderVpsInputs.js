@@ -48,6 +48,7 @@ function generateCustomVpsRange(data) {
             ${renderLabelInput(addon)}
             <span>${addon.measure[1].name_ru["$"]}</span>
             </div>
+               ${getTips(addon.id["$"])}
         </div>
             <div class="custom-range__slider">
                 <span class="custom-range__slider-track"></span>
@@ -151,4 +152,14 @@ function generateCustomSelect(data) {
   </div>
 </div>
 `;
+}
+
+function getTips(id) {
+  const tips = {
+    '2194': 'Допустимы только значения, кратные 5.',
+    '2211': 'Допустимы только значения, кратные 10.',
+    '2212': 'Допустимы только значения, кратные 50.'
+  }
+
+  return tips[id] ? `<div class="label_tip">${getIcon['tips']}<div class="tip">${tips[id]}</div></div>` : ''
 }
